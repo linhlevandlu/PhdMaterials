@@ -1,0 +1,22 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage{fullpage}
+\usepackage[margin=2cm]{geometry}
+\usepackage{mathtools,amsmath}
+\begin{document}
+\include{includes/cover}
+\include{includes/abstract}
+\part{Morphometry}
+	\include{includes/segmentation}
+	\include{includes/dominantpoints}
+	\include{includes/software}
+\part{Deep learning}
+	\include{includes/machineLearning}
+	\include{includes/linearClassifition}
+	\include{includes/deepNetwork}
+	\include{includes/cnnNetwork}
+\part{Conclusion}
+	\include{includes/discussion}
+	\include{includes/conclusion}
+\bibliographystyle{plain}
+\bibliography{includes/references}
+\end{document}

@@ -1,0 +1,74 @@
+\documentclass[12pt, a4paper]{report}
+\usepackage{fullpage}
+\begin{document}
+\section*{Morphometry}
+	The Dominant point detection can be classified into three groups\footnote{See the detail in the article M2, (M - Morphometry)}
+	\begin{itemize}
+		\item Search for dominant points using some significant measure other than curvature
+		\item Evaluate the curvature by transforming the contour to the Gaussian scale space. These methods are suitable for noisy curves.
+		\item Search for dominant points by estimating directly the curvature in the original picture space.
+\end{itemize}	
+\noindent\rule{16cm}{0.4pt}
+	Article M1: \textbf{Polygonal representation of digial planar curves through dominant point detection - a nonparametric algorithm}, Majed Marji, Pepe Siy.\\[0.2cm]
+	This article propose a new algorithm to detect a set of feature points(nodes) on boundary of 8-connected shape. The set of feature points is a ranked subset of the original shape points whose connected left and right arm extents cover the entire shape. Nodes are ranked based on their strength, length of support region, and distance from the centroid. The polygon obtained by linking the detected nodes approximates the contours. The steps of this method as follows:\\
+	\begin{itemize}
+		\item Start from a given set of contour points
+		\item Calculate the independent \textbf{left and right support} arms for each boundary point using a nonparametric least-squares error criterion (called nodes).
+		\item Determine the strength of each node and indicate the importance of that node as viewed by the other boundary points.
+		\item Sort the nodes according their strength, support length and distance from the centroid of the shape.
+		\item Extract the best subset that can cover the entire shape boundary.
+		\item Collinear point suppression: eliminate the points to the shape is minimal
+		\item Construct the approximating polygon
+	\end{itemize}
+\noindent\rule{16cm}{0.4pt}
+	Article M2: \textbf{Dominant point detection: A new proposal}, A. Carmona--Poyato, N.L Fernandes-Garcia, Medina-Carnicer, Madrid-Cuevas\\[0.2cm]
+	Article proposed a new and normalized measurement is described to estimate the curvature and to detect the dominant points. It is also proposed to eliminate collinear points using an optimization procedure.
+	\begin{itemize}
+		\item Calculate the \textbf{support region} for each point (left and right)
+		\item Calculate an adaptive bending value to calculate the estimated curvature int a point $P_{i}$
+		\item Consider the point $P_{i}$ is belong to straight line or a corner.
+		\item Consider a corner is a dominant point or not (depend on the local maximum and its value in its support region)
+	\end{itemize}
+	The result of this method is similar results to \textbf{Marji and Siy method}(article M1) regarding $E_{2}/CR, E_{2}/CR^{2}$ and \textbf{Rosin's} measure values.\\[0.3cm]
+	\noindent\rule{16cm}{0.4pt}
+	Article M3: \textbf{Dominant point detection by reverse polygonization of digital curves}, Asif Masood\\[0.2cm]
+	Article proposed an algorithm to estimate the polygonal approximation of object by using reverse polygonization. From a set of dominant points, finding the dominant point which have the minimal perpendicular distance from it to approximating straight line of curve.
+	\begin{itemize}
+		\item Detect the break points using freeman's chain-coding.Starting from this set of points.
+		\item Calculate the associated error value (AEV) from the straight line  of dominant point $DP_{j}$. The straight line is connected from two neighboring dominant points of $DP_{j}$ ($DP_{j-1}$ and $DP_{j+1}$). Keep curve index (CI) and AEV for each dominant point
+		\item Do
+			\begin{itemize}
+				\item Find dominant point $DP_{j}$ having least AEV
+				\item Remove $DP_{j}$ from the list of dominant points
+				\item Recalculate the AEV of neighboring dominant points $DP_{j-1}$ and $DP_{j+1}$
+				\item Calculate the MaxErr
+			\end{itemize}
+			While (MaxError < termination condition (0.9))
+		\item Termination condition depends on the requirements of end user. In this algorithm, the default for termination is fixed at MaxError = 0.9 (why???)
+	\end{itemize}
+\noindent\rule{16cm}{0.4pt}
+	Article M4: \textbf{Dominant point detection using adaptive bending value}, Wen-Yen Wu.\\[0.3cm]
+	This article propose the method to detect the support region for each point on curve by using \textbf{bending value}. The point with local maximum smoothing bending value can be located as the dominant point on the curve.
+	\begin{itemize}
+		\item Extract break points from Freeman's chain codes.
+		\item Determine region of support for each break point by \textit{Rule 1.}
+		\item Compute the smoothing bending value for all of thre break points by \textit{Equation 6}
+		\item Identify the dominant points by \textit{Rule 2}
+	\end{itemize}
+	
+	
+\section*{Machine Learning, Deep Learning}
+	Article DL1: \textbf{Deep Learning: Review}, Yann LeCun, Yoshua Bengio and Geoffrey Hinton\\[0.3cm]
+	\textbf{Machine learning}: is the techniques that use data to teach the computer how to do things only human were capable of before. Machine learning technology presents in all most the fields from web searcher to content filtering on social networks.\\
+	A field in machine learning used to identify objects in image \textit{(detection)}, transcribe speech into text, match news item,... called \textbf{deep learning}. Deep learning methods are representation-learning methods with multiple levels of representation, obtained by composing simple but non-linear the modules that each transform the representation at one level into a representation at a higher, slightly more abstract level.\\
+	\textbf{Key aspect}: the layers of features are not designed by human. They are learned from data using a general-purpose learning procedure. We can use the common form of machine learning as learning algorithm in deep learning: supervised learning.\\[0.3cm]
+	\textbf{Supervised learning}: is technique that teach for computer via training dataset. \\
+	Example: Imagine that we want to build a system can classify images as containing a house, car, person... We do steps followed:
+	\begin{itemize}
+		\item First, collect a large data set of houses, cars, people.
+		\item Training, show an image and procedures and output in form of a vector of scores, one for each category. We want the desired category to have the highest scores of all categories. Instead of, we compute an objective function that measure the error (distance) between the output scores and desired parttern of scores.
+		\item The machine then modifies its internal parameters (called weight) to reduce this error. The modification can be increase or decrease the weight by computing a gradient vector (SGD - stochastic gradient descent).
+		\item Finished training, we obtain a system to classify the image on these categories. After that, we use the test to test and evaluate the correctness of system
+	\end{itemize}
+	(continued)
+\end{document}
