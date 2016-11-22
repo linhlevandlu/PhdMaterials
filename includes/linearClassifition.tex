@@ -1,1 +1,28 @@
-\chapter{Linear Classification}
+\chapter{Classification}
+Classification is a most of important task in machine learning. In classification, a function is constructed to determine the category of the input. Generally, the model of classification as following:
+
+The process of classification includes two steps:
+\begin{enumerate}
+	\item \textbf{Training}: Use the \textbf{training set} to learn what every object of a class looks like. This duration is called training a classifier or learning a model. The training set is a set with the objects which have labeled with specific category.
+	\item \textbf{Evaluation}: To evaluate the quality of the classifier. We use a new set \textbf{(test set)} of the objects and try to ask the classifier predict the category of the object in the test set.
+\end{enumerate}
+In the content of this chapter, we will discuss about the classification techniques, especially, linear classification which technique has used more in neural network and deep learning.
+\section{Nearest Neighbour Classifier}
+\section{K-Nearest Neighbour Classifier}
+\section{Linear Classification}
+The linear classification has two main components: 
+\begin{itemize}
+	\item \textbf{Score function}:  which used to map the raw data to score of a category.
+	\item \textbf{Loss function}: that quantifies the agreement between predict score and the truth category of the data.
+\end{itemize}
+The simplest function of a linear mapping is:
+\begin{equation}
+	y = f(x_i,W,b) = Wx_i + b
+\end{equation}
+Where:
+\begin{itemize}
+	\item $x_i$ is the raw data, \textit{example: an image}.
+	\item $W$: a matrix parameter, called \textbf{weight} matrix
+	\item $b$: vector, called \textbf{bias} vector
+	\item $y$: score when consider the data $x_i$ belongs to a category.
+\end{itemize}
