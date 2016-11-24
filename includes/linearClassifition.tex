@@ -67,4 +67,47 @@ Visualation of new score function:
 \end{figure}~\\
 As described, we defined a score functions from a pixels value of an image to class scores with set of parameters \textbf{W}. Moreover, we need to control over parameters W such that the class scores are consistent with the ground truth labels in the training data. But not all cases are perfect, the class scores just near with the score of truth labels. So, we are going to measure the wrong with a \textbf{loss function}. Intuitively, the loss will be high if we are doing a poor classifier, ant it will be low if we are doing well. Multicalss Support Vector Machine (SVM) and Softmax function are two commonly methods for this purpose.
 \subsection{Multiclass Support Vector Machine loss}
+A commonly way to define the loss function called the \textbf{Multiclass Support Vector Machine} (SVM) loss. SVM loss is set up a margin $\Delta$ for the incorrect class scores. It means that SVM loss function wants the score of the correct class to be greater than the incorrect class (predict score) by at leat $\Delta$. If this is not the case, we will accumulate the loss.\\[0.2cm]
+The SVM loss for the i-th is formalized as follows:
+\begin{equation}
+	L_i = \sum_{j \neq y_i }max(0,s_j - s_{y_i} + \Delta)
+\end{equation}
+Where:
+\begin{itemize}
+	\item $s_j$ is the score of $x_i$ for j-th class
+	\item $s_{y_i}$ is the score of correct class
+	\item $\Delta$ is margin 
+	\item $max(0,-)$ is thresholding to zero, called hinge loss.
+\end{itemize}
+For example, we have three predict scores of an image $x_i$ like \textbf{$s = [14,-9,11]$}, and the first class is true class of $x_i$. Assume that $\Delta$ is 10. The SVM loss of this case is following:
+\begin{center}
+$
+	L_i = max(0,-9 - 14 + 10) + max (0,11 - 14 + 10) = 0 + 7 = 7
+$
+\end{center}
 \subsection{Softmax classifer}
+The other popular choice to define the loss function  is the \textbf{Softmax classifier}. Unlike SVM which treats the output of score function for each class, the Softmax classifier give a sightly more intuitive output and use the probabilistic description. Instead using theshold zero function as SVM, Softmax is using a \textbf{cross-entropy loss} for \textit{hingle loss}, which has the form.
+\begin{equation}
+	L_i = -log(\frac{e^{f_{y_i}}}{\sum_j{e^{f_j}}})
+	\label{softmax}
+\end{equation}
+Where: $f_j$ is the j-th element of vector of class scores \textbf{$f$}.\\[0.2cm]
+In formula \ref{softmax}, the function $f_j(z) = \frac{e^{z_j}}{\sum_k{e^{z_k}}}$ is called the softmax function. This formula turns the predict scores into probabilistic values (Noticed that sum of all \textbf{$f_j(z) $} is 1).\\[0.2cm]
+The cross-entropy between a correct distribution \textbf{p} and an estimated distribution \textbf{q} is defined as:
+\begin{equation}
+	H(p,q) = -\sum_x{p(x)log(q(x))}
+\end{equation}
+The Softmax classifier is minimizing the cross-entropy between the estimated socre and true score. At the end, the loss of training process is the average of cross-entropy.
+\begin{equation}
+	L = \frac{1}{N}\sum_i(H(p,q))
+\end{equation}
+The image \ref{figsvmsf} describes an example for a comparison between SVM and Softmax:
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.45]{images/svmsf}
+	\caption{An example about SVM and Softmax classifiers}
+	\label{figsvmsf}
+\end{figure}~\\[2.5cm]
+Both SVM and Softwax compute the same score of vector f. The difference is the way to present the score f: SVM uses the margin and Softmax uses probabilistic. In practice, the SVM and Softmax are usually used and compared in the machine learning systems.
+\section{How to determine the value of W and b?}
+\section{Backpropagation}
