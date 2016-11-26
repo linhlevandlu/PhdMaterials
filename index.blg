@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: index.aux
 A level-1 auxiliary file: includes/cover.aux
@@ -12,48 +12,48 @@ A level-1 auxiliary file: includes/deepNetwork.aux
 A level-1 auxiliary file: includes/cnnNetwork.aux
 A level-1 auxiliary file: includes/discussion.aux
 A level-1 auxiliary file: includes/conclusion.aux
-The style file: plain.bst
+The style file: unsrt.bst
 Database file #1: includes/references.bib
 Warning--there's a number but no volume in canny1986computational
-You've used 1 entry,
-            2118 wiz_defined-function locations,
-            516 strings with 4420 characters,
-and the built_in function-call counts, 321 in all, are:
-= -- 32
-> -- 7
+You've used 2 entries,
+            1791 wiz_defined-function locations,
+            472 strings with 4137 characters,
+and the built_in function-call counts, 465 in all, are:
+= -- 45
+> -- 12
 < -- 0
-+ -- 4
-- -- 2
-* -- 25
-:= -- 58
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 4
++ -- 5
+- -- 3
+* -- 36
+:= -- 78
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 11
-empty$ -- 28
-format.name$ -- 2
-if$ -- 62
+cite$ -- 3
+duplicate$ -- 18
+empty$ -- 47
+format.name$ -- 3
+if$ -- 97
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 1
-newline$ -- 8
+int.to.str$ -- 2
+missing$ -- 2
+newline$ -- 13
 num.names$ -- 2
 pop$ -- 3
 preamble$ -- 1
-purify$ -- 3
+purify$ -- 0
 quote$ -- 0
 skip$ -- 5
 stack$ -- 0
-substring$ -- 31
-swap$ -- 1
+substring$ -- 44
+swap$ -- 2
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
+type$ -- 0
 warning$ -- 1
-while$ -- 4
-width$ -- 2
-write$ -- 13
+while$ -- 6
+width$ -- 3
+write$ -- 24
 (There was 1 warning)
