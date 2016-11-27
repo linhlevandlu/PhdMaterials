@@ -110,4 +110,11 @@ The image \ref{figsvmsf} describes an example for a comparison between SVM and S
 \end{figure}~\\[2.5cm]
 Both SVM and Softwax compute the same score of vector f. The difference is the way to present the score f: SVM uses the margin and Softmax uses probabilistic. In practice, the SVM and Softmax are usually used and compared in the machine learning systems.
 \section{How to determine the value of W and b?}
+As we have seen in previous section, the loss function is used to quantify the quality of any set of weights \textbf{W}. So, the choosing (or optimizing) the weights W is really important to obtain a good prediction. The goal of this process is to find W that minimize the loss function. In this section, we will describe some strategy to optimize the W.
+	\subsection{Random search and random local search}
+	The core idea is finding the best set of weights W. We begin with the random weights W, try out many different random weights and keep the W what works best.\\[0.2cm]
+	Another way to try with random search is to try to extend the random direction . We also start with a random \textbf{W}, generate a random noise \textbf{$\delta$W} to it and if the loss at the concern \textbf{W + $\delta$W} is lower, we will perform an update. Following that method, the accuracy of classifier is getting on \textbf{21.4\%} (by experiment).
+	\subsection{Following the Grandient}
+	Another method is usually used to optimize the W that following the best direction which we should change our weight (steepest increase or descend). This direction is related to the gradient of the loss function. \\[0.2cm]
+	\textbf{Gradient Descent} is the procedure of repeatedly evaluating the gradient and then performing a parameter updated. In an application with the training data set is large, we must wasteful to compute the full loss function to perform the parameter. A very common way is addressing this challenge with a batches (a subset) of the training data. The extreme case of this is a setting where the mini-batch contains only a single example. This process is called \textbf{Stochastic Gradient Descent (SGD)}
 \section{Backpropagation}
