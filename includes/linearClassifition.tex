@@ -118,3 +118,30 @@ As we have seen in previous section, the loss function is used to quantify the q
 	Another method is usually used to optimize the W that following the best direction which we should change our weight (steepest increase or descend). This direction is related to the gradient of the loss function. \\[0.2cm]
 	\textbf{Gradient Descent} is the procedure of repeatedly evaluating the gradient and then performing a parameter updated. In an application with the training data set is large, we must wasteful to compute the full loss function to perform the parameter. A very common way is addressing this challenge with a batches (a subset) of the training data. The extreme case of this is a setting where the mini-batch contains only a single example. This process is called \textbf{Stochastic Gradient Descent (SGD)}
 \section{Backpropagation}
+With a classifier, we can use SVM or Softmax to compute the loss of classifier, and the input are both the training data and the parameter weights \textbf{W} and biases \textbf{b}. Clearly, the value of training data is fixed, so we can control the value of loss function via controling the weight parameters.\\[0.2cm]
+In this section, we will discuss about a method to compute the gradient of a function \textbf{f(x)} at \textbf{x} (i.e \textbf{$\nabla f(x)$}), called backprobagation. The core of backprobagation is computing gradients of function through recursive application of \textbf{chain rule}.\\[0.2cm]
+Let consider a simple function: \textbf{$f(x,y) = xy$}. The partial derivative for this function as followed:
+\begin{equation}
+	f(x,y) = xy \rightarrow \frac{\partial{f}}{\partial{x}} = y \text{,       } \frac{\partial{f}}{\partial{y}} = x
+\end{equation}
+The purpose of derivative is indicated the rate of change of the function with respect to that variable surrounding a small region near a particular point. Example, if \textbf{x = 4, y = -3} then \textbf{$f(x,y) = -12$}. The derivate on x is \textbf{$\frac{\partial{f}}{\partial{x}} = -3$}, it means if we increase the value of $x$ by a tiny amount, the value of this funciton will be to decrease it. Otherwise, the derivate on y is \textbf{$\frac{\partial{f}}{\partial{y}} = 4$}, if we increase the value of y, the function also increase the output.\\[0.2cm]
+The derivaties for the addition operation:
+\begin{equation}
+	f(x,y) = x + y \rightarrow \frac{\partial{f}}{\partial{x}} = 1 \text{, } \frac{\partial{f}}{\partial{y}} = 1
+\end{equation}
+And for \textit{max} operation, the gradient is 1 on the input that was larger and 0 on the orther input:
+\begin{equation}
+	f(x,y) = max(x,y) \rightarrow \frac{\partial{f}}{\partial{x}} = 1 (x \geq y) \text{, } \frac{\partial{f}}{\partial{y}} = 1 (y \geq x)
+\end{equation}
+The image \ref{figbackex} show an example about applying derivative to calculate the backward pass of the fucntion \textbf{$f(x,y,x) = (x+y)z$}:
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{images/back_ex}
+	\caption{A backpropagation example}
+	\label{figbackex}
+\end{figure}~\\[0.2cm]
+The backpropagation is good local process. Each gate of the circuit gets some inputs and compute two things (1) its output value and (2) the local gradient of its inputs with respect to its output value. Morever, the process at each gate can do independent. However, one the forward pass is over, during backpropagation the gate will eventually learn about the gradient of its output value on the final output of the entire circuit. Chain rule says that the gate should take that gradient and multiply it into every gradient it normally computes for all of its inputs.\\[0.2cm]
+Another kind of function at gate of circuit which we use to compute the gradient of function is \textit{sigmoid activation} function. The form of sigmod function as follows:
+\begin{equation}
+	\sigma(x) = \frac{1}{1 + e^{-x} }\rightarrow \frac{d\sigma(x)}{dx} = (1-\sigma(x))\sigma(x)
+\end{equation}
