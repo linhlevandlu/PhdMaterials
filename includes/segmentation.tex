@@ -94,3 +94,68 @@ Let an input binary image is \textbf{$F=\{f_{ij}\}$}. Set initially $NBD = 1$ (d
 		\end{itemize}
 	\item Resume the scan from the pixel $(i,j+1)$. The algorithm is stop when the scan reaches the lower right corner of the image.
 \end{enumerate}
+The obtained results from Suzuki algorithm are list of the edges of the object in the image. Each edge is list of connected points. This result is very important for the next steps of automatic detection landmarks.
+\section{Approximated lines}
+The list of points from Suzuki algorithm can used to present the object. But in some case to consider the feature of the object, the information from the list of points is not perfect. Instead of, we use another kind of the geometric object to represent the object. This is the line. In this section, we will describe the duration to get the approximated lines of object from the list of edge (each edge is represented by the list of points).\\[0.2cm]
+The method is used to fragment the edge into a list of approximated line is a recursive algorithm\cite{thacker1995assessing}, which is a new improved version with the method proposed by Lowe\cite{lowe1987three} except the stop condition is considered as a parameter $\lambda$. The steps of algorithm are followed:
+\begin{enumerate}
+	\item Create a straight line $l$ between two endpoints of the edge
+	\item Calculate the perpendicular distance from each point on edge to line $l$, and identifying the maximum point $p_m$.
+	\item If the perpendicular distance from maximum point $p_m$ is greater than the stop condition($d(p_m,l) > \lambda$), then the edge is split at this point and both parts are reprocessed. Otherwise, if we do not have any $p_i$ that the perpendicular distance from they to $l$ greater than $\lambda$ then the edge can be represented by $l$. 
+\end{enumerate}
+\section{Pairwise Geometric Histogram}
+In image processing, we have many techniques to describe the features of the image. With expect represent the image's features into the variant information for compare and representation, pairwise geometric histogram (PGH) method is chosen. PGH is constructed based on the geometry relative of the image's features. With an image is presented by the list of lines, the angle and perpendicular distance between two lines are importance characteristic to consider for re-constructor the image. Moreover, PGH is also fitwell when we apply some variants on the image such as translation or rotation because the angle and perpendicular distance between two lines are invariant. The process to calculate the PGH of an image which is represented by a list of lines as follows:
+\begin{itemize}
+	\item Choose arbitrary line as reference lines \textbf{$l_f$}
+	\item For each other lines \textbf{$l$} in image, calculate the angle between \textbf{$l$} and \textbf{$l_f$}, and perpendicular distance from two endpoints of \textbf{$l$} to \textbf{$l_f$}.
+	\item The process will stop when all line in the image are considered as reference line.
+\end{itemize}
+An importance note, during the process calculate the PGH, we need to keep the information of PGH to reconstruct the image or compare with other image.
+\begin{figure}[h!]
+\centering
+\subfloat[The geometric relationship between two lines]{\label{fig:231}\includegraphics[width=0.4\textwidth]{./images/PGH_geo}}~~
+\subfloat[The information of PGH is kept into a matrix]{\label{fig:232}\includegraphics[width=0.4\textwidth]{./images/PGH}}
+\caption{Example about geometric features and the pairwise geometric histogram}
+\label{fig:figure_23}
+\end{figure}~\\[0.2cm]
+To detect the similarity between two images, we can use the pairwise geometric histogram matching via the similar distance of their probability distribution on histogram. The Bhattacharyya metric is common distance to compare two models. The form of Bhattacharyya is:
+\begin{equation}
+	\label{eq:1}
+d_{Bhattacharyya} (H_{i}H_{j}) = \sum\limits_{\theta}^{\pi}\sum\limits_{d}^{d_{max}}\sqrt{H_{i}(\theta,d)H_{j}(\theta,d)}
+\end{equation}
+The significance of parameters in the formula \ref{eq:1}, as follows:
+\begin{itemize}
+\item $\theta$: angle value, range of $\theta$ in angle axis from 0 to $\pi$.
+\item $d$: the perpendicular distance, range of $d$ in perpendicular distance from 0 to the maximum distance of arbitrary lines of shape.
+\item $H_{i}(\theta,d)$ is an entry at row $\theta$ and column $d$ in PGH of image \textit{i}
+\item $H_{j}(\theta,d)$ is an entry at row $\theta$ and column $d$ in PGH of image \textit{j}
+\end{itemize}
+\section{Probabilistic Hough Transform}
+\textbf{Probabilistic Hough Transform (PHT)} is used to detect the presence of a model image in a scene image based on the group of features. The hypothesised location of the model image in the scene image is indicated based on the conditional probability that any pair scene lines agreement about a position in model image. Applying PHT can be separated into two steps: firstly, recording the information of model image and try to find the presence of the model image in scene image (called training process); secondly, predicting the pose of model image in the scene image (called estimating process).\\[0.2cm]
+During training process, choose an arbitrary point in the model image, called reference point. For each pair of lines in model image, the perpendicular distance and angle from each line to reference point is recording (angle is calculated as angle between line and a horizontal line begin from reference point). The presence of model image in scene image is detected by PHT with \textit{``vote"} procedure. Finally, we choose the similar pair lines between model image and scene image. The chosen pair is obtained from best \textit{vote} when we consider each pair of line in scene image with each pair of lines in model image.\\[0.2cm]
+In estimating process, the reference point in model image is estimated in scene image by extending the perpendicular lines of the pair of scene lines at the appropriate position. There, we can estimate the pose of the model in the scene image.
+\section{Template matching}
+Template matching is a technique for finding areas of an image that match to a template image (template) by sliding the template over each pixel on the image (commonly cross-correlation). At each position, the sum of products between two images is calculated. The position is considered similar if the sum value at this position is maximal. The equation of cross-correlation is as follows:
+\begin{equation}
+\label{eq:cross-correlation}
+	R_{ccorr}(x,y) = \sum\limits_{x',y'}[T(x'.y').I(x + x', y + y')]
+\end{equation}
+Where:
+\begin{itemize}
+\item T is template which use to slide and find the exist in other image.
+\item I is image which we expect to find the template image
+\item $(x', y')$ are coordinates in template where we get the value to compute.
+\item $(x + x', y + y')$ are coordinates in image where we get the value to compute when template $T$ sliding.
+\end{itemize}
+However, if we use the original image to compute and find the similarity, the brightness of the template and the image might change the conditions and the result. So, we can normalize the image before applying the cross-correlation to reduce the effect of lighting difference between them. The normalization coefficient is:
+\begin{center}
+\begin{equation}\label{eq:normalizeCoff}
+Z(x,y) = \sqrt{\sum\limits_{x',y'}T(x'.y')^{2}.\sum\limits_{x',y'}I(x + x', y + y')^{2}}
+\end{equation}
+\end{center}
+The value of this method when we normalized computation as below:
+\begin{center}
+\begin{equation}\label{eq:cross-correlation}
+R_{ccorr\_norm}(x,y) =\frac{R_{ccorr}(x,y)}{Z(x,y)} = \frac{\sum\limits_{x',y'}[T(x'.y').I(x + x', y + y')]}{\sqrt{\sum\limits_{x',y'}T(x'.y')^{2}.\sum\limits_{x',y'}I(x + x', y + y')^{2}}}
+\end{equation}
+\end{center}

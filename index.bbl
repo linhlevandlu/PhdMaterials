@@ -13,4 +13,16 @@ Satoshi Suzuki et~al.
 \newblock {\em Computer Vision, Graphics, and Image Processing}, 30(1):32--46,
   1985.
 
+\bibitem{thacker1995assessing}
+Neil~A Thacker, PA~Riocreux, and RB~Yates.
+\newblock Assessing the completeness properties of pairwise geometric
+  histograms.
+\newblock {\em Image and Vision Computing}, 13(5):423--429, 1995.
+
+\bibitem{lowe1987three}
+David~G Lowe.
+\newblock Three-dimensional object recognition from single two-dimensional
+  images.
+\newblock {\em Artificial intelligence}, 31(3):355--395, 1987.
+
 \end{thebibliography}
