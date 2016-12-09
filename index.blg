@@ -15,45 +15,45 @@ A level-1 auxiliary file: includes/conclusion.aux
 The style file: unsrt.bst
 Database file #1: includes/references.bib
 Warning--there's a number but no volume in canny1986computational
-You've used 4 entries,
+You've used 11 entries,
             1791 wiz_defined-function locations,
-            487 strings with 4448 characters,
-and the built_in function-call counts, 940 in all, are:
-= -- 92
-> -- 27
-< -- 0
-+ -- 11
-- -- 7
-* -- 75
-:= -- 152
-add.period$ -- 12
-call.type$ -- 4
-change.case$ -- 4
+            526 strings with 5778 characters,
+and the built_in function-call counts, 2847 in all, are:
+= -- 262
+> -- 119
+< -- 3
++ -- 44
+- -- 33
+* -- 189
+:= -- 439
+add.period$ -- 34
+call.type$ -- 11
+change.case$ -- 11
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 36
-empty$ -- 95
-format.name$ -- 7
-if$ -- 199
+cite$ -- 12
+duplicate$ -- 130
+empty$ -- 274
+format.name$ -- 33
+if$ -- 640
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 4
-newline$ -- 23
-num.names$ -- 4
-pop$ -- 5
+int.to.str$ -- 11
+missing$ -- 11
+newline$ -- 58
+num.names$ -- 11
+pop$ -- 33
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 11
+skip$ -- 68
 stack$ -- 0
-substring$ -- 94
-swap$ -- 4
-text.length$ -- 0
+substring$ -- 213
+swap$ -- 39
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 12
-width$ -- 5
-write$ -- 46
+while$ -- 30
+width$ -- 13
+write$ -- 121
 (There was 1 warning)
