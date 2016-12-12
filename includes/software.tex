@@ -1,10 +1,10 @@
 \chapter{Software}
-\section{The software architecture}
+
 The architecture of program is followed 3-tier model. There-tier architecture is an architecture that each tier is designed, developed and maintained as independent. The advantage of this architecture is intended to allow any upgraded or replaced independent between the tiers. When user want to change the requirements or technology of a tier, it will non-affect to other tiers.\\[0.3cm]
 The architecture of three-tiers includes:
 \begin{itemize}
 	\item \textbf{Data tier}: includes the classes which were designed for the data structure of program. It also provides the persistence mechanism to access the data.
-	\item \textbf{Logic tier}: controls the functionality of application by performing detailed processing.
+	\item \textbf{Model tier}: controls the functionality of application by performing detailed processing.
 	\item \textbf{Presentation tier}: displays information related to user. It is a layer which received the require from user to program or return the result from program to user. 
 \end{itemize}
 \begin{figure}[h]
@@ -13,7 +13,7 @@ The architecture of three-tiers includes:
 	\caption{Three-tiers model}
 	\label{fign3iters}
 \end{figure}
-\section{The modules}
+\section{The design of the software}
 The MAELab software mainly includes four modules: \textbf{segmentation}, \textbf{histograms}, \textbf{pht} and \textbf{correlation}. Besides, the software also includes the other modules to support for the main modules. The relation between the modules in the software is shown in figure \ref{fignsmodules}.
 \begin{figure}[h]
 	\centering
@@ -33,13 +33,12 @@ The functions of each modules is describing as followed:
 \end{itemize}
 \section{The classes architecture}
 Figure \ref{figclassdiagram} describes the classes diagram of the software. Based on structurally software, the classes is divided into two parts: one, describing for the data structure and another, describing the functions of software.
-\begin{figure}[!h]
+\begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.8, angle = -90]{images/classDiagram}
+	\includegraphics[scale=0.85, angle = -90]{images/classDiagram}
 	\caption{Classes diagram}
 	\label{figclassdiagram}
 \end{figure}
-\subsection{Data structure classes}
 The data structure classes are the classes that used to represent the structure of the image in program. These classes are using through all the functions of the software.
 \begin{itemize}
 	\item \texttt{Point} class describes a point in mathematics, its attributes include the coordinate of the point in Cartesian coordinate system.
@@ -48,11 +47,57 @@ The data structure classes are the classes that used to represent the structure 
 	\item \texttt{Matrix} class is used to store the information of the image after decoding.
 	\item \texttt{Image} class presents the information of an image (i.e file name, list of edges, matrix that represent the image). It also provides the methods on image such as computing histogram of image, converting image, reading the manual landmarks.
 \end{itemize} 
-\subsection{Function classes}
 The function classes are contains the methods to implement the processes on the image. They are separated into four groups: segment the image, calculate the pairwise geometric histogram of the image, apply the probabilistic hough transform on image and estimate the landmarks on image.
 \begin{itemize}
 	\item \texttt{Segmentation} classes implement the method to apply the segmentation methods on image such as threshold method, Canny algorithm. It also includes the methods to extract the edge of the image or change the display form of the image into approximated lines.
-	\item \texttt{Pairwise geometric histogram} classes provide the method to compute the geometric histogram of the image and measure the difference metric between two images.
-	\item \texttt{Probabilistic Hough Transform} classes are implemented to detect the presence of the scene image in the model image. At the beginning, the classes detect the reference point of the model in the scene, and the last result of this process is estimating the manual landmarks of model image in the scene image.
-	\item \texttt{Estimating the landmarks} classes provides the methods to verify the estimated landmarks that are detected by probabilistic hough transform. These classes have also methods to evaluate the correctness of the estimated landmarks position.
+	\item \texttt{Pairwise geometric histogram} classes provide the method to compute the geometric histogram of the image and measure the difference metric between two images. These classes include \texttt{LocalHistogram}, \texttt{ShapeHistogram}, \texttt{GeometricHistogram}.
+	\item \texttt{Probabilistic Hough Transform} classes are implemented to detect the presence of the scene image in the model image. At the beginning, the classes detect the reference point of the model in the scene, and the last result of this process is estimating the manual landmarks of model image in the scene image. The classes include \texttt{PHTEntry}, \texttt{PHoughTransform}, \texttt{ProHoughTransofrm}.
+	\item \texttt{Estimating the landmarks} classes (\texttt{LandmarkDetection})provides the methods to verify the estimated landmarks that are detected by probabilistic hough transform. These classes have also methods to evaluate the correctness of the estimated landmarks position.
 \end{itemize}
+\section{Experiments}
+The dataset is two set of biological images: \textit{left mandible} and \textit{right mandible}. Each dataset contains 293 images (3264 x 2448). However, the datasets are filtered by suppressing the ``bad images" that are the empty images or the image contains the broken object. As the result, the dataset includes 290 right mandible and 286 left mandible. The experiments are consider on two aspects: the runtime and the accuracy of the estimated landmarks.\\[0.2cm]
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Machine & No of images & Segmentation(second) & Estimation(second) \\ \hline
+		Machine 1 & 1 & 0.844 & 31.4245   \\ \hline
+		Machine 2 & 1 & 0.27782 & 10.4392 \\ \hline
+		Machine 1 & 290 & 571.576 & 13000.9131   \\ \hline
+		Machine 2 & 286 & 171.589 & 4665.79\\ \hline
+	\end{tabular}	
+	\caption{The runtime of program on two machine}		
+	\label{table_runtime}
+\end{table}~\\[0.2cm]
+The software had implemented in several steps to estimate the landmarks. The runtime can be calculate in separated step to improve the runtime of all processes. As in table \ref{table_runtime}, we show the runtime on two stages of method on two machine\footnote{
+	\begin{itemize}
+		\item Machine 1: Intel(R) Core (TM) 2 Duo CPU T8100 2.1GHz, 2GB of RAM
+		\item Machine 2: Intel(R) Core (TM) i7-47900 CPU 3.6GHz, 16GB of RAM
+	\end{itemize}
+}. On each system, we compute the runtime on one image and a set of images (table \ref{table_runtime}).\\[0.2cm]
+The accuracy of estimated landmarks is evaluated by comparing the coordinates of estimated landmarks and manual landmarks. The manual landmarks are indicated by biologist (by hand) with 18 landmarks for each right mandible and 16 landmarks for each left mandible. The automated landmarks are indicated based on the learning from the manual landmarks of model image. Figure \ref{figmanualLM} show the model image and its manual, and figure \ref{figestimatedLM} shows a scene image and its landmarks that are estimated from model's landmarks. 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{./images/manualLM}
+\caption{Model image with manual landmarks}
+\label{figmanualLM}
+\end{figure}~\\[0.2cm]
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{./images/est32}
+\caption{Automated landmarks indicated by our method}
+\label{figestimatedLM}
+\end{figure}
+Besides, the accuracy of the system can be determined by comparing the differences(in pixels) between the landmarks located by this method and the manual landmarks which was indicated manually by the biologist. The charts in the image \ref{figMdChart} and \ref{figMgChart} show the comparison between the manual and automated landmarks on two sets of data (\textit{right mandible, left mandible}). The \textbf{blue} line describes the size of the manual landmarks on set of images. The \textbf{orange} line presents for the size of the automated landmarks by software. It is clearly that the automated landmarks is near with the manual landmarks (about 5\% is exactly, 75\% is near and 20\% is far). Based on the processes, this method has to pass several steps, the result of each step will effect on next steps. Thus, to evaluate the accuracy of this method, we can evaluate the result of each step.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{./images/MdChart}
+\caption{The chart presents the accuracy between manual and automated landmarks on right mandible}
+\label{figMdChart}
+\end{figure}~\\
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{./images/MgChart}
+\caption{The chart presents the accuracy between manual and automated landmarks on left mandible}
+\label{figMgChart}
+\end{figure}~\\

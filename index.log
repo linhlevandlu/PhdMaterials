@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.23)  9 DEC 2016 17:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.23)  12 DEC 2016 20:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -690,13 +690,13 @@ Package caption Info: End \AtBeginDocument code.
 ]) [1
 
 
-]
+] [2]
 \openout2 = `includes/segmentation.aux'.
 
 
 (./includes/segmentation.tex
 Chapter 1.
-[2
+[3
 
 
 ]
@@ -706,7 +706,7 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 55.
- [3] [4]
+ [4] [5]
 Overfull \hbox (39.64206pt too wide) in paragraph at lines 104--105
 []\OT1/cmr/m/n/12 If the per-pen-dic-u-lar dis-tance from max-i-mum point $\OML
 /cmm/m/it/12 p[]$ \OT1/cmr/m/n/12 is greater than the stop condition($\OML/cmm/
@@ -714,25 +714,25 @@ m/it/12 d\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p[]; l\OT1/cmr/m/n/12 ) \OML/cmm/m/i
 t/12 >
  []
 
-[5] <./images/PGH_geo.png, id=38, 386.44376pt x 244.915pt>
+[6] <./images/PGH_geo.png, id=41, 386.44376pt x 244.915pt>
 File: ./images/PGH_geo.png Graphic file (type png)
 
 <use ./images/PGH_geo.png>
 Package pdftex.def Info: ./images/PGH_geo.png used on input line 116.
 (pdftex.def)             Requested size: 193.47578pt x 122.61787pt.
- <./images/PGH.png, id=39, 570.13pt x 442.65375pt>
+ <./images/PGH.png, id=42, 570.13pt x 442.65375pt>
 File: ./images/PGH.png Graphic file (type png)
 
 <use ./images/PGH.png>
 Package pdftex.def Info: ./images/PGH.png used on input line 117.
 (pdftex.def)             Requested size: 193.47578pt x 150.21658pt.
- [6 <./images/PGH_geo.png> <./images/PGH.png>]) [7]
+ [7 <./images/PGH_geo.png> <./images/PGH.png>]) [8]
 \openout2 = `includes/dominantpoints.aux'.
 
 
 (./includes/dominantpoints.tex
 Chapter 2.
-) [8
+) [9
 
 
 
@@ -741,14 +741,14 @@ Chapter 2.
 
  (./includes/software.tex
 Chapter 3.
-<images/software_3tiers.jpg, id=53, 171.64125pt x 260.975pt>
+<images/software_3tiers.jpg, id=56, 171.64125pt x 260.975pt>
 File: images/software_3tiers.jpg Graphic file (type jpg)
 
 <use images/software_3tiers.jpg>
 Package pdftex.def Info: images/software_3tiers.jpg used on input line 12.
 (pdftex.def)             Requested size: 120.14804pt x 182.68126pt.
 
-<images/modules.png, id=54, 831.105pt x 474.77374pt>
+<images/modules.png, id=57, 831.105pt x 474.77374pt>
 File: images/modules.png Graphic file (type png)
  <use images/modules.png>
 Package pdftex.def Info: images/modules.png used on input line 20.
@@ -757,26 +757,79 @@ Package pdftex.def Info: images/modules.png used on input line 20.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9
+[10
 
 
 
  <./images/software_3tiers.jpg>]
-<images/classDiagram.pdf, id=58, 845.04686pt x 597.50786pt>
+<images/classDiagram.pdf, id=61, 845.04686pt x 597.50786pt>
 File: images/classDiagram.pdf Graphic file (type pdf)
 
 <use images/classDiagram.pdf>
 Package pdftex.def Info: images/classDiagram.pdf used on input line 38.
-(pdftex.def)             Requested size: 676.0384pt x 478.00693pt.
+(pdftex.def)             Requested size: 718.29323pt x 507.88408pt.
+
+Overfull \hbox (24.18721pt too wide) in paragraph at lines 38--39
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 11.55737pt on input line 41.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[10 <./images/modules.png>]
+[11 <./images/modules.png>]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 77.
 
-LaTeX Warning: Text page 11 contains only floats.
+<./images/manualLM.jpg, id=67, 2457.18pt x 1842.885pt>
+File: ./images/manualLM.jpg Graphic file (type jpg)
 
-[11 <./images/classDiagram.pdf>]) [12] [13
+<use ./images/manualLM.jpg>
+Package pdftex.def Info: ./images/manualLM.jpg used on input line 81.
+(pdftex.def)             Requested size: 338.58632pt x 253.92473pt.
+ <./images/est32.JPG, id=68, 3276.24pt x 2457.18pt>
+File: ./images/est32.JPG Graphic file (type jpg)
+
+<use ./images/est32.JPG>
+Package pdftex.def Info: ./images/est32.JPG used on input line 87.
+(pdftex.def)             Requested size: 338.58632pt x 253.90598pt.
+
+<./images/MdChart.png, id=69, 996.72375pt x 564.60938pt>
+File: ./images/MdChart.png Graphic file (type png)
+
+<use ./images/MdChart.png>
+Package pdftex.def Info: ./images/MdChart.png used on input line 94.
+(pdftex.def)             Requested size: 411.14528pt x 232.89561pt.
+
+<./images/MgChart.png, id=70, 974.13937pt x 505.13719pt>
+File: ./images/MgChart.png Graphic file (type png)
+
+<use ./images/MgChart.png>
+Package pdftex.def Info: ./images/MgChart.png used on input line 100.
+(pdftex.def)             Requested size: 411.14528pt x 213.19672pt.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 58--24
+
+ []
+
+[12]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[13] [14 <./images/classDiagram.pdf>] [15 <./images/manualLM.jpg> <./images/est
+32.JPG>] [16 <./images/MdChart.png (PNG copy)> <./images/MgChart.png (PNG copy)
+>] [17
 
 
 ]
@@ -784,15 +837,15 @@ LaTeX Warning: Text page 11 contains only floats.
 
  (./includes/machineLearning.tex
 Chapter 4.
-) [14
+) [18
 
 
-] [15]
+] [19]
 \openout2 = `includes/linearClassifition.aux'.
 
  (./includes/linearClassifition.tex
 Chapter 5.
-<images/nncl1.jpeg, id=81, 1162.3425pt x 331.2375pt>
+<images/nncl1.jpeg, id=101, 1162.3425pt x 331.2375pt>
 File: images/nncl1.jpeg Graphic file (type jpg)
  <use images/nncl1.jpeg>
 Package pdftex.def Info: images/nncl1.jpeg used on input line 23.
@@ -801,25 +854,25 @@ Package pdftex.def Info: images/nncl1.jpeg used on input line 23.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16
+[20
 
 
 
-] [17 <./images/nncl1.jpeg>]
-<images/lncex.jpg, id=89, 1227.58624pt x 454.69875pt>
+] [21 <./images/nncl1.jpeg>]
+<images/lncex.jpg, id=108, 1227.58624pt x 454.69875pt>
 File: images/lncex.jpg Graphic file (type jpg)
  <use images/lncex.jpg>
 Package pdftex.def Info: images/lncex.jpg used on input line 53.
 (pdftex.def)             Requested size: 368.27872pt x 136.41068pt.
 
-<images/lncba.jpeg, id=90, 1340.00626pt x 477.785pt>
+<images/lncba.jpeg, id=109, 1340.00626pt x 477.785pt>
 File: images/lncba.jpeg Graphic file (type jpg)
  <use images/lncba.jpeg>
 Package pdftex.def Info: images/lncba.jpeg used on input line 64.
 (pdftex.def)             Requested size: 402.00497pt x 143.3366pt.
 
-[18 <./images/lncex.jpg> <./images/lncba.jpeg>]
-<images/svmsf.png, id=94, 1008.76875pt x 489.83pt>
+[22 <./images/lncex.jpg> <./images/lncba.jpeg>]
+<images/svmsf.png, id=113, 1008.76875pt x 489.83pt>
 File: images/svmsf.png Graphic file (type png)
  <use images/svmsf.png>
 Package pdftex.def Info: images/svmsf.png used on input line 107.
@@ -828,41 +881,41 @@ Package pdftex.def Info: images/svmsf.png used on input line 107.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19] [20 <./images/svmsf.png>]
-<images/back_ex.png, id=102, 433.62pt x 219.82124pt>
+[23] [24 <./images/svmsf.png>]
+<images/back_ex.png, id=122, 433.62pt x 219.82124pt>
 File: images/back_ex.png Graphic file (type png)
  <use images/back_ex.png>
 Package pdftex.def Info: images/back_ex.png used on input line 139.
 (pdftex.def)             Requested size: 260.17401pt x 131.89375pt.
 
-[21 <./images/back_ex.png>]) [22]
+[25 <./images/back_ex.png>]) [26]
 \openout2 = `includes/deepNetwork.aux'.
 
  (./includes/deepNetwork.tex
 Chapter 6.
-<images/neurons.png, id=109, 866.23625pt x 249.93375pt>
+<images/neurons.png, id=129, 866.23625pt x 249.93375pt>
 File: images/neurons.png Graphic file (type png)
 
 <use images/neurons.png>
 Package pdftex.def Info: images/neurons.png used on input line 8.
 (pdftex.def)             Requested size: 433.11707pt x 124.96657pt.
- [23
+ [27
 
 
 
  <./images/neurons.png>]
-<images/neuron.png, id=114, 397.485pt x 211.79124pt>
+<images/neuron.png, id=133, 397.485pt x 211.79124pt>
 File: images/neuron.png Graphic file (type png)
  <use images/neuron.png>
 Package pdftex.def Info: images/neuron.png used on input line 34.
 (pdftex.def)             Requested size: 198.742pt x 105.89536pt.
 )
-[24 <./images/neuron.png>]
+[28 <./images/neuron.png>]
 \openout2 = `includes/cnnNetwork.aux'.
 
  (./includes/cnnNetwork.tex
 Chapter 7.
-<images/cnn_architecture.png, id=120, 1043.9pt x 321.2pt>
+<images/cnn_architecture.png, id=139, 1043.9pt x 321.2pt>
 File: images/cnn_architecture.png Graphic file (type png)
 
 <use images/cnn_architecture.png>
@@ -873,19 +926,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--11
 
  []
 
-[25
+[29
 
 
 
- <./images/cnn_architecture.png>] [26]
-<images/filter_w0.png, id=128, 972.63374pt x 832.10875pt>
+ <./images/cnn_architecture.png>] [30]
+<images/filter_w0.png, id=148, 972.63374pt x 832.10875pt>
 File: images/filter_w0.png Graphic file (type png)
 
 <use images/filter_w0.png>
 Package pdftex.def Info: images/filter_w0.png used on input line 56.
 (pdftex.def)             Requested size: 340.42691pt x 291.24242pt.
 
-<images/filter_w1.png, id=129, 972.63374pt x 823.075pt>
+<images/filter_w1.png, id=149, 972.63374pt x 823.075pt>
 File: images/filter_w1.png Graphic file (type png)
 
 <use images/filter_w1.png>
@@ -895,8 +948,8 @@ Package pdftex.def Info: images/filter_w1.png used on input line 62.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[27 <./images/filter_w0.png (PNG copy)>]
-<images/pooling.png, id=133, 720.6925pt x 225.84375pt>
+[31 <./images/filter_w0.png (PNG copy)>]
+<images/pooling.png, id=153, 720.6925pt x 225.84375pt>
 File: images/pooling.png Graphic file (type png)
 
 <use images/pooling.png>
@@ -906,8 +959,8 @@ Package pdftex.def Info: images/pooling.png used on input line 86.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[28 <./images/filter_w1.png (PNG copy)>] [29 <./images/pooling.png>]) [30]
-[31
+[32 <./images/filter_w1.png (PNG copy)>] [33 <./images/pooling.png>]) [34]
+[35
 
 
 ]
@@ -915,7 +968,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
  (./includes/discussion.tex
 Chapter 8.
-) [32
+) [36
 
 
 ]
@@ -923,11 +976,11 @@ Chapter 8.
 
  (./includes/conclusion.tex
 Chapter 9.
-) [33
+) [37
 
 
 
-] (./index.bbl) [34
+] (./index.bbl) [38
 
 
 ] (./index.aux (./includes/cover.aux)
@@ -941,13 +994,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14301 strings out of 493304
- 255811 string characters out of 6139871
- 344096 words of memory out of 5000000
- 17403 multiletter control sequences out of 15000+600000
- 11055 words of font info for 40 fonts, out of 8000000 for 9000
+ 14334 strings out of 493304
+ 256381 string characters out of 6139871
+ 348153 words of memory out of 5000000
+ 17427 multiletter control sequences out of 15000+600000
+ 11282 words of font info for 41 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,11n,55p,893b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,11n,55p,958b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/
@@ -958,15 +1011,16 @@ onts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on index.pdf (36 pages, 1460851 bytes).
+/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on index.pdf (40 pages, 2647181 bytes).
 PDF statistics:
- 208 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
+ 233 PDF objects out of 1000 (max. 8388607)
+ 149 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
