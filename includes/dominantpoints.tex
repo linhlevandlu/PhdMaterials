@@ -8,6 +8,32 @@ There are many approaches developed for detecting dominant points and the method
 	\item Evaluate the curvature by transforming the contour to the Gaussian scale space.
 	\item Search for dominant points by estimating directly the curvature in the original image space.
 \end{itemize}
-\section{Cross correlation}
 \section{Probabilistic Hough Transform}
+\textbf{Probabilistic Hough Transform (PHT)} is used to detect the presence of a model image in a scene image based on the group of features. The hypothesised location of the model image in the scene image is indicated based on the conditional probability that any pair scene lines agreement about a position in model image. Applying PHT can be separated into two steps: firstly, recording the information of model image and try to find the presence of the model image in scene image (called training process); secondly, predicting the pose of model image in the scene image (called estimating process).\\[0.2cm]
+During training process, choose an arbitrary point in the model image, called reference point. For each pair of lines in model image, the perpendicular distance and angle from each line to reference point is recording (angle is calculated as angle between line and a horizontal line begin from reference point). The presence of model image in scene image is detected by PHT with \textit{``vote"} procedure. Finally, we choose the similar pair lines between model image and scene image. The chosen pair is obtained from best \textit{vote} when we consider each pair of line in scene image with each pair of lines in model image.\\[0.2cm]
+In estimating process, the reference point in model image is estimated in scene image by extending the perpendicular lines of the pair of scene lines at the appropriate position. There, we can estimate the pose of the model in the scene image.
 \section{Template matching}
+Template matching is a technique for finding areas of an image that match to a template image (template) by sliding the template over each pixel on the image (commonly cross-correlation). At each position, the sum of products between two images is calculated. The position is considered similar if the sum value at this position is maximal. The equation of cross-correlation is as follows:
+\begin{equation}
+\label{eq:cross-correlation}
+	R_{ccorr}(x,y) = \sum\limits_{x',y'}[T(x'.y').I(x + x', y + y')]
+\end{equation}
+Where:
+\begin{itemize}
+\item T is template which use to slide and find the exist in other image.
+\item I is image which we expect to find the template image
+\item $(x', y')$ are coordinates in template where we get the value to compute.
+\item $(x + x', y + y')$ are coordinates in image where we get the value to compute when template $T$ sliding.
+\end{itemize}
+However, if we use the original image to compute and find the similarity, the brightness of the template and the image might change the conditions and the result. So, we can normalize the image before applying the cross-correlation to reduce the effect of lighting difference between them. The normalization coefficient is:
+\begin{center}
+\begin{equation}\label{eq:normalizeCoff}
+Z(x,y) = \sqrt{\sum\limits_{x',y'}T(x'.y')^{2}.\sum\limits_{x',y'}I(x + x', y + y')^{2}}
+\end{equation}
+\end{center}
+The value of this method when we normalized computation as below:
+\begin{center}
+\begin{equation}\label{eq:cross-correlation}
+R_{ccorr\_norm}(x,y) =\frac{R_{ccorr}(x,y)}{Z(x,y)} = \frac{\sum\limits_{x',y'}[T(x'.y').I(x + x', y + y')]}{\sqrt{\sum\limits_{x',y'}T(x'.y')^{2}.\sum\limits_{x',y'}I(x + x', y + y')^{2}}}
+\end{equation}
+\end{center}
