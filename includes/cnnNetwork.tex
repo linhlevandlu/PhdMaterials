@@ -105,3 +105,49 @@ This section gives several architectures in the field of CNNs that we have.
 	\item \textbf{ResNet}: is developed by Kaiming He and al\cite{he2015deep}. The architecture of this network is missing FC layers at the end of network. It features skip connections and a heavy use of batch normalization\cite{ioffe2015batch}.
 \end{itemize}
 \section{Caffe framework}
+Caffe is a deep learning framework that is developed by the Berkeley Vision and Learning Center (BVLC) and community contributors. Besides the supporting help user defined the network without hard-coding, easily to change the device machine (CPU or GPU), speedly, Caffe already has a large community user. These are reasons that Caffe is used in many research projects and many application in vision, speech and multimedia. This  section will describe the components and the architecture of Caffe. We also using Caffe to create a small network for classification.
+\subsection{Blobs, Layers and Nets}
+Deep network is a model that represented as a collection of inter-connected layers. Keep this definition, Caffe defines a network layer by layer in its model. The data through in the network called \texttt{blobs}. Blobs is the standard array and unified memory interface for the framework. The layer is the foundation of the model and computation. The net is defined as the collection of connection between the layers. The structure of blob will describe the way that information is stored and communicated in the layers and networks.
+\subsubsection{Blobs}
+Caffe stores and communicates data using blobs. Blobs provide a uniform memory to hold data. The blob dimensions for batches of an image are number \textbf{N} x channel \textbf{K} x height \textbf{H} x width \textbf{W}. Where:
+\begin{itemize}
+	\item Number N: is the batch size of the data (the number of data through the network in the same time).
+	\item Channel K: is the feature dimension of image (i.e for RGB image K = 3)
+	\item Width W and height H: are width and height of the image data.
+\end{itemize}
+In Caffe, the dimension of blob is dependent on the type and configuration of the layer.
+\subsubsection{Layers}
+The layer is the principle of the model and the fundamental unit of computation. Caffe has provided a lot of layer's type as convolution, pool, inner products,etc. But most of types have the same model as figure \ref{figcaffelayer}. A layer take input from the bottom connections and through the output to top connections. Each layer type defines three critical computations:
+\begin{itemize}
+	\item \textbf{Setup}: initialize the layer and its connections.
+	\item \textbf{Forward}:  given the input from bottom connections, compute and send the output to the top connections.
+	\item \textbf{Backward}: given the gradient from the top connection, compute the gradient to the input and send to the bottom connections.
+\end{itemize}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{images/caffelayer}
+	\caption{Model of a layer in Caffe framework}
+	\label{figcaffelayer}
+\end{figure}
+An example about declaring a layer in Caffe:\\[0.2cm]
+\texttt{
+layer $\lbrace \\
+  \text{\tab} name: ``pool1"\\
+  \text{\tab}type: ``Pooling"\\
+  \text{\tab}bottom: ``conv1"\\
+  \text{\tab}top: ``pool1"\\
+  \text{\tab}pooling\_param \lbrace\\
+  \text{\tab \tab}  pool: MAX\\
+  \text{\tab \tab} kernel\_size: 2\\
+  \text{\tab \tab} stride: 2\\
+  \text{\tab}\rbrace\\
+\rbrace$
+}
+\subsubsection{Nets}
+The net is a set of layers connected in a computation directed acyclic graph. A net begins with a data layer that loads the data from the disk and ends with a loss layer that computes the objective of the network (such as classification, recognition,...). As simple, a net is defined as figure \ref{figcaffenet}.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{images/caffenet}
+	\caption{Model of a net in Caffe framework}
+	\label{figcaffenet}
+\end{figure}
