@@ -55,7 +55,7 @@ The function classes are contains the methods to implement the processes on the 
 	\item \texttt{Estimating the landmarks} classes (\texttt{LandmarkDetection})provides the methods to verify the estimated landmarks that are detected by probabilistic hough transform. These classes have also methods to evaluate the correctness of the estimated landmarks position.
 \end{itemize}
 \section{Experiments}
-The dataset is two set of biological images: \textit{left mandible} and \textit{right mandible}. Each dataset contains 293 images (3264 x 2448). However, the datasets are filtered by suppressing the ``bad images" that are the empty images or the image contains the broken object. As the result, the dataset includes 290 right mandible and 286 left mandible. The experiments are consider on two aspects: the runtime and the accuracy of the estimated landmarks.\\[0.2cm]
+The dataset is two set of biological images: \textit{left mandible} and \textit{right mandible}. Each dataset contains 293 images (3264 x 2448). However, the datasets are filtered by suppressing the ``bad images" that are the empty images or the image contains the broken object. As the result, the dataset includes 290 right mandible and 286 left mandible. The experiments are consider on two aspects: the runtime and the accuracy of the estimated landmarks.
 \begin{table}[!h]
 	\centering
 	\begin{tabular}{|c|c|c|c|}
@@ -68,7 +68,7 @@ The dataset is two set of biological images: \textit{left mandible} and \textit{
 	\end{tabular}	
 	\caption{The runtime of program on two machine}		
 	\label{table_runtime}
-\end{table}~\\[0.2cm]
+\end{table}
 The software had implemented in several steps to estimate the landmarks. The runtime can be calculate in separated step to improve the runtime of all processes. As in table \ref{table_runtime}, we show the runtime on two stages of method on two machine\footnote{
 	\begin{itemize}
 		\item Machine 1: Intel(R) Core (TM) 2 Duo CPU T8100 2.1GHz, 2GB of RAM
@@ -101,3 +101,23 @@ Besides, the accuracy of the system can be determined by comparing the differenc
 \caption{The chart presents the accuracy between manual and automated landmarks on left mandible}
 \label{figMgChart}
 \end{figure}~\\
+\section{Parameters}
+As we have seen, the software has to pass the steps indicate the estimated landmarks. In each step, we have used the parameters to configure the software. As detail, the parameters that used in each stage have described as followed.
+\begin{itemize}
+	\item The ratio between the \textit{lower threshold} and \textit{upper threshold} in \textit{segmentation stage}. The default ratio in the software is \textbf{(1 * threshold value) : (3 * threshold value)}. The \textit{threshold value} is identified by analysis the histogram of the image.
+	\item The perpendicular distance from a point in edge to the \textbf{endpoints line} (endpoints line is the connected line of two endpoints in the edge) when we break the edge into list of approximated lines. This is the condition to stop the algorithm. In default, the distance is set to 3 pixels.
+	\item The accuracy of the PGH matrix. This the size (height and width) of the matrix that used to record the angle and distance between each pair of lines in the image. The program has provided an enumeration for angle accuracy (i.e Haft Degree, Degree,...). The default value in program is \textbf{180} degree for angle accuracy and \textbf{500} for distance accuracy.
+	\item In PHT stage, a pair of lines is considered \textit{closet lines} if it has satisfied conditions:
+		\begin{itemize}
+			\item Length of each line is greater than \textbf{60} pixels
+			\item Angle between two lines is greater than 15 degrees.
+			\item Perpendicular distance from one of two endpoints on a line to another is less than 5 pixels
+		\end{itemize}
+	\item In PHT stage, the conditions for conclusion that two pair of lines are similar:
+		\begin{itemize}
+			\item The subtraction between the angles is less than 1.
+			\item The subtraction between ratio couple of scene lines and reference lines is less than 1.
+			\item The subtraction between distance of two pair of lines is less than 2.
+		\end{itemize}
+	\item The size of bounding box in \textit{template matching} stage. The bounding box is a rectangle surround the landmarks and accepting the landmarks is  center point of the rectangle. In default, the size of bounding box surround the reference landmarks (in model image) and estimated landmarks (in scene image) are \textbf{400} pixels and \textbf{1400} pixels, respective.
+\end{itemize}
