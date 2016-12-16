@@ -106,7 +106,7 @@ This section gives several architectures in the field of CNNs that we have.
 \end{itemize}
 \section{Caffe framework}
 Caffe is a deep learning framework that is developed by the Berkeley Vision and Learning Center (BVLC) and community contributors. Besides the supporting help user defined the network without hard-coding, easily to change the device machine (CPU or GPU), speedly, Caffe already has a large community user. These are reasons that Caffe is used in many research projects and many application in vision, speech and multimedia. This  section will describe the components and the architecture of Caffe. We also using Caffe to create a small network for classification.
-\subsection{Blobs, Layers and Nets}
+\subsection{Definitions}
 Deep network is a model that represented as a collection of inter-connected layers. Keep this definition, Caffe defines a network layer by layer in its model. The data through in the network called \texttt{blobs}. Blobs is the standard array and unified memory interface for the framework. The layer is the foundation of the model and computation. The net is defined as the collection of connection between the layers. The structure of blob will describe the way that information is stored and communicated in the layers and networks.
 \subsubsection{Blobs}
 Caffe stores and communicates data using blobs. Blobs provide a uniform memory to hold data. The blob dimensions for batches of an image are number \textbf{N} x channel \textbf{K} x height \textbf{H} x width \textbf{W}. Where:
@@ -123,31 +123,78 @@ The layer is the principle of the model and the fundamental unit of computation.
 	\item \textbf{Forward}:  given the input from bottom connections, compute and send the output to the top connections.
 	\item \textbf{Backward}: given the gradient from the top connection, compute the gradient to the input and send to the bottom connections.
 \end{itemize}
-\begin{figure}[!h]
-	\centering
-	\includegraphics[scale=0.5]{images/caffelayer}
-	\caption{Model of a layer in Caffe framework}
-	\label{figcaffelayer}
-\end{figure}
-An example about declaring a layer in Caffe:\\[0.2cm]
+\begin{multicols}{2}
+[An example about declaring a layer in Caffe and its model:\\]
 \texttt{
 layer $\lbrace \\
-  \text{\tab} name: ``pool1"\\
-  \text{\tab}type: ``Pooling"\\
-  \text{\tab}bottom: ``conv1"\\
-  \text{\tab}top: ``pool1"\\
-  \text{\tab}pooling\_param \lbrace\\
-  \text{\tab \tab}  pool: MAX\\
-  \text{\tab \tab} kernel\_size: 2\\
-  \text{\tab \tab} stride: 2\\
-  \text{\tab}\rbrace\\
-\rbrace$
+  \text{\tab\tab} name: ``conv1"\\
+  \text{\tab\tab}type: ``Convolution"\\
+  \text{\tab\tab}bottom: ``data"\\
+  \text{\tab\tab}top: ``conv1"\\
+  \text{\tab\tab}param \lbrace\\
+  \text{\tab\tab\tab}lr\_mult: 1\\
+  \text{\tab\tab}\rbrace\\
+  \text{\tab\tab}param \lbrace\\
+  \text{\tab\tab\tab}lr_mult: 2\\
+  \text{\tab\tab}\rbrace\\
+  \text{\tab\tab}convolution\_param \lbrace\\
+  \text{\tab\tab\tab}num\_output: 20\\
+  \text{\tab\tab\tab}kernel\_size: 5\\
+  \text{\tab\tab\tab}stride: 1\\
+  \text{\tab\tab\tab}weight\_filler \lbrace\\
+  \text{\tab\tab\tab\tab}type: "xavier"\\
+  \text{\tab\tab\tab}\rbrace\\
+  \text{\tab\tab\tab}bias\_filler \lbrace\\
+  \text{\tab\tab\tab\tab}type: "constant"\\
+  \text{\tab\tab\tab}\rbrace\\
+  \text{\tab\tab}\rbrace\\
+\text{\tab}\rbrace$
 }
+\columnbreak
+\begin{wrapfigure}{l}{0.9\linewidth}
+	\centering
+	\includegraphics[scale=0.45]{images/caffelayer}
+	\caption{Model of a layer in Caffe framework}
+	\label{figcaffelayer}
+\end{wrapfigure}
+\end{multicols}
 \subsubsection{Nets}
 The net is a set of layers connected in a computation directed acyclic graph. A net begins with a data layer that loads the data from the disk and ends with a loss layer that computes the objective of the network (such as classification, recognition,...). As simple, a net is defined as figure \ref{figcaffenet}.
 \begin{figure}[!h]
 	\centering
-	\includegraphics[scale=0.6]{images/caffenet}
+	\includegraphics[scale=0.5]{images/caffenet}
 	\caption{Model of a net in Caffe framework}
 	\label{figcaffenet}
 \end{figure}
+\subsubsection{Forward pass}
+Forward pass computes the output given the input by the functions. Each function stays at each layer of the model. The forward pass through from bottom to the top via each layer of model. The image \ref{figforward} shows a forward example. The input data \textit{x} through the \textbf{Inner Product} layer and \textbf{Softmax} layer to give the last result. Normally, the output of forward pass includes the result of score function and the error (loss) of the model.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.45]{images/forward}
+	\caption{Forward pass in a Caffe model}
+	\label{figforward}
+\end{figure}
+\subsubsection{Backward pass}
+Backward pass receives the loss as the input, it computes the gradient for learning of the model. The gradient of the model is computed by inverse-compose gradient of each layer in the model. Backward pass through from top to bottom. The gradient respect of the model is computed layer by layer via the chain rule through the parameters of each layer (figure \ref{figbackward}).
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.45]{images/backward}
+	\caption{Backward pass in a Caffe model}
+	\label{figbackward}
+\end{figure}
+\subsubsection{Solver}
+In Caffe, Solver is designed for optimizing the model by coordinating the network's forward inference and backward gradients to form parameter update that attempt to improve the loss. The steps in optimizing process are followed:
+\begin{itemize}
+	\item Firstly, calling the forward pass to obtain the output and loss,
+	\item Secondly, calling the backward pass to generate the gradient of model,
+	\item Finally, Incorporating the gradient into the weight update that attempts to minimize the loss.
+\end{itemize}
+The Caffe solvers include:
+\begin{itemize}
+	\item Stochastic Gradient Descent
+	\item AdaDelta
+	\item Adaptive Gradient
+	\item Adam
+	\item Nesterov's Accelerated Gradient
+	\item RMSprop
+\end{itemize}
