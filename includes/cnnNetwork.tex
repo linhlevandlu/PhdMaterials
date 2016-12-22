@@ -198,3 +198,157 @@ The Caffe solvers include:
 	\item Nesterov's Accelerated Gradient
 	\item RMSprop
 \end{itemize}
+\section{Layers Catalogue}
+The layers in Caffe framework are organized similarly to CSS language. They are defined following the structure with the specific attributes. The model architecture of a network using Caffe is defined in a protocol buffer definition file (prototxt). In general, the structure of a layer in Caffe looks like:\\
+\texttt{
+layer $\lbrace \text{\tab \# \textbf{layer} is keyword}\\
+  \text{\tab\tab} name: ``\text{\textbf{name}}" \text{\tab \# Name of layer}\\
+  \text{\tab\tab}type: ``layer\_type" \text{\tab \# Type of layer}\\
+  \text{\tab\tab}bottom: ``bottom\_blob" \text{\tab \# Input (bottom) of layer}\\
+  \text{\tab\tab}top: ``top\_blob" \text{\tab \# Output (top) of layer}\\
+  \text{\tab\tab \# And the parameters of layer(required, recommended or optional parameters)}\\
+\text{\tab}\rbrace$
+}\\[0.2cm]
+Depending to specific layer, Caffe has provided difference parameters. This section will discuss a few of the important layers.
+\subsubsection{Convolution layer}
+The convolution layer means applying a mathematical function to a range of image. The aim of this function is convolutional the image with a new depth. The parameters of this layer are as followed:
+\begin{itemize}
+	\item Layer type: \texttt{Convolution}
+	\item Required parameters:
+		\begin{itemize}
+			\item \texttt{num\_output(n)}: the number of filters
+			\item \texttt{kernel\_size}: specifies width and height of each filter
+		\end{itemize}
+	\item Recommended parameters: \texttt{weight\_filler} has two sub-parameters: \texttt{type} and \texttt{value}.This is an initialization for filter)
+	\item Optional parameters:
+		\begin{itemize}
+			\item \texttt{stride}: specifies the moving-step when applying the filters to the input.
+			\item \texttt{bias\_term}: specifies the addition biases to the outputs.
+			\item \texttt{pad}: specifies the addition pixels to each side of the input.
+			\item \texttt{group(g)}: Indicating the connectivity of each filter to a subset of the input.
+		\end{itemize}
+\end{itemize}
+An example of convolution layer (fig.\ref{figstconv}):
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.4]{images/stconv}
+	\caption{A convolution layer in Caffe}
+	\label{figstconv}
+\end{figure}
+\subsubsection{Pooling layer}
+The pooling layer works similar to a convolution layer but the functions at pooling layer are different (maximum function (MAX) or average function (AVE)). The parameters of pooling layer are followed:
+\begin{itemize}
+	\item Layer type: \texttt{Pooling}
+	\item Required parameter: \texttt{kernel\_size} specifies width and height of each filter
+	\item Optional parameters:
+		\begin{itemize}
+			\item \texttt{pool}: the pooling method, such as: \textbf{MAX, AVE, STOCHASTIC}.
+			\item \texttt{pad}: specifies the pixels to add to each side of the input.
+			\item \texttt{stride}: moving-step when applying the filters to the input
+		\end{itemize}
+\end{itemize}
+An example of pooling layer (fig. \ref{figstpool}):
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{images/stpool}
+	\caption{A pooling layer in Caffe}
+	\label{figstpool}
+\end{figure}
+\subsubsection{Loss layers}
+Loss of learning is indicated by comparing an output to a target and assigning cost to minimize. The loss computed includes the loss in forward pass and the gradient in backward pass. The loss functions in Caffe are described as followed:
+\begin{itemize}
+	\item \textbf{Softmax} (layer type: \texttt{SoftmaxWithLoss})
+	\item \textbf{Euclidean} (layer type: \texttt{EuclideanLoss})
+	\item \textbf{Hinge/Margin} (layer type: \texttt{HingeLoss})
+	\item \textbf{Sigmoid Cross-Entropy} (layer type: \texttt{SigmoidCrossEntropyLoss})
+	\item \textbf{Infogain} (layer type: \texttt{Infogain})
+\end{itemize}
+Example about a loss layer using \textbf{Softmax} (fig. \ref{figstloss}):
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{images/stloss}
+	\caption{A loss layer in Caffe}
+	\label{figstloss}
+\end{figure}
+\subsubsection{Activation layers}
+Activation layers are taking one bottom blob and producing one top blob of the same size with an activation function. The activation function in Caffe includes:
+\begin{itemize}
+	\item \textbf{ReLU} (layer type:\texttt{ReLU})
+	\item \textbf{Sigmoid} (layer type:\texttt{Sigmoid})
+	\item \textbf{TanH} (layer type:\texttt{TanH})
+	\item \textbf{Absolute} (layer type:\texttt{AbsVal})
+	\item \textbf{Power} (layer type:\texttt{Power})
+	\item \textbf{BNLL} (layer type:\texttt{BNLL})
+\end{itemize}
+An activation layer with ReLU (fig. \ref{figstrelu}):
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{images/strelu}
+	\caption{A ReLU layer in Caffe}
+	\label{figstrelu}
+\end{figure}
+\subsubsection{Inner Product layer}
+This is a fully connected layer of Caffe. The parameters of this layer are followed:
+\begin{itemize}
+	\item Layer type: \texttt{InnerProduct}
+	\item Required parameter: \texttt{num\_output(c\_o)} the number of filters
+	\item Recommended parameter: \texttt{weight\_filler} initialize of filters.
+	\item Optional parameters:
+		\begin{itemize}
+			\item \texttt{bias\_filler}: initialize of bias filters
+			\item \texttt{bias\_term}: specifies whether to learn and apply a set of additive biases to the filter outputs.
+		\end{itemize}
+\end{itemize}
+An example of inner product layer (fig. \ref{figstinner}):
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{images/stinner}
+	\caption{An Inner Product layer in Caffe}
+	\label{figstinner}
+\end{figure}
+\subsubsection{Data layer}
+Data enters Caffe through data layers. They lie at the bottom of nets. Caffe strongly supports many kinds of data, directly from memory or from files on disk in HDF5 or common image formats. The types of data are include:
+\begin{itemize}
+	\item \textbf{Database}: layer type \texttt{Data}
+		\begin{itemize}
+			\item Required parameters:
+				\begin{itemize}
+					\item \texttt{source}: the name of the directory containing the database
+					\item \texttt{batch\_size}: the number of inputs to process at one time
+				\end{itemize}
+			\item Optional parameters:
+				\begin{itemize}
+					\item \texttt{rand\_skip}: skip up to this number of inputs at the beginning
+					\item \texttt{backend}: choose whether to use a \textbf{LEVELDB} or \textbf{LMDB}
+				\end{itemize}
+		\end{itemize}
+	\item \textbf{In-Memory}: layer type \texttt{MemoryData}. Required parameters: \texttt{batch\_size, channels, height, width} - specify the size of input chunks to read from memory
+	\item \textbf{HDF5 Input}: layer type \texttt{HDF5Data}. Required parameters are followed:
+		\begin{itemize}
+			\item \texttt{source}: the name of the file to read from
+			\item \texttt{batch\_size}: number of images to batch together
+		\end{itemize}
+	\item \textbf{HDF5 Output}: layer type \texttt{HDF5Output}. Required parameter are \textbf{file\_name} which name of file to write the output.
+	\item \textbf{Images}: layer type \texttt{ImageData}.
+		\begin{itemize}
+			\item Required parameters:
+				\begin{itemize}
+					\item \texttt{source}: name of a text file. Each line gives an image filename and label
+					\item \texttt{batch\_size}: number of images to batch together
+				\end{itemize}
+			\item Optional parameters:
+				\begin{itemize}
+					\item \textbf{rand\_skip}: skip up to this number of inputs at the beginning
+					\item \texttt{shuffle}
+					\item \texttt{new\_height, new\_width}: resize all images to this size
+				\end{itemize}
+		\end{itemize}
+\end{itemize}
+An example of data layer:
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.65]{images/stdata}
+	\caption{A data layer in Caffe}
+	\label{figstdata}
+\end{figure}
+\section{An example}
