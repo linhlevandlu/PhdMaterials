@@ -351,4 +351,23 @@ An example of data layer:
 	\caption{A data layer in Caffe}
 	\label{figstdata}
 \end{figure}
-\section{An example}
+\section{A small deep network with Caffe}
+Caffe uses prototxt format for specification of neural networks. Each layer is defined separately with the inputs, the outputs called blobs. The layers are stacked vertical with the input of layer at the bottom and the output of layer at the top. Besides, each layer expects a number of input and output blobs. The figure xx show an sample deep neural netwoks. The network begin the input layer that takes the data input, an output of network that computes the final prediction, a loss layer which can be intergrated with the final output layer. We will discuss how to create this network by Caffe.\\[0.2cm]
+
+The first layer in the network is the input layer. In this network, the ImageData has been used. It takes an input text file which contains multiple lines of input. Each line contains the path to each image and its label, separated as a space. Besides ImageData, we can use other input layers which are supported by Caffe such as HDF5, Data,...\\[0.2cm]
+
+The second layer is a convolutional layer. In this sample, we choose \textit{kernel\_size} as nine with a \textit{stride} of three and the number of outputs will be set to 100. This layer take the output of the first layer as the input, then its output will be used at next layer. The parameters depend on how deep the convolutional layer is placed in the network and what level of detail of features is begin targeted.\\[0.2cm]
+
+The third layer is a fully connected layer which generates a prediction on the labels possible. The number of output is equal to the number of labels.\\[0.2cm]
+
+The fourth and fifth layer is the Sofmax and output layer. The layers use softmax distribution on the output of fully connected layer to compute the probabilities of the image belonging to each label. Besides, the layer also compute the loss for backpropagation for training.\\[0.2cm]
+
+Now, we have finished design network. Now, we will Caffe to create a real network. The stages to create network as follows:
+\begin{enumerate}
+	\item Preparing the dataset: collect the images and place them in a directory. Then, create a text file with all the image names and its label.
+	\item Creating the network: The layers are stacked as description above in a file and saving in a \textbf{prototxt} format.
+	\item Create a solver file to describe the step learning procedure.
+	\item Star the training procedure with command \\
+	\texttt{build/tools/caffe train --solver=./path/to/solver.protoxt --gpu=0}
+\end{enumerate}
+After finishing the training procedure, a file with format caffemodel will be generated. We use this file as model of the network in specifies program.
