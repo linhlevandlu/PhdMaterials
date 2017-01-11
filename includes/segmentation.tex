@@ -132,3 +132,23 @@ The significance of parameters in the formula \ref{eq:1}, as follows:
 \item $H_{i}(\theta,d)$ is an entry at row $\theta$ and column $d$ in PGH of image \textit{i}
 \item $H_{j}(\theta,d)$ is an entry at row $\theta$ and column $d$ in PGH of image \textit{j}
 \end{itemize}
+\section{Bounding box detection}
+In this section, we will discuss about the projection histogram technique which used to detect the distribution of pixels in many ways. Besides, we also mention the applying the projection histogram for detecting the bounding box around object in image.
+\subsection{Projection histogram}
+Projection histogram is one of the techniques that used to extract the feature of the image. The information of projection histogram was extracted from the distribution of the pixels on an arbitrary axis. In mathematics, a projection is a mapping of a set into a subset which is correspondence with its square for mapping composition. \\[0.2cm]
+To find the projection histograms of a color image; we need to process on each channel color of the image and combine the result at the end of process. With a channel of image, we can create a lot of projection histogram i.e projection on x-axis, y-axis. The numer of the projection and the combining the projections are is depended on the goal of method. Figure \ref{fignprojection} decribes the x-axis projection and y-axis projection of an objection in the image.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{images/projection}
+	\caption{An example about projection histograms}
+	\label{fignprojection}
+\end{figure}
+\subsection{Bounding box}
+The bounding box of insect in the image is result by applying some analysis on the projection histograms. Actually, to determine the postion of bounding box that we just need to indicate the position of two (or four) corners ((top-left, bottom-right)or (top-left, top-right, bottom-left, bottom-right) of the box.\\[0.2cm]
+The information of these corners was determined by analysis the horizontal projection and vertical projection of the image. The analysis to indicate the left and right border of the peak region on each projection. The steps in the method are used to find the bounding box of object in image as followed:
+\begin{itemize}
+	\item Quantize the image to N colors (can be decrease the number of bit to store)
+	\item Detect the horizontal and vertical projection of the image
+	\item The corners are indicating by the intersection of the borders between horizontal and vertical projection.
+\end{itemize}
+\section{Texture segmentation}
