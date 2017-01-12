@@ -33,7 +33,7 @@ The functions of each modules is describing as followed:
 \end{itemize}
 \section{The classes architecture}
 Figure \ref{figclassdiagram} describes the classes diagram of the software. Based on structurally software, the classes is divided into two parts: one, describing for the data structure and another, describing the functions of software.
-\begin{figure}[h!]
+\begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.85, angle = -90]{images/classDiagram}
 	\caption{Classes diagram}
@@ -89,18 +89,49 @@ The accuracy of estimated landmarks is evaluated by comparing the coordinates of
 \label{figestimatedLM}
 \end{figure}
 Besides, the accuracy of the system can be determined by comparing the differences(in pixels) between the landmarks located by this method and the manual landmarks which was indicated manually by the biologist. The charts in the image \ref{figMdChart} and \ref{figMgChart} show the comparison between the manual and automated landmarks on two sets of data (\textit{right mandible, left mandible}). The \textbf{blue} line describes the size of the manual landmarks on set of images. The \textbf{orange} line presents for the size of the automated landmarks by software. It is clearly that the automated landmarks is near with the manual landmarks (about 5\% is exactly, 75\% is near and 20\% is far). Based on the processes, this method has to pass several steps, the result of each step will effect on next steps. Thus, to evaluate the accuracy of this method, we can evaluate the result of each step.
-\begin{figure}[h!]
+\begin{figure}[h]
 \centering
-\includegraphics[width=0.85\textwidth]{./images/MdChart}
+\includegraphics[width=0.6\textwidth]{./images/MdChart}
 \caption{The chart presents the accuracy between manual and automated landmarks on right mandible}
 \label{figMdChart}
 \end{figure}~\\
-\begin{figure}[h!]
+\begin{figure}[h]
 \centering
-\includegraphics[width=0.85\textwidth]{./images/MgChart}
+\includegraphics[width=0.6\textwidth]{./images/MgChart}
 \caption{The chart presents the accuracy between manual and automated landmarks on left mandible}
 \label{figMgChart}
 \end{figure}~\\
+To evaluate the method, we carry out the experiments on the random models and 62 scene images. The centroid of estimated landmarks is quite near with the manual centroid. According the result, we can use the estimated centroid to classify the image on left and right mandibles. The figure \ref{figstatistic1} show manual centroid and estimated centroid from some random model of mandibles: the "blue" color and "other" are presented for manual centroid and estimated centroid of each image, respective.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.6]{images/statistic1}
+	\caption{Distribution of centroid}
+	\label{figstatistic1}
+\end{figure}\\
+However, as can see that the estimated landmarks are depending on the chosing of model image. If we choose good model, the landmarks will be indicated adequately. Table \ref{table_successrate} shows the success rate of method on difference models. 
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Model image & Success rate(\%) \\ \hline
+		Md 19 & 82.26 \\ \hline
+		Md 63 & 79.03 \\ \hline
+		Md 152 & 16.13 \\ \hline
+		Md 237 & 56.45\\ \hline
+	\end{tabular}	
+	\caption{The successfull rate of estimating}		
+	\label{table_successrate}
+\end{table}
+Besides, we also have the cases that method can not determine all the landmarks on image. Following the result of estimating, the error cases can be come from arbitrary stage in the method such as:
+\begin{itemize}
+	\item Bad segmentation
+	\item The error about the probability when applying the PHT
+	\item The size of the bounding box in template matching.
+\end{itemize}
+
+
+
+ 
 \section{Parameters}
 As we have seen, the software has to pass the steps indicate the estimated landmarks. In each step, we have used the parameters to configure the software. As detail, the parameters that used in each stage have described as followed.
 \begin{itemize}
