@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.23)  11 JAN 2017 10:46
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.20)  11 JAN 2017 14:14
->>>>>>> f0ad3254c97bedc96e80ac5b1a8034e948d26cba
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.23)  16 JAN 2017 08:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1139,17 +1135,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
- 14461 strings out of 493304
- 258398 string characters out of 6139871
- 351391 words of memory out of 5000000
- 17539 multiletter control sequences out of 15000+600000
-=======
- 15678 strings out of 493029
- 301334 string characters out of 6136233
- 373325 words of memory out of 5000000
- 18817 multiletter control sequences out of 15000+600000
->>>>>>> f0ad3254c97bedc96e80ac5b1a8034e948d26cba
+ 14474 strings out of 493304
+ 258682 string characters out of 6139871
+ 352426 words of memory out of 5000000
+ 17550 multiletter control sequences out of 15000+600000
  11618 words of font info for 43 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  56i,11n,55p,958b,533s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1169,11 +1158,7 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-<<<<<<< HEAD
-Output written on index.pdf (49 pages, 3078068 bytes).
-=======
-Output written on index.pdf (51 pages, 3202486 bytes).
->>>>>>> f0ad3254c97bedc96e80ac5b1a8034e948d26cba
+Output written on index.pdf (51 pages, 3202595 bytes).
 PDF statistics:
  281 PDF objects out of 1000 (max. 8388607)
  173 compressed objects within 2 object streams
