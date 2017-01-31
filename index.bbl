@@ -25,6 +25,26 @@ David~G Lowe.
   images.
 \newblock {\em Artificial intelligence}, 31(3):355--395, 1987.
 
+\bibitem{ibrahim2012bounding}
+Mostafa~S Ibrahim, Amr~A Badr, Mostafa~R Abdallah, and Ibrahim~F Eissa.
+\newblock Bounding box object localization based on image superpixelization.
+\newblock {\em Procedia Computer Science}, 13:108--119, 2012.
+
+\bibitem{mukhopadhyay2015survey}
+Priyanka Mukhopadhyay and Bidyut~B Chaudhuri.
+\newblock A survey of hough transform.
+\newblock {\em Pattern Recognition}, 48(3):993--1010, 2015.
+
+\bibitem{vc1962method}
+Hough~Paul VC.
+\newblock Method and means for recognizing complex patterns, December~18 1962.
+\newblock US Patent 3,069,654.
+
+\bibitem{ballard1981generalizing}
+Dana~H Ballard.
+\newblock Generalizing the hough transform to detect arbitrary shapes.
+\newblock {\em Pattern recognition}, 13(2):111--122, 1981.
+
 \bibitem{lecun1998gradient}
 Yann LeCun, L{\'e}on Bottou, Yoshua Bengio, and Patrick Haffner.
 \newblock Gradient-based learning applied to document recognition.
