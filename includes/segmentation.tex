@@ -133,22 +133,35 @@ The significance of parameters in the formula \ref{eq:1}, as follows:
 \item $H_{j}(\theta,d)$ is an entry at row $\theta$ and column $d$ in PGH of image \textit{j}
 \end{itemize}
 \section{Bounding box detection}
-In this section, we will discuss about the projection histogram technique which used to detect the distribution of pixels in many ways. Besides, we also mention the applying the projection histogram for detecting the bounding box around object in image.
-\subsection{Projection histogram}
+In this section, we will discuss about the methods to detect the bounding box of the object. Besides, we also mention about the projection histogram technique which used to detect the distribution of pixels in many ways and applying the projection histogram for detecting the bounding box around object in image.
+\subsection{Bounding box detection}
+The bounding box of an object is a rectangle surround the object and detecting the bounding box of object is finding the smallest box that can contain the object. Figure \ref{figbbox} show an example about the bounding box of a mandible of beetle.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{images/bbox}
+	\caption{An example about projection histograms}
+	\label{figbbox}
+\end{figure}
+In this example, the mandible has two bounding boxes, one is box with red color, another with blue color. In the context of detecting the bounding box, hence we want to indicate the smallest bounding of the object. Mostafa S. Ibrahim et al \cite{ibrahim2012bounding} has proposed a method based on image superpixelization. The image superpixels are used to determine the small subset of candidate sub-windows to have the object of interest. Then, they used the \textit{OLIS-BF} algorithm and \textit{OLIS-ESS} algorithm to represent the most confident location to have the object. (\textbf{...need to talk more about the authors on this field}).\\[0.2cm]
+\subsection{Histgoram projection}
 Projection histogram is one of the techniques that used to extract the feature of the image. The information of projection histogram was extracted from the distribution of the pixels on an arbitrary axis. In mathematics, a projection is a mapping of a set into a subset which is correspondence with its square for mapping composition. \\[0.2cm]
-To find the projection histograms of a color image; we need to process on each channel color of the image and combine the result at the end of process. With a channel of image, we can create a lot of projection histogram i.e projection on x-axis, y-axis. The numer of the projection and the combining the projections are is depended on the goal of method. Figure \ref{fignprojection} decribes the x-axis projection and y-axis projection of an objection in the image.
+To find the projection histograms of a color image; we need to process on each channel color of the image and combine the result at the end of process. With a channel of image, we can create a lot of projection histogram i.e projection on x-axis, y-axis. The number of the projection and the combining the projections are is depended on the goal of the works; the projection histogram of the image is calculated on many difference axes such as y=x, y=-x,.... The purpose of this work is increasing the accuracy of the method to find exactly the feature of the image. Figure \ref{fignprojection} decribes the x-axis projection and y-axis projection of an objection in the image.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.4]{images/projection}
 	\caption{An example about projection histograms}
 	\label{fignprojection}
 \end{figure}
-\subsection{Bounding box}
-The bounding box of insect in the image is result by applying some analysis on the projection histograms. Actually, to determine the postion of bounding box that we just need to indicate the position of two (or four) corners ((top-left, bottom-right)or (top-left, top-right, bottom-left, bottom-right) of the box.\\[0.2cm]
-The information of these corners was determined by analysis the horizontal projection and vertical projection of the image. The analysis to indicate the left and right border of the peak region on each projection. The steps in the method are used to find the bounding box of object in image as followed:
-\begin{itemize}
-	\item Quantize the image to N colors (can be decrease the number of bit to store)
-	\item Detect the horizontal and vertical projection of the image
-	\item The corners are indicating by the intersection of the borders between horizontal and vertical projection.
-\end{itemize}
+
+The method that we use to detect the bounding box is based on the projection histogram of the image by applying the analysis on projection histograms. Actually, to determine the position of bounding box that we just need to indicate the position of two (or four) corners ((top-left, bottom-right)or (top-left, top-right, bottom-left, bottom-right) of the box.\\[0.2cm]
+The information of the corners was determined by combining and analysing the horizontal and vertical projection of the image: Firstly, the image is quantized into N color to decrease the number of color on the image. Secondly, the horizontal and vertical histogram projection are calculated on the width and height of the image. Finally, finding the lower and upper limit of histogram around the the peak value. The corners of the bounding box are indicated by intersecting of the limit values.
+\subsection{Result}
+The experiment is done on the set of the mandibles and body part of beetle. The bounding box on mandibles is detected clearly and more exactly than the box on body of beetle. The difference of the results are coming from the analysis the projections. 
+\begin{figure}[h!]
+\centering
+\subfloat[Bounding box on madible of beetle]{\label{figrbox1}\includegraphics[width=0.4\textwidth]{./images/rbox1}}~~
+\subfloat[Bounding box on body of beetle]{\label{figrbox2}\includegraphics[width=0.4\textwidth]{./images/rbox2}}
+\caption{The result of bounding box on beetle}
+\label{figrboxes}
+\end{figure}~\\[0.2cm]
 \section{Texture segmentation}
