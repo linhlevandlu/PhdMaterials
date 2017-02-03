@@ -11,7 +11,7 @@ There are many approaches developed for detecting dominant points and the method
 \section{Hough Transform}
 One of the challenges in image processing is detecting the characteristic of the object for recognition. Shape recognition is done by searching or detecting a class of simple geometric object such as line, curves in the image and comparing with the model. The matching score of the shapes is calculating by a measurement distance (such as Bhattacharyya). Instead of comparing between the geometric classes from the shapes, we can detect the presence of a shape in anther shape by searching each feature of the shapes. To sovle this problem, Hough Transform (HT)\cite{mukhopadhyay2015survey} is varied. At the beginning, HT\cite{vc1962method} is used to detect the line. It converts the space of parameters from x and y (coordinate of points in line) to space of slope and y-intercept of the line by voting process. For each object statisfying with equation of a line, it votes for the bin have correspondence slope and y-intercept. The set of bins is called the accumulator.
 \subsection{Generalizing Hough Transform}
-Until now, HT is still a good method for line detection or object recognition. But one of the weakness of HT is cannot determine the end points of the line segments. For this reason, the Generalized Hough Transform (GHT), introduced by Ballard\cite{ballard1981generalizing} is a generalization of HT to detect non-parametric curves. The process includes two phases: learning and recognition. In learning phase, a R-table is construct for model object. R-table is constructed based on the geometric information of each points in curves of object model with a reference point. The reference point can be arbitrary point in the model. Each row in R-table includes the gradient direction of each point which was chosen as index of table; and the polar coordinate values of each point. This mean that a gradient direction can be having many polar coordinate values. During recognition phase, an accumulator is created, called Hough Space. For each point in the scene object, finding the correspondce gradient direction in the R-table and voting at all the coordinate values. The peak in accumnulator is position of reference point of the model object in the scene object. And the peak value is equal to the number of boundary ponits of the object  when the model and the scene match perfectly.\\[0.2cm]
+Until now, HT is still a good method for line detection or object recognition. But one of the weakness of HT is cannot determine the end points of the line segments. For this reason, the Generalized Hough Transform (GHT), introduced by Ballard\cite{ballard1981generalizing} is a generalization of HT to detect non-parametric curves. The process includes two phases: learning and recognition. In learning phase, a R-table is construct for model object. R-table is constructed based on the geometric information of each points in curves of object model with a reference point. The reference point can be arbitrary point in the model. Each row in R-table includes the gradient direction of each point which was chosen as index of table; and the polar coordinate values of each point. This mean that a gradient direction can be having many polar coordinate values. During recognition phase, an accumulator is created, called Hough Space. For each point in the scene object, finding the correspondce gradient direction in the R-table and voting at all the coordinate values. The peak in accumnulator is position of reference point of the model object in the scene object. And the peak value is equal to the number of boundary points of the object  when the model and the scene match perfectly.\\[0.2cm]
 During recognition phase, the translation and rotation between model object and scene object is determine by principal component axis. Based on the curve points of the object, the centroid of each object is calculated. Then, the principal axis of each object is indicated. The translation between two objects is difference of two centroid points. The angle to rotate is the angle difference of two axes.\\[0.2cm]
 When model and scene are matching, the dominant points (landmarks) of scene object is estimated from landmarks of model object by applying the translation, rotation from the centroid points. The last result is verifying by apply template matching (which will discuss as section \ref{template}).
 \subsubsection{Result}
@@ -53,3 +53,55 @@ The value of this method when we normalized computation as below:
 R_{ccorr\_norm}(x,y) =\frac{R_{ccorr}(x,y)}{Z(x,y)} = \frac{\sum\limits_{x',y'}[T(x'.y').I(x + x', y + y')]}{\sqrt{\sum\limits_{x',y'}T(x'.y')^{2}.\sum\limits_{x',y'}I(x + x', y + y')^{2}}}
 \end{equation}
 \end{center}
+\section{Image registration}
+Image registration is process of transforming difference data sets into the same space and comparing or integrating the data from them. The object in image registration may be the images, time series or viewpoints. It is having many application in medicin, military or satellites. In recent years, image registration is applied for both 2D and 3D objects with many methods. These methods may be classified following the characteristics of the input such as \textit{intensity-based and feature-based}, \textbf{transformation}, \textit{spatial and frequency},... In the context of this section, we want to discuss around the methods of linear transformations which include rotation, translation and scaling which is used to generate the general model from several objects or detect the landmarks on the object. It also detect the global difference between the objects during process.
+\subsection{Principal component analysis (PCA)}
+Principal component analysis is computed based on principal directions of the datasets (model and scene). The input of this method is the list of points on curves of model and scene object. The origin of the axes is centroid of all points on the curves. One of the axes is the line over the origin and having the minimum distance to all points in the curves; another axis is perpendicular line with the first axis. The translation between two objects is different distance of centroid point coordinates; the rotation is different angle of two coordinate systems. The steps in PCA are followed:
+\begin{itemize}
+	\item Compute the centroid of model and scene object,
+	\item Calculate the principal axes of model and scene,
+	\item Compute the translation and rotation
+	\item Translate the model to the scene that they have the same centroid.
+	\item Rotate the model followed the different angle to match with the scene.
+\end{itemize}
+\subsubsection{Result}
+The method is experiment with the set of right mandibles. Most of model can be detected its position on the scene by PCA. It also determine the translation and rotation information (see figure \ref{figpca1}). But in the case the input has more the noises, the centroid may be missed with correct position, following it is wrong translation and rotation(see figure \ref{figpca2}). In these examples, the red line is presented for the scene object and blue points is presented for the model object, which we want to align with the scene.
+\begin{figure}[h!]
+\centering
+\subfloat[PCA with less noises]{\label{figpca1}\includegraphics[width=0.4\textwidth]{./images/pca1}}~~
+\subfloat[PCA with noises]{\label{figpca2}\includegraphics[width=0.4\textwidth]{./images/pca2}}
+\caption{The result after applying the PCA}
+\label{figpca}
+\end{figure}
+\subsection{Singular value decomposition (SVD)}
+The PCA method is more effected by the noise, instead of using all the curve points, SVD just using a subset of points by optimal alignment between corresponding points of model and scene. Assume that \texttt{M} is a subset of the model points, \texttt{S} is a subset of the scene points and $p_i \in M, q_i \in S$ are two corresponding points. We would like to find the matrix transformed \texttt{R} so that the pair-wise distances between the corresesponding points is minimum. The pairwise distance is indicated by equation \ref{eqpwdistance}.
+\begin{center}
+\begin{equation}\label{eqpwdistance}
+	E = \sum_{i=1}^{n} {\|q_i - p_i^{'}\|}
+\end{equation}
+\end{center}
+Where:
+\begin{itemize}
+	\item \textit{n}: is number of corresponding points
+	\item \textit{$q_i$}: point of scene
+	\item \textit{$p_i^{'}$}: point of model which corresponding with \texttt{$q_i$}
+\end{itemize}
+In detail, SVD method includes the following steps:
+\begin{itemize}
+	\item Calculate the cross covariance matrix: $M = P.Q^T$, where $P(Q)$ are matrix with i-th column is vector $p_i - c_T$ ($q_i - c_S$)
+	\item Compute the singular value decomposition of matrix $M$: \textbf{$M = U.W.V^T$}. Where:
+	\begin{itemize}
+		\item U,V are \textit{m} x \textit{m} orthonormal matrices
+		\item W is a diagonal \textit{m} x \textit{m} matrix with non-negative entries.
+	\end{itemize}
+	\item Indicate the orthonormal matrix (rotation matrix) $R = V.U^T$
+\end{itemize}
+\subsubsection{Result}
+SVD method is solving the noise problem of PCA by using a set of corresponding points. The result obtained by applying the SVD also better PCA. But a disadvantage of SVD is requiring a accurate correspondences set of points which are usually not available.
+\subsection{Iterative closest point (ICP)}
+Based on the advantage and disadvantage of PCA and SVD. ICP combines two previous methods. The idea of ICP is using PCA to intial guess of correspondences and repeating SVD to improve correspondences. The steps of ICP are:
+\begin{itemize}
+	\item Transform the model by PCA aligment
+	\item For each transformed model point, assign the closest scene point as its corresponding point. Align model and scene by SVD
+	\item Repeat the step (2) until a termination criteria is met.
+\end{itemize}
