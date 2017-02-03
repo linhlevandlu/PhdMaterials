@@ -16,13 +16,14 @@ During recognition phase, the translation and rotation between model object and 
 When model and scene are matching, the dominant points (landmarks) of scene object is estimated from landmarks of model object by applying the translation, rotation from the centroid points. The last result is verifying by apply template matching (which will discuss as section \ref{template}).
 \subsubsection{Result}
 Using GHT to extract the landmarks on beetle is experiment on 287 images of right mandible of beetle. To compare the matching between the location of manual landmarks and estimated landmarks, the centroid size is compute for each set of landmarks.\\[0.2cm]
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.4]{images/chartGHT}
-	\caption{Chart of centroid size distribution}
-	\label{figcentroidSize}
+\begin{figure}[h!]
+\centering
+\subfloat[Model 28]{\label{figpca1}\includegraphics[width=0.5\textwidth]{./images/cmodel28}}~~
+\subfloat[Model 71]{\label{figpca2}\includegraphics[width=0.5\textwidth]{./images/cmodel71}}
+\caption{The accuracy of centroid size on mandible}
+\label{figpca}
 \end{figure}
-Figure \ref{figcentroidSize} display the distribution of centroid size that are computed the manual and estimated landmarks. We use 2 images (Md28.JPG and Md71.JPG) as model. The number of landmarks be detected on scene object is 100\%. The accuracy of centroid size between manual and estimated are 76\% (for model 28) and 71\% (for model 71).
+Figure \ref{figcentroidSize} display the accuracy of the centroid size of estimated landmarks when we compare with the centroid size of manual landmarks. We use 2 images (Md28.JPG and Md71.JPG) as model. The number of landmarks be detected on scene object is 100\%. For model 28, 71.43\% the centroid of estimated landmarks is placed inside the standard deviation (SD) of manual landmarks, 28.57\% is outside the SD. The ratio for model 71 are 70.03\% and 29.97\%.
 \subsection{Probabilistic Hough Transform}
 To speed up Hough Transform, instead of processing on all data set, we can consider a subset of data points. The popular method is  \textbf{Probabilistic Hough Transform}. Probabilistic Hough Transform (PHT) is used to detect the presence of a model image in a scene image based on the group of features. The hypothesised location of the model image in the scene image is indicated based on the conditional probability that any pair scene lines agreement about a position in model image. Applying PHT can be separated into two steps: firstly, recording the information of model image and try to find the presence of the model image in scene image (called training process); secondly, predicting the pose of model image in the scene image (called estimating process).\\[0.2cm]
 During training process, choose an arbitrary point in the model image, called reference point. For each pair of lines in model image, the perpendicular distance and angle from each line to reference point is recording (angle is calculated as angle between line and a horizontal line begin from reference point). The presence of model image in scene image is detected by PHT with \textit{``vote"} procedure. Finally, we choose the similar pair lines between model image and scene image. The chosen pair is obtained from best \textit{vote} when we consider each pair of line in scene image with each pair of lines in model image.\\[0.2cm]
@@ -54,9 +55,9 @@ R_{ccorr\_norm}(x,y) =\frac{R_{ccorr}(x,y)}{Z(x,y)} = \frac{\sum\limits_{x',y'}[
 \end{equation}
 \end{center}
 \section{Image registration}
-Image registration is process of transforming difference data sets into the same space and comparing or integrating the data from them. The object in image registration may be the images, time series or viewpoints. It is having many application in medicin, military or satellites. In recent years, image registration is applied for both 2D and 3D objects with many methods. These methods may be classified following the characteristics of the input such as \textit{intensity-based and feature-based}, \textbf{transformation}, \textit{spatial and frequency},... In the context of this section, we want to discuss around the methods of linear transformations which include rotation, translation and scaling which is used to generate the general model from several objects or detect the landmarks on the object. It also detect the global difference between the objects during process.
+Image registration is process of transforming difference data sets into the same space and comparing or integrating the data from them. The object in image registration may be the images, time series or viewpoints. It is having many application in medical, military or satellites. In recent years, image registration is applied for both 2D and 3D objects with many methods. These methods may be classified following the characteristics of the input such as \textit{intensity-based and feature-based}, \textbf{transformation}, \textit{spatial and frequency},... In the context of this section, we want to discuss around the methods of linear transformations which include rotation, translation and scaling. Besides, we use these method to generate the general model from several objects or detect the landmarks on the object.
 \subsection{Principal component analysis (PCA)}
-Principal component analysis is computed based on principal directions of the datasets (model and scene). The input of this method is the list of points on curves of model and scene object. The origin of the axes is centroid of all points on the curves. One of the axes is the line over the origin and having the minimum distance to all points in the curves; another axis is perpendicular line with the first axis. The translation between two objects is different distance of centroid point coordinates; the rotation is different angle of two coordinate systems. The steps in PCA are followed:
+Principal component analysis is computed based on principal directions of the datasets (model and scene). The input of this method is the list of points on curves of model and scene object (called model points and object points). The origin of the axes is centroid of all points on the curves. One of the axes is the line over the origin and having the minimum distance to all points in the curves; another axis is perpendicular axis with the first axis. The translation between two objects is different distance of centroid point coordinates; the rotation is different angle of two coordinate systems. The steps in PCA are followed:
 \begin{itemize}
 	\item Compute the centroid of model and scene object,
 	\item Calculate the principal axes of model and scene,
@@ -74,7 +75,7 @@ The method is experiment with the set of right mandibles. Most of model can be d
 \label{figpca}
 \end{figure}
 \subsection{Singular value decomposition (SVD)}
-The PCA method is more effected by the noise, instead of using all the curve points, SVD just using a subset of points by optimal alignment between corresponding points of model and scene. Assume that \texttt{M} is a subset of the model points, \texttt{S} is a subset of the scene points and $p_i \in M, q_i \in S$ are two corresponding points. We would like to find the matrix transformed \texttt{R} so that the pair-wise distances between the corresesponding points is minimum. The pairwise distance is indicated by equation \ref{eqpwdistance}.
+The PCA method is more effected by the noise, instead of using all the curve points, SVD just using a subset of points by optimal alignment between corresponding points of model and scene. Assume that \texttt{M} is a subset of the model points, \textbf{S} is a subset of the scene points and $p_i \in M, q_i \in S$ are two corresponding points. We would like to find the matrix transformed \textbf{R} so that the pair-wise distances between the corresesponding points is minimum. The pairwise distance is indicated by equation (\ref{eqpwdistance}).
 \begin{center}
 \begin{equation}\label{eqpwdistance}
 	E = \sum_{i=1}^{n} {\|q_i - p_i^{'}\|}
@@ -88,7 +89,7 @@ Where:
 \end{itemize}
 In detail, SVD method includes the following steps:
 \begin{itemize}
-	\item Calculate the cross covariance matrix: $M = P.Q^T$, where $P(Q)$ are matrix with i-th column is vector $p_i - c_T$ ($q_i - c_S$)
+	\item Calculate the cross covariance matrix: $M = P.Q^T$, where $P(Q)$ are matrix with i-th column is vector $p_i - c_T$ ($q_i - c_S$),
 	\item Compute the singular value decomposition of matrix $M$: \textbf{$M = U.W.V^T$}. Where:
 	\begin{itemize}
 		\item U,V are \textit{m} x \textit{m} orthonormal matrices

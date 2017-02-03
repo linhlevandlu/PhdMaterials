@@ -165,3 +165,25 @@ The experiment is done on the set of the mandibles and body part of beetle. The 
 \label{figrboxes}
 \end{figure}~\\[0.2cm]
 \section{Texture segmentation}
+Texture is an important characteristic for the analysis the image. It is widely used to segment the image into regions and classify these regions. In another field, texture can be defining the characteristic of regions and critical in calculating the correct information. In intensity information side, texture provides for us the intensities of the image by the information of the pixels on the image. Texture segmentation is the methods which used to detect the border of the regions in the image. Those methods can be classified into three classes: \textit{region-based} includes the methods that detect the regions in the image; \textit{boundary-based} includes the methods that detect the border between the regions; and \textit{a hybrid} of two classes. Even using any methods, the textures firstly must be characterize the distribution of the pixels on the image. This section will present the methods to describe and segment the texture.
+\subsection{Texture description}
+\subsubsection{Texel-based texture descriptions}
+A texture can be seen as a set of primitive texel in a particular relationship. The structural description of texture will include the description of the texel and the relationship between the texels. The texels are regions that can be extracted by applying some simple procedure. The information of spatial relationships is obtained from a Voronoi tesselation of texels.\\[0.2cm]
+Assume that we have a set of extracted texels and \textbf{S} is the set of meaningful points(i.e centroid) that each point is represented for texels of the image. With two arbitrary points in \textbf{S}, we construct the perpendicular bisector of the line joining them. The perpendicular bisector will divide \textbf{S} into two parts(P,Q), one of which is closest with the first point(P), other of which is closest with the second point (Q). The \textit{Voronoi polygon} of P is the polygonal region consisting of all points that closer to P than to any other points of S. It is defined by:
+\begin{equation}
+	V(P) = \bigcap_{Q \in S, Q \neq P} H^Q(P)
+\end{equation}
+Where: $H^Q(P)$ is the part of points that closer to P with perpendicular bisector of P and Q.\\
+The texel based description is easy to understand and implementation, but it will be difficult when we apply for the real image instead of artificially general patterns.
+\subsubsection{Local binary pattern}
+Another method to describe texture is local binary pattern. For each pixels in the image, 8-connected pixels are examined by comparing the intensity of each pixel with the intensity of the center pixel. The result of this step is compute the digit matrix of 8-connected pixels; the corresponding will be 1 if the value of pixel $p_i (i=1..8)$ is greater than value of center pixel and 0 if otherwise. The process is repeated for all pixels of the image. At the end, a histogram of these numbers is used to present the texture of the region. Two regions of the image are compared by using L1 distance between their histogram. Besides, LBP is also combined with the contrast of the regions in many texture segmentation methods.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{images/lbp}
+	\caption{Computation of local binary pattern}
+	\label{figlbp}
+\end{figure}
+Figure \ref{figlbp} shows an example of LBP computation. The left matrix is a pixel in image and its neighbors; the right matrix is digit matrix when we compare the value of the neighbors with the center value. 
+\subsection{Texture segmentation methods}
+\subsubsection{Voronoi polygons}
+\subsubsection{Timo's method}
