@@ -1,6 +1,85 @@
 \chapter{Segmentation}
 Segmentation is an importance process in computer vision, the goal of segmentation is to change the representation of an image into another way with more meaningful and easier to analyze. In another point of view, segmentation is process to assign the label to every pixel in an image to detect the pixels that have the same characteristics. The result of image segmentation is a set of distinct pixels with difference characteristics, or a set of contours extracted from the image.\\[0.2cm]
 In computer vision, we have a lot of methods to segment an image. In the context of this chapter, we will mention the commonly method for segmentation. Besides, we also introduce the ways to record the information extracted from the contours of the image.
+\section{Threshold}
+\textbf{Threshold} is a basically method in segmentation, but it is widely used in image processing to remove the unnecessary characteristics as well as keep the information interested. The main parameter in threshold method is \textbf{threshold value}. This value seems a border to seperate the necessary and unnecessary characteristics. Depending on the requirements of application, the user will be choose difference types of threshold.\\[0.2cm]  
+\subsection{Types of threshold}
+Let's consider that we have a source image with pixels with its intensity \texttt{src(x,y)}, threshold value \texttt{thresh}, a maximum value (\texttt{maxValue}) to assign to the result. 
+\subsubsection{Binary threshold}
+The new intensity of pixel will be set to \texttt{maxValue} if the intensity of pixel \texttt{src(x,y)} is greater than \texttt{thresh} value. Otherwise, the new intensity will be set to \texttt{0}.
+\begin{equation}	
+		dst(x,y) = 
+		\begin{cases}
+			maxValue & \quad \text{if }\texttt{src(x,y)} > \texttt{thresh} \\
+			0 & \quad \text{otherwise}
+		\end{cases}	
+\end{equation}
+\subsubsection{Binary threshold inverted}
+The new intensity of pixel will be set to \texttt{0} if the intensity of pixel \texttt{src(x,y)} is greater than \texttt{thresh} value. Otherwise, the new intensity will be set to \texttt{maxValue}.
+\begin{equation}	
+		dst(x,y) = 
+		\begin{cases}
+			0 & \quad \text{if }\texttt{src(x,y)} > \texttt{thresh} \\
+			maxValue & \quad \text{otherwise}
+		\end{cases}	
+\end{equation}
+\subsubsection{Truncate threshold}
+The new intensity of pixel will be set to \texttt{thresh} value if the intensity of pixel \texttt{src(x,y)} is greater than \texttt{thresh} value. Otherwise, the new intensity is not change. It means in this case, the maximumvalue for the pixels is \texttt{thresh} value, if \texttt{src(x,y)} is greater than \texttt{thresh}, then its value is truncated.
+\begin{equation}	
+		dst(x,y) = 
+		\begin{cases}
+			\texttt{thresh} & \quad \text{if }\texttt{src(x,y)} > \texttt{thresh} \\
+			\texttt{src(x,y)} & \quad \text{otherwise}
+		\end{cases}	
+\end{equation}
+\subsubsection{Threshold to zero}
+The intensity of destination pixels are kept the same with the source if its intensity \texttt{src(x,y)} is greater than \texttt{thresh}. Otherwise, new pixel value will be set to \texttt{0}.
+\begin{equation}	
+		dst(x,y) = 
+		\begin{cases}
+			\texttt{src(x,y)} & \quad \text{if }\texttt{src(x,y)} > \texttt{thresh} \\
+			\texttt{0} & \quad \text{otherwise}
+		\end{cases}	
+\end{equation}
+\subsubsection{Threshold to zero inverted}
+The intensity of destination pixels will be set to 0 if if its intensity \texttt{src(x,y)} is greater than \texttt{thresh}. Otherwise, new pixel value is keep the same with the source.
+\begin{equation}	
+		dst(x,y) = 
+		\begin{cases}
+			\texttt{0} & \quad \text{if }\texttt{src(x,y)} > \texttt{thresh} \\
+			\texttt{src(x,y)} & \quad \text{otherwise}
+		\end{cases}	
+\end{equation}
+\subsection{Threshold value parameter}
+The key of threshold method is how to decide the threshold value ? In most of application, the threshold value is setted by manual. Besides, this value can be detect automatically. In the context of thesis, we applying a method to determine the threshold value by analysing the histogram of the gray-scale image. For the histogram, we indicate the peaks and valley of the histogram. The threshold value is mean between two values at the histogram slopes(between peak and valley).
+\subsection{Post process}
+In threshold method, if we can choose a good threshold value, the segmentation is very good. However, removing  wrong the interested characteristics is unavoidable. So, after thresholing the image, we continue post-process to evaluate the result of segmetation. The post-process method is based on ``line scan" idea. It is used to fixed the wrong hole on the object in the image. The steps of method are followed:
+\begin{enumerate}
+	\item Find the begin of the hole (initialize line)
+		\begin{itemize}
+			\item Find the first endpoint of line: pixel that moves from the object to backgound (hole).
+			\item Find the second endpoint of the line: pixel that moves form the background (hole) to the object.
+			\item Check the lines is the first line of this hole or not? If it is not correct, go to step \ref{step4}.
+		\end{itemize}
+	\item \label{step2}While not end the hole
+		\begin{itemize}
+			\item Recored the line
+			\item Increase a row
+			\item Find the limit endpoints of the new line
+			\item Check the new line is the end of hole or not? If it is not the end, repeat step \ref{step2}. Otherwise, go to step \ref{step3}.
+		\end{itemize}
+	\item \label{step3}For each line recored, fill the hole's pixel with value of object.
+	\item \label{step4}Clear the lines and continue with next pixel in the image
+	\item The algorithm will stop when all pixels are considered.
+\end{enumerate}
+\begin{figure}[h]
+	\centering
+	\subfloat{\includegraphics[scale=0.4]{images/threshold}}~~
+	\subfloat{\includegraphics[scale=0.4]{images/threshold}}
+	\caption{A result of threshold method}
+	\label{figthreshold}
+\end{figure}
+In figure \ref{figthreshold}, the left image shows result after applying binary threshold on gray-scale image; the right image shows the result of binary threshold and post-process. 
 \section{Canny algorithm}
 In 1986, \textbf{John F.Canny} had proposed a method to determine the edge in image. This is a technique to detect the useful structure of the object in digital image. Until now, the Canny algorithm\cite{canny1986computational} is used widely for the segmentation in computer vision. The process of Canny algorithm can be described in 4 steps as follows:
 \begin{enumerate}
