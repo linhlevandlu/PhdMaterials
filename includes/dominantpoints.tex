@@ -69,11 +69,25 @@ Principal component analysis is computed based on principal directions of the da
 The method is experiment with the set of right mandibles. Most of model can be detected its position on the scene by PCA. It also determine the translation and rotation information (see figure \ref{figpca1}). But in the case the input has more the noises, the centroid may be missed with correct position, following it is wrong translation and rotation(see figure \ref{figpca2}). In these examples, the red line is presented for the scene object and blue points is presented for the model object, which we want to align with the scene.
 \begin{figure}[h!]
 \centering
-\subfloat[PCA with less noises]{\label{figpca1}\includegraphics[width=0.4\textwidth]{./images/pca1}}~~
+\subfloat[PCA with less noises]{\label{figpca1}\includegraphics[width=0.3\textwidth]{./images/pca1}}~~
 \subfloat[PCA with noises]{\label{figpca2}\includegraphics[width=0.4\textwidth]{./images/pca2}}
 \caption{The result after applying the PCA}
 \label{figpca}
 \end{figure}
+\subsection{PCA Iteration (PCAI)}
+PCA method is a simplest method to align two images. However, PCA is more influenced by noises(see figure \ref{figpca}). Based on the idea of PCA method, PCAI try to apply the PCA on the interested data of the input.\\[0.2cm]
+The solved problem in PCAI is the same with other difference registration methods. With two set of data input, specify curve points, we want to register two images with best matches. In PCAI method, firstly, PCA is applied on all two set of data for having the first sight of data. Secondly, the data is sorted followed one of coordinates of data points. The interested data is taken up with a half of data points which are sorted. Thirdly, an iteration will be executed to match the data. For each iteration, we re-compute the principal component of scene data and compare with the model. The iteration will be terminated when the difference position between two images is smallest (see figure \ref{figpcai}).\\[0.2cm]
+\begin{figure}[h!]
+\centering
+\subfloat[Image alignment with PCA]{\label{figpcai1}\includegraphics[width=0.4\textwidth]{./images/pca1}}~~
+\subfloat[Image alignment with PCAI]{\label{figpcai2}\includegraphics[width=0.4\textwidth]{./images/pca2}}
+\caption{Comparing the result between PCA and PCAI}
+\label{figpcai}
+\end{figure}
+Beside applying PCAI to make the images are matched. PCAI can combine with other technique to estimate the landmarks, such as template matching. At beginning, PCAI is applied to match the images. At the end, for each manual landmarks on the model, we apply the template matching to estimate the location of landmarks on scene image. 
+\subsubsection{Result}
+The combining between PCAI and template matching is experimented on two datasets of mandible (left and right mandible). For each set of data, it was divided into two sub-sets followed the size of objects. The model is chosen for each sub-set. The estimated landmarks coordinates are used to compute the centroid size of the mandibles. The results are compared with the centroid size of manual landmarks. In general, the success rate of the method is \textbf{90.56\%} for left mandible and \textbf{94.48\%} for right mandible (see figure...). On each sub-set of left mandible, the success rate of sub-set 1 is \textit{87.18\%} and \textit{97.80\%} for sub-set 2 (see figure). And \textit{94.52\%} and \textit{94.37\%} are success rates of sub-sets on right mandible(see figure).
+Although the result from the method is good but it depends much on the result of segmentation. If the segmentation is not good and have many noises, the result of the method will be affected.
 \subsection{Singular value decomposition (SVD)}
 The PCA method is more effected by the noise, instead of using all the curve points, SVD just using a subset of points by optimal alignment between corresponding points of model and scene. Assume that \texttt{M} is a subset of the model points, \textbf{S} is a subset of the scene points and $p_i \in M, q_i \in S$ are two corresponding points. We would like to find the matrix transformed \textbf{R} so that the pair-wise distances between the corresesponding points is minimum. The pairwise distance is indicated by equation (\ref{eqpwdistance}).
 \begin{center}
