@@ -45,6 +45,70 @@ Dana~H Ballard.
 \newblock Generalizing the hough transform to detect arbitrary shapes.
 \newblock {\em Pattern recognition}, 13(2):111--122, 1981.
 
+\bibitem{bentley1975multidimensional}
+Jon~Louis Bentley.
+\newblock Multidimensional binary search trees used for associative searching.
+\newblock {\em Communications of the ACM}, 18(9):509--517, 1975.
+
+\bibitem{sproull1991refinements}
+Robert~F Sproull.
+\newblock Refinements to nearest-neighbor searching in k-dimensional trees.
+\newblock {\em Algorithmica}, 6(1):579--589, 1991.
+
+\bibitem{niyogi1996example}
+Sourabh Niyogi and William~T Freeman.
+\newblock Example-based head tracking.
+\newblock In {\em Automatic Face and Gesture Recognition, 1996., Proceedings of
+  the Second International Conference on}, pages 374--378. IEEE, 1996.
+
+\bibitem{kumar2008good}
+Neeraj Kumar, Li~Zhang, and Shree Nayar.
+\newblock What is a good nearest neighbors algorithm for finding similar
+  patches in images?
+\newblock In {\em European conference on computer vision}, pages 364--378.
+  Springer, 2008.
+
+\bibitem{barnes2010generalized}
+Connelly Barnes, Eli Shechtman, Dan~B Goldman, and Adam Finkelstein.
+\newblock The generalized patchmatch correspondence algorithm.
+\newblock In {\em European Conference on Computer Vision}, pages 29--43.
+  Springer, 2010.
+
+\bibitem{barnes2009patchmatch}
+Connelly Barnes, Eli Shechtman, Adam Finkelstein, and Dan Goldman.
+\newblock Patchmatch: A randomized correspondence algorithm for structural
+  image editing.
+\newblock {\em ACM Transactions on Graphics-TOG}, 28(3):24, 2009.
+
+\bibitem{xiao2011fast}
+Chunxia Xiao, Meng Liu, Nie Yongwei, and Zhao Dong.
+\newblock Fast exact nearest patch matching for patch-based image editing and
+  processing.
+\newblock {\em IEEE Transactions on Visualization and Computer Graphics},
+  17(8):1122--1134, 2011.
+
+\bibitem{datar2004locality}
+Mayur Datar, Nicole Immorlica, Piotr Indyk, and Vahab~S Mirrokni.
+\newblock Locality-sensitive hashing scheme based on p-stable distributions.
+\newblock In {\em Proceedings of the twentieth annual symposium on
+  Computational geometry}, pages 253--262. ACM, 2004.
+
+\bibitem{barnessurvey}
+Connelly Barnes and Fang-Lue Zhang.
+\newblock A survey of the state-of-the-art in patch-based synthesis.
+\newblock {\em Computational Visual Media}, pages 1--18.
+
+\bibitem{guillemot2014image}
+Christine Guillemot and Olivier Le~Meur.
+\newblock Image inpainting: Overview and recent advances.
+\newblock {\em IEEE signal processing magazine}, 31(1):127--144, 2014.
+
+\bibitem{cho2008patch}
+Taeg~Sang Cho, Moshe Butman, Shai Avidan, and William~T Freeman.
+\newblock The patch transform and its applications to image editing.
+\newblock In {\em Computer Vision and Pattern Recognition, 2008. CVPR 2008.
+  IEEE Conference on}, pages 1--8. IEEE, 2008.
+
 \bibitem{lecun1998gradient}
 Yann LeCun, L{\'e}on Bottou, Yoshua Bengio, and Patrick Haffner.
 \newblock Gradient-based learning applied to document recognition.
