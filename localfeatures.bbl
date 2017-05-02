@@ -1,0 +1,39 @@
+\begin{thebibliography}{1}
+
+\bibitem{fechner1948elements}
+Gustav~Theodor Fechner.
+\newblock Elements of psychophysics, 1860.
+\newblock 1948.
+
+\bibitem{lowe2004distinctive}
+David~G Lowe.
+\newblock Distinctive image features from scale-invariant keypoints.
+\newblock {\em International journal of computer vision}, 60(2):91--110, 2004.
+
+\bibitem{michelson1995studies}
+Albert~Abraham Michelson.
+\newblock {\em Studies in optics}.
+\newblock Courier Corporation, 1995.
+
+\bibitem{ojala1999unsupervised}
+Timo Ojala and Matti Pietik{\"a}inen.
+\newblock Unsupervised texture segmentation using feature distributions.
+\newblock {\em Pattern Recognition}, 32(3):477--486, 1999.
+
+\bibitem{ojala1996comparative}
+Timo Ojala, Matti Pietik{\"a}inen, and David Harwood.
+\newblock A comparative study of texture measures with classification based on
+  featured distributions.
+\newblock {\em Pattern recognition}, 29(1):51--59, 1996.
+
+\bibitem{peli1990contrast}
+Eli Peli.
+\newblock Contrast in complex images.
+\newblock {\em JOSA A}, 7(10):2032--2040, 1990.
+
+\bibitem{wang1990texture}
+Li~Wang and Dong-Chen He.
+\newblock Texture classification using texture spectrum.
+\newblock {\em Pattern Recognition}, 23(8):905--910, 1990.
+
+\end{thebibliography}
