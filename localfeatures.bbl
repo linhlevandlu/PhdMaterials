@@ -1,4 +1,10 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{canny1986computational}
+John Canny.
+\newblock A computational approach to edge detection.
+\newblock {\em IEEE Transactions on pattern analysis and machine intelligence},
+  (6):679--698, 1986.
 
 \bibitem{fechner1948elements}
 Gustav~Theodor Fechner.
@@ -9,6 +15,12 @@ Gustav~Theodor Fechner.
 David~G Lowe.
 \newblock Distinctive image features from scale-invariant keypoints.
 \newblock {\em International journal of computer vision}, 60(2):91--110, 2004.
+
+\bibitem{maini2009study}
+Raman Maini and Himanshu Aggarwal.
+\newblock Study and comparison of various image edge detection techniques.
+\newblock {\em International journal of image processing (IJIP)}, 3(1):1--11,
+  2009.
 
 \bibitem{michelson1995studies}
 Albert~Abraham Michelson.
@@ -30,6 +42,11 @@ Timo Ojala, Matti Pietik{\"a}inen, and David Harwood.
 Eli Peli.
 \newblock Contrast in complex images.
 \newblock {\em JOSA A}, 7(10):2032--2040, 1990.
+
+\bibitem{smith1997susan}
+Stephen~M Smith and J~Michael Brady.
+\newblock Susan—a new approach to low level image processing.
+\newblock {\em International journal of computer vision}, 23(1):45--78, 1997.
 
 \bibitem{wang1990texture}
 Li~Wang and Dong-Chen He.
