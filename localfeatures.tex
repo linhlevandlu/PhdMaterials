@@ -108,7 +108,10 @@ Timo Ojala et al \cite{ojala1999unsupervised} have proposed a method to segment 
 
 
 In the context of combining the local features, we apply LBP/C to evaluate the effect of this feature pair on the texture around the landmark (as described before). The result shows that the distance of pair at landmark $3^{rd}, 4^{th}, 6^{th}, 7^{th}$ is better than other ones. This mean that the pair LBP/C is worked well on the pattern which have the distinctable pixels.
-\section{References}
+
+In another examine, the scene image is segmented by applying Canny algorithm. Then, a patch around each contour point is created. The descriptor is computed and compared with the descriptor of the manual landmark of the model. The process keep the point of the contour that has minimum distance with the manual descriptor. Following this way, the evaluation is done on all manual landmarks of model. The result of examination shows that this method can estimate the landmark at the position $3^{rd}, 4^{th}$, and in some case of landmark $6^{th}, 7^{th}$.
+\section{Conclusion}
+In this works, we have studied the local features and their combination. We have applied the LBP/C to examine the sensitive of this pair with on the gray-scale of pronotum image. In the next, we will try to evaluate the other pair of local features on pronotum such as LBP/SCOV.
 \bibliographystyle{plain}
 \bibliography{includes/localfeatures}
 \end{document}
