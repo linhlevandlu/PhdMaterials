@@ -1,9 +1,10 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: index.aux
 A level-1 auxiliary file: includes/cover.aux
 A level-1 auxiliary file: includes/abstract.aux
 A level-1 auxiliary file: includes/segmentation.aux
+A level-1 auxiliary file: includes/localfeatures.aux
 A level-1 auxiliary file: includes/dominantpoints.aux
 A level-1 auxiliary file: includes/software.aux
 A level-1 auxiliary file: includes/machineLearning.aux
@@ -14,47 +15,49 @@ A level-1 auxiliary file: includes/discussion.aux
 A level-1 auxiliary file: includes/conclusion.aux
 The style file: unsrt.bst
 Database file #1: includes/references.bib
+Warning--I didn't find a database entry for "•"
 Warning--there's a number but no volume in canny1986computational
+Warning--empty journal in fechner1948elements
 Warning--empty year in barnessurvey
-You've used 26 entries,
+You've used 35 entries,
             1791 wiz_defined-function locations,
-            617 strings with 8320 characters,
-and the built_in function-call counts, 6986 in all, are:
-= -- 671
-> -- 262
+            668 strings with 9440 characters,
+and the built_in function-call counts, 8863 in all, are:
+= -- 853
+> -- 321
 < -- 9
-+ -- 98
-- -- 72
-* -- 464
-:= -- 1039
-add.period$ -- 84
-call.type$ -- 26
-change.case$ -- 26
++ -- 122
+- -- 87
+* -- 596
+:= -- 1335
+add.period$ -- 111
+call.type$ -- 35
+change.case$ -- 34
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 320
-empty$ -- 686
-format.name$ -- 72
-if$ -- 1600
+cite$ -- 38
+duplicate$ -- 401
+empty$ -- 881
+format.name$ -- 87
+if$ -- 2008
 int.to.chr$ -- 0
-int.to.str$ -- 26
-missing$ -- 25
-newline$ -- 133
-num.names$ -- 26
-pop$ -- 82
+int.to.str$ -- 35
+missing$ -- 35
+newline$ -- 178
+num.names$ -- 35
+pop$ -- 101
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 169
+skip$ -- 199
 stack$ -- 0
-substring$ -- 558
-swap$ -- 103
+substring$ -- 715
+swap$ -- 111
 text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 2
-while$ -- 78
-width$ -- 28
-write$ -- 289
-(There were 2 warnings)
+warning$ -- 3
+while$ -- 101
+width$ -- 37
+write$ -- 385
+(There were 4 warnings)

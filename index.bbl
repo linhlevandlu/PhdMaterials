@@ -30,6 +30,53 @@ Mostafa~S Ibrahim, Amr~A Badr, Mostafa~R Abdallah, and Ibrahim~F Eissa.
 \newblock Bounding box object localization based on image superpixelization.
 \newblock {\em Procedia Computer Science}, 13:108--119, 2012.
 
+\bibitem{maini2009study}
+Raman Maini and Himanshu Aggarwal.
+\newblock Study and comparison of various image edge detection techniques.
+\newblock {\em International journal of image processing (IJIP)}, 3(1):1--11,
+  2009.
+
+\bibitem{smith1997susan}
+Stephen~M Smith and J~Michael Brady.
+\newblock Susan—a new approach to low level image processing.
+\newblock {\em International journal of computer vision}, 23(1):45--78, 1997.
+
+\bibitem{lowe2004distinctive}
+David~G Lowe.
+\newblock Distinctive image features from scale-invariant keypoints.
+\newblock {\em International journal of computer vision}, 60(2):91--110, 2004.
+
+\bibitem{wang1990texture}
+Li~Wang and Dong-Chen He.
+\newblock Texture classification using texture spectrum.
+\newblock {\em Pattern Recognition}, 23(8):905--910, 1990.
+
+\bibitem{ojala1996comparative}
+Timo Ojala, Matti Pietik{\"a}inen, and David Harwood.
+\newblock A comparative study of texture measures with classification based on
+  featured distributions.
+\newblock {\em Pattern recognition}, 29(1):51--59, 1996.
+
+\bibitem{fechner1948elements}
+Gustav~Theodor Fechner.
+\newblock Elements of psychophysics, 1860.
+\newblock 1948.
+
+\bibitem{michelson1995studies}
+Albert~Abraham Michelson.
+\newblock {\em Studies in optics}.
+\newblock Courier Corporation, 1995.
+
+\bibitem{peli1990contrast}
+Eli Peli.
+\newblock Contrast in complex images.
+\newblock {\em JOSA A}, 7(10):2032--2040, 1990.
+
+\bibitem{ojala1999unsupervised}
+Timo Ojala and Matti Pietik{\"a}inen.
+\newblock Unsupervised texture segmentation using feature distributions.
+\newblock {\em Pattern Recognition}, 32(3):477--486, 1999.
+
 \bibitem{mukhopadhyay2015survey}
 Priyanka Mukhopadhyay and Bidyut~B Chaudhuri.
 \newblock A survey of hough transform.
