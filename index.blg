@@ -11,6 +11,7 @@ A level-1 auxiliary file: includes/machineLearning.aux
 A level-1 auxiliary file: includes/linearClassifition.aux
 A level-1 auxiliary file: includes/deepNetwork.aux
 A level-1 auxiliary file: includes/cnnNetwork.aux
+A level-1 auxiliary file: includes/cnnClassification.aux
 A level-1 auxiliary file: includes/discussion.aux
 A level-1 auxiliary file: includes/conclusion.aux
 The style file: unsrt.bst
@@ -21,7 +22,7 @@ Warning--empty journal in fechner1948elements
 Warning--empty year in barnessurvey
 You've used 35 entries,
             1791 wiz_defined-function locations,
-            668 strings with 9440 characters,
+            669 strings with 9470 characters,
 and the built_in function-call counts, 8863 in all, are:
 = -- 853
 > -- 321
