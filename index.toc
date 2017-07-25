@@ -110,11 +110,16 @@
 \contentsline {subsubsection}{Inner Product layer}{61}
 \contentsline {subsubsection}{Data layer}{61}
 \contentsline {section}{\numberline {8.5}A small deep network with Caffe}{63}
-\contentsline {chapter}{\numberline {9}Using CNN to classify the landmark}{64}
+\contentsline {chapter}{\numberline {9}Using CNN to classify the patches}{64}
 \contentsline {section}{\numberline {9.1}Data}{64}
 \contentsline {section}{\numberline {9.2}The network}{64}
-\contentsline {section}{\numberline {9.3}Experiment}{64}
-\contentsline {section}{\numberline {9.4}Result}{64}
-\contentsline {part}{III\hspace {1em}Conclusion}{65}
-\contentsline {chapter}{\numberline {10}Discussion}{66}
-\contentsline {chapter}{\numberline {11}Conclusion}{67}
+\contentsline {section}{\numberline {9.3}Solver parameters}{65}
+\contentsline {section}{\numberline {9.4}Experiment and results}{65}
+\contentsline {section}{\numberline {9.5}Conclusion}{66}
+\contentsline {chapter}{\numberline {10}A comparison of Deep Learning Frameworks}{67}
+\contentsline {section}{\numberline {10.1}Overview of deep learning frameworks}{67}
+\contentsline {section}{\numberline {10.2}Environments}{67}
+\contentsline {section}{\numberline {10.3}Result and discussion}{67}
+\contentsline {part}{III\hspace {1em}Conclusion}{68}
+\contentsline {chapter}{\numberline {11}Discussion}{69}
+\contentsline {chapter}{\numberline {12}Conclusion}{70}
