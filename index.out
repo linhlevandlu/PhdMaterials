@@ -1,0 +1,64 @@
+\BOOKMARK [-1][-]{part.1}{I Morphometry}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Segmentation}{part.1}% 2
+\BOOKMARK [1][-]{section.1.1}{Threshold}{chapter.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.1}{Types of threshold}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.2}{Threshold value parameter}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.3}{Post process}{section.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.4}{Sobel convolution}{section.1.1}% 7
+\BOOKMARK [2][-]{subsection.1.1.5}{Non-maximum suppression}{section.1.1}% 8
+\BOOKMARK [2][-]{subsection.1.1.6}{Double threshold}{section.1.1}% 9
+\BOOKMARK [2][-]{subsection.1.1.7}{Summary}{section.1.1}% 10
+\BOOKMARK [1][-]{section.1.2}{Suzuki algorithm}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.3}{Approximated lines}{chapter.1}% 12
+\BOOKMARK [1][-]{section.1.4}{Pairwise Geometric Histogram}{chapter.1}% 13
+\BOOKMARK [2][-]{subsection.1.4.1}{Result}{section.1.4}% 14
+\BOOKMARK [1][-]{section.1.5}{Texture segmentation}{chapter.1}% 15
+\BOOKMARK [2][-]{subsection.1.5.1}{Texture description}{section.1.5}% 16
+\BOOKMARK [0][-]{chapter.2}{Local features and landmark estimation}{part.1}% 17
+\BOOKMARK [1][-]{section.2.1}{Local features}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.1.1}{Image gradient}{section.2.1}% 19
+\BOOKMARK [2][-]{subsection.2.1.2}{Local binary pattern}{section.2.1}% 20
+\BOOKMARK [2][-]{subsection.2.1.3}{Contrast}{section.2.1}% 21
+\BOOKMARK [1][-]{section.2.2}{Conclusion}{chapter.2}% 22
+\BOOKMARK [0][-]{chapter.3}{Dominant points}{part.1}% 23
+\BOOKMARK [1][-]{section.3.1}{Hough Transform}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.1.1}{Generalizing Hough Transform}{section.3.1}% 25
+\BOOKMARK [1][-]{section.3.2}{Template matching}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.3}{Image registration}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.1}{Principal component analysis \(PCA\)}{section.3.3}% 28
+\BOOKMARK [2][-]{subsection.3.3.2}{Singular value decomposition \(SVD\)}{section.3.3}% 29
+\BOOKMARK [0][-]{chapter.4}{Software}{part.1}% 30
+\BOOKMARK [1][-]{section.4.1}{The design of the software}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.2}{Parameters}{chapter.4}% 32
+\BOOKMARK [-1][-]{part.2}{II Deep learning}{}% 33
+\BOOKMARK [0][-]{chapter.5}{Machine Learning}{part.2}% 34
+\BOOKMARK [1][-]{section.5.1}{Supervised learning algorithms}{chapter.5}% 35
+\BOOKMARK [1][-]{section.5.2}{Unsupervised learning algorithms}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.3}{Stochastic Gradient Descent}{chapter.5}% 37
+\BOOKMARK [0][-]{chapter.6}{Classification}{part.2}% 38
+\BOOKMARK [1][-]{section.6.1}{Nearest Neighbour Classifier}{chapter.6}% 39
+\BOOKMARK [0][-]{chapter.7}{Deep Network}{part.2}% 40
+\BOOKMARK [1][-]{section.7.1}{Neural network}{chapter.7}% 41
+\BOOKMARK [2][-]{subsection.7.1.1}{Neural}{section.7.1}% 42
+\BOOKMARK [1][-]{section.7.2}{The architecture of neural networks}{chapter.7}% 43
+\BOOKMARK [0][-]{chapter.8}{Convolutional Neural Network}{part.2}% 44
+\BOOKMARK [1][-]{section.8.1}{Architecture}{chapter.8}% 45
+\BOOKMARK [2][-]{subsection.8.1.1}{Convolutional layer}{section.8.1}% 46
+\BOOKMARK [0][-]{chapter.9}{Using CNN to classify the patches}{part.2}% 47
+\BOOKMARK [1][-]{section.9.1}{Data}{chapter.9}% 48
+\BOOKMARK [1][-]{section.9.2}{The network}{chapter.9}% 49
+\BOOKMARK [1][-]{section.9.3}{Solver parameters}{chapter.9}% 50
+\BOOKMARK [1][-]{section.9.4}{Experiment and results}{chapter.9}% 51
+\BOOKMARK [1][-]{section.9.5}{Conclusion}{chapter.9}% 52
+\BOOKMARK [0][-]{chapter.10}{A comparison of Deep Learning Frameworks}{part.2}% 53
+\BOOKMARK [1][-]{section.10.1}{Overview of deep learning frameworks}{chapter.10}% 54
+\BOOKMARK [2][-]{subsection.10.1.1}{Caffe}{section.10.1}% 55
+\BOOKMARK [2][-]{subsection.10.1.2}{Theano}{section.10.1}% 56
+\BOOKMARK [2][-]{subsection.10.1.3}{TensorFlow}{section.10.1}% 57
+\BOOKMARK [2][-]{subsection.10.1.4}{Torch}{section.10.1}% 58
+\BOOKMARK [2][-]{subsection.10.1.5}{CNTK}{section.10.1}% 59
+\BOOKMARK [1][-]{section.10.2}{Environments}{chapter.10}% 60
+\BOOKMARK [1][-]{section.10.3}{Result and discussion}{chapter.10}% 61
+\BOOKMARK [-1][-]{part.3}{III Conclusion}{}% 62
+\BOOKMARK [0][-]{chapter.11}{Discussion}{part.3}% 63
+\BOOKMARK [0][-]{chapter.12}{Conclusion}{part.3}% 64
