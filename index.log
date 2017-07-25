@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.23)  25 JUL 2017 15:13
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.23)  25 JUL 2017 18:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1329,11 +1329,17 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
  (./includes/deepFrameworks.tex
 Chapter 10.
-) [67
+
+LaTeX Warning: Citation `â€¢' on page 67 undefined on input line 2.
+
+
+LaTeX Warning: Citation `â€¢' on page 67 undefined on input line 2.
+
+[67
 
 
 
-] [68
+]) [68] [69
 
 
 ]
@@ -1341,7 +1347,7 @@ Chapter 10.
 
  (./includes/discussion.tex
 Chapter 11.
-) [69
+) [70
 
 
 ]
@@ -1349,7 +1355,7 @@ Chapter 11.
 
  (./includes/conclusion.tex
 Chapter 12.
-) [70
+) [71
 
 
 
@@ -1357,10 +1363,10 @@ Chapter 12.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ” in font cmr12!
- [71
+ [72
 
 
-] [72]) [73] (./index.aux (./includes/cover.aux)
+] [73]) [74] (./index.aux (./includes/cover.aux)
 (./includes/abstract.aux) (./includes/segmentation.aux)
 (./includes/localfeatures.aux) (./includes/dominantpoints.aux)
 (./includes/software.aux) (./includes/machineLearning.aux)
@@ -1399,10 +1405,10 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on index.pdf (75 pages, 6143205 bytes).
+Output written on index.pdf (76 pages, 6145190 bytes).
 PDF statistics:
- 378 PDF objects out of 1000 (max. 8388607)
- 226 compressed objects within 3 object streams
+ 381 PDF objects out of 1000 (max. 8388607)
+ 228 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  268 words of extra memory for PDF output out of 10000 (max. 10000000)
 

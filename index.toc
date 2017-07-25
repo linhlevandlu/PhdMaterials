@@ -118,8 +118,13 @@
 \contentsline {section}{\numberline {9.5}Conclusion}{66}
 \contentsline {chapter}{\numberline {10}A comparison of Deep Learning Frameworks}{67}
 \contentsline {section}{\numberline {10.1}Overview of deep learning frameworks}{67}
-\contentsline {section}{\numberline {10.2}Environments}{67}
-\contentsline {section}{\numberline {10.3}Result and discussion}{67}
-\contentsline {part}{III\hspace {1em}Conclusion}{68}
-\contentsline {chapter}{\numberline {11}Discussion}{69}
-\contentsline {chapter}{\numberline {12}Conclusion}{70}
+\contentsline {subsection}{\numberline {10.1.1}Caffe}{68}
+\contentsline {subsection}{\numberline {10.1.2}Theano}{68}
+\contentsline {subsection}{\numberline {10.1.3}TensorFlow}{68}
+\contentsline {subsection}{\numberline {10.1.4}Torch}{68}
+\contentsline {subsection}{\numberline {10.1.5}CNTK}{68}
+\contentsline {section}{\numberline {10.2}Environments}{68}
+\contentsline {section}{\numberline {10.3}Result and discussion}{68}
+\contentsline {part}{III\hspace {1em}Conclusion}{69}
+\contentsline {chapter}{\numberline {11}Discussion}{70}
+\contentsline {chapter}{\numberline {12}Conclusion}{71}
