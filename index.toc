@@ -124,6 +124,8 @@
 \contentsline {subsection}{\numberline {10.1.4}Torch}{68}
 \contentsline {subsection}{\numberline {10.1.5}CNTK}{68}
 \contentsline {section}{\numberline {10.2}Environments}{68}
+\contentsline {subsection}{\numberline {10.2.1}CIFAR-10 dataset on Caffe and Theano}{68}
+\contentsline {subsection}{\numberline {10.2.2}Landmarks patches dataset on Caffe and Theano}{68}
 \contentsline {section}{\numberline {10.3}Result and discussion}{68}
 \contentsline {part}{III\hspace {1em}Conclusion}{69}
 \contentsline {chapter}{\numberline {11}Discussion}{70}
