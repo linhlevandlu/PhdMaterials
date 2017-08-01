@@ -196,4 +196,25 @@ Sergey Ioffe and Christian Szegedy.
   internal covariate shift.
 \newblock {\em arXiv preprint arXiv:1502.03167}, 2015.
 
+\bibitem{sun2013deep}
+Yi~Sun, Xiaogang Wang, and Xiaoou Tang.
+\newblock Deep convolutional network cascade for facial point detection.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 3476--3483, 2013.
+
+\bibitem{cintas2016automatic}
+Celia Cintas, Mirsha Quinto-S{\'a}nchez, Victor Acu{\~n}a, Carolina Paschetta,
+  Soledad de~Azevedo, Caio Cesar~Silva de~Cerqueira, Virginia Ramallo, Carla
+  Gallo, Giovanni Poletti, Maria~Catira Bortolini, et~al.
+\newblock Automatic ear detection and feature extraction using geometric
+  morphometrics and convolutional neural networks.
+\newblock {\em IET Biometrics}, 6(3):211--223, 2016.
+
+\bibitem{huang2007labeled}
+Gary~B Huang, Manu Ramesh, Tamara Berg, and Erik Learned-Miller.
+\newblock Labeled faces in the wild: A database for studying face recognition
+  in unconstrained environments.
+\newblock Technical report, Technical Report 07-49, University of
+  Massachusetts, Amherst, 2007.
+
 \end{thebibliography}

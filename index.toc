@@ -127,6 +127,17 @@
 \contentsline {subsection}{\numberline {10.2.1}CIFAR-10 dataset on Caffe and Theano}{68}
 \contentsline {subsection}{\numberline {10.2.2}Landmarks patches dataset on Caffe and Theano}{68}
 \contentsline {section}{\numberline {10.3}Result and discussion}{68}
-\contentsline {part}{III\hspace {1em}Conclusion}{69}
-\contentsline {chapter}{\numberline {11}Discussion}{70}
-\contentsline {chapter}{\numberline {12}Conclusion}{71}
+\contentsline {chapter}{\numberline {11}Automatic extraction the morphometry landmarks by Convolutional Neural Network}{69}
+\contentsline {section}{\numberline {11.1}Facial Point Detection by CNN}{69}
+\contentsline {subsection}{\numberline {11.1.1}Data}{69}
+\contentsline {subsection}{\numberline {11.1.2}Model}{69}
+\contentsline {subsection}{\numberline {11.1.3}Experiments}{70}
+\contentsline {subsubsection}{Training}{70}
+\contentsline {subsubsection}{Testing}{71}
+\contentsline {subsection}{\numberline {11.1.4}Model with pronotum landmarks data}{71}
+\contentsline {subsubsection}{Data and training}{72}
+\contentsline {subsubsection}{Testing}{72}
+\contentsline {section}{\numberline {11.2}Automatic ear detection with CNN}{72}
+\contentsline {part}{III\hspace {1em}Conclusion}{75}
+\contentsline {chapter}{\numberline {12}Discussion}{76}
+\contentsline {chapter}{\numberline {13}Conclusion}{77}

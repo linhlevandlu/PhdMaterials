@@ -13,6 +13,7 @@ A level-1 auxiliary file: includes/deepNetwork.aux
 A level-1 auxiliary file: includes/cnnNetwork.aux
 A level-1 auxiliary file: includes/cnnClassification.aux
 A level-1 auxiliary file: includes/deepFrameworks.aux
+A level-1 auxiliary file: includes/cnnAndLandmarks.aux
 A level-1 auxiliary file: includes/discussion.aux
 A level-1 auxiliary file: includes/conclusion.aux
 The style file: unsrt.bst
@@ -21,45 +22,45 @@ Warning--I didn't find a database entry for "•"
 Warning--there's a number but no volume in canny1986computational
 Warning--empty journal in fechner1948elements
 Warning--empty year in barnessurvey
-You've used 35 entries,
+You've used 38 entries,
             1791 wiz_defined-function locations,
-            670 strings with 9497 characters,
-and the built_in function-call counts, 8863 in all, are:
-= -- 853
-> -- 321
-< -- 9
-+ -- 122
-- -- 87
-* -- 596
-:= -- 1335
-add.period$ -- 111
-call.type$ -- 35
-change.case$ -- 34
+            689 strings with 10387 characters,
+and the built_in function-call counts, 9793 in all, are:
+= -- 931
+> -- 381
+< -- 10
++ -- 143
+- -- 105
+* -- 664
+:= -- 1482
+add.period$ -- 120
+call.type$ -- 38
+change.case$ -- 38
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 401
-empty$ -- 881
-format.name$ -- 87
-if$ -- 2008
+cite$ -- 41
+duplicate$ -- 439
+empty$ -- 958
+format.name$ -- 105
+if$ -- 2214
 int.to.chr$ -- 0
-int.to.str$ -- 35
-missing$ -- 35
-newline$ -- 178
-num.names$ -- 35
-pop$ -- 101
+int.to.str$ -- 38
+missing$ -- 37
+newline$ -- 193
+num.names$ -- 38
+pop$ -- 110
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 199
+skip$ -- 222
 stack$ -- 0
-substring$ -- 715
-swap$ -- 111
-text.length$ -- 9
+substring$ -- 780
+swap$ -- 125
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 101
-width$ -- 37
-write$ -- 385
+while$ -- 109
+width$ -- 40
+write$ -- 418
 (There were 4 warnings)
