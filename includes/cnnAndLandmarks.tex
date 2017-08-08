@@ -83,13 +83,60 @@ The error rate of each network during training is shown in the table:\\
 The model is tested on four images. The position of the landmark is located.
 \begin{figure}[h!]
 \centering
-\subfloat[Test 1]{\label{}\includegraphics[width=0.5\textwidth]{./images/test1}}~~
-\subfloat[Test 2]{\label{}\includegraphics[width=0.5\textwidth]{./images/test2}}\\
-\subfloat[Test 3]{\label{}\includegraphics[width=0.5\textwidth]{./images/test3}}~~
-\subfloat[Test 4]{\label{}\includegraphics[width=0.5\textwidth]{./images/test4}}\\
+\subfloat[Test 1]{\label{}\includegraphics[width=0.45\textwidth]{./images/test1}}~~
+\subfloat[Test 2]{\label{}\includegraphics[width=0.45\textwidth]{./images/test2}}\\
+\subfloat[Test 3]{\label{}\includegraphics[width=0.45\textwidth]{./images/test3}}~~
+\subfloat[Test 4]{\label{}\includegraphics[width=0.45\textwidth]{./images/test4}}\\
 \caption{The pronotum with predicted landmarks at level 1}
 \label{figcentroidSize}
 \end{figure}
 
 Next: continue with the network of level 2, 3.
 \section{Automatic ear detection with CNN}
+Celia Cintas et al \cite{•} proposed a method based on Geometric Morphometric and Deep Learning for automatic ear detection and feature extraction in the form of landmarks. The convolutional neural network was trained with a set of manually landmarks examples. The network is able to provide the morphometric landmarks on ear image automatically.
+\subsection{Dataset}
+The image and manual landmark belong to the CANDELA initiative \cite{•}, a project includes geneticists, bioinformatics and social-anthropologists interested on Latin American. CANDELA contains 7500 images with the size of $2136 \times 3216$. The provided dataset contains 2753 images which extracted from the CANDELA dataset. For each image, a set of 45 landmarks and semi-landmarks provided by human operators. The dataset was split into a training set with 2051 images (75\%) and a validation set of 684 images (25\%).
+\subsection{Network}
+Three models were designed and trained for performing the automatic landmarks task.  These architectures are different in the number of convolution layers, the filter sizes, and the learning rate. An image with a single channel of the size  $96 \times 96$ with brightness scaled to [0,1], is taken as the input of the network. Fig.\ref{1Econv} shows the best architecture. In this architecture, a structure of two convolutional layers with the filters, followed by maximum pooling and dropout layer. This structure is repeated three times to obtain features at different levels with different size of filters. After extraction the features, two fully connected linear layers with 1500 units each and a dropout layer is hired. The output layer contains 90 output units (corresponding with 45 landmarks) for the predicted position of the landmarks. The implementation used Python and the Lasagne library \cite{}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.27]{images/ear_cnn}
+	\caption{The best architecture for automatic ear's landmarks detection}
+	\label{1Econv}
+\end{figure}
+\subsection{Experiments}
+Following the article, the method is evaluated the usual quality metrics for regression problems, in particular $r^2$, root mean square error (RMSE), explained variance (EV), and Pearson's correlation. The accuracy of three architectures are shown in Table \ref{tbear1}. Also, in Table \ref{tbear2}, the RMSE for each landmarks is shown. The regression metrics were computed using \textit{scikit-learn}\cite{}.
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l c c c}
+	& Arch0 & Arch1 & Arch2 \\ \hline
+	$r^2$ & 0.709 & 0.678 & 0.698 \\ \hline
+	RMSE & 2.296 & 2.415 & 2.338\\ \hline
+	EV & 0.976 & 0.974 &  0.975 \\ \hline
+	Pearson & 0.988 & 0.987 &  0.988 \\ \hline	
+	\end{tabular}
+	\caption{Performance of three different ConvNet architectures}
+	\label{tbear1}
+\end{table}\\
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l r}
+	\# Landmark & RMSE \\ \hline
+	1 & 1.8183 \\ \hline
+	2 & 1.2216\\ \hline
+	3 &  1.08651\\ \hline
+	4 &  1.3291\\ \hline
+	5 &  2.4477\\ \hline
+	6 &  2.59746\\ \hline
+	7 &  1.17571\\ \hline
+	\end{tabular}
+	\caption{RMS error for each landmark}
+	\label{tbear2}
+\end{table}\\
+Because the CANDELA dataset is not open. Another dataset was chosen to study the network. The new dataset was used for the Facial Keypoint Detection including 7049 gray-scale images ($96 \times 96$). For each image, we are supported learn to find the position of 15 landmarks. After dropping some missing data, the dataset remains 2140 images. All the images with coordinates of manual landmarks is stored in csv file and fetched into the network. The training and validation loss are shown in Fig. \ref{}.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.27]{images/trainloss}
+	\caption{The loss of Ear-CNN network with facial point dataset}
+	\label{1Econv}
+\end{figure}

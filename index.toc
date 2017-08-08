@@ -138,6 +138,9 @@
 \contentsline {subsubsection}{Data and training}{72}
 \contentsline {subsubsection}{Testing}{72}
 \contentsline {section}{\numberline {11.2}Automatic ear detection with CNN}{72}
-\contentsline {part}{III\hspace {1em}Conclusion}{75}
-\contentsline {chapter}{\numberline {12}Discussion}{76}
-\contentsline {chapter}{\numberline {13}Conclusion}{77}
+\contentsline {subsection}{\numberline {11.2.1}Dataset}{73}
+\contentsline {subsection}{\numberline {11.2.2}Network}{73}
+\contentsline {subsection}{\numberline {11.2.3}Experiments}{74}
+\contentsline {part}{III\hspace {1em}Conclusion}{76}
+\contentsline {chapter}{\numberline {12}Discussion}{77}
+\contentsline {chapter}{\numberline {13}Conclusion}{78}
