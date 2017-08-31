@@ -22,125 +22,127 @@
 \contentsline {subsection}{\numberline {1.6.1}Bounding box detection}{13}
 \contentsline {subsection}{\numberline {1.6.2}Histgoram projection}{14}
 \contentsline {subsection}{\numberline {1.6.3}Result}{15}
-\contentsline {section}{\numberline {1.7}Texture segmentation}{15}
+\contentsline {subsection}{\numberline {1.6.4}Bounding box on Pronotum}{15}
+\contentsline {subsubsection}{Result}{16}
+\contentsline {section}{\numberline {1.7}Texture segmentation}{16}
 \contentsline {subsection}{\numberline {1.7.1}Texture description}{16}
 \contentsline {subsubsection}{Texel-based texture descriptions}{16}
-\contentsline {subsubsection}{Local binary pattern}{16}
-\contentsline {subsection}{\numberline {1.7.2}Texture segmentation methods}{16}
-\contentsline {subsubsection}{Voronoi polygons}{16}
-\contentsline {subsubsection}{Timo's method}{16}
-\contentsline {chapter}{\numberline {2}Local features and landmark estimation}{17}
-\contentsline {section}{\numberline {2.1}Local features}{17}
-\contentsline {subsection}{\numberline {2.1.1}Image gradient}{17}
-\contentsline {subsection}{\numberline {2.1.2}Local binary pattern}{17}
-\contentsline {subsection}{\numberline {2.1.3}Contrast}{18}
-\contentsline {subsection}{\numberline {2.1.4}Center-symmetric covariance measures}{18}
-\contentsline {section}{\numberline {2.2}Features integration}{19}
-\contentsline {section}{\numberline {2.3}Local features and landmark estimation}{19}
-\contentsline {section}{\numberline {2.4}Result}{19}
-\contentsline {section}{\numberline {2.5}Conclusion}{20}
-\contentsline {chapter}{\numberline {3}Dominant points}{21}
-\contentsline {section}{\numberline {3.1}Hough Transform}{21}
-\contentsline {subsection}{\numberline {3.1.1}Generalizing Hough Transform}{21}
-\contentsline {subsubsection}{Result}{22}
-\contentsline {subsection}{\numberline {3.1.2}Probabilistic Hough Transform}{22}
-\contentsline {section}{\numberline {3.2}Template matching}{23}
-\contentsline {section}{\numberline {3.3}Image registration}{24}
-\contentsline {subsection}{\numberline {3.3.1}Principal component analysis (PCA)}{24}
-\contentsline {subsubsection}{Result}{24}
-\contentsline {subsection}{\numberline {3.3.2}PCA Iteration (PCAI)}{24}
+\contentsline {subsubsection}{Local binary pattern}{17}
+\contentsline {subsection}{\numberline {1.7.2}Texture segmentation methods}{17}
+\contentsline {subsubsection}{Voronoi polygons}{17}
+\contentsline {subsubsection}{Timo's method}{17}
+\contentsline {chapter}{\numberline {2}Local features and landmark estimation}{18}
+\contentsline {section}{\numberline {2.1}Local features}{18}
+\contentsline {subsection}{\numberline {2.1.1}Image gradient}{18}
+\contentsline {subsection}{\numberline {2.1.2}Local binary pattern}{18}
+\contentsline {subsection}{\numberline {2.1.3}Contrast}{19}
+\contentsline {subsection}{\numberline {2.1.4}Center-symmetric covariance measures}{19}
+\contentsline {section}{\numberline {2.2}Features integration}{20}
+\contentsline {section}{\numberline {2.3}Local features and landmark estimation}{20}
+\contentsline {section}{\numberline {2.4}Result}{20}
+\contentsline {section}{\numberline {2.5}Conclusion}{21}
+\contentsline {chapter}{\numberline {3}Dominant points}{22}
+\contentsline {section}{\numberline {3.1}Hough Transform}{22}
+\contentsline {subsection}{\numberline {3.1.1}Generalizing Hough Transform}{22}
+\contentsline {subsubsection}{Result}{23}
+\contentsline {subsection}{\numberline {3.1.2}Probabilistic Hough Transform}{23}
+\contentsline {section}{\numberline {3.2}Template matching}{24}
+\contentsline {section}{\numberline {3.3}Image registration}{25}
+\contentsline {subsection}{\numberline {3.3.1}Principal component analysis (PCA)}{25}
 \contentsline {subsubsection}{Result}{25}
-\contentsline {subsection}{\numberline {3.3.3}Singular value decomposition (SVD)}{25}
-\contentsline {subsubsection}{Result}{27}
-\contentsline {subsection}{\numberline {3.3.4}Iterative closest point (ICP)}{27}
-\contentsline {section}{\numberline {3.4}Patch-based}{27}
-\contentsline {subsection}{\numberline {3.4.1}Comparing method between patches}{27}
-\contentsline {subsubsection}{Pixel-based distance(L1 distance)}{28}
-\contentsline {subsubsection}{Correlation}{28}
-\contentsline {subsubsection}{Descriptor distance}{28}
-\contentsline {subsubsection}{Probabilistic matching}{28}
-\contentsline {subsection}{\numberline {3.4.2}Methods on patches}{28}
-\contentsline {subsection}{\numberline {3.4.3}Application on patches}{29}
-\contentsline {subsubsection}{Inpainting and reshuffling}{29}
-\contentsline {subsubsection}{Denoising}{29}
-\contentsline {chapter}{\numberline {4}Software}{30}
-\contentsline {section}{\numberline {4.1}The design of the software}{30}
-\contentsline {section}{\numberline {4.2}The classes architecture}{31}
-\contentsline {section}{\numberline {4.3}Experiments}{32}
-\contentsline {section}{\numberline {4.4}Parameters}{33}
-\contentsline {part}{II\hspace {1em}Deep learning}{38}
-\contentsline {chapter}{\numberline {5}Machine Learning}{39}
-\contentsline {section}{\numberline {5.1}Supervised learning algorithms}{40}
-\contentsline {section}{\numberline {5.2}Unsupervised learning algorithms}{40}
-\contentsline {section}{\numberline {5.3}Stochastic Gradient Descent}{40}
-\contentsline {chapter}{\numberline {6}Classification}{41}
-\contentsline {section}{\numberline {6.1}Nearest Neighbour Classifier}{41}
-\contentsline {section}{\numberline {6.2}K-Nearest Neighbour Classifier}{42}
-\contentsline {section}{\numberline {6.3}Linear Classification}{42}
-\contentsline {subsection}{\numberline {6.3.1}Multiclass Support Vector Machine loss}{44}
-\contentsline {subsection}{\numberline {6.3.2}Softmax classifer}{44}
-\contentsline {section}{\numberline {6.4}How to determine the value of W and b?}{45}
-\contentsline {subsection}{\numberline {6.4.1}Random search and random local search}{45}
-\contentsline {subsection}{\numberline {6.4.2}Following the Grandient}{45}
-\contentsline {section}{\numberline {6.5}Backpropagation}{46}
-\contentsline {chapter}{\numberline {7}Deep Network}{48}
-\contentsline {section}{\numberline {7.1}Neural network}{48}
-\contentsline {subsection}{\numberline {7.1.1}Neural}{48}
-\contentsline {section}{\numberline {7.2}The architecture of neural networks}{49}
-\contentsline {section}{\numberline {7.3}Deep network}{49}
-\contentsline {chapter}{\numberline {8}Convolutional Neural Network}{50}
-\contentsline {section}{\numberline {8.1}Architecture}{50}
-\contentsline {subsection}{\numberline {8.1.1}Convolutional layer}{50}
-\contentsline {subsection}{\numberline {8.1.2}Pooling layer}{53}
-\contentsline {subsection}{\numberline {8.1.3}Full connected layer}{54}
-\contentsline {section}{\numberline {8.2}Case studies}{54}
-\contentsline {section}{\numberline {8.3}Caffe framework}{55}
-\contentsline {subsection}{\numberline {8.3.1}Definitions}{55}
-\contentsline {subsubsection}{Blobs}{55}
-\contentsline {subsubsection}{Layers}{55}
-\contentsline {subsubsection}{Nets}{56}
-\contentsline {subsubsection}{Forward pass}{57}
-\contentsline {subsubsection}{Backward pass}{57}
-\contentsline {subsubsection}{Solver}{58}
-\contentsline {section}{\numberline {8.4}Layers Catalogue}{58}
-\contentsline {subsubsection}{Convolution layer}{58}
-\contentsline {subsubsection}{Pooling layer}{59}
-\contentsline {subsubsection}{Loss layers}{60}
-\contentsline {subsubsection}{Activation layers}{60}
-\contentsline {subsubsection}{Inner Product layer}{61}
-\contentsline {subsubsection}{Data layer}{61}
-\contentsline {section}{\numberline {8.5}A small deep network with Caffe}{63}
-\contentsline {chapter}{\numberline {9}Using CNN to classify the patches}{64}
-\contentsline {section}{\numberline {9.1}Data}{64}
-\contentsline {section}{\numberline {9.2}The network}{64}
-\contentsline {section}{\numberline {9.3}Solver parameters}{65}
-\contentsline {section}{\numberline {9.4}Experiment and results}{65}
-\contentsline {section}{\numberline {9.5}Conclusion}{66}
-\contentsline {chapter}{\numberline {10}A comparison of Deep Learning Frameworks}{67}
-\contentsline {section}{\numberline {10.1}Overview of deep learning frameworks}{67}
-\contentsline {subsection}{\numberline {10.1.1}Caffe}{67}
-\contentsline {subsection}{\numberline {10.1.2}Theano}{68}
-\contentsline {subsection}{\numberline {10.1.3}TensorFlow}{68}
-\contentsline {subsection}{\numberline {10.1.4}Torch}{68}
-\contentsline {subsection}{\numberline {10.1.5}CNTK}{68}
-\contentsline {section}{\numberline {10.2}Environments}{68}
-\contentsline {subsection}{\numberline {10.2.1}CIFAR-10 dataset on Caffe and Theano}{68}
-\contentsline {subsection}{\numberline {10.2.2}Landmarks patches dataset on Caffe and Theano}{68}
-\contentsline {section}{\numberline {10.3}Result and discussion}{68}
-\contentsline {chapter}{\numberline {11}Automatic extraction the morphometry landmarks by Convolutional Neural Network}{69}
-\contentsline {section}{\numberline {11.1}Facial Point Detection by CNN}{69}
-\contentsline {subsection}{\numberline {11.1.1}Data}{69}
-\contentsline {subsection}{\numberline {11.1.2}Model}{69}
-\contentsline {subsection}{\numberline {11.1.3}Experiments}{70}
-\contentsline {subsubsection}{Training}{70}
-\contentsline {subsubsection}{Testing}{71}
-\contentsline {subsection}{\numberline {11.1.4}Model with pronotum landmarks data}{71}
-\contentsline {subsubsection}{Data and training}{72}
+\contentsline {subsection}{\numberline {3.3.2}PCA Iteration (PCAI)}{25}
+\contentsline {subsubsection}{Result}{26}
+\contentsline {subsection}{\numberline {3.3.3}Singular value decomposition (SVD)}{26}
+\contentsline {subsubsection}{Result}{28}
+\contentsline {subsection}{\numberline {3.3.4}Iterative closest point (ICP)}{28}
+\contentsline {section}{\numberline {3.4}Patch-based}{28}
+\contentsline {subsection}{\numberline {3.4.1}Comparing method between patches}{28}
+\contentsline {subsubsection}{Pixel-based distance(L1 distance)}{29}
+\contentsline {subsubsection}{Correlation}{29}
+\contentsline {subsubsection}{Descriptor distance}{29}
+\contentsline {subsubsection}{Probabilistic matching}{29}
+\contentsline {subsection}{\numberline {3.4.2}Methods on patches}{29}
+\contentsline {subsection}{\numberline {3.4.3}Application on patches}{30}
+\contentsline {subsubsection}{Inpainting and reshuffling}{30}
+\contentsline {subsubsection}{Denoising}{30}
+\contentsline {chapter}{\numberline {4}Software}{31}
+\contentsline {section}{\numberline {4.1}The design of the software}{31}
+\contentsline {section}{\numberline {4.2}The classes architecture}{32}
+\contentsline {section}{\numberline {4.3}Experiments}{33}
+\contentsline {section}{\numberline {4.4}Parameters}{34}
+\contentsline {part}{II\hspace {1em}Deep learning}{39}
+\contentsline {chapter}{\numberline {5}Machine Learning}{40}
+\contentsline {section}{\numberline {5.1}Supervised learning algorithms}{41}
+\contentsline {section}{\numberline {5.2}Unsupervised learning algorithms}{41}
+\contentsline {section}{\numberline {5.3}Stochastic Gradient Descent}{41}
+\contentsline {chapter}{\numberline {6}Classification}{42}
+\contentsline {section}{\numberline {6.1}Nearest Neighbour Classifier}{42}
+\contentsline {section}{\numberline {6.2}K-Nearest Neighbour Classifier}{43}
+\contentsline {section}{\numberline {6.3}Linear Classification}{43}
+\contentsline {subsection}{\numberline {6.3.1}Multiclass Support Vector Machine loss}{45}
+\contentsline {subsection}{\numberline {6.3.2}Softmax classifer}{45}
+\contentsline {section}{\numberline {6.4}How to determine the value of W and b?}{46}
+\contentsline {subsection}{\numberline {6.4.1}Random search and random local search}{46}
+\contentsline {subsection}{\numberline {6.4.2}Following the Grandient}{46}
+\contentsline {section}{\numberline {6.5}Backpropagation}{47}
+\contentsline {chapter}{\numberline {7}Deep Network}{49}
+\contentsline {section}{\numberline {7.1}Neural network}{49}
+\contentsline {subsection}{\numberline {7.1.1}Neural}{49}
+\contentsline {section}{\numberline {7.2}The architecture of neural networks}{50}
+\contentsline {section}{\numberline {7.3}Deep network}{50}
+\contentsline {chapter}{\numberline {8}Convolutional Neural Network}{51}
+\contentsline {section}{\numberline {8.1}Architecture}{51}
+\contentsline {subsection}{\numberline {8.1.1}Convolutional layer}{51}
+\contentsline {subsection}{\numberline {8.1.2}Pooling layer}{54}
+\contentsline {subsection}{\numberline {8.1.3}Full connected layer}{55}
+\contentsline {section}{\numberline {8.2}Case studies}{55}
+\contentsline {section}{\numberline {8.3}Caffe framework}{56}
+\contentsline {subsection}{\numberline {8.3.1}Definitions}{56}
+\contentsline {subsubsection}{Blobs}{56}
+\contentsline {subsubsection}{Layers}{56}
+\contentsline {subsubsection}{Nets}{57}
+\contentsline {subsubsection}{Forward pass}{58}
+\contentsline {subsubsection}{Backward pass}{58}
+\contentsline {subsubsection}{Solver}{59}
+\contentsline {section}{\numberline {8.4}Layers Catalogue}{59}
+\contentsline {subsubsection}{Convolution layer}{59}
+\contentsline {subsubsection}{Pooling layer}{60}
+\contentsline {subsubsection}{Loss layers}{61}
+\contentsline {subsubsection}{Activation layers}{61}
+\contentsline {subsubsection}{Inner Product layer}{62}
+\contentsline {subsubsection}{Data layer}{62}
+\contentsline {section}{\numberline {8.5}A small deep network with Caffe}{64}
+\contentsline {chapter}{\numberline {9}Using CNN to classify the patches}{65}
+\contentsline {section}{\numberline {9.1}Data}{65}
+\contentsline {section}{\numberline {9.2}The network}{65}
+\contentsline {section}{\numberline {9.3}Solver parameters}{66}
+\contentsline {section}{\numberline {9.4}Experiment and results}{66}
+\contentsline {section}{\numberline {9.5}Conclusion}{67}
+\contentsline {chapter}{\numberline {10}A comparison of Deep Learning Frameworks}{68}
+\contentsline {section}{\numberline {10.1}Overview of deep learning frameworks}{68}
+\contentsline {subsection}{\numberline {10.1.1}Caffe}{68}
+\contentsline {subsection}{\numberline {10.1.2}Theano}{69}
+\contentsline {subsection}{\numberline {10.1.3}TensorFlow}{69}
+\contentsline {subsection}{\numberline {10.1.4}Torch}{69}
+\contentsline {subsection}{\numberline {10.1.5}CNTK}{69}
+\contentsline {section}{\numberline {10.2}Environments}{69}
+\contentsline {subsection}{\numberline {10.2.1}CIFAR-10 dataset on Caffe and Theano}{69}
+\contentsline {subsection}{\numberline {10.2.2}Landmarks patches dataset on Caffe and Theano}{69}
+\contentsline {section}{\numberline {10.3}Result and discussion}{69}
+\contentsline {chapter}{\numberline {11}Automatic extraction the morphometry landmarks by Convolutional Neural Network}{70}
+\contentsline {section}{\numberline {11.1}Facial Point Detection by CNN}{70}
+\contentsline {subsection}{\numberline {11.1.1}Data}{70}
+\contentsline {subsection}{\numberline {11.1.2}Model}{70}
+\contentsline {subsection}{\numberline {11.1.3}Experiments}{71}
+\contentsline {subsubsection}{Training}{71}
 \contentsline {subsubsection}{Testing}{72}
-\contentsline {section}{\numberline {11.2}Automatic ear detection with CNN}{72}
-\contentsline {subsection}{\numberline {11.2.1}Dataset}{73}
-\contentsline {subsection}{\numberline {11.2.2}Network}{73}
-\contentsline {subsection}{\numberline {11.2.3}Experiments}{74}
-\contentsline {part}{III\hspace {1em}Conclusion}{76}
-\contentsline {chapter}{\numberline {12}Discussion}{77}
-\contentsline {chapter}{\numberline {13}Conclusion}{78}
+\contentsline {subsection}{\numberline {11.1.4}Model with pronotum landmarks data}{72}
+\contentsline {subsubsection}{Data and training}{73}
+\contentsline {subsubsection}{Testing}{73}
+\contentsline {section}{\numberline {11.2}Automatic ear detection with CNN}{73}
+\contentsline {subsection}{\numberline {11.2.1}Dataset}{74}
+\contentsline {subsection}{\numberline {11.2.2}Network}{74}
+\contentsline {subsection}{\numberline {11.2.3}Experiments}{75}
+\contentsline {part}{III\hspace {1em}Conclusion}{77}
+\contentsline {chapter}{\numberline {12}Discussion}{78}
+\contentsline {chapter}{\numberline {13}Conclusion}{79}

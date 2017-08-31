@@ -52,7 +52,7 @@ The intensity of destination pixels will be set to 0 if if its intensity \texttt
 \end{equation}
 \subsection{Threshold value parameter}
 The key of threshold method is how to decide the threshold value ? In most of application, the threshold value is setted by manual. Besides, this value can be detect automatically. In the context of thesis, we applying a method to determine the threshold value by analysing the histogram of the gray-scale image. For the histogram, we indicate the peaks and valley of the histogram. The threshold value is mean between two values at the histogram slopes(between peak and valley).
-\subsection{Post process}
+\subsection{Post process}\label{postprocess}
 In threshold method, if we can choose a good threshold value, the segmentation is very good. However, removing  wrong the interested characteristics is unavoidable. So, after thresholing the image, we continue post-process to evaluate the result of segmetation. The post-process method is based on ``line scan" idea. It is used to fixed the wrong hole on the object in the image. The steps of method are followed:
 \begin{enumerate}
 	\item Find the begin of the hole (initialize line)
@@ -243,6 +243,41 @@ The experiment is done on the set of the mandibles and body part of beetle. The 
 \caption{The result of bounding box on beetle}
 \label{figrboxes}
 \end{figure}~\\[0.2cm]
+\subsection{Bounding box on Pronotum}
+The method that used to detect bounding box on pronotum includes 3 main steps:
+\begin{enumerate}
+	\item Threshold the image (binary threshold) and fill the holes inside the object.
+	\item Detecting the contours points of the object.
+	\item Bounding box detection
+\end{enumerate}
+
+
+Firstly, image was thresholded by applying binary threshold. The threshold value was detected by analysing the histogram of image. Then, holes which inside the object are filled by using the ``line-based" method(section \ref{postprocess}).
+
+Secondly, the contours points of the object are indicated as following:
+\begin{enumerate}
+	\item A point insides the object is chosen, called \textit{origin}.
+	\item Find the intersection between horizontal, vertical line via \textit{origin} and the background.
+	\item Finding the median point for each pairs of intersection points. 
+	\item Finding the intersection between median line (line via origin point and median point) and the background. 
+	\item The method will be stopped after a number of iteration which setted by user.
+	\item The intersection points are the contours points of the object.
+\end{enumerate}
+
+
+Finally, four locations of bounding box are detected by analysing the contours points.
+\begin{enumerate}
+	\item Dividing the contours points into two groups. The first group stays on the left of origin point, remaining group stays on the right of origin point.
+	\item For each group, two corners ((top-left, bottom-left) or (top-right, bottom-right)) of bounding box are detected:
+		\begin{enumerate}
+			\item The points are sorted following y-direction. 
+			Then, the point that has the maximum distance with vertical line (when we compute the contours points) is detected.		
+			\item Next, the points are continue split into two groups. The first group begins from beginning point to the maximum point, and the second group is remaining points. The minimum point is determined in each group (the point that has the minimum distance to vertical line).
+			\item The coordinates of the bounding box are combined from the maximum and minimum points of each group. The value of x-coordinate is the x-coordinate of maximum point. The y-coordinates are the y-coordinate of minimum points.
+		\end{enumerate}			
+\end{enumerate}
+ \subsubsection{Result}
+ 
 \section{Texture segmentation}
 Texture is an important characteristic for the analysis the image. It is widely used to segment the image into regions and classify these regions. In another field, texture can be defining the characteristic of regions and critical in calculating the correct information. In intensity information side, texture provides for us the intensities of the image by the information of the pixels on the image. Texture segmentation is the methods which used to detect the border of the regions in the image. Those methods can be classified into three classes: \textit{region-based} includes the methods that detect the regions in the image; \textit{boundary-based} includes the methods that detect the border between the regions; and \textit{a hybrid} of two classes. Even using any methods, the textures firstly must be characterize the distribution of the pixels on the image. This section will present the methods to describe and segment the texture.
 \subsection{Texture description}
