@@ -130,19 +130,27 @@
 \contentsline {subsection}{\numberline {10.2.2}Landmarks patches dataset on Caffe and Theano}{69}
 \contentsline {section}{\numberline {10.3}Result and discussion}{69}
 \contentsline {chapter}{\numberline {11}Automatic extraction the morphometry landmarks by Convolutional Neural Network}{70}
-\contentsline {section}{\numberline {11.1}Facial Point Detection by CNN}{70}
+\contentsline {section}{\numberline {11.1}Model 1: Facial point detection by CNN}{70}
 \contentsline {subsection}{\numberline {11.1.1}Data}{70}
-\contentsline {subsection}{\numberline {11.1.2}Model}{70}
+\contentsline {subsection}{\numberline {11.1.2}Architecture}{70}
 \contentsline {subsection}{\numberline {11.1.3}Experiments}{71}
 \contentsline {subsubsection}{Training}{71}
 \contentsline {subsubsection}{Testing}{72}
-\contentsline {subsection}{\numberline {11.1.4}Model with pronotum landmarks data}{72}
-\contentsline {subsubsection}{Data and training}{73}
-\contentsline {subsubsection}{Testing}{73}
-\contentsline {section}{\numberline {11.2}Automatic ear detection with CNN}{73}
-\contentsline {subsection}{\numberline {11.2.1}Dataset}{74}
-\contentsline {subsection}{\numberline {11.2.2}Network}{74}
-\contentsline {subsection}{\numberline {11.2.3}Experiments}{75}
-\contentsline {part}{III\hspace {1em}Conclusion}{77}
-\contentsline {chapter}{\numberline {12}Discussion}{78}
-\contentsline {chapter}{\numberline {13}Conclusion}{79}
+\contentsline {section}{\numberline {11.2}Model 2: Automatic ear landmarks detection by CNN}{72}
+\contentsline {subsection}{\numberline {11.2.1}Dataset}{72}
+\contentsline {subsection}{\numberline {11.2.2}Network}{73}
+\contentsline {subsection}{\numberline {11.2.3}Experiments}{73}
+\contentsline {section}{\numberline {11.3}Model 1 and model 2 on pronotum}{75}
+\contentsline {subsection}{\numberline {11.3.1}Data preparing}{75}
+\contentsline {subsection}{\numberline {11.3.2}Model 1 and pronotum landmarks}{76}
+\contentsline {subsubsection}{Testing}{76}
+\contentsline {subsection}{\numberline {11.3.3}Model 2 and pronotum landmarks}{76}
+\contentsline {subsection}{\numberline {11.3.4}Comparing model 1 and model 2}{76}
+\contentsline {section}{\numberline {11.4}Proposed architecture}{77}
+\contentsline {subsection}{\numberline {11.4.1}Model}{77}
+\contentsline {subsection}{\numberline {11.4.2}Parameters}{77}
+\contentsline {subsection}{\numberline {11.4.3}Training}{77}
+\contentsline {section}{\numberline {11.5}Conclusions}{77}
+\contentsline {part}{III\hspace {1em}Conclusion}{78}
+\contentsline {chapter}{\numberline {12}Discussion}{79}
+\contentsline {chapter}{\numberline {13}Conclusion}{80}
