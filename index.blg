@@ -22,45 +22,45 @@ Warning--I didn't find a database entry for "•"
 Warning--there's a number but no volume in canny1986computational
 Warning--empty journal in fechner1948elements
 Warning--empty year in barnessurvey
-You've used 38 entries,
+You've used 40 entries,
             1791 wiz_defined-function locations,
-            689 strings with 10387 characters,
-and the built_in function-call counts, 9793 in all, are:
-= -- 931
-> -- 381
-< -- 10
-+ -- 143
-- -- 105
-* -- 664
-:= -- 1482
-add.period$ -- 120
-call.type$ -- 38
-change.case$ -- 38
+            697 strings with 10697 characters,
+and the built_in function-call counts, 10327 in all, are:
+= -- 972
+> -- 418
+< -- 11
++ -- 156
+- -- 116
+* -- 699
+:= -- 1565
+add.period$ -- 126
+call.type$ -- 40
+change.case$ -- 40
 chr.to.int$ -- 0
-cite$ -- 41
-duplicate$ -- 439
-empty$ -- 958
-format.name$ -- 105
-if$ -- 2214
+cite$ -- 43
+duplicate$ -- 462
+empty$ -- 1009
+format.name$ -- 116
+if$ -- 2337
 int.to.chr$ -- 0
-int.to.str$ -- 38
-missing$ -- 37
-newline$ -- 193
-num.names$ -- 38
-pop$ -- 110
+int.to.str$ -- 40
+missing$ -- 38
+newline$ -- 202
+num.names$ -- 40
+pop$ -- 123
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 222
+skip$ -- 234
 stack$ -- 0
-substring$ -- 780
-swap$ -- 125
-text.length$ -- 10
+substring$ -- 799
+swap$ -- 132
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 109
-width$ -- 40
-write$ -- 418
+while$ -- 114
+width$ -- 42
+write$ -- 438
 (There were 4 warnings)

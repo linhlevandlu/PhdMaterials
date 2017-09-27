@@ -1,0 +1,519 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.23)  27 SEP 2017 13:10
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**cnnlandmarks.tex
+(./cnnlandmarks.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/preprint/fullpage.sty
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip43
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count87
+\Gm@cntv=\count88
+\c@Gm@tempcnt=\count89
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip44
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen111
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen112
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count90
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count91
+\leftroot@=\count92
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count93
+\DOTSCASE@=\count94
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen113
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
+\dotsspace@=\muskip10
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
+\tag@help=\toks17
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
+\andhelp@=\toks18
+\eqnshift@=\dimen114
+\alignsep@=\dimen115
+\tagshift@=\dimen116
+\tagwidth@=\dimen117
+\totwidth@=\dimen118
+\lineht@=\dimen119
+\@envbody=\toks19
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen120
+\captionmargin@=\dimen121
+\captionwidth=\dimen122
+\caption@tempdima=\dimen123
+\caption@indent=\dimen124
+\caption@parindent=\dimen125
+\caption@hangindent=\dimen126
+)
+\c@ContinuedFloat=\count102
+)
+\c@KVtest=\count103
+\sf@farskip=\skip47
+\sf@captopadj=\dimen127
+\sf@capskip=\skip48
+\sf@nearskip=\skip49
+\c@subfigure=\count104
+\c@subfigure@save=\count105
+\c@lofdepth=\count106
+\c@subtable=\count107
+\c@subtable@save=\count108
+\c@lotdepth=\count109
+\sf@top=\skip50
+\sf@bottom=\skip51
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count110
+))
+\Gin@req@height=\dimen128
+\Gin@req@width=\dimen129
+)
+(./cnnlandmarks.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+)
+\openout1 = `cnnlandmarks.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=731.23584pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-15.36449pt
+* \headheight=0.0pt
+* \headsep=0.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count111
+\scratchdimen=\dimen130
+\scratchbox=\box28
+\nofMPsegments=\count112
+\nofMParguments=\count113
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count114
+\MPscratchDim=\dimen131
+\MPnumerator=\count115
+\makeMPintoPDFobject=\count116
+\everyMPtoPDFconversion=\toks22
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+<images/3levels.png, id=1, 1364.09625pt x 409.53pt>
+File: images/3levels.png Graphic file (type png)
+ <use images/3levels.png>
+Package pdftex.def Info: images/3levels.png used on input line 24.
+(pdftex.def)             Requested size: 477.44084pt x 143.33765pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/1Fconv.png, id=2, 960.58875pt x 310.15875pt>
+File: images/1Fconv.png Graphic file (type png)
+ <use images/1Fconv.png>
+Package pdftex.def Info: images/1Fconv.png used on input line 32.
+(pdftex.def)             Requested size: 288.17885pt x 93.04834pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 49.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 49.
+
+<images/level1_test.png, id=14, 1445.4pt x 1084.05pt>
+File: images/level1_test.png Graphic file (type png)
+
+<use images/level1_test.png>
+Package pdftex.def Info: images/level1_test.png used on input line 57.
+(pdftex.def)             Requested size: 433.62335pt x 325.21751pt.
+
+<images/level2_test.png, id=16, 1445.4pt x 1084.05pt>
+File: images/level2_test.png Graphic file (type png)
+
+<use images/level2_test.png>
+Package pdftex.def Info: images/level2_test.png used on input line 63.
+(pdftex.def)             Requested size: 433.62335pt x 325.21751pt.
+
+<images/level3_test.png, id=17, 1445.4pt x 1084.05pt>
+File: images/level3_test.png Graphic file (type png)
+
+<use images/level3_test.png>
+Package pdftex.def Info: images/level3_test.png used on input line 69.
+(pdftex.def)             Requested size: 433.62335pt x 325.21751pt.
+ [2 <./images/3levels.png> <./images/1Fconv.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/ear_cnn.png, id=26, 1143.27126pt x 785.93625pt>
+File: images/ear_cnn.png Graphic file (type png)
+
+<use images/ear_cnn.png>
+Package pdftex.def Info: images/ear_cnn.png used on input line 81.
+(pdftex.def)             Requested size: 457.3004pt x 314.36893pt.
+ [3 <./images/level1_test.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/trainloss.png, id=32, 1345.025pt x 767.86874pt>
+File: images/trainloss.png Graphic file (type png)
+
+<use images/trainloss.png>
+Package pdftex.def Info: images/trainloss.png used on input line 120.
+(pdftex.def)             Requested size: 363.1616pt x 207.32733pt.
+
+<images/figure_1-1.png, id=33, 1695.4542pt x 922.8879pt>
+File: images/figure_1-1.png Graphic file (type png)
+
+<use images/figure_1-1.png>
+Package pdftex.def Info: images/figure_1-1.png used on input line 127.
+(pdftex.def)             Requested size: 457.77876pt x 249.18306pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4 <./images/level2_test.png>]
+
+LaTeX Warning: Text page 5 contains only floats.
+
+[5 <./images/level3_test.png> <./images/ear_cnn.png>] [6 <./images/trainloss.pn
+g> <./images/figure_1-1.png>] <./images/test1.JPG, id=46, 256.96pt x 192.72pt>
+File: ./images/test1.JPG Graphic file (type jpg)
+
+<use ./images/test1.JPG>
+Package pdftex.def Info: ./images/test1.JPG used on input line 159.
+(pdftex.def)             Requested size: 96.73788pt x 72.55505pt.
+ <./images/test2.JPG, id=47, 256.96pt x 192.72pt>
+File: ./images/test2.JPG Graphic file (type jpg)
+
+<use ./images/test2.JPG>
+Package pdftex.def Info: ./images/test2.JPG used on input line 160.
+(pdftex.def)             Requested size: 96.73788pt x 72.55505pt.
+ <./images/test3.JPG, id=48, 256.96pt x 192.72pt>
+File: ./images/test3.JPG Graphic file (type jpg)
+
+<use ./images/test3.JPG>
+Package pdftex.def Info: ./images/test3.JPG used on input line 161.
+(pdftex.def)             Requested size: 96.73788pt x 72.55505pt.
+ <./images/test4.JPG, id=49, 256.96pt x 192.72pt>
+File: ./images/test4.JPG Graphic file (type jpg)
+
+<use ./images/test4.JPG>
+Package pdftex.def Info: ./images/test4.JPG used on input line 162.
+(pdftex.def)             Requested size: 96.73788pt x 72.55505pt.
+ [7 <./images/test1.JPG> <./images/test2.JPG> <./images/test3.JPG> <./images/te
+st4.JPG>]
+<images/figure_1_loss_celia.png, id=54, 578.16pt x 433.62pt>
+File: images/figure_1_loss_celia.png Graphic file (type png)
+
+<use images/figure_1_loss_celia.png>
+Package pdftex.def Info: images/figure_1_loss_celia.png used on input line 174.
+
+(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
+
+<images/figure_1_celia.png, id=55, 1695.4542pt x 922.8879pt>
+File: images/figure_1_celia.png Graphic file (type png)
+
+<use images/figure_1_celia.png>
+Package pdftex.def Info: images/figure_1_celia.png used on input line 181.
+(pdftex.def)             Requested size: 423.86252pt x 230.7214pt.
+
+<images/proposed_model.png, id=56, 1161.33875pt x 138.5175pt>
+File: images/proposed_model.png Graphic file (type png)
+
+<use images/proposed_model.png>
+Package pdftex.def Info: images/proposed_model.png used on input line 202.
+(pdftex.def)             Requested size: 464.52727pt x 55.406pt.
+ [8 <./images/figure_1_loss_celia.png> <./images/figure_1_celia.png>]
+<images/figure_1_loss_cnn3_3000_2.png, id=63, 1695.4542pt x 922.8879pt>
+File: images/figure_1_loss_cnn3_3000_2.png Graphic file (type png)
+
+<use images/figure_1_loss_cnn3_3000_2.png>
+Package pdftex.def Info: images/figure_1_loss_cnn3_3000_2.png used on input lin
+e 210.
+(pdftex.def)             Requested size: 423.86252pt x 230.7214pt.
+
+<images/figure_1_cnn3_3000_2.png, id=64, 1695.4542pt x 922.8879pt>
+File: images/figure_1_cnn3_3000_2.png Graphic file (type png)
+
+<use images/figure_1_cnn3_3000_2.png>
+Package pdftex.def Info: images/figure_1_cnn3_3000_2.png used on input line 218
+.
+(pdftex.def)             Requested size: 508.64018pt x 276.8685pt.
+
+Overfull \hbox (24.94331pt too wide) in paragraph at lines 218--219
+ [][] 
+ []
+
+<images/plandmark.png, id=65, 1097.09875pt x 829.0975pt>
+File: images/plandmark.png Graphic file (type png)
+
+<use images/plandmark.png>
+Package pdftex.def Info: images/plandmark.png used on input line 224.
+(pdftex.def)             Requested size: 329.13217pt x 248.73117pt.
+ [9 <./images/proposed_model.png> <./images/figure_1_loss_cnn3_3000_2.png>] (./
+cnnlandmarks.bbl [10 <./images/figure_1_cnn3_3000_2.png> <./images/plandmark.pn
+g>]
+Underfull \hbox (badness 1931) in paragraph at lines 10--16
+[]\OT1/cmr/m/n/12 Celia Cin-tas, Mir-sha Quinto-S^^Sanchez, Vic-tor Acu~na, Car
+-olina Paschetta, Soledad
+ []
+
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¼ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
+) [11] (./cnnlandmarks.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3935 strings out of 493304
+ 59689 string characters out of 6139871
+ 123558 words of memory out of 5000000
+ 7327 multiletter control sequences out of 15000+600000
+ 11115 words of font info for 40 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 44i,10n,47p,1019b,364s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on cnnlandmarks.pdf (11 pages, 6541686 bytes).
+PDF statistics:
+ 119 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+

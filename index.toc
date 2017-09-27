@@ -141,16 +141,14 @@
 \contentsline {subsection}{\numberline {11.2.2}Network}{73}
 \contentsline {subsection}{\numberline {11.2.3}Experiments}{73}
 \contentsline {section}{\numberline {11.3}Model 1 and model 2 on pronotum}{75}
-\contentsline {subsection}{\numberline {11.3.1}Data preparing}{75}
+\contentsline {subsection}{\numberline {11.3.1}Dataset preparing}{75}
 \contentsline {subsection}{\numberline {11.3.2}Model 1 and pronotum landmarks}{76}
 \contentsline {subsubsection}{Testing}{76}
-\contentsline {subsection}{\numberline {11.3.3}Model 2 and pronotum landmarks}{76}
-\contentsline {subsection}{\numberline {11.3.4}Comparing model 1 and model 2}{76}
-\contentsline {section}{\numberline {11.4}Proposed architecture}{77}
-\contentsline {subsection}{\numberline {11.4.1}Model}{77}
-\contentsline {subsection}{\numberline {11.4.2}Parameters}{77}
-\contentsline {subsection}{\numberline {11.4.3}Training}{77}
-\contentsline {section}{\numberline {11.5}Conclusions}{77}
-\contentsline {part}{III\hspace {1em}Conclusion}{78}
-\contentsline {chapter}{\numberline {12}Discussion}{79}
-\contentsline {chapter}{\numberline {13}Conclusion}{80}
+\contentsline {subsection}{\numberline {11.3.3}Model 2 and pronotum landmarks}{77}
+\contentsline {section}{\numberline {11.4}Proposed architecture}{78}
+\contentsline {subsection}{\numberline {11.4.1}Model and parameters}{78}
+\contentsline {subsection}{\numberline {11.4.2}Training and experiments}{78}
+\contentsline {section}{\numberline {11.5}Conclusions}{80}
+\contentsline {part}{III\hspace {1em}Conclusion}{81}
+\contentsline {chapter}{\numberline {12}Discussion}{82}
+\contentsline {chapter}{\numberline {13}Conclusion}{83}

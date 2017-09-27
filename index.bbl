@@ -217,4 +217,15 @@ Gary~B Huang, Manu Ramesh, Tamara Berg, and Erik Learned-Miller.
 \newblock Technical report, Technical Report 07-49, University of
   Massachusetts, Amherst, 2007.
 
+\bibitem{lasagne}
+Sander Dieleman, Jan Schlüter, Colin Raffel, Eben Olson, Søren~Kaae
+  Sønderby, Daniel Nouri, et~al.
+\newblock Lasagne: First release., August 2015.
+
+\bibitem{lecun2012efficient}
+Yann~A LeCun, L{\'e}on Bottou, Genevieve~B Orr, and Klaus-Robert M{\"u}ller.
+\newblock Efficient backprop.
+\newblock In {\em Neural networks: Tricks of the trade}, pages 9--48. Springer,
+  2012.
+
 \end{thebibliography}
