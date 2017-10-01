@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{subfig}
 \usepackage{graphicx}
+\usepackage{caption}
 \begin{document}
 \title{Morphometry landmarks detection by convolutional neural network}
 \author{LE Van Linh and BEURTON-AIMAR Marie}
@@ -26,15 +27,23 @@ The proposed architecture includes 3-levels of CNN: three networks at the first 
 	\label{3levels}
 \end{figure}
 
-At the first level, three CNNs are employed to study the location of the facial points: F1, EN1, NM1 whose input regions cover the whole face. F1 is studied all the position of five landmarks; EN1 is worked on the eyes and nose while NM1 worked on nose and the mouth corners. Each network predicts the landmarks corresponding with the region that it covers. At the end of level 1, the coordinate of each landmark is averaged of coordinates that predicted from three networks. Fig.\ref{1Fconv} illustrates the deep structure of F1, which contains four convolutional layers followed by max pooling and two dense layers. EN1 and NM1 take the same structure but with different size of the input.
+At the first level, three CNNs are employed to study the location of the facial points: F1, EN1, NM1 whose input regions cover the whole face(size of $39 \times 39$). F1 is studied all the position of five landmarks; EN1 is worked on the eyes and nose while NM1 worked on nose and the mouth corners. Each network predicts the landmarks corresponding with the region that it covers. At the end of level 1, the coordinate of each landmark is averaged of coordinates that predicted from three networks. Fig.\ref{1Fconv} illustrates the deep structure of the networks at level 1, which contains four convolutional layers followed by max pooling and two dense layers. F1, EN1, and NM1 take the same structure but with different size of the input ($39 \times 31$) and different output at full-connected layers to suitable with the number of predicted landmarks.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.3]{images/1Fconv}
-	\caption{The structure of F1-convolutional network}
+	\includegraphics[scale=0.5]{images/cnn_level1}
+	\caption{The structure of the networks in level 1}
 	\label{1Fconv}
 \end{figure}
 
-The networks at the second and third levels take local patches centered at the predicted position of previous levels as input. Besides, they allowed to make small changes to previous prediction. The size of patches are also reduced along with the cascade model. For each position, two networks are used to predict the new positions. The last predicted position is average of the new positions. With 3-levels model, the purpose of the networks at the first level are estimated the landmark positions with large errors; the networks at last two levels are designed to achieve high accuracy.
+The networks at the second and third levels take local patches centered at the predicted position of previous levels as input. Besides, they allowed to make small changes to previous prediction. The size of patches are also reduced along with the cascade model. For each position, two networks are used to predict the new positions. The last predicted position is average of the new positions. Fig.\ref{2lvconv} illustrates the architecture of the networks in level 2 and level 3. Basically, the networks in last two levels are similar, the only difference is the way to choose the patch around the landmark. A padding is added to the coordinates of the landmark to make the change of the patches i.e $0.16, 0.18$ in level 2 and $0.11, 0.12$ in level 3. Then, the patch is resized to the size of $15 \times 15$ before giving the networks.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{images/cnn_level2}
+	\caption{The structure of the networks in level 2, level 3}
+	\label{2lvconv}
+\end{figure}
+
+ With 3-levels model, the purpose of the networks at the first level are estimated the landmark positions with large errors; the networks at last two levels are designed to achieve high accuracy.
 \subsection{Experiments}
 \subsubsection{Training}
 At the first level, the patches according the bounding boxes (size of $39 \times 39$) are used as the input of the networks. At the following levels, the patches centered at previous predicted position is used to train. The size of the patches is decreased for each level. The learnable parameters include weight w, the gain g and the bias b which are initialized by small random number and learned by stochastic gradient descent.
@@ -52,21 +61,29 @@ Where:
 \end{itemize}
 \subsubsection{Testing}
 The model is tested with a dataset of 2557 face images. The image with the bounding box of the face is used as the input of the model. At the end, the predicted position is estimated from the model. By using the way in Eq.(\ref{eq1}) to evaluate the model, the error statistic on each level is obtained (Figs. \ref{rslevel1}, \ref{rslevel2}, \ref{rslevel3}).
-\begin{figure}[!h]
+%\begin{table}[h!]
+%	\centering
+%	\begin{tabular}{c}
+%	\includegraphics[scale=0.3]{images/level1_test}~\\
+%	\includegraphics[scale=0.3]{images/level2_test}~\\
+%	\includegraphics[scale=0.3]{images/level3_test}
+%	\end{tabular}	
+%\end{table}
+\begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.3]{images/level1_test}
+	\includegraphics[scale=0.25]{images/level1_test}
 	\caption{The error on each landmark in level 1}
 	\label{rslevel1}
 \end{figure}
-\begin{figure}[!h]
+\begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.3]{images/level2_test}
+	\includegraphics[scale=0.25]{images/level2_test}
 	\caption{The error on each landmark in level 2}
 	\label{rslevel2}
 \end{figure}
-\begin{figure}[!h]
+	\begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.3]{images/level3_test}
+	\includegraphics[scale=0.25]{images/level3_test}
 	\caption{The error on each landmark in level 3}
 	\label{rslevel3}
 \end{figure}
