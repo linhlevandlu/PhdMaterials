@@ -88,11 +88,11 @@ The model is tested with a dataset of 2557 face images. The image with the bound
 	\label{rslevel3}
 \end{figure}
 \section{Model 2: Automatic ear landmarks detection by CNN}
-Celia Cintas et al \cite{cintas2016automatic} proposed a method based on geometric morphometric and deep learning for automatic ear detection and feature extraction in the form of landmarks. The convolutional neural network was trained with a set of manually landmarks examples. The network is able to provide the morphometric landmarks on ear image automatically.
+Celia Cintas et al\cite{cintas2016automatic} proposed a method based on geometric morphometric and deep learning for automatic ear detection and feature extraction in the form of landmarks. The convolutional neural network was trained with a set of manually landmarks examples. The network is able to provide the morphometric landmarks on ear image automatically.
 \subsection{Dataset}
 The image and manual landmark belong to the CANDELA initiative \footnote{https://www.ucl.ac.uk/candela}, a project includes geneticists, bioinformatics and social-anthropologists interested on Latin American. CANDELA contains 7500 images with the size of $2136 \times 3216$. The provided dataset contains 2753 images which extracted from the CANDELA dataset. For each image, a set of 45 landmarks and semi-landmarks provided by human operators. The dataset was split into a training set with 2051 images (75\%) and a validation set of 684 images (25\%).
 \subsection{Network}
-Three models were designed and trained for performing the automatic landmarks task. These architectures are different in the number of convolution layers, the filter sizes, and the learning rate. An image with a single channel of the size  $96 \times 96$ with brightness scaled to $[0,1]$, is taken as the input of the network. The target (landmarks coordinates) is scaled to $[-1,1]$. \textbf{Fig.\ref{1Econv}} shows the best architecture. In this architecture, a structure of two convolutional layers with the filters, followed by maximum pooling and dropout layer. This structure is repeated three times to obtain features at different levels with different size of filters. After extraction the features, two fully connected linear layers with 1500 units each and a dropout layer is hired. The output layer contains 90 output units (corresponding with 45 landmarks) for the predicted position of the landmarks. The implementation used Python and the Lasagne library\cite{lasagne}.
+Three models were designed and trained for performing the automatic landmarks task. These architectures are different in the number of convolution layers, the filter sizes, and the learning rate. An image with a single channel of the size  $96 \times 96$ with brightness scaled to $[0,1]$, is taken as the input of the network. The target (landmarks coordinates) is scaled to $[-1,1]$. \textbf{Fig.\ref{1Econv}} shows the best architecture. In this architecture, a structure of two convolutional layers with the filters, followed by maximum pooling and dropout layer. This structure is repeated three times to obtain features at different levels with different size of filters(i.e $4 \times 4$ and $3 \times 3$). After extraction the features, two fully connected linear layers with 1500 units each and a dropout layer is hired. The output layer contains 90 output units corresponding with 45 landmarks for the predicted position of the landmarks. The implementation used Python and the Lasagne library\cite{lasagne}.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.4]{images/ear_cnn}
@@ -131,7 +131,7 @@ Three models were designed and trained for performing the automatic landmarks ta
 %	\label{tbear2}
 %\end{table}\\
 
-Because the CANDELA dataset is not published. Another dataset was chosen to study the network. The new dataset was used for the Facial Keypoint Detection including 7049 gray-scale images ($96 \times 96$). For each image, we are supported learn to find the position of 15 landmarks. After dropping some missing data, the dataset remains 2140 images. All the images with coordinates of manual landmarks is stored in csv file and fetched into the network. The training and validation loss are shown in Fig.\ref{earLosstrain}. The training is finished after 3000 iterations with the loss arround $10^{-3}$.
+Because the CANDELA dataset is not published. Another dataset was chosen to study the network. The new dataset was used for the Facial Keypoint Detection including 7049 gray-scale images ($96 \times 96$). For each image, we are supported learn to find the position of 15 landmarks. After dropping some missing data, the dataset remains 2140 images. All the images with coordinates of manual landmarks is stored in csv file and fetched into the network. During the training and validation, the usual quality metrics for regression problems is used, in particular, root mean square error (RMSE). Fig.\ref{earLosstrain} shows the learning curves of the model on training and validation set error. The training is finished after 3000 iterations with the loss arround $10^{-3}$.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.27]{images/trainloss}
@@ -147,19 +147,19 @@ Fig.\ref{earTest} shows some test on the real facial images.
 \end{figure}
 \section{Model 1 and model 2 on pronotum}
 \subsection{Dataset preparing}
-The dataset includes 293 pronotum images. The images are divided into three subsets: the training set (200 images), the validation set (60 images) and the testing set (33 images). Because the dataset is limited and the models are worked on gray-scale images, we applied some ways to en-large the dataset. Firstly, for each original image in RGB, each channel is modified by adding some values. Secondly, the channels of the original image are split. So, we have obtained 1600 images for the training set and 480 images for the validation set. At the end, the images are down-sampled with the  size of $256 \times 192$ before giving to the networks.
+The dataset includes 293 pronotum images. The images are divided into three subsets: the training set (200 images), the validation set (60 images) and the testing set (33 images). Because the dataset is limited and the models are worked on gray-scale images, we applied some ways to en-large the dataset. Firstly, for each original image in RGB, each channel is modified by adding some values. Secondly, the channels of the original image are split. So, we have obtained 1400 images for the training set and 420 images for the validation set. At the end, the images are down-sampled with the  size of $256 \times 192$ before giving to the networks.
 
 %To enlarge the dataset during training, the image in training and validation set are augmentation by modifying the valued of red and green channel. So, at the end, we have 600 and 180 images in training and validation set, respectively.
 \subsection{Model 1 and pronotum landmarks}
-The networks in the first level are modified to suitable with the prediction of landmarks on the pronotum (8-landmarks). For each pronotum, eight manual landmarks have been set. The bounding box is created depending on the coordinate of the manual landmark. The networks in the first level are used as followed:
+The networks in the first level are modified to suitable with the prediction of landmarks on the pronotum (8-landmarks). For each pronotum, eight manual landmarks have been set. The bounding box is created depending on the coordinate of the manual landmark and kept with the same size. The networks in the first level are used as followed:
 \begin{itemize}
 	\item F1 network recognizes whole pronotum bounding box with eight landmarks.
-	\item EN1 network predicts the location of the first five-landmarks.
-	\item NM1 network is used to estimated the position of last four-landmarks and the first landmark.
+	\item EN1 network predicts the location of the first five-landmarks i.e $[1..5]$.
+	\item NM1 network is used to estimated the position of last four-landmarks and the first landmark i.e $[5..8,1]$.
 	\item At the end, the position of each landmark is average of the predicted position in the networks.
 \end{itemize} 
 \subsubsection{Testing}
-The error rate of each network during training is shown in the Table.\ref{model1p}:\\
+During training, the Euclidean distance (sum of squares) is used to compute the loss of the networks. The error rate of each network during training is shown in the Table.\ref{model1p}:\\
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{l r}
@@ -180,9 +180,9 @@ The error rate of each network during training is shown in the Table.\ref{model1
 \caption{The pronotum with predicted landmarks at level 1}
 \label{model1pTest}
 \end{figure}\\
-From the result, the errors of EN1 and NM1 still high. That errors make the prediction result of level 1 do not enough good. Besides, the networks at level 2 and level 3 used the prediction at level 1 as the input data to predict the new position. So, we can not continue with the level 2, 3 until the result at level 1 is improved. Perhaps, the model in model 1 is not suitable to detect the landmarks on pronotum.  Fig. \ref{model1pTest} shows the prediction landmarks on four images. Followed that, the networks can be detected the landmarks at position 4, 5 and 7; the different position still not good.
+From Table \ref{model1p}, the errors of EN1 and NM1 are still high. That errors make the prediction result of level 1 do not enough good. Besides, the networks at level 2 and level 3 used the prediction at level 1 as the input data to predict the new position. So, we can not continue with the level 2, 3 until the result at level 1 is improved. Perhaps, the model in model 1 is not suitable to detect the landmarks on pronotum.  Fig. \ref{model1pTest} shows the prediction landmarks on four images. Followed that, the networks can detect the landmarks at positions 4, 5 and 7; the different positions still not good.
 \subsection{Model 2 and pronotum landmarks}
-The dataset is kept the same with model 1 (2080 images) but having some changes. Firstly, the ways to choose the data(to train and validate) is changed. All images are combined. Then, the network will automatically choose $75 \%$ data to train and $25 \%$ for validation. Secondly, the inputs that given to the network are just the image and landmarks(without the coordinate of the bounding box).
+The dataset is kept the same with model 1 (1820 images) but having some changes. Firstly, the ways to choose the data(to train and validate) is changed. All images are combined. Then, the network will automatically choose $75 \%$ data to train and $25 \%$ for validation. Secondly, the inputs that given to the network are just the image and landmarks(without the coordinates of the bounding box).
 
 The network is run 3000 iterations with the learning rate begin from $0.08$ to $0.01$. During training, the learning rate is changed to fit with the remaining iterations\cite{lecun2012efficient}. Fig.\ref{model2pl} shows the first 700 iterations during training. The loss did not have many changes after $100^{th}$ iteration.
 
@@ -221,15 +221,43 @@ From the tutorial of Daniel Nouri\footnote{http://danielnouri.org/} about using 
 	\label{pmodel}
 \end{figure}
 \subsection{Training and experiments}
-The model is trained with 2080 images(mentioned before) in 3000 iterations. The images are normalized before giving to the network by scaling the intensity value to [0,1], instead of 0 to 255. The target values (x and y coordinates) is kept as original. During the training, the root-mean-square error (MSE) is used to calculate the loss.
+The model is trained with 1820 images(mentioned before) in 5000 iterations. The images are normalized before giving to the network by scaling the intensity value to [0,1], instead of 0 to 255. The target values (x and y coordinates) is kept as original. During the training, the root-mean-square error (MSE) is used to calculate the loss.
+
+To evaluate the stability and confidence of the model, we proposed four ways  to propose data (the way to choose the images for test set) as Table.\ref{choosedata}:\\
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c l l}
+	Rule & Test set & Training and validation set \\ \hline
+	rule\_1 & From $1^{st}$ image to $33^{rd}$ image & Remaining images \\ \hline
+	rule\_2 & From $260^{th}$ image to $293^{rd}$ image & Remaining images\\ \hline
+	rule\_3 & Random & Random \\ \hline
+	rule\_4 & From $90^{th}$ image to $122^{nd}$ image & Remaining images\\ \hline
+	rule\_5 & From $200^{th}$ image to $232^{nd}$ image & Remaining images \\ \hline
+	\end{tabular}
+	\caption{The ways to choose the data for the network}
+	\label{choosedata}
+\end{table}~\\
+Following the ways to choose the data, the loss of training and validation is shown in Table \ref{losschoosedata}:
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c l l}
+	Rule & Training loss & Validation loss \\ \hline
+	rule\_1 & $0.12739$ & $0.63681$ \\ \hline
+	rule\_2 & $0.15204$ & $0.59480$ \\ \hline
+	rule\_3 & $0$ & $0$ \\ \hline
+	rule\_4 & $0$ & $0$ \\ \hline
+	rule\_5 & $0$ & $0$ \\ \hline
+	\end{tabular}
+	\caption{The training loss and validation loss following each rule to choose the data}
+	\label{losschoosedata}
+\end{table}
+Fig.\ref{cnn3l} shows the loss of training and validation. We can see that, at the first 200 iterations, the loss is not changed. When the training is longer and the learning rate is improved, the loss is decreased and a large distance between training and validation is appeared (over-fitting) but it is not that bad. With the loss of $0.1$ by MSE, the model is enough good to predict the landmark on pronotum. Fig.\ref{cnn3t}, Fig.\ref{cnn3t1} show the location of prediction landmarks on test dataset.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.25]{images/figure_1_loss_cnn3_3000_2}
-	\caption{The loss during training and validation}
+	\caption{The loss during training and validation of rule\_1}
 	\label{cnn3l}
 \end{figure}
-
-Fig.\ref{cnn3l} shows the loss of training and validation. We can see that, at the first 200 iterations, the loss is not changed. When the training is longer and the learning rate is improved, the loss is decreased and a large distance between training and validation is appeared (over-fitting) but it is not that bad. With the loss of $0.1$ by MSE, the model is enough good to predict the landmark on pronotum. Fig.\ref{cnn3t}, Fig.\ref{cnn3t1} show the location of prediction landmarks on test dataset.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.3]{images/figure_1_cnn3_3000_2}
