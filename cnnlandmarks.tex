@@ -244,8 +244,8 @@ Following the ways to choose the data, the loss of training and validation is sh
 	Rule & Training loss & Validation loss \\ \hline
 	rule\_1 & $0.12739$ & $0.63681$ \\ \hline
 	rule\_2 & $0.15204$ & $0.59480$ \\ \hline
-	rule\_3 & $0$ & $0$ \\ \hline
-	rule\_4 & $0$ & $0$ \\ \hline
+	rule\_3 & $0.16694$ & $0.55584$ \\ \hline
+	rule\_4 & $0.08798$ & $0.61934$ \\ \hline
 	rule\_5 & $0$ & $0$ \\ \hline
 	\end{tabular}
 	\caption{The training loss and validation loss following each rule to choose the data}
@@ -274,4 +274,40 @@ Fig.\ref{cnn3l} shows the loss of training and validation. We can see that, at t
 In this chapter, we have studied two methods to predict the landmarks on 2D gray-scale images. For each case, the model is suitable with different dataset but the results are still not good when we change the data (pronotum). Besides, we proposed a network to learn and detect the landmark positions on pronotum. The accuracy of the model is greater than $98 \%$ and we believe that the network is enough good to predict the landmark on pronotum dataset.
 \bibliographystyle{unsrt}
 \bibliography{includes/references}
+
+\appendix
+\section{The parameters in the networks of each model}
+
+\begin{table}[h!]
+	\centering
+	\resizebox{\textwidth}{!}{
+	\begin{tabular}{c | l l l l l l l l l l}
+	  & layer 0 & layer 1 & layer 2 & layer 3 & layer 4 & layer 5 & layer 6 & layer 7 & layer 8 & layer 9 \\ \hline
+	F1 & I(1,39,39) & CR(20,4,1) & P(2) & CR(40,3,1) & P(2) & CR(60,3,1) & P(2) & CR(80,2,1) & F(120) & F(10) \\ \hline
+	EN1 \& NM1 & I(1,31,39) & CR(20,4,1) & P(2) & CR(40,3,1) & P(2) & CR(60,3,1) & P(2) & CR(80,2,1) & F(100) & F(6) \\ \hline
+	level2 \& level 3 & I(1,15,15) & CR(20,4,1) & P(2) & CR(40,3,1) & P(2) & F(60) & F(2) & &  \\ \hline
+	\end{tabular}
+	}
+	\caption{The parameters in the networks of Model 1}
+	\label{paramter_model1}
+\end{table}
+\begin{table}[h!]
+	\centering
+	\resizebox{\textwidth}{!}{
+	\begin{tabular}{l l l l l l l l l l l l l l l l l}
+	  layer 0 & layer 1 & layer 2 & layer 3 & layer 4 & layer 5 & layer 6 & layer 7 & layer 8 & layer 9 & layer 10 & layer 11 & layer 12 & layer 13 & layer 14 & layer 15 & layer 15 \\ \hline
+	I(1,96,96) & C(32,4,1) & C(32,4,1) & P(2) & D(0.1) & C(32,3,1) & C(32,3,1) & P(2) & D(0.2) & C(64,3,1) & C(64,3,1) & P(2) & D(0.3) & F(1500) & D(0.5) & F(1500) & F(90) \\ \hline
+	\end{tabular}
+	}
+	\caption{The parameters in the networks of Model 2}
+	\label{paramter_model2}
+\end{table}
+Which:
+\begin{itemize}
+	\item I: Input(depth, height, width)
+	\item CR: Convolutional $+$ ReLU (output, filter kernel size, stride, padding = 0)
+	\item P: Maximal pooling(filter kernel size)
+	\item F: Full connected(output)
+\end{itemize}
+
 \end{document}
