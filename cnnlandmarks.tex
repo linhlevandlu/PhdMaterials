@@ -237,7 +237,7 @@ To evaluate the stability and confidence of the model, we proposed four ways  to
 	\caption{The ways to choose the data for the network}
 	\label{choosedata}
 \end{table}~\\
-Following the ways to choose the data, the loss of training and validation is shown in Table \ref{losschoosedata}:
+Following the rules to choose the data, the loss of training and validation is shown in Table \ref{losschoosedata}. From the results in the table, the training losses in the cases of \textit{rule\_4, rule\_5} are smaller than other rules; but the validation losses are stability. It means the overfitting is appeared clearly in the case of \textit{rule\_4} and \textit{rule\_5}.
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{c l l}
@@ -246,27 +246,27 @@ Following the ways to choose the data, the loss of training and validation is sh
 	rule\_2 & $0.15204$ & $0.59480$ \\ \hline
 	rule\_3 & $0.16694$ & $0.55584$ \\ \hline
 	rule\_4 & $0.08798$ & $0.61934$ \\ \hline
-	rule\_5 & $0$ & $0$ \\ \hline
+	rule\_5 & $0.0918$ & $0.52843$ \\ \hline
 	\end{tabular}
 	\caption{The training loss and validation loss following each rule to choose the data}
 	\label{losschoosedata}
-\end{table}
-Fig.\ref{cnn3l} shows the loss of training and validation. We can see that, at the first 200 iterations, the loss is not changed. When the training is longer and the learning rate is improved, the loss is decreased and a large distance between training and validation is appeared (over-fitting) but it is not that bad. With the loss of $0.1$ by MSE, the model is enough good to predict the landmark on pronotum. Fig.\ref{cnn3t}, Fig.\ref{cnn3t1} show the location of prediction landmarks on test dataset.
+\end{table}~\\[2cm]
+Fig.\ref{cnn3l} shows the loss of training and validation in the case of \textit{rule\_5}. We can see that, at the first 200 iterations, the loss is not changed. When the training is longer and the learning rate is improved, the loss is decreased and a large distance between training and validation is appeared (over-fitting) but it is not that bad. With the loss of $0.1$ by MSE, the model is enough good to predict the landmark on pronotum. Fig.\ref{cnn3t},\ref{cnn3t1} show the location of prediction landmarks on test dataset.
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.25]{images/figure_1_loss_cnn3_3000_2}
+	\includegraphics[scale=0.2]{images/figure_1_loss_cnn3_3000_2}
 	\caption{The loss during training and validation of rule\_1}
 	\label{cnn3l}
 \end{figure}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.3]{images/figure_1_cnn3_3000_2}
+	\includegraphics[scale=0.2]{images/figure_1_cnn3_3000_2}
 	\caption{The prediction landmarks on 16-pronotum images}
 	\label{cnn3t}
 \end{figure}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.3]{images/plandmark}
+	\includegraphics[scale=0.25]{images/plandmark}
 	\caption{The prediction landmarks on a pronotum}
 	\label{cnn3t1}
 \end{figure}
@@ -275,7 +275,9 @@ In this chapter, we have studied two methods to predict the landmarks on 2D gray
 \bibliographystyle{unsrt}
 \bibliography{includes/references}
 
+\pagebreak
 \appendix
+Annex
 \section{The parameters in the networks of each model}
 
 \begin{table}[h!]
@@ -295,19 +297,43 @@ In this chapter, we have studied two methods to predict the landmarks on 2D gray
 	\centering
 	\resizebox{\textwidth}{!}{
 	\begin{tabular}{l l l l l l l l l l l l l l l l l}
-	  layer 0 & layer 1 & layer 2 & layer 3 & layer 4 & layer 5 & layer 6 & layer 7 & layer 8 & layer 9 & layer 10 & layer 11 & layer 12 & layer 13 & layer 14 & layer 15 & layer 15 \\ \hline
+	  layer 0 & layer 1 & layer 2 & layer 3 & layer 4 & layer 5 & layer 6 & layer 7 & layer 8 & layer 9 & layer 10 & layer 11 & layer 12 & layer 13 & layer 14 & layer 15 & layer 16 \\ \hline
 	I(1,96,96) & C(32,4,1) & C(32,4,1) & P(2) & D(0.1) & C(32,3,1) & C(32,3,1) & P(2) & D(0.2) & C(64,3,1) & C(64,3,1) & P(2) & D(0.3) & F(1500) & D(0.5) & F(1500) & F(90) \\ \hline
 	\end{tabular}
 	}
 	\caption{The parameters in the networks of Model 2}
 	\label{paramter_model2}
 \end{table}
+\begin{table}[h!]
+	\centering
+	\resizebox{\textwidth}{!}{
+	\begin{tabular}{l l l l l l l l l l l l l l l l}
+	  layer 0 & layer 1 & layer 2 & layer 3 & layer 4 & layer 5 & layer 6 & layer 7 & layer 8 & layer 9 & layer 10 & layer 11 & layer 12 & layer 13 & layer 14 & layer 15 \\ \hline
+	I(1,245,326) & CR(25,3,1) & CR(25,3,1) & P(2) & D(0.1) & CR(25,3,1) & CR(25,3,1) & P(2) & D(0.1) & CR(50,3,1) & P(2) & D(0.1) & FR(500) & D(0.2) & FR(500) & F(1) \\ \hline
+	\end{tabular}
+	}
+	\caption{The parameters in the networks from Nicolas}
+	\label{paramter_model2n}
+\end{table}
+\begin{table}[h!]
+	\centering
+	\resizebox{\textwidth}{!}{
+	\begin{tabular}{l l l l l l l l l l l l l l l l l}
+	  layer 0 & layer 1 & layer 2 & layer 3 & layer 4 & layer 5 & layer 6 & layer 7 & layer 8 & layer 9 \\ \hline
+	I(1,192,256) & C(32,3,1) & P(2) & C(64,2,1) & P(2) & C(128,2,1) & P(2) & F(500) & F(500) & F(16) \\ \hline
+	\end{tabular}
+	}
+	\caption{The parameters in the networks of proposed model}
+	\label{paramter_model3}
+\end{table}~\\
 Which:
 \begin{itemize}
 	\item I: Input(depth, height, width)
+	\item C: Convolutional(output, filter kernel size, stride)
 	\item CR: Convolutional $+$ ReLU (output, filter kernel size, stride, padding = 0)
 	\item P: Maximal pooling(filter kernel size)
 	\item F: Full connected(output)
+	\item FR: Full connected $+$ ReLU
 \end{itemize}
 
 \end{document}
