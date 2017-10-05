@@ -213,7 +213,7 @@ Fig.\ref{model2pt} shows the prediction landmarks on 16 images. Following, the p
 %\end{table}\\
 \section{Proposed architecture}
 \subsection{Model and parameters}
-From the tutorial of Daniel Nouri\footnote{http://danielnouri.org/} about using CNN to detect facial key points. We propose a CNN to detect the landmarks on pronotum. The proposed network includes three convolutional layers followed by three maximum pooling layers and three full connected layers(Fig.\ref{pmodel}). The network receives the gray-scale image ($256 \times 192$) as the input. The deep of convolutional layers is increased from $32, 64, $ and $ 128$ with different size of filter while we keep the same size of filter for pooling layers. At the end of the network, three full-connected layers with the size of $500, 500, $ and $16$ are set up to predict the landmarks. Besides, the model is designed with a small sharing learning-rate and the momentum. The learning-rate and the momentum are changed overtime of training.
+From the tutorial of Daniel Nouri\footnote{http://danielnouri.org/} about using CNN to detect facial key points. We propose a CNN to detect the landmarks on pronotum. The proposed network includes three convolutional layers followed by three maximum pooling layers and three full connected layers(Fig.\ref{pmodel}). The network receives the gray-scale image ($256 \times 192$) as the input. The deep of convolutional layers is increased from $32, 64, $ to $ 128$ with different size of filter. The size of filters in pooling layers are kept in the same size of $2 \time 2$. At the end of the network, three full-connected layers with the size of $500, 500, $ and $16$ are set up to predict the landmarks. Besides, the model is designed with a small sharing learning-rate and the momentum. The learning-rate and the momentum are changed overtime of training.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.4]{images/proposed_model}
@@ -223,7 +223,7 @@ From the tutorial of Daniel Nouri\footnote{http://danielnouri.org/} about using 
 \subsection{Training and experiments}
 The model is trained with 1820 images(mentioned before) in 5000 iterations. The images are normalized before giving to the network by scaling the intensity value to [0,1], instead of 0 to 255. The target values (x and y coordinates) is kept as original. During the training, the root-mean-square error (MSE) is used to calculate the loss.
 
-To evaluate the stability and confidence of the model, we proposed four ways  to propose data (the way to choose the images for test set) as Table.\ref{choosedata}:\\
+To evaluate the stability and confidence of the model, we proposed several rules to select the images for the network, as Table.\ref{choosedata}:\\
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{c l l}
@@ -234,7 +234,7 @@ To evaluate the stability and confidence of the model, we proposed four ways  to
 	rule\_4 & From $90^{th}$ image to $122^{nd}$ image & Remaining images\\ \hline
 	rule\_5 & From $200^{th}$ image to $232^{nd}$ image & Remaining images \\ \hline
 	\end{tabular}
-	\caption{The ways to choose the data for the network}
+	\caption{The rules to choose the data for the network}
 	\label{choosedata}
 \end{table}~\\
 Following the rules to choose the data, the loss of training and validation is shown in Table \ref{losschoosedata}. From the results in the table, the training losses in the cases of \textit{rule\_4, rule\_5} are smaller than other rules; but the validation losses are stability. It means the overfitting is appeared clearly in the case of \textit{rule\_4} and \textit{rule\_5}.
