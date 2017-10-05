@@ -27,7 +27,7 @@ The proposed architecture includes 3-levels of CNN: three networks at the first 
 	\label{3levels}
 \end{figure}
 
-At the first level, three CNNs are employed to study the location of the facial points: F1, EN1, NM1 whose input regions cover the whole face(size of $39 \times 39$). F1 is studied all the position of five landmarks; EN1 is worked on the eyes and nose while NM1 worked on nose and the mouth corners. Each network predicts the landmarks corresponding with the region that it covers. At the end of level 1, the coordinate of each landmark is averaged of coordinates that predicted from three networks. Fig.\ref{1Fconv} illustrates the deep structure of the networks at level 1, which contains four convolutional layers followed by max pooling and two dense layers. F1, EN1, and NM1 take the same structure but with different size of the input ($39 \times 31$) and different output at full-connected layers to suitable with the number of predicted landmarks.
+At the first level, three CNNs are employed to study the location of the facial points: F1, EN1, NM1 whose input regions cover the whole face. F1 is studied all the position of five landmarks; EN1 is worked on the eyes and nose while NM1 worked on nose and the mouth corners. Each network predicts the landmarks corresponding with the region that it covers. At the end of level 1, the coordinate of each landmark is averaged of coordinates that predicted from three networks. Fig.\ref{1Fconv} illustrates the deep structure of the networks at level 1, which contains four convolutional layers followed by max pooling and two dense layers. F1, EN1, and NM1 take the same structure but with different size of the input and different output at full-connected layers to suitable with the number of predicted landmarks.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.5]{images/cnn_level1}
@@ -46,7 +46,11 @@ The networks at the second and third levels take local patches centered at the p
  With 3-levels model, the purpose of the networks at the first level are estimated the landmark positions with large errors; the networks at last two levels are designed to achieve high accuracy.
 \subsection{Experiments}
 \subsubsection{Training}
-At the first level, the patches according the bounding boxes (size of $39 \times 39$) are used as the input of the networks. At the following levels, the patches centered at previous predicted position is used to train. The size of the patches is decreased for each level. The learnable parameters include weight w, the gain g and the bias b which are initialized by small random number and learned by stochastic gradient descent.
+At the first level, $F1$ takes the whole face as input (size of $39 \times 39$ of the network and outputs the position of all the five points. $EN1$ takes the top and middle part of face as input (size of $31 \times 39$) and outputs the positions of two eye centers and nose tip. $NM1$ takes the bottom and middle part of the face to predict the positions of nose tip and two corners of mouth.
+
+All the networks at level 2 and level 3 take a small squares ($15 \times 15$)centered at the predicted position by the previous level as the input and output the incremental prediction. The last predicted positions at each level are average of corresponding positions from all the networks in each level. 
+
+During training, the size of the patches is decreased for each level. The learnable parameters include weight w, the gain g and the bias b which are initialized by small random number and learned by stochastic gradient descent.
 
 The detection error on each facial point is measured by Eq.\ref{eq1}. If the error is greater than $5\%$, it is considered as failure.
 \begin{equation}
@@ -87,10 +91,11 @@ The model is tested with a dataset of 2557 face images. The image with the bound
 	\caption{The error on each landmark in level 3}
 	\label{rslevel3}
 \end{figure}
+\pagebreak
 \section{Model 2: Automatic ear landmarks detection by CNN}
 Celia Cintas et al\cite{cintas2016automatic} proposed a method based on geometric morphometric and deep learning for automatic ear detection and feature extraction in the form of landmarks. The convolutional neural network was trained with a set of manually landmarks examples. The network is able to provide the morphometric landmarks on ear image automatically.
 \subsection{Dataset}
-The image and manual landmark belong to the CANDELA initiative \footnote{https://www.ucl.ac.uk/candela}, a project includes geneticists, bioinformatics and social-anthropologists interested on Latin American. CANDELA contains 7500 images with the size of $2136 \times 3216$. The provided dataset contains 2753 images which extracted from the CANDELA dataset. For each image, a set of 45 landmarks and semi-landmarks provided by human operators. The dataset was split into a training set with 2051 images (75\%) and a validation set of 684 images (25\%).
+The image and manual landmarks belong to the CANDELA initiative \footnote{https://www.ucl.ac.uk/candela}, a project includes geneticists, bioinformatics and social-anthropologists interested on Latin American. CANDELA contains 7500 images with the size of $2136 \times 3216$. The provided dataset contains 2753 images which extracted from the CANDELA dataset. For each image, a set of 45 landmarks and semi-landmarks provided by human operators. The dataset was split into a training set with 2051 images (75\%) and a validation set of 684 images (25\%).
 \subsection{Network}
 Three models were designed and trained for performing the automatic landmarks task. These architectures are different in the number of convolution layers, the filter sizes, and the learning rate. An image with a single channel of the size  $96 \times 96$ with brightness scaled to $[0,1]$, is taken as the input of the network. The target (landmarks coordinates) is scaled to $[-1,1]$. \textbf{Fig.\ref{1Econv}} shows the best architecture. In this architecture, a structure of two convolutional layers with the filters, followed by maximum pooling and dropout layer. This structure is repeated three times to obtain features at different levels with different size of filters(i.e $4 \times 4$ and $3 \times 3$). After extraction the features, two fully connected linear layers with 1500 units each and a dropout layer is hired. The output layer contains 90 output units corresponding with 45 landmarks for the predicted position of the landmarks. The implementation used Python and the Lasagne library\cite{lasagne}.
 \begin{figure}[h!]
@@ -182,7 +187,7 @@ During training, the Euclidean distance (sum of squares) is used to compute the 
 \end{figure}\\
 From Table \ref{model1p}, the errors of EN1 and NM1 are still high. That errors make the prediction result of level 1 do not enough good. Besides, the networks at level 2 and level 3 used the prediction at level 1 as the input data to predict the new position. So, we can not continue with the level 2, 3 until the result at level 1 is improved. Perhaps, the model in model 1 is not suitable to detect the landmarks on pronotum.  Fig. \ref{model1pTest} shows the prediction landmarks on four images. Followed that, the networks can detect the landmarks at positions 4, 5 and 7; the different positions still not good.
 \subsection{Model 2 and pronotum landmarks}
-The dataset is kept the same with model 1 (1820 images) but having some changes. Firstly, the ways to choose the data(to train and validate) is changed. All images are combined. Then, the network will automatically choose $75 \%$ data to train and $25 \%$ for validation. Secondly, the inputs that given to the network are just the image and landmarks(without the coordinates of the bounding box).
+The dataset is kept the same with model 1 (1400 images for training and 420 images for validation) but having some changes. Firstly, the ways to choose the data(to train and validate) is changed. All images are combined. Then, the network will automatically choose $75 \%$ data to train and $25 \%$ for validation. Secondly, the inputs that given to the network are just the image and landmarks(without the coordinates of the bounding box).
 
 The network is run 3000 iterations with the learning rate begin from $0.08$ to $0.01$. During training, the learning rate is changed to fit with the remaining iterations\cite{lecun2012efficient}. Fig.\ref{model2pl} shows the first 700 iterations during training. The loss did not have many changes after $100^{th}$ iteration.
 
@@ -213,7 +218,7 @@ Fig.\ref{model2pt} shows the prediction landmarks on 16 images. Following, the p
 %\end{table}\\
 \section{Proposed architecture}
 \subsection{Model and parameters}
-From the tutorial of Daniel Nouri\footnote{http://danielnouri.org/} about using CNN to detect facial key points. We propose a CNN to detect the landmarks on pronotum. The proposed network includes three convolutional layers followed by three maximum pooling layers and three full connected layers(Fig.\ref{pmodel}). The network receives the gray-scale image ($256 \times 192$) as the input. The deep of convolutional layers is increased from $32, 64, $ to $ 128$ with different size of filter. The size of filters in pooling layers are kept in the same size of $2 \time 2$. At the end of the network, three full-connected layers with the size of $500, 500, $ and $16$ are set up to predict the landmarks. Besides, the model is designed with a small sharing learning-rate and the momentum. The learning-rate and the momentum are changed overtime of training.
+From the tutorial of Daniel Nouri\footnote{http://danielnouri.org/} about using CNN to detect facial key points. We propose a CNN to detect the landmarks on pronotum. The proposed network includes three convolutional layers followed by three maximum pooling layers and three full connected layers(Fig.\ref{pmodel}). The network receives the gray-scale image ($256 \times 192$) as the input. The deep of convolutional layers is increased from $32, 64, $ to $ 128$ with different size of filter. The size of filters in pooling layers are kept in the same size of $2 \times 2$. At the end of network, three full-connected layers with the size of $500, 500, $ and $16$ are set up to predict the positions of landmarks. Besides, the model is designed with a small sharing learning-rate and the momentum. The learning-rate and the momentum are changed overtime of training.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.4]{images/proposed_model}
@@ -221,7 +226,7 @@ From the tutorial of Daniel Nouri\footnote{http://danielnouri.org/} about using 
 	\label{pmodel}
 \end{figure}
 \subsection{Training and experiments}
-The model is trained with 1820 images(mentioned before) in 5000 iterations. The images are normalized before giving to the network by scaling the intensity value to [0,1], instead of 0 to 255. The target values (x and y coordinates) is kept as original. During the training, the root-mean-square error (MSE) is used to calculate the loss.
+The model is trained with 1820 images in 5000 iterations. The images are normalized before giving to the network by scaling the intensity value to [0,1], instead of 0 to 255. The target values (x and y coordinates) is kept as original. During the training, the root-mean-square error (MSE) is used to calculate the loss.
 
 To evaluate the stability and confidence of the model, we proposed several rules to select the images for the network, as Table.\ref{choosedata}:\\
 \begin{table}[h!]
@@ -250,34 +255,91 @@ Following the rules to choose the data, the loss of training and validation is s
 	\end{tabular}
 	\caption{The training loss and validation loss following each rule to choose the data}
 	\label{losschoosedata}
-\end{table}~\\[2cm]
-Fig.\ref{cnn3l} shows the loss of training and validation in the case of \textit{rule\_5}. We can see that, at the first 200 iterations, the loss is not changed. When the training is longer and the learning rate is improved, the loss is decreased and a large distance between training and validation is appeared (over-fitting) but it is not that bad. With the loss of $0.1$ by MSE, the model is enough good to predict the landmark on pronotum. Fig.\ref{cnn3t},\ref{cnn3t1} show the location of prediction landmarks on test dataset.
-\begin{figure}[h!]
+\end{table}~\\[0.1cm]
+Fig.\ref{cnn3l} shows the training curve loss and validation curve loss of the model on each rule to choose the data. From the beginning, the loss is not changed. When the training is longer and the learning rate is improved, the loss is decreased and a large distance between training and validation is appeared (over-fitting) but it is not that bad. With the loss of $0.1$ by MSE, the model is enough good to predict the landmark on pronotum.
+
+The model is tested on the test datasets(five rules). Then, correlation between the manual landmarks and predicted landmarks is computed by applying some correlation methods (see Table.\ref{pearson}, \ref{spearman}, \ref{kendall})
+\begin{table}[h!]
 	\centering
-	\includegraphics[scale=0.2]{images/figure_1_loss_cnn3_3000_2}
-	\caption{The loss during training and validation of rule\_1}
-	\label{cnn3l}
+	\begin{tabular}{c c c}
+		Rule & x correlation & y correlation \\ \hline
+		rule\_1 & $0.9953877$ & $0.9941767$ \\ \hline
+		rule\_2 & $0.9968787$ & $0.9960827$ \\ \hline
+		rule\_3 & $0.9966784$ & $0.9957729$ \\ \hline
+		rule\_4 & $0.9975662$ & $0.9985097$ \\ \hline
+		rule\_5 & $0.9972048$ & $0.9976416$ \\ \hline
+	\end{tabular}
+	\caption{The correlation between manual and predicted landmarks by Pearson\cite{pallant2013spss} method}
+	\label{pearson}
+\end{table}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c c c}
+		Rule & x correlation & y correlation \\ \hline
+		rule\_1 & $0.9893943$ & $0.9289319$ \\ \hline
+		rule\_2 & $0.992556$ & $0.9444423$ \\ \hline
+		rule\_3 & $0.9913126$ & $0.9565425$ \\ \hline
+		rule\_4 & $0.9943106$ & $0.9789221$ \\ \hline
+		rule\_5 & $0.9920646$ & $0.9864683$ \\ \hline
+	\end{tabular}
+	\caption{The correlation between manual and predicted landmarks by Spearman\cite{myers2010research} method}
+	\label{spearman}
+\end{table}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c c c}
+		Rule & x correlation & y correlation \\ \hline
+		rule\_1 & $0.913517$ & $0.7498531$ \\ \hline
+		rule\_2 & $0.9303295$ & $0.8231899$ \\ \hline
+		rule\_3 & $0.9273002$ & $0.8273057$ \\ \hline
+		rule\_4 & $0.9419902$ & $0.8904413$ \\ \hline
+		rule\_5 & $0.9299128$ & $0.9051508$ \\ \hline
+	\end{tabular}
+	\caption{The correlation between manual and predicted landmarks by Kendall\cite{kendall1938new} method}
+	\label{kendall}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+\subfloat[rule\_1]{\label{}\includegraphics[width=0.4\textwidth]{./images/figure_1_cnn3_5000_loss_v11}}~~
+\subfloat[rule\_2]{\label{}\includegraphics[width=0.4\textwidth]{./images/figure_1_cnn3_5000_loss_v12}}\\
+\subfloat[rule\_3]{\label{}\includegraphics[width=0.4\textwidth]{./images/figure_1_cnn3_5000_loss_v13}}\\
+\subfloat[rule\_4]{\label{}\includegraphics[width=0.4\textwidth]{./images/figure_1_cnn3_5000_loss_v14}}~~
+\subfloat[rule\_5]{\label{}\includegraphics[width=0.4\textwidth]{./images/figure_1_cnn3_5000_loss_v15}}
+\caption{The loss during training and validation followed each rule to choose data }
+\label{cnn3l}
 \end{figure}
+\pagebreak
+
+Fig.\ref{cnn3t} show the predicted positions on test dataset followed rule\_3:
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[scale=0.2]{images/figure_1_loss_cnn3_3000_2}
+%	\caption{The loss during training and validation of rule\_1}
+%	\label{cnn3l}
+%\end{figure}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.2]{images/figure_1_cnn3_3000_2}
+	\includegraphics[scale=0.2]{images/figure_1_cnn3_5000_v13}
 	\caption{The prediction landmarks on 16-pronotum images}
 	\label{cnn3t}
 \end{figure}
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.25]{images/plandmark}
-	\caption{The prediction landmarks on a pronotum}
-	\label{cnn3t1}
-\end{figure}
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[scale=0.25]{images/plandmark}
+%	\caption{The prediction landmarks on a pronotum}
+%	\label{cnn3t1}
+%\end{figure}
 \section{Conclusions}
-In this chapter, we have studied two methods to predict the landmarks on 2D gray-scale images. For each case, the model is suitable with different dataset but the results are still not good when we change the data (pronotum). Besides, we proposed a network to learn and detect the landmark positions on pronotum. The accuracy of the model is greater than $98 \%$ and we believe that the network is enough good to predict the landmark on pronotum dataset.
+In this studied, two methods to predict the landmarks on 2D gray-scale images. For each case, the model is suitable with different dataset but the results are still not good when we change the data (pronotum). Besides, we proposed a network to learn and detect the landmark positions on pronotum. The accuracy of the model is greater than $98 \%$. The correlation coefficient between manual and predicted landmarks are good.
 \bibliographystyle{unsrt}
 \bibliography{includes/references}
 
 \pagebreak
 \appendix
-Annex
+\begin{center}
+\LARGE \textbf{ANNEX}
+\end{center}
 \section{The parameters in the networks of each model}
 
 \begin{table}[h!]
