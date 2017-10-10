@@ -216,7 +216,7 @@ Fig.\ref{model2pt} shows the prediction landmarks on 16 images. Following, the p
 %	Model 2 & Lasagne(Theano) & 2140 & zz\\
 %	\end{tabular}
 %\end{table}\\
-\section{Proposed architecture}
+\section{Proposed architecture (model 3)}
 \subsection{Model and parameters}
 From the tutorial of Daniel Nouri\footnote{http://danielnouri.org/} about using CNN to detect facial key points. We propose a CNN to detect the landmarks on pronotum. The proposed network includes three convolutional layers followed by three maximum pooling layers and three full connected layers(Fig.\ref{pmodel}). The network receives the gray-scale image ($256 \times 192$) as the input. The deep of convolutional layers is increased from $32, 64, $ to $ 128$ with different size of filter. The size of filters in pooling layers are kept in the same size of $2 \times 2$. At the end of network, three full-connected layers with the size of $500, 500, $ and $16$ are set up to predict the positions of landmarks. Besides, the model is designed with a small sharing learning-rate and the momentum. The learning-rate and the momentum are changed overtime of training.
 \begin{figure}[h!]
@@ -323,15 +323,38 @@ Fig.\ref{cnn3t} show the predicted positions on test dataset followed rule\_3:
 	\includegraphics[scale=0.2]{images/figure_1_cnn3_5000_v13}
 	\caption{The prediction landmarks on 16-pronotum images}
 	\label{cnn3t}
-\end{figure}
+\end{figure}~\\[2cm]
 %\begin{figure}[h!]
 %	\centering
 %	\includegraphics[scale=0.25]{images/plandmark}
 %	\caption{The prediction landmarks on a pronotum}
 %	\label{cnn3t1}
 %\end{figure}
+The network in model 3 is applied to predict the landmarks on tete and elytre with some modifications such as: the output at the last of full connected layer. The data that used to train and test are chosen by applying rule\_3. Table.\ref{tete},\ref{elytre} shown the statistic on the test set of tete and elytre by different correlation coefficient methods:
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l c c}
+		Method & x correlation & y correlation \\ \hline
+		Pearson & $0.99082758$ & $0.988833$ \\ \hline
+		Spearman & $0.9868292$ & $0.989447$ \\ \hline
+		Kendall & $0.905933$ & $0.9130359$ \\ \hline
+	\end{tabular}
+	\caption{The correlation between manual and predicted landmarks on tete images}
+	\label{tete}
+\end{table}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l c c}
+		Method & x correlation & y correlation \\ \hline
+		Pearson & $0.984969$ & $0.9976646$ \\ \hline
+		Spearman & $0.9840307$ & $0.966091$ \\ \hline
+		Kendall & $0.8996806$ & $0.846849$ \\ \hline
+	\end{tabular}
+	\caption{The correlation between manual and predicted landmarks on elytre images}
+	\label{elytre}
+\end{table}
 \section{Conclusions}
-In this studied, two methods that used to predict the landmarks on 2D gray-scale images are studied. For each case, the model is suitable with different dataset but the results are still not good when we change the data (pronotum). Besides, we proposed a network to learn and detect the landmark positions on pronotum. The accuracy of the model is greater than $98 \%$. The correlation coefficient between manual and predicted landmarks have been evaluated enough good to precise.
+In this studied, two methods that used to predict the landmarks on 2D gray-scale images are studied. For each case, the model is suitable with different dataset but the results are still not good when we change the data (pronotum). Besides, we proposed a network to learn and detect the landmark positions on pronotum. The accuracy of the model is greater than $98 \%$. The results are evaluated on 3 datasets: pronotum, tete and elytre. From the correlation coefficients of each dataset shows that if we consider on the statistic side, the coefficients are enough good to precise. But when we see the real position on each image, that is not good as we expect. It means the model is not really suitable for the problem and we need to improve the model.
 \bibliographystyle{unsrt}
 \bibliography{includes/references}
 

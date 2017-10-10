@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.23)  6 OCT 2017 10:53
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.23)  10 OCT 2017 10:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -536,10 +536,10 @@ Package pdftex.def Info: images/figure_1_cnn3_5000_v13.png used on input line 3
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(./cnnlandmarks.bbl [11 <./images/figure_1_cnn3_5000_loss_v11.png> <./images/fi
-gure_1_cnn3_5000_loss_v12.png> <./images/figure_1_cnn3_5000_loss_v13.png> <./im
-ages/figure_1_cnn3_5000_loss_v14.png> <./images/figure_1_cnn3_5000_loss_v15.png
->]
+[11 <./images/figure_1_cnn3_5000_loss_v11.png> <./images/figure_1_cnn3_5000_los
+s_v12.png> <./images/figure_1_cnn3_5000_loss_v13.png> <./images/figure_1_cnn3_5
+000_loss_v14.png> <./images/figure_1_cnn3_5000_loss_v15.png>]
+(./cnnlandmarks.bbl [12 <./images/figure_1_cnn3_5000_v13.png>]
 Underfull \hbox (badness 1931) in paragraph at lines 10--16
 []\OT1/cmr/m/n/12 Celia Cin-tas, Mir-sha Quinto-S^^Sanchez, Vic-tor Acu~na, Car
 -olina Paschetta, Soledad
@@ -551,16 +551,16 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
-) [12 <./images/figure_1_cnn3_5000_v13.png>] [13] (./cnnlandmarks.aux)
+) [13] [14] (./cnnlandmarks.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3969 strings out of 493304
- 60796 string characters out of 6139871
- 128651 words of memory out of 5000000
- 7357 multiletter control sequences out of 15000+600000
+ 3971 strings out of 493304
+ 60810 string characters out of 6139871
+ 128671 words of memory out of 5000000
+ 7359 multiletter control sequences out of 15000+600000
  11422 words of font info for 41 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  44i,10n,47p,1052b,364s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -576,10 +576,10 @@ amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on cnnlandmarks.pdf (13 pages, 6269123 bytes).
+Output written on cnnlandmarks.pdf (14 pages, 6270678 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
+ 137 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  111 words of extra memory for PDF output out of 10000 (max. 10000000)
 
