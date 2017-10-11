@@ -221,7 +221,7 @@ Fig.\ref{model2pt} shows the prediction landmarks on 16 images. Following, the p
 From the tutorial of Daniel Nouri\footnote{http://danielnouri.org/} about using CNN to detect facial key points. We propose a CNN to detect the landmarks on pronotum. The proposed network includes three convolutional layers followed by three maximum pooling layers and three full connected layers(Fig.\ref{pmodel}). The network receives the gray-scale image ($256 \times 192$) as the input. The deep of convolutional layers is increased from $32, 64, $ to $ 128$ with different size of filter. The size of filters in pooling layers are kept in the same size of $2 \times 2$. At the end of network, three full-connected layers with the size of $500, 500, $ and $16$ are set up to predict the positions of landmarks. Besides, the model is designed with a small sharing learning-rate and the momentum. The learning-rate and the momentum are changed overtime of training.
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.4]{images/proposed_model}
+	\includegraphics[scale=0.4]{images/model3}
 	\caption{The architecture of proposed model}
 	\label{pmodel}
 \end{figure}
@@ -352,7 +352,30 @@ The network in model 3 is applied to predict the landmarks on tete and elytre wi
 	\end{tabular}
 	\caption{The correlation between manual and predicted landmarks on elytre images}
 	\label{elytre}
-\end{table}
+\end{table}~\\
+From the result of Table \ref{losschoosedata}, the dataset which was chosen by rule\_3 is used to continue the experiments. To improve the results, we have modified the rule to pre-process the input data: the target (coordinates of manual landmarks) is normalized into the range of $[-1,1]$, instead of $[0,256]$ for x-coordinate and $[0,192]$ for y-coordinate. Additional, the \textit{learning rate} of the network has been changed to increase the speed of training process.
+
+After changing, the result that we obtain as we expect: training loss and validation loss have decreased significantly(training loss: \textbf{0.00002}, validation loss: \textbf{0.00012}). Thus, the landmarks coordinates have been normalized into $[-1,1]$, so, to calculate the MSE error, we will take the square error and multiply by scale ratio again: the error is arround $1.4$(validation loss). Fig.\ref{tvlscaletarget} shows the losses during training and validation. We can see that overfitting have appeared during the train and validation processes.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{images/figure_1_cnn3_3000_v13_loss_change2}
+	\caption{The training and validation loss when normalize the landmarks coordinates}
+	\label{tvlscaletarget}
+\end{figure}~\\
+To prevent the overfitting on the network, we have modified both data and model: on data side, we have changed the \textit{split} ratio to get more samples for validation set($40\%$ instead of $20\%$ of number of samples); on model side, the number of units in the last two hidden layers (full-connected layer) are increased from 500 to 1000. Besides, four dropout layers have been added into the network. They have been located following the pooling layers and the first full-connected layer. The dropout ratios are $0.1$, $0.2$, $0.3$ and $0.5$ (Fig.\ref{model3dropout}).
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.35]{images/model3_dropout}
+	\caption{The proposed model with dropout layers}
+	\label{model3dropout}
+\end{figure}~\\
+Fig.\ref{tvldropout} shows the losses after the model have been modified. The overfitting problem is solved but the losses are stability from $2000^{th}$ until the end.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.2]{images/figure_1_cnn3_3000_v13_loss_change3_dropout_increase_2}
+	\caption{The training and validation loss with dropout layers}
+	\label{tvldropout}
+\end{figure}~\\
 \section{Conclusions}
 In this studied, two methods that used to predict the landmarks on 2D gray-scale images are studied. For each case, the model is suitable with different dataset but the results are still not good when we change the data (pronotum). Besides, we proposed a network to learn and detect the landmark positions on pronotum. The accuracy of the model is greater than $98 \%$. The results are evaluated on 3 datasets: pronotum, tete and elytre. From the correlation coefficients of each dataset shows that if we consider on the statistic side, the coefficients are enough good to precise. But when we see the real position on each image, that is not good as we expect. It means the model is not really suitable for the problem and we need to improve the model.
 \bibliographystyle{unsrt}
@@ -361,7 +384,7 @@ In this studied, two methods that used to predict the landmarks on 2D gray-scale
 \pagebreak
 \appendix
 \begin{center}
-\LARGE \textbf{ANNEX}
+\LARGE \textbf{APPENDIX}
 \end{center}
 \section{The parameters in the networks of each model}
 
