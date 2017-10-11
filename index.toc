@@ -133,22 +133,22 @@
 \contentsline {section}{\numberline {11.1}Model 1: Facial point detection by CNN}{70}
 \contentsline {subsection}{\numberline {11.1.1}Data}{70}
 \contentsline {subsection}{\numberline {11.1.2}Architecture}{70}
-\contentsline {subsection}{\numberline {11.1.3}Experiments}{71}
-\contentsline {subsubsection}{Training}{71}
+\contentsline {subsection}{\numberline {11.1.3}Experiments}{72}
+\contentsline {subsubsection}{Training}{72}
 \contentsline {subsubsection}{Testing}{72}
-\contentsline {section}{\numberline {11.2}Model 2: Automatic ear landmarks detection by CNN}{72}
-\contentsline {subsection}{\numberline {11.2.1}Dataset}{72}
-\contentsline {subsection}{\numberline {11.2.2}Network}{73}
-\contentsline {subsection}{\numberline {11.2.3}Experiments}{73}
-\contentsline {section}{\numberline {11.3}Model 1 and model 2 on pronotum}{75}
-\contentsline {subsection}{\numberline {11.3.1}Dataset preparing}{75}
+\contentsline {section}{\numberline {11.2}Model 2: Automatic ear landmarks detection by CNN}{73}
+\contentsline {subsection}{\numberline {11.2.1}Dataset}{74}
+\contentsline {subsection}{\numberline {11.2.2}Network}{74}
+\contentsline {subsection}{\numberline {11.2.3}Experiments}{74}
+\contentsline {section}{\numberline {11.3}Model 1 and model 2 on pronotum}{76}
+\contentsline {subsection}{\numberline {11.3.1}Dataset preparing}{76}
 \contentsline {subsection}{\numberline {11.3.2}Model 1 and pronotum landmarks}{76}
 \contentsline {subsubsection}{Testing}{76}
 \contentsline {subsection}{\numberline {11.3.3}Model 2 and pronotum landmarks}{77}
-\contentsline {section}{\numberline {11.4}Proposed architecture}{78}
+\contentsline {section}{\numberline {11.4}Proposed architecture (model 3)}{78}
 \contentsline {subsection}{\numberline {11.4.1}Model and parameters}{78}
-\contentsline {subsection}{\numberline {11.4.2}Training and experiments}{78}
-\contentsline {section}{\numberline {11.5}Conclusions}{80}
-\contentsline {part}{III\hspace {1em}Conclusion}{81}
-\contentsline {chapter}{\numberline {12}Discussion}{82}
-\contentsline {chapter}{\numberline {13}Conclusion}{83}
+\contentsline {subsection}{\numberline {11.4.2}Training and experiments}{79}
+\contentsline {section}{\numberline {11.5}Conclusions}{83}
+\contentsline {part}{III\hspace {1em}Conclusion}{84}
+\contentsline {chapter}{\numberline {12}Discussion}{85}
+\contentsline {chapter}{\numberline {13}Conclusion}{86}

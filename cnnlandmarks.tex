@@ -4,7 +4,7 @@
 \usepackage{amsmath}
 \usepackage{subfig}
 \usepackage{graphicx}
-\usepackage{caption}
+\usepackage[justification=centering]{caption}
 \begin{document}
 \title{Morphometry landmarks detection by convolutional neural network}
 \author{LE Van Linh and BEURTON-AIMAR Marie}
@@ -369,13 +369,24 @@ To prevent the overfitting on the network, we have modified both data and model:
 	\caption{The proposed model with dropout layers}
 	\label{model3dropout}
 \end{figure}~\\
-Fig.\ref{tvldropout} shows the losses after the model have been modified. The overfitting problem is solved but the losses are stability from $2000^{th}$ until the end.
+Fig.\ref{tvldropout} shows the losses after the model have been modified. The overfitting problem is solved but the losses are stability from $2000^{th}$ until the end(we need more data). Table.\ref{coffdropout} shows the correlation coefficient of new model. Clearly that, the result have been improved a little bit when we compare with the last result. 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.2]{images/figure_1_cnn3_3000_v13_loss_change3_dropout_increase_2}
 	\caption{The training and validation loss with dropout layers}
 	\label{tvldropout}
 \end{figure}~\\
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l c c}
+		Method & x correlation & y correlation \\ \hline
+		Pearson & $0.9970585$ & $0.9978605$ \\ \hline
+		Spearman & $0.9942475$ & $0.9859642$ \\ \hline
+		Kendall & $0.9430501$ & $0.9067739$ \\ \hline
+	\end{tabular}
+	\caption{The correlation between manual and predicted landmarks on pronotum images with new model}
+	\label{coffdropout}
+\end{table}
 \section{Conclusions}
 In this studied, two methods that used to predict the landmarks on 2D gray-scale images are studied. For each case, the model is suitable with different dataset but the results are still not good when we change the data (pronotum). Besides, we proposed a network to learn and detect the landmark positions on pronotum. The accuracy of the model is greater than $98 \%$. The results are evaluated on 3 datasets: pronotum, tete and elytre. From the correlation coefficients of each dataset shows that if we consider on the statistic side, the coefficients are enough good to precise. But when we see the real position on each image, that is not good as we expect. It means the model is not really suitable for the problem and we need to improve the model.
 \bibliographystyle{unsrt}
