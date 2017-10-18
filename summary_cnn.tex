@@ -79,10 +79,10 @@ In this section, we describe the experimental processes of two models on pronotu
 \subsection{Experiment 1}
 In the first experiment, the images are kept in gray-scale with the size of $256 \times 192$. The brightness of the image is normalized to $[0,1]$, instead of $[0,255]$ while the coordinates of the landmarks are kept as original. 
 \subsubsection{With model 1}
-We kept the same initial parameters of the model to train with the pronotum dataset. During training, the network cannot detect the loss of train and validation ($nan$ value). A solution is given that we decreased the initial value (from $0.03$ to $0.000001$) and the stop value (from $0.0001$ to $0.0000001$) of learning rate. The network is re-trained with new parameters and we have succeeded. Fig.\ref{model1loss} shows the first 700 epochs during training and validation process. We can see that the losses are stable and did not have much change after the $100^{th}$ epoch (to the end). Fig.\ref{model1test} shows the prediction landmarks on an image in test set (the network never saw before). The predicted landmarks are closed with the pronotum but their location is still inaccurate.
+We kept the same initial parameters of the model to train with the pronotum dataset. During training, the network cannot detect the loss of train and validation ($nan$ value). A solution is given that we decreased the initial value (from $0.03$ to $0.000001$) and the stop value (from $0.0001$ to $0.0000001$) of learning rate. The network is re-trained with new parameters and we have succeeded. Fig.\ref{model1loss} shows the losses during training and validation process. We can see that the losses are not stable between training and validation. Fig.\ref{model1test} shows the prediction landmarks on an image in test set (the network never saw before). The predicted landmarks are closed with the pronotum but their location is still inaccurate.
 \begin{figure}[h!]
 \centering
-\subfloat[Training losses and validation loss]{\label{model1loss}\includegraphics[width=0.5\textwidth]{./images/figure_1_loss_celia}}~~
+\subfloat[Training losses and validation loss]{\label{model1loss}\includegraphics[width=0.5\textwidth]{./images/figure_1_celia_5000_without_normalize_data_loss}}~~
 \subfloat[A pronotum with predicted landmarks]{\label{model1test}\includegraphics[width=0.5\textwidth]{./images/fig1_celia}}
 \caption{The evaluation of pronotum data on model 1}
 \label{model1tl}
@@ -107,7 +107,7 @@ The model 2 is used to predict the landmarks on the test set (includes 33 images
 	\end{tabular}
 	\caption{The correlation between manual and predicted landmarks on test images}
 	\label{corr1}
-\end{table}~\\
+\end{table}~\\[0.5cm]
 \subsection{Experiment 2}
 In the second experiment, both the image values and the target (landmark coordinates) are normalized to a range of $[-1,1]$, instead of $[0,256]$ and $[0,192]$ before giving to the networks\cite{lecun2012efficient}. After some trials, the learning rates are set at the beginning to increase the speed of the processes. Fig.\ref{expr2} show the loss during training and validation of two models with the new version of data. We can see that the losses from model 2 is really better than from model 1. But, at the end of training, the overfitting has appeared in model 2.
 \begin{figure}[h!]
@@ -174,6 +174,32 @@ Besides the evaluation on correlation coefficient, we also consider the accuracy
 \caption{The proportions of well predicted landmarks on each model}
 \label{expr22s}
 \end{figure}~\\
+The average distances and standard deviations of all landmarks are shown in Table \ref{sdmodel1} and Table \ref{sdmodel2}.
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l c c c c c c c c}
+		Landmarks & LM1 & LM2 & LM3 & LM4 & LM5 & LM6 & LM7 & LM8 \\ \hline
+		Average & 3.6758 &	3.8836 & 	2.9337 & 	4.4401 &	 3.8504 &	4.5767 &	 3.0965 &	4.5527
+
+ \\ \hline
+		SD & 2.5006 &	3.0874 & 	1.6591 & 	3.0579 & 	3.1195 &	 3.9012 &	2.4359 &	3.8919
+ \\ \hline
+	\end{tabular}
+	\caption{The average distance and standard deviations from model 1}
+	\label{sdmodel1}
+\end{table}~\\
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l c c c c c c c c}
+		Landmarks & LM1 & LM2 & LM3 & LM4 & LM5 & LM6 & LM7 & LM8 \\ \hline
+		Average & 4.2249 & 4.7678 & 3.6129 &	4.4391	 & 4.4319	& 5.2091 &	 4.1567 &	5.1568
+ \\ \hline
+		SD & 2.6985 &	3.06024 & 1.6963	& 3.6506 & 	3.4997 &	4.2616 &	2.5724 &	3.8691
+ \\ \hline
+	\end{tabular}
+	\caption{The average distance and standard deviations from model 2}
+	\label{sdmodel2}
+\end{table}~\\
 \section{Conclusions}
 Two models that used to predict the landmarks on 2D gray-scale images are studied. For each case, the model is suitable with different dataset but the results are still good when we change the training data (the case of model 1 when we re-train on pronotum). Besides, we proposed a different way to enlarge the data in the case the dataset is limited. From the correlation coefficients of each model shows that the effects of two models are similar. Additional, if we consider on the statistic side, the coefficients are enough good to precise. But, when we see the predicted landmarks on the images, we also have some case that is not good as we expect. 
 \bibliographystyle{unsrt}
@@ -181,10 +207,24 @@ Two models that used to predict the landmarks on 2D gray-scale images are studie
 \pagebreak
 \appendix
 \section*{A comparison on parameters of the networks}
+The number of layers in each model are shown in Table \ref{numlayers}.
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l p{1.2cm} p{3cm} p{2cm} p{1.2cm} p{2cm} p{2cm}}
+		Model & $N^o$ layers & Input size & $N^o$ CONVs & $N^o$ POOLs & $N^o$ Dropout & $N^o$ FC \\ \hline
+		model 1 & 16 & $1 \times 96 \times 96$ & 6 & 3 & 4 & 3 \\ \hline
+		model 2 & 9 & $1 \times 256 \times 192$ & 3 & 3 & 0 & 3 \\ \hline
+		model 2\_1 & 9 & $1 \times 256 \times 192$ & 3 & 3 & 0 & 3 \\ \hline
+		model 2\_2 & 13 & $1 \times 256 \times 192$ & 6 & 3 & 4 & 3 \\ \hline
+	\end{tabular}
+	\caption{The number of layer types in each model}
+	\label{numlayers}
+\end{table}~\\
+The detail parameters in each layer of the models are shown in Table \ref{modelparameters}.
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{l p{3cm} p{3cm} p{3cm} p{3cm}}
-		layers & model 1 & model 2 & model 2\_1 & model 2\_end \\ \hline
+		layers & model 1 & model 2 & model 2\_1 & model 2\_2 \\ \hline
 		input & $ 1 \times 96 \times 96$ & $1 \times 256 \times 192$ & $1 \times 256 \times 192$ & $1 \times 256 \times 192$ \\ \hline
  		layer 1 & CONV(32,4,1,0) & CONV(32,3,1,0) & CONV(32,3,1,0) & CONV(32,3,1,0) \\ \hline
 		layer 2 & CONV(32,4,1,0) & POOL(2,2,0) & POOL(2,2,0) & POOL(2,2,0) \\ \hline
@@ -205,7 +245,7 @@ Two models that used to predict the landmarks on 2D gray-scale images are studie
 	\end{tabular}
 	\caption{The parameters at each layer of the models}
 	\label{modelparameters}
-\end{table}
+\end{table}~\\
 Which:
 \begin{itemize}
 	\item CONV(x,y,z,t): convolutional layer with the parameters: \textit{x = number of filters, y = size of filter matrix, z = stride value, t = padding value}
@@ -213,4 +253,5 @@ Which:
 	\item DROP(p): dropout layer with \textit{p is the dropout ratio}
 	\item FC(x): full-connected layer with \textit{x is the number of output}
 \end{itemize}
+
 \end{document}
