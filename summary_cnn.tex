@@ -171,7 +171,7 @@ Besides the evaluation on correlation coefficient, we also consider the accuracy
 \centering
 \subfloat[Model 1]{\label{model1loss2}\includegraphics[width=0.5\textwidth]{./images/pronotum_celia_statistic}}~~
 \subfloat[Model 2]{\label{model2loss2}\includegraphics[width=0.5\textwidth]{./images/pronotum_pmodel_statistic}}
-\caption{The proportions of well predicted landmarks on each model}
+\caption{The proportions of well predicted landmarks on each model by standard deviation}
 \label{expr22s}
 \end{figure}~\\
 The average distances and standard deviations of all landmarks are shown in Table \ref{sdmodel1} and Table \ref{sdmodel2}.
@@ -199,7 +199,15 @@ The average distances and standard deviations of all landmarks are shown in Tabl
 	\end{tabular}
 	\caption{The average distance and standard deviations from model 2}
 	\label{sdmodel2}
-\end{table}~\\
+\end{table}~\\[3cm]
+Because the distance between manual and predicted landmarks are presented in pixels. Fig.\ref{expr22avg} shows the statistic on the landmarks when we consider that the maximum error (in pixels) is the average of the distances on landmarks.
+\begin{figure}[h!]
+\centering
+\subfloat[Model 1]{\label{model1loss2}\includegraphics[width=0.5\textwidth]{./images/pronotum_celia_statistic_avg}}~~
+\subfloat[Model 2]{\label{model2loss2}\includegraphics[width=0.5\textwidth]{./images/pronotum_pmodel_statistic_avg}}
+\caption{The proportions of well predicted landmarks on each model by average}
+\label{expr22avg}
+\end{figure}~\\
 \section{Conclusions}
 Two models that used to predict the landmarks on 2D gray-scale images are studied. For each case, the model is suitable with different dataset but the results are still good when we change the training data (the case of model 1 when we re-train on pronotum). Besides, we proposed a different way to enlarge the data in the case the dataset is limited. From the correlation coefficients of each model shows that the effects of two models are similar. Additional, if we consider on the statistic side, the coefficients are enough good to precise. But, when we see the predicted landmarks on the images, we also have some case that is not good as we expect. 
 \bibliographystyle{unsrt}
