@@ -34,6 +34,18 @@ The predicted landmark is considered as well-predicted if the distance from it i
 	\label{wellpredicted}
 \end{figure}
 \section{Method}
+In this section, we describe the method that used to improve the position of the landmarks which have been predicted by CNN. The landmarks are stayed on the contours of the pronotum, specific, the landmarks at position $3^{rd}, 4^{th}, 5^{th}$, and $6^{th}$. The main steps of this method include:
+\begin{enumerate}
+	\item Generating (choose) the ``mean curve" at each landmark position (from manual landmark),
+	\item Adapting the predicted landmark on the contour of pronotum,
+	\item Searching a position around ``adapted point" that the curve via it is closest with the ``mean curve".
+\end{enumerate}
+\subsection*{Generating mean curve}
+The first step of this method is generating (or chosing) a mean curve. The mean curve is computed from a set of curves at the same position. 
+\begin{itemize}
+	\item Segment the image to obtain the list of border contour of pronotum,
+	\item For each l
+\end{itemize}
 \section{Conclusions}
 In this study, we proposed a CNN to predict the landmarks on beetles images. The model is evaluated on five datasets corresponding five parts of the beetle: left mandible, right mandible, pronotum, body, and head. For each dataset, the model has been trained in several times with different images data. Then, the trained model is evaluated with the corresponding test set. At the end, the coordinates of the landmarks on all the images in each dataset have been predicted. Three correlation methods have been used to calculate the coefficient between manual landmarks and predicted landmarks. Besides, a statistic based on the distance between manual and predict landmarks is also calculated. The statistic accepts the predicted landmark that has the distance (corresponding manual and itself) less than the average value (of all images). From two evaluation ways, the coefficients are enough good to precise when we consider the statistic problem. But, when we stay on the side of the image, the results are not good as we expect. Especially, when we compare this result with the result from MAELab(left and right mandible), the result from CNN model is not enough precise. We need to post-process the prediction landmarks to obtain better results.
 \bibliographystyle{unsrt}
