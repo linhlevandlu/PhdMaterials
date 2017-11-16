@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.23)  16 NOV 2017 12:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.23)  16 NOV 2017 17:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -190,9 +190,6 @@ LaTeX Warning: Label `mean_lm7' multiply defined.
 
 LaTeX Warning: Label `sub@mean_lm7' multiply defined.
 
-
-LaTeX Warning: Label `meancuvre' multiply defined.
-
 )
 \openout1 = `cnnimproved.aux'.
 
@@ -342,7 +339,7 @@ File: ./images/mean_proportions_lm3.jpg Graphic file (type jpg)
 <use ./images/mean_proportions_lm3.jpg>
 Package pdftex.def Info: ./images/mean_proportions_lm3.jpg used on input line 7
 7.
-(pdftex.def)             Requested size: 241.84843pt x 128.34311pt.
+(pdftex.def)             Requested size: 198.31747pt x 105.24324pt.
 
 <./images/mean_proportions_lm7.jpg, id=29, 374.39874pt x 197.73875pt>
 File: ./images/mean_proportions_lm7.jpg Graphic file (type jpg)
@@ -350,32 +347,66 @@ File: ./images/mean_proportions_lm7.jpg Graphic file (type jpg)
 <use ./images/mean_proportions_lm7.jpg>
 Package pdftex.def Info: ./images/mean_proportions_lm7.jpg used on input line 7
 8.
-(pdftex.def)             Requested size: 241.84843pt x 127.7321pt.
+(pdftex.def)             Requested size: 198.31747pt x 104.74069pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 77--79
- [][]   [] 
- []
+<images/dis_lm3_cnn.jpg, id=30, 607.26875pt x 341.275pt>
+File: images/dis_lm3_cnn.jpg Graphic file (type jpg)
 
+<use images/dis_lm3_cnn.jpg>
+Package pdftex.def Info: images/dis_lm3_cnn.jpg used on input line 85.
+(pdftex.def)             Requested size: 303.63364pt x 170.63707pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--82
+<images/dis_lm3_cnn_rule1.jpg, id=31, 607.26875pt x 341.275pt>
+File: images/dis_lm3_cnn_rule1.jpg Graphic file (type jpg)
 
- []
+<use images/dis_lm3_cnn_rule1.jpg>
+Package pdftex.def Info: images/dis_lm3_cnn_rule1.jpg used on input line 91.
+(pdftex.def)             Requested size: 303.63364pt x 170.63707pt.
 
-(./cnnimproved.bbl [3 <./images/mean_proportions_lm3.jpg> <./images/mean_propor
-tions_lm7.jpg>]
+<images/dis_lm3_cnn_rule2.jpg, id=32, 607.26875pt x 341.275pt>
+File: images/dis_lm3_cnn_rule2.jpg Graphic file (type jpg)
+
+<use images/dis_lm3_cnn_rule2.jpg>
+Package pdftex.def Info: images/dis_lm3_cnn_rule2.jpg used on input line 97.
+(pdftex.def)             Requested size: 303.63364pt x 170.63707pt.
+
+<images/dis_lm7_cnn.jpg, id=33, 589.20125pt x 352.31625pt>
+File: images/dis_lm7_cnn.jpg Graphic file (type jpg)
+
+<use images/dis_lm7_cnn.jpg>
+Package pdftex.def Info: images/dis_lm7_cnn.jpg used on input line 104.
+(pdftex.def)             Requested size: 294.5999pt x 176.15768pt.
+
+<images/dis_lm7_cnn_rule1.jpg, id=34, 607.26875pt x 341.275pt>
+File: images/dis_lm7_cnn_rule1.jpg Graphic file (type jpg)
+
+<use images/dis_lm7_cnn_rule1.jpg>
+Package pdftex.def Info: images/dis_lm7_cnn_rule1.jpg used on input line 110.
+(pdftex.def)             Requested size: 303.63364pt x 170.63707pt.
+
+<images/dis_lm7_cnn_rule2.jpg, id=35, 607.26875pt x 341.275pt>
+File: images/dis_lm7_cnn_rule2.jpg Graphic file (type jpg)
+
+<use images/dis_lm7_cnn_rule2.jpg>
+Package pdftex.def Info: images/dis_lm7_cnn_rule2.jpg used on input line 116.
+(pdftex.def)             Requested size: 303.63364pt x 170.63707pt.
+ [3 <./images/mean_proportions_lm3.jpg> <./images/mean_proportions_lm7.jpg>] [4
+ <./images/dis_lm3_cnn.jpg> <./images/dis_lm3_cnn_rule1.jpg> <./images/dis_lm3_
+cnn_rule2.jpg>] (./cnnimproved.bbl [5 <./images/dis_lm7_cnn.jpg> <./images/dis_
+lm7_cnn_rule1.jpg> <./images/dis_lm7_cnn_rule2.jpg>]
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [4] (./cnnimproved.aux)
+) [6] (./cnnimproved.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3830 strings out of 493304
- 57802 string characters out of 6139871
- 123431 words of memory out of 5000000
- 7245 multiletter control sequences out of 15000+600000
+ 3867 strings out of 493304
+ 58768 string characters out of 6139871
+ 125487 words of memory out of 5000000
+ 7276 multiletter control sequences out of 15000+600000
  11955 words of font info for 43 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  44i,11n,47p,1001b,373s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -391,10 +422,10 @@ amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on cnnimproved.pdf (4 pages, 194251 bytes).
+Output written on cnnimproved.pdf (6 pages, 371506 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
+ 89 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

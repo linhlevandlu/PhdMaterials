@@ -71,16 +71,52 @@ During the process to find the new position of predicted-landmark, Root Mean Squ
 	\caption{The average distance on each landmark according to the mean curve generating rules}
 	\label{avgdistance2}
 \end{table}~\\
-In another side, when we consider on the number of well predicted landmarks (the distance from it to corresponding manual one is less than average value), the proportions are also significantly improved. Fig. shows the proportion of well-predicted on the $3^{rd}$ and $7^{th}$ landmarks.
+In another side, when we consider the number of well-predicted landmarks. A predicted landmark is considered as well predicted if the distance from it to corresponding manual one is less than average value. The proportions are also significantly improved. Fig.\ref{propotions} shows the proportion of well-predicted on the $3^{rd}$ and $7^{th}$ landmarks according the result from CNN and the rules that used to improve the result from CNN.
 \begin{figure}[h!]
 \centering
-\subfloat[The $3^{rd}$ landmark]{\label{mean_lm3}\includegraphics[width=0.5\textwidth]{./images/mean_proportions_lm3}}~~
-\subfloat[The $7^{th}$ landmark]{\label{mean_lm7}\includegraphics[width=0.5\textwidth]{./images/mean_proportions_lm7}}
+\subfloat[The $3^{rd}$ landmark]{\label{mean_lm3}\includegraphics[width=0.41\textwidth]{./images/mean_proportions_lm3}}~~
+\subfloat[The $7^{th}$ landmark]{\label{mean_lm7}\includegraphics[width=0.41\textwidth]{./images/mean_proportions_lm7}}
 \caption{The proportions of well-predicted of the $3^{rd}$ and $7^{th}$ landmarks}
-\label{meancuvre}
+\label{propotions}
 \end{figure}~\\
-
-
+Figs. \ref{wellpredicted31}, \ref{wellpredicted32}, \ref{wellpredicted33} present the distribution of distance between manual landmarks and predicted landmarks at the $3^{rd}$ index.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{images/dis_lm3_cnn}
+	\caption{The distribution of distance between manual landmarks and predicted landmarks provided by CNN}
+	\label{wellpredicted31}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{images/dis_lm3_cnn_rule1}
+	\caption{The distribution of distance between manual landmarks and predicted landmarks provided by CNN and rule 1}
+	\label{wellpredicted32}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{images/dis_lm3_cnn_rule2}
+	\caption{The distribution of distance between manual landmarks and predicted landmarks provided by CNN and rule 2}
+	\label{wellpredicted33}
+\end{figure}~\\
+Figs. \ref{wellpredicted71}, \ref{wellpredicted72}, \ref{wellpredicted73}  present the distribution of distance between manual landmarks and predicted landmarks at the $7^{th}$ index.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{images/dis_lm7_cnn}
+	\caption{The distribution of distance between manual landmarks and predicted landmarks provided by CNN}
+	\label{wellpredicted71}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{images/dis_lm7_cnn_rule1}
+	\caption{The distribution of distance between manual landmarks and predicted landmarks provided by CNN and rule 1}
+	\label{wellpredicted72}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{images/dis_lm7_cnn_rule2}
+	\caption{The distribution of distance between manual landmarks and predicted landmarks provided by CNN and rule 2}
+	\label{wellpredicted73}
+\end{figure}
 \section{Conclusions}
 In this study, we described a method to improve the location of the predicted landmark by CNN. The method mainly based on the segmentation technique. We extract the contour points of the pronotum; then, the mean contour through the manual landmarks are computed. At the end, we find the new position of the predicted landmark. The new position of the landmark is evaluated by computing the distance from it to manual one and comparing with the previous distance. The results are shown that the location of a number predicted landmarks have been improved. The new positions are more closest with the manual one than the landmark at the beginning.
 \bibliographystyle{unsrt}
