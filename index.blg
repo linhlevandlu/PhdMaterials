@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: index.aux
 A level-1 auxiliary file: includes/cover.aux
@@ -13,6 +13,7 @@ A level-1 auxiliary file: includes/deepNetwork.aux
 A level-1 auxiliary file: includes/cnnNetwork.aux
 A level-1 auxiliary file: includes/cnnClassification.aux
 A level-1 auxiliary file: includes/deepFrameworks.aux
+A level-1 auxiliary file: includes/cnndatasets.aux
 A level-1 auxiliary file: includes/cnnAndLandmarks.aux
 A level-1 auxiliary file: includes/discussion.aux
 A level-1 auxiliary file: includes/conclusion.aux
@@ -22,45 +23,45 @@ Warning--I didn't find a database entry for "•"
 Warning--there's a number but no volume in canny1986computational
 Warning--empty journal in fechner1948elements
 Warning--empty year in barnessurvey
-You've used 43 entries,
+You've used 44 entries,
             1791 wiz_defined-function locations,
-            714 strings with 10994 characters,
-and the built_in function-call counts, 10854 in all, are:
-= -- 1018
-> -- 437
+            719 strings with 11297 characters,
+and the built_in function-call counts, 11033 in all, are:
+= -- 1030
+> -- 445
 < -- 11
-+ -- 164
-- -- 121
-* -- 725
-:= -- 1649
-add.period$ -- 135
-call.type$ -- 43
-change.case$ -- 41
++ -- 167
+- -- 123
+* -- 731
+:= -- 1676
+add.period$ -- 138
+call.type$ -- 44
+change.case$ -- 42
 chr.to.int$ -- 0
-cite$ -- 46
-duplicate$ -- 491
-empty$ -- 1069
-format.name$ -- 121
-if$ -- 2457
+cite$ -- 47
+duplicate$ -- 503
+empty$ -- 1094
+format.name$ -- 123
+if$ -- 2500
 int.to.chr$ -- 0
-int.to.str$ -- 43
-missing$ -- 43
-newline$ -- 217
-num.names$ -- 43
-pop$ -- 138
+int.to.str$ -- 44
+missing$ -- 44
+newline$ -- 222
+num.names$ -- 44
+pop$ -- 145
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 241
+skip$ -- 245
 stack$ -- 0
 substring$ -- 818
-swap$ -- 135
+swap$ -- 137
 text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 119
-width$ -- 45
-write$ -- 469
+while$ -- 120
+width$ -- 46
+write$ -- 479
 (There were 4 warnings)

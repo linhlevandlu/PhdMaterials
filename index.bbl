@@ -196,6 +196,13 @@ Sergey Ioffe and Christian Szegedy.
   internal covariate shift.
 \newblock {\em arXiv preprint arXiv:1502.03167}, 2015.
 
+\bibitem{koestinger11a}
+Peter M.~Roth Martin~Koestinger, Paul~Wohlhart and Horst Bischof.
+\newblock {Annotated Facial Landmarks in the Wild: A Large-scale, Real-world
+  Database for Facial Landmark Localization}.
+\newblock In {\em {Proc. First IEEE International Workshop on Benchmarking
+  Facial Image Analysis Technologies}}, 2011.
+
 \bibitem{sun2013deep}
 Yi~Sun, Xiaogang Wang, and Xiaoou Tang.
 \newblock Deep convolutional network cascade for facial point detection.
