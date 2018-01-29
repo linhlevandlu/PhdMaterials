@@ -8,12 +8,26 @@ Dong Yi et al. [] have proposed a semi-automatical way to collect the face image
 \subsection{The Annotated Facial Landmarks in the Wild dataset}
 Annotated Facial Landmarks in the Wild (AFLW) \cite{koestinger11a} is a dataset of annotated face images gathered from Flickr. The images recognize the human face with difference  information such as, pose, expression, age, gener. In total, AFLW contains 25000 annotated face images with up to 21 landmarks per image. This database is public at AFLW site\footnote{https://www.tugraz.at/institute/icg/research/team-bischof/lrs/downloads/aflw/}.
 \subsection{Multi-Task Facial Landmark (MTFL) dataset}
-Multi-Task Facial Landmark (MTFL) has been trained on the same database with \cite{}. It includes 5590 LFW images and 7876 other images dowloaded from the web.
-Zhanpeng Zhang et al. [] proposed TCDCN dataset\footnote{http://mmlab.ie.cuhk.edu.hk/projects/TCDCN.html}.
-\subsection{Database from Facial Keypoint Detection Kaggle Challenge}\footnote{https://www.kaggle.com/c/facial-keypoints-detection/data}
+Multi-Task Facial Landmark (MTFL) has been trained on the same database with \cite{sun2013deep}. It includes $5590$ LFW images, $1521$ BioID images, $781$ LFPW training images, $249$ LFPW test images and $7876$ other images dowloaded from the web. The images have been divided into training ($13466$ images) and testing set ($2552$ images). During training, each face in the image is labeled with five key points. 
+\subsection{Facial Keypoints Detection Kaggle Challenge}
+The dataset has been built for a challenge of facial keypoints detection. It includes two sets of images: training set contains $7049$ images; testing set includes $1783$ images. The size of images in the dataset was kept as $96 \times 96$ pixels. All the information of images has been saved into \textit{CSV} files. In training set, each row of CSV file contains the coordinates $(x,y)$ for 15 key points and the image data as row ordered list of pixels. In testing set, each csv row contains the image identification and image data as row ordered list of pixels. The dataset has been published at Kaggle website\footnote{https://www.kaggle.com/c/facial-keypoints-detection/data}.
 \section{Other problems}
 \subsection{Syntheseyes dataset}
-Note \footnote{https://www.cl.cam.ac.uk/research/rainbow/projects/syntheseyes/}
-\footnote{https://github.com/danakianfar/landmark\_detection}
+Erroll Wood et al \cite{wood2015_iccv} proposed synthesizing perfectly labelled photo-realsitic training data in a fraction of the time. The eye-regions models have been built from head scan geometry by using computer graphics techniques. The models were randomly posed to synthesize close-up eye images for a wide range of head poses, gaze directions and illumination conditions. For each image, each 3D eye-region landmarks with 28 landmarks have been set manually, corresponding to the eyelids (12 landmarks), iris boundary (8 landmarks), and pupil boundary (8 landmarks).
+The database is exists at SynthesEyes\footnote{https://github.com/danakianfar/landmark\_detection}.
 \subsection{Lip reading dataset}
 Note \footnote{http://www.robots.ox.ac.uk/$\%$7Evgg/data/lip\_reading/}
+\section{Summary}
+The summary of alldatasets are shown in the following table:\\
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{*{5}{c}}
+		Name of databse & N$^{o}$ images & Size of image & N$^{o}$ landmarks & Project \\ \hline
+		MTFL & $16018$ & $x \times x$ & 5 & No \\ \hline
+		FKDKC & $8832$ & $96 \times 96$ & 15 & Challenge \\ \hline
+		SynthesEyes & $11382$ & $120 \times 80$ & 28 & Yes \\ \hline
+		LRS & $11382$ & $120 \times 80$ & 28 & Yes \\ \hline
+	\end{tabular}
+	\caption{The summary of deep learning datasets}
+	\label{tb4}
+\end{table}
