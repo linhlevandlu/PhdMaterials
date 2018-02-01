@@ -209,6 +209,20 @@ Yi~Sun, Xiaogang Wang, and Xiaoou Tang.
 \newblock In {\em Proceedings of the IEEE conference on computer vision and
   pattern recognition}, pages 3476--3483, 2013.
 
+\bibitem{wood2015_iccv}
+Erroll Wood, Tadas Baltrusaitis, Xucong Zhang, Yusuke Sugano, Peter Robinson,
+  and Andreas Bulling.
+\newblock Rendering of eyes for eye-shape registration and gaze estimation.
+\newblock In {\em Proc. of the IEEE International Conference on Computer Vision
+  (ICCV 2015)}, 2015.
+
+\bibitem{sonnenschein2015image}
+Anne Sonnenschein, David VanderZee, William~R Pitchers, Sudarshan Chari, and
+  Ian Dworkin.
+\newblock An image database of drosophila melanogaster wings for phenomic and
+  biometric analysis.
+\newblock {\em GigaScience}, 4(1):25, 2015.
+
 \bibitem{cintas2016automatic}
 Celia Cintas, Mirsha Quinto-S{\'a}nchez, Victor Acu{\~n}a, Carolina Paschetta,
   Soledad de~Azevedo, Caio Cesar~Silva de~Cerqueira, Virginia Ramallo, Carla

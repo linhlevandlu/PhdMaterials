@@ -1,12 +1,12 @@
 \chapter{Deep learning datasets for landmarking}
-In deep learning, the dataset is a most of important field that "gop phan" to the success of deep learning. The collections the data is depend on the field of project. This chapter presents the deep learning datasets, specially, the biological datasets for landmarking detection in 2D images. 
+In deep learning, the dataset is a most of important field that "gop phan" to the success of deep learning. The collections the data is depend on the field of project and the size of the database has the effects to the result of training and testing processes. This chapter presents the deep learning datasets, specially, the biological datasets for landmarking detection in 2D images. 
 \section{Facial keypoints problem}
 In this section, we will present the datasets that have been built for detecting the keypoints (landmarks) on human face.
-\subsection{CASIA WebFace}
-Dong Yi et al. [] have proposed a semi-automatical way to collect the face images from Internet\footnote{http://www.cbsr.ia.ac.cn/english/CASIA-WebFace-Database.html}. The dataset includes 10575 subjects and 494414 images. Based on the database, a $11-$layers CNN was trained to illustrate the quality of the images. The accuracy was compared with the state of the art methods, such as: \textit{Deep Face, DeepID2}. (can not download)
+%\subsection{CASIA WebFace}
+%Dong Yi et al. [] have proposed a semi-automatical way to collect the face images from Internet\footnote{http://www.cbsr.ia.ac.cn/english/CASIA-WebFace-Database.html}. The dataset includes 10575 subjects and 494414 images. Based on the database, a $11-$layers CNN was trained to illustrate the quality of the images. The accuracy was compared with the state of the art methods, such as: \textit{Deep Face, DeepID2}. (can not download)
 
 \subsection{The Annotated Facial Landmarks in the Wild dataset}
-Annotated Facial Landmarks in the Wild (AFLW) \cite{koestinger11a} is a dataset of annotated face images gathered from Flickr. The images recognize the human face with difference  information such as, pose, expression, age, gener. In total, AFLW contains 25000 annotated face images with up to 21 landmarks per image. This database is public at AFLW site\footnote{https://www.tugraz.at/institute/icg/research/team-bischof/lrs/downloads/aflw/}.
+Annotated Facial Landmarks in the Wild (AFLW) \cite{koestinger11a} is a dataset of annotated face images gathered from Flickr. The images recognize the human face with difference  information such as, pose, expression, age, gener. The dataset is tagged as  $59\%$ female's faces, $41\%$  male's faces; some images contains multiple faces. Totally, AFLW contains 25000 annotated face images with up to 21 landmarks per image. This database is public at AFLW site\footnote{https://www.tugraz.at/institute/icg/research/team-bischof/lrs/downloads/aflw/}.
 \subsection{Multi-Task Facial Landmark (MTFL) dataset}
 Multi-Task Facial Landmark (MTFL) has been trained on the same database with \cite{sun2013deep}. It includes $5590$ LFW images, $1521$ BioID images, $781$ LFPW training images, $249$ LFPW test images and $7876$ other images dowloaded from the web. The images have been divided into training ($13466$ images) and testing set ($2552$ images). During training, each face in the image is labeled with five key points. 
 \subsection{Facial Keypoints Detection Kaggle Challenge}
@@ -14,19 +14,22 @@ The dataset has been built for a challenge of facial keypoints detection. It inc
 \section{Other problems}
 \subsection{Syntheseyes dataset}
 Erroll Wood et al \cite{wood2015_iccv} proposed synthesizing perfectly labelled photo-realsitic training data in a fraction of the time. The eye-regions models have been built from head scan geometry by using computer graphics techniques. The models were randomly posed to synthesize close-up eye images for a wide range of head poses, gaze directions and illumination conditions. For each image, each 3D eye-region landmarks with 28 landmarks have been set manually, corresponding to the eyelids (12 landmarks), iris boundary (8 landmarks), and pupil boundary (8 landmarks).
-The database is exists at SynthesEyes\footnote{https://github.com/danakianfar/landmark\_detection}.
-\subsection{Lip reading dataset}
-Note \footnote{http://www.robots.ox.ac.uk/$\%$7Evgg/data/lip\_reading/}
+The database is exists at SynthesEyes\footnote{https://www.cl.cam.ac.uk/research/rainbow/projects/syntheseyes/}.
+%\subsection{Lip reading dataset}
+%Note \footnote{http://www.robots.ox.ac.uk/$\%$7Evgg/data/lip\_reading/}
+\subsection{Drosophila Wings dataset}
+Drosophila Wing (DW) datasets \cite{sonnenschein2015image} was constructed from Drosophila melanogaster wings for the development, testing measurement, and classification tools for biological images. The images are individually identified and organized by sex, genotype, and replicate imaging system. DW database contains a large number of wing images representing multiple genotypes. Each wing was imaged at $20\times$ and $40\times$ magnification on an Olympus BX51 and Leica M125 microscope. The landmarks and semi-landmarks data have been extracted by WINGMACHINE. In total, this included 12 landmarks and 36 semi-landmarks. The images and landmarks can download at GigaScience website\footnote{http://gigadb.org/dataset/100141}.
 \section{Summary}
-The summary of alldatasets are shown in the following table:\\
+The summary of all datasets are shown in the following table:\\
 \begin{table}[!h]
 	\centering
 	\begin{tabular}{*{5}{c}}
 		Name of databse & N$^{o}$ images & Size of image & N$^{o}$ landmarks & Project \\ \hline
-		MTFL & $16018$ & $x \times x$ & 5 & No \\ \hline
+		AFLW & $25000$ & $-$ & 21 & No \\ \hline
+		MTFL & $16018$ & $250 \times 250$ & 5 & No \\ \hline
 		FKDKC & $8832$ & $96 \times 96$ & 15 & Challenge \\ \hline
 		SynthesEyes & $11382$ & $120 \times 80$ & 28(3D) & Yes \\ \hline
-		LRS & $11382$ & $120 \times 80$ & - & - \\ \hline
+		DW & $8948$ & $-$ & 48 & - \\ \hline
 	\end{tabular}
 	\caption{The summary of deep learning datasets}
 	\label{tb4}

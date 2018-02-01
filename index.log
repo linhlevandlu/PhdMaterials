@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.24)  29 JAN 2018 21:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  30 JAN 2018 13:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **index.tex
 (./index.tex
 LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 7 language(s) loaded.
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -1459,11 +1459,7 @@ Chapter 11.
 
 
 
-]
-
-LaTeX Warning: Citation `wood2015_iccv' on page 72 undefined on input line 16.
-
-) [72]
+]) [72]
 \openout2 = `includes/cnnAndLandmarks.aux'.
 
  (./includes/cnnAndLandmarks.tex
@@ -1745,7 +1741,7 @@ Missing character: There is no ” in font cmr12!
 
 
 ] [91]
-Underfull \hbox (badness 1297) in paragraph at lines 213--219
+Underfull \hbox (badness 1297) in paragraph at lines 227--233
 []\OT1/cmr/m/n/12 Celia Cin-tas, Mir-sha Quinto-S^^Sanchez, Vic-tor Acu~na, Car
 -olina Paschetta, Soledad
  []
@@ -1772,12 +1768,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16059 strings out of 494883
- 309885 string characters out of 6178693
- 372130 words of memory out of 5000000
- 18881 multiletter control sequences out of 15000+600000
+ 16060 strings out of 493029
+ 309908 string characters out of 6136234
+ 376733 words of memory out of 5000000
+ 19117 multiletter control sequences out of 15000+600000
  11618 words of font info for 43 fonts, out of 8000000 for 9000
- 36 hyphenation exceptions out of 8191
+ 1141 hyphenation exceptions out of 8191
  55i,11n,54p,1370b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
@@ -1796,7 +1792,7 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on index.pdf (94 pages, 12407275 bytes).
+Output written on index.pdf (94 pages, 12389102 bytes).
 PDF statistics:
  481 PDF objects out of 1000 (max. 8388607)
  270 compressed objects within 3 object streams

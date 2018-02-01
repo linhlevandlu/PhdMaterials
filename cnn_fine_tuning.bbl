@@ -1,0 +1,15 @@
+\begin{thebibliography}{1}
+
+\bibitem{lecun2010convolutional}
+Yann LeCun, Koray Kavukcuoglu, and Cl{\'e}ment Farabet.
+\newblock Convolutional networks and applications in vision.
+\newblock In {\em Circuits and Systems (ISCAS), Proceedings of 2010 IEEE
+  International Symposium on}, pages 253--256. IEEE, 2010.
+
+\bibitem{yosinski2014transferable}
+Jason Yosinski, Jeff Clune, Yoshua Bengio, and Hod Lipson.
+\newblock How transferable are features in deep neural networks?
+\newblock In {\em Advances in neural information processing systems}, pages
+  3320--3328, 2014.
+
+\end{thebibliography}
