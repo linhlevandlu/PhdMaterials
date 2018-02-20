@@ -88,11 +88,11 @@ The trained model have been continued to fine-tune \cite{yosinski2014transferabl
 	2 & 0.00018 & 0.00010 \\ \hline
 	3 & 0.00018 & 0.00010 \\ \hline
 	4 & 0.00019 & 0.00008 \\ \hline
-	5 & - & - \\ \hline
-	6 & - & - \\ \hline
-	7 & - & - \\ \hline
-	8 & - & - \\ \hline
-	9 & - & - \\ \hline
+	5 & 0.00019 & 0.00009 \\ \hline
+	6 & 0.00018 & 0.00008 \\ \hline
+	7 & 0.00019 & 0.00008 \\ \hline
+	8 & 0.00018 & 0.00006 \\ \hline
+	9 & 0.00018 & 0.00009 \\ \hline
 	\end{tabular}
 	\caption{The losses during fine-tuning model}
 	\label{finetuningloss}
@@ -109,22 +109,22 @@ Fig.\ref{figfintuning} shows an example of the losses during fine-tuning and cor
 \end{figure}
 After fine-tuning, the predicted landmarks of all images are provided. To evaluate the effects of fine-tuning, we calculated the distance between the predicted landmarks and corresponding manual landmarks. A statistic on the distance of each landmarks is also computed. 
 
-Table.\ref{tab2} shows the average error distance given by each landmark. The values in \textbf{Distance 1} and \textbf{Distance 2} columns present for the average distance of all landmark when the pronotum images were trained from scratch and fine-tuning, respectively.
+Table.\ref{tab2} shows the average error distance given by each landmark. The values in \textbf{Distance 1} and \textbf{Distance 2} columns present for the average distance of all landmark when the pronotum images were trained from scratch and fine-tuning, respectively. From the Table. \ref{tab2}, the result from fine-tuning is significantly improved ($\sim 38\%$) 
 \begin{table}[htbp]
 \begin{center}
 \begin{tabular}{|c|p{2.5cm}|p{2.5cm}|}
 \hline
 \textbf{$\#$Landmark} & \textbf{Distance 1} & \textbf{Distance 2} \\ \hline
-1 & 4.002 & -  \\ \hline
-2 & 4.4831 & -  \\ \hline
-3 & 4.2959  & - \\ \hline
-4 & 4.3865  & - \\ \hline
-5 & 4.2925  & - \\ \hline
-6 & 5.3631  & - \\ \hline
-7 & 4.636  & - \\ \hline
-8 & 4.9363  & - \\ \hline
+1 & 4.002 & 2.486  \\ \hline
+2 & 4.4831 & 2.720  \\ \hline
+3 & 4.2959  & 2.652 \\ \hline
+4 & 4.3865  & 2.771 \\ \hline
+5 & 4.2925  & 2.487 \\ \hline
+6 & 5.3631  & 3.049 \\ \hline
+7 & 4.636  & 2.684 \\ \hline
+8 & 4.9363  & 2.871 \\ \hline
 \end{tabular}
-\caption{The average distance per landmark.}
+\caption{The average error distance per landmark.}
 \label{tab2}
 \end{center}
 \end{table}
