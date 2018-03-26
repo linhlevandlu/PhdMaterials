@@ -14,16 +14,8 @@
 \include{includes/abstract}
 \tableofcontents
 \part{Morphometry}
-Morphometry (or morphometrics) is a norm refers to the analysis of form, specifics size and shape of the object in digital image. Morphometry analyses are commonly performed on organisms, and are useful in analyzing the structure of the organisms. Morphometry can be used to extract the general information of creatures, or reconstruct the shape of the organism based on the analysed information that we had. Besides, morphometry can also detect the changes on creatures. Based on these information, we can statically the hypotheses about the factors that affect to the changes of shape.\\[0.2cm]
-We have three distinct approaches are usually use: traditional morphometry, landmark-based morphometry and outline-based morphometry.
-\begin{enumerate}
-	\item Traditional morphometry:  measure the size of the object such as the length, width, angle, ratio and areas on object. The traditional morphomentry is using many measurement of size that most will be highly correlated; as a result, there are few independent variables despite the many measurements.
-	\item Landmark-based morphometry: finding enough landmark to provide  a comprehensive description of shape. From the set of beginning landmarks, we can estimate the the missing landmarks.
-	\item Outline-based morphometry: a mathematical functions is fitted to points sampled along the outline.
-\end{enumerate}
-In this part, we will describe the methods to analysis the morphometry based on the segmentation, dominant points of the image. The method is through the several technique in image processing. At the end of this part, a software had built to verify the linkage of the steps.
 	\include{includes/segmentation}
-		\include{includes/localfeatures}
+	\include{includes/localfeatures}
 	\include{includes/dominantpoints}
 	\include{includes/software}
 \part{Deep learning}
@@ -36,8 +28,8 @@ In this part, we will describe the methods to analysis the morphometry based on 
 	\include{includes/cnndatasets}
 	\include{includes/cnnAndLandmarks}
 \part{Conclusion}
-	\include{includes/discussion}
 	\include{includes/conclusion}
+	\include{includes/discussion}	
 \bibliographystyle{unsrt}
 \bibliography{includes/references}
 \end{document}

@@ -159,5 +159,5 @@
 \contentsline {subsection}{\numberline {12.4.2}Training and experiments}{82}
 \contentsline {section}{\numberline {12.5}Conclusions}{86}
 \contentsline {part}{III\hspace {1em}Conclusion}{87}
-\contentsline {chapter}{\numberline {13}Discussion}{88}
-\contentsline {chapter}{\numberline {14}Conclusion}{89}
+\contentsline {chapter}{\numberline {13}Conclusion}{88}
+\contentsline {chapter}{\numberline {14}Discussion}{89}
