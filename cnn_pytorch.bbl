@@ -6,4 +6,9 @@ Adam Paszke, Sam Gross, Soumith Chintala, Gregory Chanan, Edward Yang, Zachary
 \newblock Automatic differentiation in pytorch.
 \newblock In {\em NIPS-W}, 2017.
 
+\bibitem{lasagne}
+Sander Dieleman, Jan Schlüter, Colin Raffel, Eben Olson, Søren~Kaae
+  Sønderby, Daniel Nouri, et~al.
+\newblock Lasagne: First release., August 2015.
+
 \end{thebibliography}

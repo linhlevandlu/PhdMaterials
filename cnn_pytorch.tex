@@ -137,55 +137,26 @@ In this section, we introduce the process to down-sample the original images to 
 
 Then, we augment the images for training and validation (it have been presented in ICPRS-18).
 
-
 \section{Experiments}
-The proposed network has been trained on two datasets with different of input size: $224 \times 224$ and $96 \times 96$ in $10000$ epochs. We have applied cross-validation to obtain fully the prediction of landmarks of all images. Table.\ref{tab2} shows losses during training on each round.
-For dataset of $224 \times 224$ images, the average loss of validation stage (RMSE) is \textit{$sqrt(0.0000767) \times 112 = 0.981$} pixels; while, this value for dataset of $96 \times 96$ is \textit{$sqrt(0.00004) \times 48 = 0.00192$} pixels.
+We have trained the model on $2$ different libraries: Lasagne \cite{lasagne} and PyTorch in $10000$ epochs. During training, we have applied differents optimizers (with the same parameters) to compute backprogation. The number of images, which use to train and to validate, are split automatically followed the ratio of $0.8/0.2$. Table.\ref{tab2} shows losses corresponding to the optimizer during training.
 
 \begin{table}[htbp]
 \centering
-\begin{tabular}{ | c | c | c | c | c | }
+\begin{tabular}{ | p{2cm} | c | c | c | c | c | c | }
 \hline
-	\multicolumn{1}{|c|}{\multirow{2}{*}{Round}} & \multicolumn{2}{c|}{$224 \times 224$} &  \multicolumn{2}{c|}{$96 \times 96$}  \\ \cline{2-5}
-	 & Train loss & Validation loss & Train loss & Validation loss \  \\ \hline
-	\textbf{1} & \textbf{0.00012} & \textbf{0.00009} & \textbf{0.00015} & \textbf{0.00004} \\ \hline
-	2 & 0.00012 & 0.00006 & 0.00015 & 0.00004 \\ \hline
-	3 & 0.00012 & 0.00007 & 0.00015 & 0.00006 \\ \hline
-	4 & 0.00012 & 0.00009 & 0.00015 & 0.00004 \\ \hline
-	5 & 0.00013 & 0.00010 & 0.00016 & 0.00005 \\ \hline
-	\textbf{6} & \textbf{0.00012} & \textbf{0.00006} & \textbf{0.00014} & \textbf{0.00003} \\ \hline
-	7 & 0.00013 & 0.00008 & 0.00014 & 0.00003 \\ \hline
-	8 & 0.00012 & 0.00006 & 0.00015 & 0.00004 \\ \hline
-	9 & 0.00013 & 0.00008 & 0.00014 & 0.00003 \\ \hline
+	\multicolumn{1}{|p{2cm}|}{\multirow{2}{*}{Optimizer}} & \multicolumn{3}{c|}{Lasagne} &  \multicolumn{3}{c|}{PyTorch}  \\ \cline{2-7}
+	 & Train loss & Validation loss & Time(s) & Train loss & Validation loss & Time(s) \  \\ \hline
+	Adam & 0.00011 & 0.00074 & 4,200 & 0.00002 & 0.00286 & 22,500 \\ \hline
+	RMSprop & 0.00839 & 0.00778 & 4,308 & 0.00818 & 0.00872 & 23,548 \\ \hline
+	SGD Momentum & 0.00041 & 0.00025 & 4,236 & 0.00034 & 0.00154 & 23,264 \\ \hline
+	\textbf{SGD Momentum nesterov} & \textbf{0.00015} & \textbf{0.00004} & \textbf{4,258} & \textbf{0.00010} & \textbf{0.00012} & \textbf{24,538} \\ \hline
 \end{tabular}
-\caption{\small{A comparing of losses during training between the datasets.}}
+\caption{\small{A comparing of losses during training between the libraries.}}
 \label{tab2}
 \end{table}
-
-Table.\ref{tab3} shows the average distances in pixels and standard deviation (SD) when we calculate the distance from the coordinates of predicted landmarks to coordinates of manual landmarks.
-\begin{table}[htbp]
-\centering
-\begin{tabular}{ | c | c | c | c | c | }
-\hline
-	\multicolumn{1}{|c|}{\multirow{2}{*}{Landmark}} & \multicolumn{2}{c|}{$224 \times 224$} &  \multicolumn{2}{c|}{$96 \times 96$}  \\ \cline{2-5}
-	 & Avg distance & SD & Avg distance & SD \  \\ \hline
-	\textbf{1} & \textbf{3.2974} & \textbf{2.2689} & \textbf{1.6136} & \textbf{0.9332
-} \\ \hline
-	2 & 3.9845 & 2.6562 & 1.8399 & 1.1190 \\ \hline
-	3 & 3.4676 & 2.3424 & 1.6248 &	1.0027 \\ \hline
-	4 & 3.8779 & 2.7883 & 1.8787	& 1.2135 \\ \hline
-	5 & 3.5482 & 2.5824 & 1.7616 &	1.1022 \\ \hline
-	\textbf{6} & \textbf{4.2235} & \textbf{3.2746} & \textbf{2.1340} &\textbf{1.3440} \\ \hline
-	7 & 3.3834 & 2.3783 & 1.6150 &	1.0217 \\ \hline
-	8 & 4.0352 & 2.8116 & 1.9779 &	1.2735 \\ \hline	
-\end{tabular}
-\caption{\small{A comparing of average distance and SD on two dataset.}}
-\label{tab3}
-\end{table}
-
-
+Following Table.\ref{tab2}, we can clearly see the differences between the losses of 2 libraries on the same network with the same data, especially, training time. In the case of \textbf{SGD Momentum nesterov} optimizer, we have obtained the same losses during training model in two libraries.
 \section{Conclusions}
-In this study, we have trained the model on pronotum dataset but the size of images are changed to $224 \times 224$ and $96 \times 96$. This study shows that the losses during training are the same with the last one, but we have a difference about the average distance among the results on each dataset. Additional, when we training with small input, the training time had improved than with the large input.
+In this study, we have studied PyTorch, a new libraries which used to design a Convolutional Neural Network. We have shown the way to create a model with some basic layers. At the end of study, we have trained the model which we have submitted to \textbf{ICPRS-18} in PyTorch. We have trained the model with different optimizers. As the results, mostly the losses are different between two libraries. In which, the large distance between the training times is a worth to consider in the future works.
 \bibliographystyle{unsrt}
 \bibliography{includes/references}
 
