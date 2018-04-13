@@ -118,7 +118,7 @@ dropout layer is inserted between FC1 ond FC2 with a probability equal to $0.5$.
 \label{cnnnetwork2}
 \end{figure*}
 
-In our study, instead of using a \textit{``square"} image, we have used a \textit{``rectangle"} image as the input. The result shows that the network has the ability to work well on the input that size of width and height are different. Considering as a different of workflows, we would like to see how the network works on ``square" input. In this study, we continue train the proposed network on a new dataset with different size of $96 \times 96$. The network is implemented on PyTorch.
+In our study, instead of using a \textit{``square"} image, we have used a \textit{``rectangle"} image as the input. The result shows that the network has the ability to work well on the input that size of width and height are different. Considering as a different of workflows, we would like to see how the network works on ``square" input on another libraries. In this study, we continue to train the proposed network on a new dataset with different size of $96 \times 96$. The network is implemented on PyTorch.
 
 \section{Dataset}
 The dataset includes 293 RGB-images of beetle's pronotum. The images were taken by the same camera with the same conditions of resolution of $3264 \times 2448$. The images in the dataset were divided into two subsets: training (including $260$ images) and testing (including $33$ images). For each image, a set of 8 manual landmarks have been set by biologists.
