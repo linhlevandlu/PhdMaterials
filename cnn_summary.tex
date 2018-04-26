@@ -16,8 +16,28 @@
 \section{Introduction}
 Morphometric landmarks are important features in biological investigations. They are use to analyze the shape of the organisms. Depending on the organisms, the number of landmarks on their shapes is different. When we consider the position of the landmarks with the shape, most of landmarks are located on the edges, for example, the landmarks on wings of Drosophila fly \cite{.}. Besides, we can also see the landmarks which stayed inside the anatomical part, i.e, landmarks on pinna of human ears \cite{.}. Currently, the landmarks are set manually by the biologsits. However, landmarking manually will be a time-consuming process and difficult to pre-process. Consequently, a process that proposed automatically the coordinates of landmarks could be interested.
 
-In image processing, segmentation is a most often step of the methods. In some cases, the object of
-interest is easy to extract and can be analyzed with the help of a lot of very well-known image analysis procedures. The result of segmentation step is very useful for many purposes. Depending on purpose of the applications, the object can be segmented or un-segmented before continuing the futher steps. Landmarks setting is no different. In a previous study \cite{.}, we have analyzed two parts of beetle: left and right mandibles. These parts are easy to segment. In that work, we have applied a set of algorithm based on segmentation, image alignment and SIFT \cite{.}. 
+In image processing, segmentation is a most often step of the methods. In some cases, the object of interest is easy to extract and can be analyzed with the help of a lot of very well-known image analysis procedures. The result of segmentation step is very useful for many purposes. Depending on purpose of the applications, the object can be segmented or un-segmented before continuing the futher steps. Landmarks setting is no different. In a previous study \cite{.}, we have analyzed two parts of beetle: left and right mandibles. These parts are easy to segment. In that work, we have applied a set of algorithms based on segmentation, image alignment and SIFT \cite{.} to detect the landmarks on mandibles. 
+
+Unfortunately, the images of other parts are not simply as the mandibles. Besides the main objects, we have also the different parts, i.e, we have a part of head and the legs in pronotum images. The image becomes very noisy. If we would like to segment the object as traditional processes, the process may have consumed a lot of time and difficult to choose a proper method. This is the reason that we turn the landmarking problem on some parts of beetle (i.e, pronotum, head, and body) to a way of analyzing images without the segmentation step. 
+
+As the beetles have not been dissected, their anatomical parts have not been set apart. So image segmentation of each part, as they are still attached to the whole specimen, is problematic and has been given up. Coordinates of manual landmarks for each part have been provided and are considered as the ground truth to evaluate the predicted ones by our methods. Fig.\ref{figintro} shows the parts of beeltes and their manual landmarks what we are looking for. 
+
+\begin{figure}[h!]
+\centering
+\subfloat{\includegraphics[scale=0.7]{./images/fpronotum}}~~
+\subfloat{\includegraphics[scale=0.7]{./images/ftete}}~~
+\subfloat{\includegraphics[scale=0.7]{./images/felytre}}
+\caption{The dataset images with their manual landmarks.\\
+		 \textit{From left to right}: pronotum, head, and body}
+\label{figintro}
+\end{figure}
+
+To achieve the landmarks prediction, we have proposed a CNN model \cite{.} by using Lasagne library \cite{.}. In the first evaluation, the proposed model has been trained from scratch on the dataset of each part. In the second step, the evaluation has been modified to use a fine-tuning \cite{.} stage.
+
+Our contributions in this study are as follows: In the next section, we present the related works about automatic estimation landmarks on 2D images. The architecture of proposed network will be presented at section \ref{}. In section \ref{.}, we describe the process to augment the dataset. All the experiments of our model will be shown in section \ref{.}. It includes the results to evaluate the model and comparison between two working strategy on neural networks.
+
+\section{Related works}
+
 \section{Dataset}
 The data includes images in three sets of the beetle: pronotum, body, and head (Fig.\ref{figdata}). Each dataset includes 293 color images. For each dataset, the images are divided into two subsets: training and validation (called training set) include 260 images, and the testing set has 33 images. To have enough images for training process, the training sets have been combined together. Then, the training dataset was enlarged to $5460$ images ($1820 \times 3$) following the way that we change the values of pixels on the images. At this time, we have enough the images for training. However, another problem has occurred: the number of landmarks of each part is different: $8$ landmarks on pronotum part, $11$ landmarks on the body part, and $10$ landmarks on the head part. We see that the trained model will be fine-tuned on pronotum dataset. So, we kept the number of the landmark on pronotum as a reference and we suppress some landmarks on body and head part. Specifically, we have removed \textit{three} landmarks on the body part ($1^{st}, 6^{th}, 9^{th}$) and \textit{two} landmarks on the head part ($5^{th}, 6^{th}$).
 \begin{figure}[h!]
