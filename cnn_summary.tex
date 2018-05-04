@@ -5,6 +5,9 @@
 \usepackage{subfig}
 \usepackage{graphicx}
 \usepackage[justification=centering]{caption}
+\usepackage{enumitem}
+
+
 \begin{document}
 \title{Landmarks prediction on Beetle anatomical by applying Convolutional Neural Network }
 \author{LE Van Linh}
@@ -37,37 +40,95 @@ To achieve the landmarks prediction, we have proposed a CNN model \cite{.} by us
 Our contributions in this study are as follows: In the next section, we present the related works about automatic estimation landmarks on 2D images. The architecture of proposed network will be presented at section \ref{}. In section \ref{.}, we describe the process to augment the dataset. All the experiments of our model will be shown in section \ref{.}. It includes the results to evaluate the model and comparison between two working strategy on neural networks.
 
 \section{Related works}
+In geometric morphometry, landmarks (or points of interest) are important features to describe a shape. Depending on the difficulty to segment the objects inside the images, setting automatic landmarks can rely on different methods. When segmentation can be applied, Lowe et al. \cite{.} have proposed a method to identify the key points in the 2D image. From the detected key points, the method is able to match two images. Palaniswamy et al. \cite{.} have applied probabilistic Hough Transform to automatically estimate the landmarks in images
+of Drosophila wings. In a previous study \cite{.}, we have extended
+Palaniswamy’s method to detect landmarks automatically on
+beetles mandibles with good results. Unfortunately, when the
+segmentation is not precise, we have observed that the results
+are getting worse. This is why we have turned our work on
+Deep Learning algorithms in order to find a suitable solution to
+predict the landmarks without any segmentation step.
 
+Deep Learning models are coming from machine learning theory. They have been introduced in the middle of previous century for artificial intelligence applications but they encounter
+several problems to take real-world cases. More recently, the
+improvement of computing capacities, both in memory size
+and computing time with GPU programming has opened new
+perspective for Deep Learning. Many deep learning architectures have been proposed to solve the problems of classification \cite{.}, image recognition \cite{.}, speech recognition \cite{.} and language translation \cite{.}. To implement
+the algorithms, many frameworks have been built such as Caffe
+\cite{.}, Theano \cite{.}, Tensorflow \cite{.},.... These frameworks help
+the users to design their application by re-using already proposed network architectures. In image analysis domain, Deep
+Learning, specifically with CNN, can be used to predict the key
+points in an image. Yi Sun et al. \cite{.} have proposed a cascaded
+convolutional network to predict the key points on the human
+face. Zhang et al. \cite{.} optimize facial landmarks detection
+with a set of related tasks such as head pose estimation, age
+estimation, ...Cintas et al. \cite{.} have introduced a network to
+predict the landmarks on human ear images to characterize ear
+shape for biometric analysis. In the same way, we have applied CNN computing to predict the landmarks on beetles anatomical parts. The predicted landmarks will be found in two strategies: training the model from scratch and applying a fine-tuning process.
 \section{Dataset}
-The data includes images in three sets of the beetle: pronotum, body, and head (Fig.\ref{figdata}). Each dataset includes 293 color images. For each dataset, the images are divided into two subsets: training and validation (called training set) include 260 images, and the testing set has 33 images. To have enough images for training process, the training sets have been combined together. Then, the training dataset was enlarged to $5460$ images ($1820 \times 3$) following the way that we change the values of pixels on the images. At this time, we have enough the images for training. However, another problem has occurred: the number of landmarks of each part is different: $8$ landmarks on pronotum part, $11$ landmarks on the body part, and $10$ landmarks on the head part. We see that the trained model will be fine-tuned on pronotum dataset. So, we kept the number of the landmark on pronotum as a reference and we suppress some landmarks on body and head part. Specifically, we have removed \textit{three} landmarks on the body part ($1^{st}, 6^{th}, 9^{th}$) and \textit{two} landmarks on the head part ($5^{th}, 6^{th}$).
-\begin{figure}[h!]
-\centering
-\subfloat{\includegraphics[scale=0.5]{./images/ftete}}~~
-\subfloat{\includegraphics[scale=0.5]{./images/fpronotum}}~~
-\subfloat{\includegraphics[scale=0.5]{./images/felytre}}\\
-\subfloat{\includegraphics[scale=0.5]{./images/ftete2}}~~
-\subfloat{\includegraphics[scale=0.5]{./images/fpronotum}}~~
-\subfloat{\includegraphics[scale=0.5]{./images/felytre2}}
-\caption{The dataset images. \textit{Top row}: The images with their manual landmarks. \textit{Bottom row}: The training images (some landmarks have been removed on head and body parts)}
-\label{figdata}
-\end{figure}
+The data includes images in three sets of the beetle: pronotum, body, and head (Fig.\ref{figdata}). Each dataset includes 293 color images which are taken with the same camera in the same
+condition with a resolution of $3264 \times 2448$. Each image has
+the manual landmarks setting by biologists, i.e, pronotum has $8$
+manual landmarks. For each dataset, the images are randomly divided into two subsets: training and validation (called training set) include 260 images, and the testing set has 33 images.
+
+One of the main characteristics of CNN is that it must use
+a huge number of data and one can consider that only several
+hundreds of images is not enough to feed a CNN. Moreover,
+working with small dataset can push us again to the popular problem of overfitting. A way to enlarge the dataset size
+has to be considered. In image processing, we usually apply
+transform procedures (translation, rotation) to generate a new
+image. Unluckily the methods to compute features through a
+CNN most often are translation and rotation independent. So, we have used another method to augment dataset from the down-sampling images. 
+
+A first procedure has been applied to change the value of
+each color channel in the original image. According to that,
+a constant is added to one of the RGB channels each time it
+is used for training. Each constant is sampled in a uniform
+distribution $\in [1,N] $ to obtain a new value caped at $255$. For
+example, we can add a constant $c = 10$ to the red channel of
+all images in order to generate new images. This operation can
+be done for the three color channels. The second procedure separates the channels of RGB into three gray-scale images. As the network works on single channel images we are able to generate six versions of the same image, the total number of images used to train and to validate is
+$260 \times 7 = 1820$ images (six versions and original image). This
+has been an efficient way to proceed to the dataset expansion.
+
+To have obtained the datasets in different sizes of images, we have applied different methods to down-sampling from the original images (see section \ref{}). In the context of this study, we have considered the images in two different resolutions: $256 \times 192$ and $96 \times 96$. Of course, the coordinates of manual landmarks have been also scaled to fit with the new resolutions. In the first considered resolutions ($256 \times 192$), we have simplied down-sampling from the original resolution. While, in the second considered resolution ($96 \times 96$), the original images have been cropped from the left to obtain a new resolution of $2448 \times 2448$. Then, the cropped images have been down-sampled to the target resolution.
+
+
+
 \section{The model}
-In this study, we use the model that we have used to train on pronotum dataset. 
-The network consists on three repeated-structure of a convolutional layer followed by a maximum pooling layer and dropout layer. The depth
-of convolutional layers increases from $32, 64,$ and $128$ with
-different size of the filter kernel: $3 \times 3, 2 \times 2$, and $2 \times 2$.
-All the kernels of pooling layers have the same size of $2 \times 2$. The dropout probability values used for dropout layers are $0.1, 0.2,$ and $0.3$.
-Then, three full connected layers have been added to the
-network. A dropout layer with probability of $0.5$ was added between the first two full connected layers. The outputs of the full connected layers are $1000, 1000,$
-and $16$, respectively. The output of the last full-connected
-layer corresponds to $8$ landmarks (x and y coordinates) which
-we would like to predict (Fig. \ref{1Econv}). 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.45]{images/architecture3}
-	\caption{The architecture of CNN model}
-	\label{1Econv}
-\end{figure}\\
+The model, what we used to predict the landmarks, receives an image of $1 \times 256 \times 192$ as the input. The network was constructed from $3$ \textit{``elementary block"} following by $3$ full-connected layers. An elementary block is defined as a sequence of convolution $(C_i)$, pooling $(P_i)$ and dropout $(D_i)$ layers. The parameters for each layers are as below, the list of values follows the order of elementary blocks:
+\begin{itemize}[nosep,label=\footnotesize$\bullet$]
+	\item CONV layres:
+	\begin{itemize}[nosep]
+		\item Number of filters: 32, 64 and 128,
+		\item Kernel filters size: $(3 \times 3), (2 \times 2)$, and $(2 \times 2)$
+		\item Stride values: $1,1,1$
+		\item No padding is used for CONV layers
+	\end{itemize}
+	\item POOL layers:
+	\begin{itemize}[nosep]
+		\item Kernel filters size: $(2 \times 2), (2 \times 2)$, and $(2 \times 2)$
+		\item Stride values: $2,2,2$
+		\item No padding is used for CONV layers
+	\end{itemize}
+	\item DROP layers:
+	\begin{itemize}
+		\item Propabilities: $0.1, 0.2$ and $0.3$.
+	\end{itemize}
+\end{itemize}
+In the last full-connected layers (FC), the parameters are: FC1
+output: $1000$, FC2 output: $1000$, FC3 output: $16$. As usual, a
+dropout layer is inserted between FC1 ond FC2 with a probability equal to $0.5$. Fig.\ref{cnnnetwork2} illustrate the order of the layers in the network.
+
+\begin{figure*}[h]
+\centering
+\includegraphics[scale=0.32]{images/cnn_newdatasize/arch_model}
+\caption{{\small{Network architecture using $3$ \textit{elementary blocks}.
+  Convolution
+  layer in red, pooling in yellow and dropout in green color.}}} 
+\label{cnnnetwork2}
+\end{figure*}
+
 The parameters of CNN are shown in Table.x.
 \begin{table}[h!]
 	\centering
