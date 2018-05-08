@@ -80,6 +80,13 @@ transform procedures (translation, rotation) to generate a new
 image. Unluckily the methods to compute features through a
 CNN most often are translation and rotation independent. So, we have used another method to augment dataset from the down-sampling images. 
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.6]{images/cnn_newdatasize/data_aug}
+	\caption{An example of augmentation data. From an original image, six augmented version have generated.}
+	\label{figdataaug}
+\end{figure}
+
 A first procedure has been applied to change the value of
 each color channel in the original image. According to that,
 a constant is added to one of the RGB channels each time it
@@ -89,11 +96,9 @@ example, we can add a constant $c = 10$ to the red channel of
 all images in order to generate new images. This operation can
 be done for the three color channels. The second procedure separates the channels of RGB into three gray-scale images. As the network works on single channel images we are able to generate six versions of the same image, the total number of images used to train and to validate is
 $260 \times 7 = 1820$ images (six versions and original image). This
-has been an efficient way to proceed to the dataset expansion.
+has been an efficient way to proceed to the dataset expansion. Fig.\ref{figdataaug} presents two strategies that we used to augment the data.
 
 To have obtained the datasets in different sizes of images, we have applied different methods to down-sampling from the original images (see section \ref{}). In the context of this study, we have considered the images in two different resolutions: $256 \times 192$ and $96 \times 96$. Of course, the coordinates of manual landmarks have been also scaled to fit with the new resolutions. In the first considered resolutions ($256 \times 192$), we have simplied down-sampling from the original resolution. While, in the second considered resolution ($96 \times 96$), the original images have been cropped from the left to obtain a new resolution of $2448 \times 2448$. Then, the cropped images have been down-sampled to the target resolution.
-
-
 
 \section{The model}
 The model, what we used to predict the landmarks, receives an image of $1 \times 256 \times 192$ as the input. The network was constructed from $3$ \textit{``elementary block"} following by $3$ full-connected layers. An elementary block is defined as a sequence of convolution $(C_i)$, pooling $(P_i)$ and dropout $(D_i)$ layers. The parameters for each layers are as below, the list of values follows the order of elementary blocks:
@@ -116,9 +121,6 @@ The model, what we used to predict the landmarks, receives an image of $1 \times
 		\item Propabilities: $0.1, 0.2$ and $0.3$.
 	\end{itemize}
 \end{itemize}
-In the last full-connected layers (FC), the parameters are: FC1
-output: $1000$, FC2 output: $1000$, FC3 output: $16$. As usual, a
-dropout layer is inserted between FC1 ond FC2 with a probability equal to $0.5$. Fig.\ref{cnnnetwork2} illustrate the order of the layers in the network.
 
 \begin{figure*}[h]
 \centering
@@ -128,8 +130,11 @@ dropout layer is inserted between FC1 ond FC2 with a probability equal to $0.5$.
   layer in red, pooling in yellow and dropout in green color.}}} 
 \label{cnnnetwork2}
 \end{figure*}
+In the last full-connected layers (FC), the parameters are: FC1
+output: $1000$, FC2 output: $1000$, FC3 output: $16$. As usual, a
+dropout layer is inserted between FC1 ond FC2 with a probability equal to $0.5$. Fig.\ref{cnnnetwork2} illustrate the order of the layers in the network.
 
-The parameters of CNN are shown in Table.x.
+The parameters of CNN are shown in Table.\ref{model2parameters}.
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{l l l}
@@ -144,8 +149,13 @@ The parameters of CNN are shown in Table.x.
 	\label{model2parameters}
 \end{table}
 \section{Experiments}
+The model has been experimented on two resolution datasets. For each resolution dataset, the model was evaluated in two strategies: training from scratch and fine-tuning. In each evaluation, cross-validation technique to select the training and the testing data. From that, we able to have the predicted landmarks on all images.
+
+The dataset was trained on the model with $10000$ epochs\footnote{An epoch is a single pass through the full training set}. During training, the images are randomly divided into training set and validation set followed the ratio $6:4$. The learning rate began at $0.03$ and decreased to $0.00001$ during training. In vice versa, the momentum started at $0.9$ and increasing to $0.999$ at the end of the training process. 
+\subsection{Experiment on the first resolution dataset ($256 \times 192$) }
+\subsection{Experiment on the second resolution dataset ($96 \times 96$) }
 \subsection{Training on three parts of beetle}
-The dataset includes $5460$ images was trained on the model with $10000$ epochs\footnote{An epoch is a single pass through the full training set}. The images are randomly divided into training set and validation set followed the ratio $6:4$. The learning rate began at $0.03$ and decreased to $0.00001$ during training. In vice versa, the momentum started at $0.9$ and increasing to $0.999$ at the end of the training process. 
+
 
 Fig.\ref{figlossallparts} shows the losses during training process. At the beginning, the validation loss is always higher than the tranining loss, but from the $2000^{}$ epochs, the training loss begins stable while the validation loss continue to decrease. At the end of training, the losses values are $0.00029$ and $0.00009$ for training and validation, respectively.
 
