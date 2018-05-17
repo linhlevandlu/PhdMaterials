@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.4)  8 MAY 2018 23:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  9 MAY 2018 08:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -475,13 +475,10 @@ s/pronotum_fine_tuning_v11_test.png>] [8] (./cnn_summary.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
  4170 strings out of 493029
- 63854 string characters out of 6136235
+ 63854 string characters out of 6136234
  136961 words of memory out of 5000000
  7652 multiletter control sequences out of 15000+600000
  12301 words of font info for 44 fonts, out of 8000000 for 9000
