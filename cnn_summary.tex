@@ -6,7 +6,8 @@
 \usepackage{graphicx}
 \usepackage[justification=centering]{caption}
 \usepackage{enumitem}
-
+\usepackage{multirow}
+\usepackage{color}
 
 \begin{document}
 \title{Landmarks prediction on Beetle anatomical by applying Convolutional Neural Network }
@@ -149,11 +150,128 @@ The parameters of CNN are shown in Table.\ref{model2parameters}.
 	\label{model2parameters}
 \end{table}
 \section{Experiments}
-The model has been experimented on two resolution datasets. For each resolution dataset, the model was evaluated in two strategies: training from scratch and fine-tuning. In each evaluation, cross-validation technique to select the training and the testing data. From that, we able to have the predicted landmarks on all images.
+The model has been experimented on two resolution datasets: $256 \times 192$ and $96 \times 96$. For each resolution dataset, the model was evaluated in two strategies: training from scratch and fine-tuning. In each evaluation, cross-validation technique to select the training and the testing data. From that, we able to have the predicted landmarks on all images.
 
 The dataset was trained on the model with $10000$ epochs\footnote{An epoch is a single pass through the full training set}. During training, the images are randomly divided into training set and validation set followed the ratio $6:4$. The learning rate began at $0.03$ and decreased to $0.00001$ during training. In vice versa, the momentum started at $0.9$ and increasing to $0.999$ at the end of the training process. 
+
+To evaluate the prediction, the distance between predicted and manual landmarks have been computed in all images. Then, the average distance and standard deviation (SD) have been calculated on each landmark. Following sub-sections describe the average distance and SD of each dataset in each part of beetle.
 \subsection{Experiment on the first resolution dataset ($256 \times 192$) }
+\subsubsection{Pronotum part}
+	\begin{table}[htbp]
+		\centering
+		\begin{tabular}{ | c | c | c | c | c | }
+			\hline
+	
+			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{With fine-tuning}  \\ \cline{2-5}
+	 & Average & SD & Average & SD \  \\ \hline
+			\color{green}{\textbf{LM1}} & \color{green}{\textbf{4.002}} & \color{green}{\textbf{2.5732}} & \color{green}{\textbf{2.486}} & \color{green}{\textbf{1.5448}} \\ \hline
+			LM2 & 4.4831 & 2.7583 & 2.7198 & 1.7822 \\ \hline
+			LM3 & 4.2959 & 2.7067 & 2.6523 & 1.8386 \\ \hline
+			LM4 & 4.3865 & 3.0563 & 2.7709 & 1.9483 \\ \hline
+			LM5 & 4.2925 & 2.9086 & 2.4872 & 1.6235 \\ \hline
+			\color{red}{\textbf{LM6}} & \color{red}{\textbf{5.3631}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{3.0492}} & \color{red}{\textbf{1.991}} \\ \hline
+			LM7 & 4.636 & 2.8426 & 2.6836 & 1.7781 \\ \hline
+			LM8 & 4.9363 & 3.0801 & 2.8709 & 1.9662 \\ \hline
+		\end{tabular}
+	\end{table}
+\subsubsection{Body part}
+	\begin{table}[htbp]
+		\centering
+		\begin{tabular}{ | c | c | c | c | c | }
+			\hline
+	
+			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{With fine-tuning}  \\ \cline{2-5}
+	 & Average & SD & Average & SD \  \\ \hline
+			\color{green}{\textbf{LM1}} & \color{green}{\textbf{3.87}} & \color{green}{\textbf{2.5732}} & \color{green}{\textbf{2.34}} & \color{green}{\textbf{3.11}} \\ \hline
+			LM2 & 3.97 & 2.7583 & 2.27 & 1.7822 \\ \hline
+			LM3 & 3.92 & 2.7067 & 2.27 & 1.8386 \\ \hline
+			LM4 & 3.87 & 3.0563 & 2.25 & 1.9483 \\ \hline
+			LM5 & 4.02 & 2.9086 & 2.27 & 1.6235 \\ \hline
+			\color{red}{\textbf{LM6}} & \color{red}{\textbf{4.84}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{3.14}} & \color{red}{\textbf{1.991}} \\ \hline
+			LM7 & 5.21 & 2.8426 & 3.14 & 1.7781 \\ \hline
+			LM8 & 5.47 & 3.0801 & 3.29 & 1.9662 \\ \hline
+			LM9 & 5.27 & 3.0801 & 3.42 & 1.9662 \\ \hline
+			LM10 & 4.07 & 3.0801 & 2.49 & 1.9662 \\ \hline
+			LM11 & 3.99 & 3.0801 & 2.30 & 1.9662 \\ \hline						
+		\end{tabular}
+	\end{table}
+\subsubsection{Head}
+	\begin{table}[htbp]
+		\centering
+		\begin{tabular}{ | c | c | c | c | c | }
+			\hline
+	
+			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{With fine-tuning}  \\ \cline{2-5}
+	 & Average & SD & Average & SD \  \\ \hline
+			\color{green}{\textbf{LM1}} & \color{green}{\textbf{5.53}} & \color{green}{\textbf{2.5732}} & \color{green}{\textbf{3.03}} & \color{green}{\textbf{1.5448}} \\ \hline
+			LM2 & 5.16 & 2.7583 & 2.94 & 1.7822 \\ \hline
+			LM3 & 5.38 & 2.7067 & 2.96 & 1.8386 \\ \hline
+			LM4 & 5.03 & 3.0563 & 2.88 & 1.9483 \\ \hline
+			LM5 & 4.84 & 2.9086 & 2.76 & 1.6235 \\ \hline
+			\color{red}{\textbf{LM6}} & \color{red}{\textbf{4.45}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{2.67}} & \color{red}{\textbf{1.991}} \\ \hline
+			LM7 & 4.79 & 2.8426 & 2.29 & 1.7781 \\ \hline
+			LM8 & 4.53 & 3.0801 & 2.20 & 1.9662 \\ \hline
+			LM9 & 5.14 & 3.0801 & 2.57 & 1.9662 \\ \hline
+			LM10 & 5.06 & 3.0801 & 2.44 & 1.9662 \\ \hline
+		\end{tabular}
+	\end{table}
 \subsection{Experiment on the second resolution dataset ($96 \times 96$) }
+\subsubsection{Pronotum part}
+	\begin{table}[htbp]
+		\centering
+		\begin{tabular}{ | c | c | c | c | c | }
+			\hline
+	
+			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{With fine-tuning}  \\ \cline{2-5}
+	 & Average & SD & Average & SD \  \\ \hline
+			\color{green}{\textbf{LM1}} & \color{green}{\textbf{4.002}} & \color{green}{\textbf{2.5732}} & \color{green}{\textbf{2.486}} & \color{green}{\textbf{1.5448}} \\ \hline
+			LM2 & 4.4831 & 2.7583 & 2.7198 & 1.7822 \\ \hline
+			LM3 & 4.2959 & 2.7067 & 2.6523 & 1.8386 \\ \hline
+			LM4 & 4.3865 & 3.0563 & 2.7709 & 1.9483 \\ \hline
+			LM5 & 4.2925 & 2.9086 & 2.4872 & 1.6235 \\ \hline
+			\color{red}{\textbf{LM6}} & \color{red}{\textbf{5.3631}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{3.0492}} & \color{red}{\textbf{1.991}} \\ \hline
+			LM7 & 4.636 & 2.8426 & 2.6836 & 1.7781 \\ \hline
+			LM8 & 4.9363 & 3.0801 & 2.8709 & 1.9662 \\ \hline
+		\end{tabular}
+	\end{table}
+\subsubsection{Body part}
+	\begin{table}[htbp]
+		\centering
+		\begin{tabular}{ | c | c | c | c | c | }
+			\hline
+	
+			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{With fine-tuning}  \\ \cline{2-5}
+	 & Average & SD & Average & SD \  \\ \hline
+			\color{green}{\textbf{LM1}} & \color{green}{\textbf{4.002}} & \color{green}{\textbf{2.5732}} & \color{green}{\textbf{2.486}} & \color{green}{\textbf{1.5448}} \\ \hline
+			LM2 & 4.4831 & 2.7583 & 2.7198 & 1.7822 \\ \hline
+			LM3 & 4.2959 & 2.7067 & 2.6523 & 1.8386 \\ \hline
+			LM4 & 4.3865 & 3.0563 & 2.7709 & 1.9483 \\ \hline
+			LM5 & 4.2925 & 2.9086 & 2.4872 & 1.6235 \\ \hline
+			\color{red}{\textbf{LM6}} & \color{red}{\textbf{5.3631}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{3.0492}} & \color{red}{\textbf{1.991}} \\ \hline
+			LM7 & 4.636 & 2.8426 & 2.6836 & 1.7781 \\ \hline
+			LM8 & 4.9363 & 3.0801 & 2.8709 & 1.9662 \\ \hline
+		\end{tabular}
+	\end{table}
+\subsubsection{Head}
+	\begin{table}[htbp]
+		\centering
+		\begin{tabular}{ | c | c | c | c | c | }
+			\hline
+	
+			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{With fine-tuning}  \\ \cline{2-5}
+	 & Average & SD & Average & SD \  \\ \hline
+			\color{green}{\textbf{LM1}} & \color{green}{\textbf{4.002}} & \color{green}{\textbf{2.5732}} & \color{green}{\textbf{2.486}} & \color{green}{\textbf{1.5448}} \\ \hline
+			LM2 & 4.4831 & 2.7583 & 2.7198 & 1.7822 \\ \hline
+			LM3 & 4.2959 & 2.7067 & 2.6523 & 1.8386 \\ \hline
+			LM4 & 4.3865 & 3.0563 & 2.7709 & 1.9483 \\ \hline
+			LM5 & 4.2925 & 2.9086 & 2.4872 & 1.6235 \\ \hline
+			\color{red}{\textbf{LM6}} & \color{red}{\textbf{5.3631}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{3.0492}} & \color{red}{\textbf{1.991}} \\ \hline
+			LM7 & 4.636 & 2.8426 & 2.6836 & 1.7781 \\ \hline
+			LM8 & 4.9363 & 3.0801 & 2.8709 & 1.9662 \\ \hline
+		\end{tabular}
+	\end{table}
+
+
 \subsection{Training on three parts of beetle}
 
 
