@@ -18,7 +18,7 @@
 	In morphometric studies, landmarks are regarded as one of important properties to analyze the object's shape. Especially in biology, collecting complete landmarks give us the information of the oganism. From that, the biologists can study the complex interactions between evolution of the oganism and environment factors. In the context of this study, we focus on one of the most common insect of North-Western France, Carabidae (Beetle). Landmarking manually will be a time-consuming process. In order to investigate the posibility of automatic identify the landmarks on Beetles, we propose a convolutional neural network (CNN) to predict the landmarks on the parts of Beetle: pronotum, head, and body. The proposed model will witnessed on the datasets includes $293$ images (for each part) in different sizes. The experiments will be done in two directions: training the model from scratch and using fine-tuning. During the experiments, the coordinates of automatic landmarks will be evaluated by comparing with the manual coordinates, which are given by the biologists.
 \end{abstract}
 \section{Introduction}
-Morphometric landmarks are important features in biological investigations. They are use to analyze the shape of the organisms. Depending on the organisms, the number of landmarks on their shapes is different. When we consider the position of the landmarks with the shape, most of landmarks are located on the edges, for example, the landmarks on wings of Drosophila fly \cite{.}. Besides, we can also see the landmarks which stayed inside the anatomical part, i.e, landmarks on pinna of human ears \cite{.}. Currently, the landmarks are set manually by the biologsits. However, landmarking manually will be a time-consuming process and difficult to pre-process. Consequently, a process that proposed automatically the coordinates of landmarks could be interested.
+Morphometric landmarks are important features in biological investigations. They are using to analyze the shape of the organisms. Depending on the organisms, the number of landmarks on their shapes is different. When we consider the position of the landmarks with the shape, most of landmarks are located on the edges, for example, the landmarks on wings of Drosophila fly \cite{.}. Besides, we can also see the landmarks which stayed inside the anatomical part, i.e, landmarks on pinna of human ears \cite{.}. Currently, the landmarks are set manually by the biologsits. However, landmarking manually will be a time-consuming process and difficult to pre-process. Consequently, a process that proposed automatically the coordinates of landmarks could be interested.
 
 In image processing, segmentation is a most often step of the methods. In some cases, the object of interest is easy to extract and can be analyzed with the help of a lot of very well-known image analysis procedures. The result of segmentation step is very useful for many purposes. Depending on purpose of the applications, the object can be segmented or un-segmented before continuing the futher steps. Landmarks setting is no different. In a previous study \cite{.}, we have analyzed two parts of beetle: left and right mandibles. These parts are easy to segment. In that work, we have applied a set of algorithms based on segmentation, image alignment and SIFT \cite{.} to detect the landmarks on mandibles. 
 
@@ -156,7 +156,6 @@ The dataset was trained on the model with $10000$ epochs\footnote{An epoch is a 
 
 To evaluate the prediction, the distance between predicted and manual landmarks have been computed in all images. Then, the average distance and standard deviation (SD) have been calculated on each landmark. Following sub-sections describe the average distance and SD of each dataset in each part of beetle.
 \subsection{Experiment on the first resolution dataset ($256 \times 192$) }
-\subsubsection{Pronotum part}
 	\begin{table}[htbp]
 		\centering
 		\begin{tabular}{ | c | c | c | c | c | }
@@ -173,8 +172,10 @@ To evaluate the prediction, the distance between predicted and manual landmarks 
 			LM7 & 4.636 & 2.8426 & 2.6836 & 1.7781 \\ \hline
 			LM8 & 4.9363 & 3.0801 & 2.8709 & 1.9662 \\ \hline
 		\end{tabular}
+		\label{tbl1}
+		\caption{The average distance and standard deviation on pronotum images}
 	\end{table}
-\subsubsection{Body part}
+
 	\begin{table}[htbp]
 		\centering
 		\begin{tabular}{ | c | c | c | c | c | }
@@ -183,19 +184,21 @@ To evaluate the prediction, the distance between predicted and manual landmarks 
 			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{With fine-tuning}  \\ \cline{2-5}
 	 & Average & SD & Average & SD \  \\ \hline
 			\color{green}{\textbf{LM1}} & \color{green}{\textbf{3.87}} & \color{green}{\textbf{2.5732}} & \color{green}{\textbf{2.34}} & \color{green}{\textbf{3.11}} \\ \hline
-			LM2 & 3.97 & 2.7583 & 2.27 & 1.7822 \\ \hline
-			LM3 & 3.92 & 2.7067 & 2.27 & 1.8386 \\ \hline
-			LM4 & 3.87 & 3.0563 & 2.25 & 1.9483 \\ \hline
-			LM5 & 4.02 & 2.9086 & 2.27 & 1.6235 \\ \hline
-			\color{red}{\textbf{LM6}} & \color{red}{\textbf{4.84}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{3.14}} & \color{red}{\textbf{1.991}} \\ \hline
-			LM7 & 5.21 & 2.8426 & 3.14 & 1.7781 \\ \hline
-			LM8 & 5.47 & 3.0801 & 3.29 & 1.9662 \\ \hline
-			LM9 & 5.27 & 3.0801 & 3.42 & 1.9662 \\ \hline
-			LM10 & 4.07 & 3.0801 & 2.49 & 1.9662 \\ \hline
-			LM11 & 3.99 & 3.0801 & 2.30 & 1.9662 \\ \hline						
+			LM2 & 3.97 & 2.7583 & 2.27 & 3.15 \\ \hline
+			LM3 & 3.92 & 2.7067 & 2.27 & 2.96 \\ \hline
+			LM4 & 3.87 & 3.0563 & 2.25 & 3.26 \\ \hline
+			LM5 & 4.02 & 2.9086 & 2.27 & 3.28 \\ \hline
+			\color{red}{\textbf{LM6}} & \color{red}{\textbf{4.84}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{3.14}} & \color{red}{\textbf{3.47}} \\ \hline
+			LM7 & 5.21 & 2.8426 & 3.14 & 3.40 \\ \hline
+			LM8 & 5.47 & 3.0801 & 3.29 & 3.36 \\ \hline
+			LM9 & 5.27 & 3.0801 & 3.42 & 3.09 \\ \hline
+			LM10 & 4.07 & 3.0801 & 2.49 & 3.05 \\ \hline
+			LM11 & 3.99 & 3.0801 & 2.30 & 3.06 \\ \hline						
 		\end{tabular}
+		\label{tbl2}
+		\caption{The average distance and standard deviation on body (elytra) images}
 	\end{table}
-\subsubsection{Head}
+
 	\begin{table}[htbp]
 		\centering
 		\begin{tabular}{ | c | c | c | c | c | }
@@ -203,18 +206,22 @@ To evaluate the prediction, the distance between predicted and manual landmarks 
 	
 			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{With fine-tuning}  \\ \cline{2-5}
 	 & Average & SD & Average & SD \  \\ \hline
-			\color{green}{\textbf{LM1}} & \color{green}{\textbf{5.53}} & \color{green}{\textbf{2.5732}} & \color{green}{\textbf{3.03}} & \color{green}{\textbf{1.5448}} \\ \hline
-			LM2 & 5.16 & 2.7583 & 2.94 & 1.7822 \\ \hline
-			LM3 & 5.38 & 2.7067 & 2.96 & 1.8386 \\ \hline
-			LM4 & 5.03 & 3.0563 & 2.88 & 1.9483 \\ \hline
-			LM5 & 4.84 & 2.9086 & 2.76 & 1.6235 \\ \hline
-			\color{red}{\textbf{LM6}} & \color{red}{\textbf{4.45}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{2.67}} & \color{red}{\textbf{1.991}} \\ \hline
-			LM7 & 4.79 & 2.8426 & 2.29 & 1.7781 \\ \hline
-			LM8 & 4.53 & 3.0801 & 2.20 & 1.9662 \\ \hline
-			LM9 & 5.14 & 3.0801 & 2.57 & 1.9662 \\ \hline
-			LM10 & 5.06 & 3.0801 & 2.44 & 1.9662 \\ \hline
+			\color{green}{\textbf{LM1}} & \color{green}{\textbf{5.53}} & \color{green}{\textbf{2.5732}} & \color{green}{\textbf{3.03}} & \color{green}{\textbf{1.89}} \\ \hline
+			LM2 & 5.16 & 2.7583 & 2.94 & 1.97 \\ \hline
+			LM3 & 5.38 & 2.7067 & 2.96 & 1.81 \\ \hline
+			LM4 & 5.03 & 3.0563 & 2.88 & 1.92 \\ \hline
+			LM5 & 4.84 & 2.9086 & 2.76 & 1.75 \\ \hline
+			\color{red}{\textbf{LM6}} & \color{red}{\textbf{4.45}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{2.67}} & \color{red}{\textbf{2.02}} \\ \hline
+			LM7 & 4.79 & 2.8426 & 2.29 & 1.64 \\ \hline
+			LM8 & 4.53 & 3.0801 & 2.20 & 1.54 \\ \hline
+			LM9 & 5.14 & 3.0801 & 2.57 & 1.60 \\ \hline
+			LM10 & 5.06 & 3.0801 & 2.44 & 1.53 \\ \hline
 		\end{tabular}
+		\label{tbl3}
+		\caption{The average distance and standard deviation on head images}
 	\end{table}
+
+Table. \ref{tbl1}, \ref{tbl2}, and \ref{tbl3} show the comparation on average distances and standard deviations on protum, body, and head part, respectively. The results show that the average distance have been improved with using fine-tuning. Besides, we do not see the significant difference of the fine-tuning processes (with and without freezing some layers).
 \subsection{Experiment on the second resolution dataset ($96 \times 96$) }
 \subsubsection{Pronotum part}
 	\begin{table}[htbp]
