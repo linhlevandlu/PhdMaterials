@@ -154,76 +154,89 @@ The model has been experimented on two resolution datasets: $256 \times 192$ and
 
 The dataset was trained on the model with $10000$ epochs\footnote{An epoch is a single pass through the full training set}. During training, the images are randomly divided into training set and validation set followed the ratio $6:4$. The learning rate began at $0.03$ and decreased to $0.00001$ during training. In vice versa, the momentum started at $0.9$ and increasing to $0.999$ at the end of the training process. 
 
-To evaluate the prediction, the distance between predicted and manual landmarks have been computed in all images. Then, the average distance and standard deviation (SD) have been calculated on each landmark. Following sub-sections describe the average distance and SD of each dataset in each part of beetle.
+To evaluate the prediction, the distance between predicted and manual landmarks have been computed in all images. Then, the average distance and standard deviation (SD) have been calculated on each landmark. Following sub-sections describe the average distance and SD of each dataset in each part of beetle. The evaluation has been finished on two size of the input images.
 \subsection{Experiment on the first resolution dataset ($256 \times 192$) }
 	\begin{table}[htbp]
 		\centering
-		\begin{tabular}{ | c | c | c | c | c | }
-			\hline
-	
-			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{With fine-tuning}  \\ \cline{2-5}
-	 & Average & SD & Average & SD \  \\ \hline
-			\color{green}{\textbf{LM1}} & \color{green}{\textbf{4.002}} & \color{green}{\textbf{2.5732}} & \color{green}{\textbf{2.486}} & \color{green}{\textbf{1.5448}} \\ \hline
-			LM2 & 4.4831 & 2.7583 & 2.7198 & 1.7822 \\ \hline
-			LM3 & 4.2959 & 2.7067 & 2.6523 & 1.8386 \\ \hline
-			LM4 & 4.3865 & 3.0563 & 2.7709 & 1.9483 \\ \hline
-			LM5 & 4.2925 & 2.9086 & 2.4872 & 1.6235 \\ \hline
-			\color{red}{\textbf{LM6}} & \color{red}{\textbf{5.3631}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{3.0492}} & \color{red}{\textbf{1.991}} \\ \hline
-			LM7 & 4.636 & 2.8426 & 2.6836 & 1.7781 \\ \hline
-			LM8 & 4.9363 & 3.0801 & 2.8709 & 1.9662 \\ \hline
+		\begin{tabular}{ | c | c | c | c | c | c | c | }
+			\hline	
+			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{Fine-tuning without freezing} & \multicolumn{2}{c|}{Fine-tuning with freezing}  \\ \cline{2-7}
+	 & Average & SD & Average & SD & Average & SD \  \\ \hline
+			\color{green}{\textbf{LM1}} & \color{green}{\textbf{4.002}} & \color{green}{\textbf{2.5732}} & \color{green}{\textbf{2.486}} & \color{green}{\textbf{1.5448}} & \color{green}{\textbf{2.47}} & \color{green}{\textbf{1.55}}\\ \hline
+			LM2 & 4.4831 & 2.7583 & 2.7198 & 1.7822 & 2.67 & 1.75 \\ \hline
+			LM3 & 4.2959 & 2.7067 & 2.6523 & 1.8386 & 2.67 & 1.77 \\ \hline
+			LM4 & 4.3865 & 3.0563 & 2.7709 & 1.9483 & 2.74 & 1.91\\ \hline
+			LM5 & 4.2925 & 2.9086 & 2.4872 & 1.6235 & 2.57 & 1.60\\ \hline
+			\color{red}{\textbf{LM6}} & \color{red}{\textbf{5.3631}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{3.0492}} & \color{red}{\textbf{1.991}} & \color{red}{\textbf{3.09}} & \color{red}{\textbf{2.13}}\\ \hline
+			LM7 & 4.636 & 2.8426 & 2.6836 & 1.7781 & 2.65 & 1.80\\ \hline
+			LM8 & 4.9363 & 3.0801 & 2.8709 & 1.9662 & 2.96 & 1.97\\ \hline
 		\end{tabular}
 		\label{tbl1}
-		\caption{The average distance and standard deviation on pronotum images}
-	\end{table}
-
+		\caption{The average distance and standard deviation on pronotum images ($256 \times 192$)}
+	\end{table}~\\
 	\begin{table}[htbp]
 		\centering
-		\begin{tabular}{ | c | c | c | c | c | }
-			\hline
-	
-			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{With fine-tuning}  \\ \cline{2-5}
-	 & Average & SD & Average & SD \  \\ \hline
-			\color{green}{\textbf{LM1}} & \color{green}{\textbf{3.87}} & \color{green}{\textbf{2.5732}} & \color{green}{\textbf{2.34}} & \color{green}{\textbf{3.11}} \\ \hline
-			LM2 & 3.97 & 2.7583 & 2.27 & 3.15 \\ \hline
-			LM3 & 3.92 & 2.7067 & 2.27 & 2.96 \\ \hline
-			LM4 & 3.87 & 3.0563 & 2.25 & 3.26 \\ \hline
-			LM5 & 4.02 & 2.9086 & 2.27 & 3.28 \\ \hline
-			\color{red}{\textbf{LM6}} & \color{red}{\textbf{4.84}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{3.14}} & \color{red}{\textbf{3.47}} \\ \hline
-			LM7 & 5.21 & 2.8426 & 3.14 & 3.40 \\ \hline
-			LM8 & 5.47 & 3.0801 & 3.29 & 3.36 \\ \hline
-			LM9 & 5.27 & 3.0801 & 3.42 & 3.09 \\ \hline
-			LM10 & 4.07 & 3.0801 & 2.49 & 3.05 \\ \hline
-			LM11 & 3.99 & 3.0801 & 2.30 & 3.06 \\ \hline						
+		\begin{tabular}{ | c | c | c | c | c | c| c | }
+			\hline	
+			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{Fine-tuning without freezing} & \multicolumn{2}{c|}{Fine-tuning with freezing}  \\ \cline{2-7}
+	 & Average & SD & Average & SD & Average & SD \  \\ \hline
+			\color{green}{\textbf{LM1}} & \color{green}{\textbf{3.87}} & \color{green}{\textbf{3.40}} & \color{green}{\textbf{2.34}} & \color{green}{\textbf{3.11}} & \color{green}{\textbf{2.33}} & \color{green}{\textbf{3.10}} \\ \hline
+			LM2 & 3.97 & 3.63 & 2.27 & 3.15 & 2.27 & 3.19 \\ \hline
+			LM3 & 3.92 & 3.36 & 2.27 & 2.96 & 2.33 & 2.93 \\ \hline
+			LM4 & 3.87 & 3.50 & 2.25 & 3.26 & 2.20 & 3.09 \\ \hline
+			LM5 & 4.02 & 3.54 & 2.27 & 3.28 & 2.34 & 3.07 \\ \hline
+			\color{red}{\textbf{LM6}} & \color{red}{\textbf{4.84}} & \color{red}{\textbf{3.59}} & \color{red}{\textbf{3.14}} & \color{red}{\textbf{3.47}} & \color{red}{\textbf{3.12}} & \color{red}{\textbf{3.30}}  \\ \hline
+			LM7 & 5.21 & 3.76 & 3.14 & 3.40 & 3.10 & 3.47 \\ \hline
+			LM8 & 5.47 & 3.89 & 3.29 & 3.36 & 3.28 & 3.43 \\ \hline
+			LM9 & 5.27 & 3.67 & 3.42 & 3.09 & 3.30 & 3.06 \\ \hline
+			LM10 & 4.07 & 3.45 & 2.49 & 3.05 & 2.45 & 2.75 \\ \hline
+			LM11 & 3.99 & 3.34 & 2.30 & 3.06 & 2.31 & 2.97 \\ \hline						
 		\end{tabular}
 		\label{tbl2}
-		\caption{The average distance and standard deviation on body (elytra) images}
-	\end{table}
-
+		\caption{The average distance and standard deviation on body (elytra) images ($256 \times 192$)}
+	\end{table}~\\
 	\begin{table}[htbp]
 		\centering
-		\begin{tabular}{ | c | c | c | c | c | }
+		\begin{tabular}{ | c | c | c | c | c | c | c | }
 			\hline
 	
-			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{With fine-tuning}  \\ \cline{2-5}
-	 & Average & SD & Average & SD \  \\ \hline
-			\color{green}{\textbf{LM1}} & \color{green}{\textbf{5.53}} & \color{green}{\textbf{2.5732}} & \color{green}{\textbf{3.03}} & \color{green}{\textbf{1.89}} \\ \hline
-			LM2 & 5.16 & 2.7583 & 2.94 & 1.97 \\ \hline
-			LM3 & 5.38 & 2.7067 & 2.96 & 1.81 \\ \hline
-			LM4 & 5.03 & 3.0563 & 2.88 & 1.92 \\ \hline
-			LM5 & 4.84 & 2.9086 & 2.76 & 1.75 \\ \hline
-			\color{red}{\textbf{LM6}} & \color{red}{\textbf{4.45}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{2.67}} & \color{red}{\textbf{2.02}} \\ \hline
-			LM7 & 4.79 & 2.8426 & 2.29 & 1.64 \\ \hline
-			LM8 & 4.53 & 3.0801 & 2.20 & 1.54 \\ \hline
-			LM9 & 5.14 & 3.0801 & 2.57 & 1.60 \\ \hline
-			LM10 & 5.06 & 3.0801 & 2.44 & 1.53 \\ \hline
+			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{Fine-tuning without freezing} & \multicolumn{2}{c|}{Fine-tuning with freezing}  \\ \cline{2-7}
+	 & Average & SD & Average & SD & Average & SD \  \\ \hline
+			\color{green}{\textbf{LM1}} & \color{green}{\textbf{5.53}} & \color{green}{\textbf{3.40}} & \color{green}{\textbf{3.03}} & \color{green}{\textbf{1.89}} & \color{green}{\textbf{3.03}} & \color{green}{\textbf{1.88}} \\ \hline
+			LM2 & 5.16 & 3.63 & 2.94 & 1.97 & 2.86 & 1.87 \\ \hline
+			LM3 & 5.38 & 3.46 & 2.96 & 1.81 & 2.96 & 1.86\\ \hline
+			LM4 & 5.03 & 3.58 & 2.88 & 1.92 & 2.79 & 1.91\\ \hline
+			LM5 & 4.84 & 3.26 & 2.76 & 1.75 & 2.77 & 1.78\\ \hline
+			\color{red}{\textbf{LM6}} & \color{red}{\textbf{4.45}} & \color{red}{\textbf{3.37}} & \color{red}{\textbf{2.67}} & \color{red}{\textbf{2.02}} & \color{red}{\textbf{2.61}} & \color{red}{\textbf{1.97}} \\ \hline
+			LM7 & 4.79 & 3.08 & 2.29 & 1.64 & 2.31 & 1.69 \\ \hline
+			LM8 & 4.53 & 3.11 & 2.20 & 1.54 & 2.20 & 1.58 \\ \hline
+			LM9 & 5.14 & 3.13 & 2.57 & 1.60 & 2.66 & 1.63 \\ \hline
+			LM10 & 5.06 & 3.17 & 2.44 & 1.53 & 2.55 & 1.61 \\ \hline
 		\end{tabular}
 		\label{tbl3}
-		\caption{The average distance and standard deviation on head images}
-	\end{table}
+		\caption{The average distance and standard deviation on head images ($256 \times 192$)}
+	\end{table}~\\
 
 Table. \ref{tbl1}, \ref{tbl2}, and \ref{tbl3} show the comparation on average distances and standard deviations on protum, body, and head part, respectively. The results show that the average distance have been improved with using fine-tuning. Besides, we do not see the significant difference of the fine-tuning processes (with and without freezing some layers).
 \subsection{Experiment on the second resolution dataset ($96 \times 96$) }
-\subsubsection{Pronotum part}
+	\begin{table}[htbp]
+		\centering
+		\begin{tabular}{ | c | c | c | c | c | }
+			\hline	
+			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{With fine-tuning}  \\ \cline{2-5}
+	 & Average & SD & Average & SD \  \\ \hline
+			\color{green}{\textbf{LM1}} & \color{green}{\textbf{1.61}} & \color{green}{\textbf{0.93}} & \color{green}{\textbf{0.83}} & \color{green}{\textbf{0.55}} \\ \hline
+			LM2 & 1.84 & 1.12 & 0.92 & 0.73 \\ \hline
+			LM3 & 1.62 & 1.00 & 0.88 & 0.62 \\ \hline
+			LM4 & 1.88 & 1.21 & 0.86 & 0.64 \\ \hline
+			LM5 & 1.76 & 1.10 & 0.90 & 0.65 \\ \hline
+			\color{red}{\textbf{LM6}} & \color{red}{\textbf{2.13}} & \color{red}{\textbf{1.34}} & \color{red}{\textbf{1.00}} & \color{red}{\textbf{0.79}} \\ \hline
+			LM7 & 1.61 & 1.02 & 0.81 & 0.64 \\ \hline
+			LM8 & 1.98 & 1.27 & 0.94 & 0.82 \\ \hline
+		\end{tabular}
+		\label{tbl4}
+		\caption{The average distance and standard deviation on pronotum images ($96 \times 96$)}
+	\end{table}~\\
 	\begin{table}[htbp]
 		\centering
 		\begin{tabular}{ | c | c | c | c | c | }
@@ -231,17 +244,21 @@ Table. \ref{tbl1}, \ref{tbl2}, and \ref{tbl3} show the comparation on average di
 	
 			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{With fine-tuning}  \\ \cline{2-5}
 	 & Average & SD & Average & SD \  \\ \hline
-			\color{green}{\textbf{LM1}} & \color{green}{\textbf{4.002}} & \color{green}{\textbf{2.5732}} & \color{green}{\textbf{2.486}} & \color{green}{\textbf{1.5448}} \\ \hline
-			LM2 & 4.4831 & 2.7583 & 2.7198 & 1.7822 \\ \hline
-			LM3 & 4.2959 & 2.7067 & 2.6523 & 1.8386 \\ \hline
-			LM4 & 4.3865 & 3.0563 & 2.7709 & 1.9483 \\ \hline
-			LM5 & 4.2925 & 2.9086 & 2.4872 & 1.6235 \\ \hline
-			\color{red}{\textbf{LM6}} & \color{red}{\textbf{5.3631}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{3.0492}} & \color{red}{\textbf{1.991}} \\ \hline
-			LM7 & 4.636 & 2.8426 & 2.6836 & 1.7781 \\ \hline
-			LM8 & 4.9363 & 3.0801 & 2.8709 & 1.9662 \\ \hline
+			\color{green}{\textbf{LM1}} & \color{green}{\textbf{1.50}} & \color{green}{\textbf{1.27}} & \color{green}{\textbf{0.878}} & \color{green}{\textbf{0.77}} \\ \hline
+			LM2 & 1.54 & 1.32 & 0.82 & 0.80 \\ \hline
+			LM3 & 1.56 & 1.21 & 0.82 & 0.70 \\ \hline
+			LM4 & 1.45 & 1.31 & 0.81 & 0.78 \\ \hline
+			LM5 & 1.52 & 1.36 & 0.89 & 0.75 \\ \hline
+			\color{red}{\textbf{LM6}} & \color{red}{\textbf{2.09}} & \color{red}{\textbf{1.58}} & \color{red}{\textbf{1.21}} & \color{red}{\textbf{0.94}} \\ \hline
+			LM7 & 2.27 & 1.69 & 1.06 & 1.01 \\ \hline
+			LM8 & 2.41 & 1.67 & 1.08 & 0.95 \\ \hline
+			LM9 & 2.33 & 1.55 & 1.21 & 0.84 \\ \hline
+			LM10 & 1.59 & 1.21 & 0.85 & 0.72 \\ \hline
+			LM11 & 1.54 & 1.24 & 0.83 & 0.70 \\ \hline
 		\end{tabular}
-	\end{table}
-\subsubsection{Body part}
+		\label{tbl5}
+		\caption{The average distance and standard deviation on body images ($96 \times 96$)}
+	\end{table}~\\
 	\begin{table}[htbp]
 		\centering
 		\begin{tabular}{ | c | c | c | c | c | }
@@ -249,34 +266,31 @@ Table. \ref{tbl1}, \ref{tbl2}, and \ref{tbl3} show the comparation on average di
 	
 			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{With fine-tuning}  \\ \cline{2-5}
 	 & Average & SD & Average & SD \  \\ \hline
-			\color{green}{\textbf{LM1}} & \color{green}{\textbf{4.002}} & \color{green}{\textbf{2.5732}} & \color{green}{\textbf{2.486}} & \color{green}{\textbf{1.5448}} \\ \hline
-			LM2 & 4.4831 & 2.7583 & 2.7198 & 1.7822 \\ \hline
-			LM3 & 4.2959 & 2.7067 & 2.6523 & 1.8386 \\ \hline
-			LM4 & 4.3865 & 3.0563 & 2.7709 & 1.9483 \\ \hline
-			LM5 & 4.2925 & 2.9086 & 2.4872 & 1.6235 \\ \hline
-			\color{red}{\textbf{LM6}} & \color{red}{\textbf{5.3631}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{3.0492}} & \color{red}{\textbf{1.991}} \\ \hline
-			LM7 & 4.636 & 2.8426 & 2.6836 & 1.7781 \\ \hline
-			LM8 & 4.9363 & 3.0801 & 2.8709 & 1.9662 \\ \hline
+			\color{green}{\textbf{LM1}} & \color{green}{\textbf{2.32}} & \color{green}{\textbf{1.40}} & \color{green}{\textbf{0.98}} & \color{green}{\textbf{0.80}} \\ \hline
+			LM2 & 2.00 & 1.36 & 0.88 & 0.62 \\ \hline
+			LM3 & 2.18 & 1.41 & 1.00 & 0.86 \\ \hline
+			LM4 & 1.90 & 1.40 & 0.91 & 0.68 \\ \hline
+			LM5 & 1.93 & 1.26 & 1.19 & 0.96 \\ \hline
+			\color{red}{\textbf{LM6}} & \color{red}{\textbf{1.63}} & \color{red}{\textbf{1.31}} & \color{red}{\textbf{1.07}} & \color{red}{\textbf{0.85}} \\ \hline
+			LM7 & 1.77 & 1.18 & 0.89 & 0.86 \\ \hline
+			LM8 & 1.57 & 1.15 & 0.85 & 0.76 \\ \hline
+			LM9 & 1.92 & 1.22 & 0.96 & 0.91 \\ \hline
+			LM10 & 1.83 & 1.20 & 0.92 & 0.83 \\ \hline
 		\end{tabular}
+		\label{tbl6}
+		\caption{The average distance and standard deviation on head images ($96 \times 96$)}
 	\end{table}
-\subsubsection{Head}
-	\begin{table}[htbp]
-		\centering
-		\begin{tabular}{ | c | c | c | c | c | }
-			\hline
-	
-			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{With fine-tuning}  \\ \cline{2-5}
-	 & Average & SD & Average & SD \  \\ \hline
-			\color{green}{\textbf{LM1}} & \color{green}{\textbf{4.002}} & \color{green}{\textbf{2.5732}} & \color{green}{\textbf{2.486}} & \color{green}{\textbf{1.5448}} \\ \hline
-			LM2 & 4.4831 & 2.7583 & 2.7198 & 1.7822 \\ \hline
-			LM3 & 4.2959 & 2.7067 & 2.6523 & 1.8386 \\ \hline
-			LM4 & 4.3865 & 3.0563 & 2.7709 & 1.9483 \\ \hline
-			LM5 & 4.2925 & 2.9086 & 2.4872 & 1.6235 \\ \hline
-			\color{red}{\textbf{LM6}} & \color{red}{\textbf{5.3631}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{3.0492}} & \color{red}{\textbf{1.991}} \\ \hline
-			LM7 & 4.636 & 2.8426 & 2.6836 & 1.7781 \\ \hline
-			LM8 & 4.9363 & 3.0801 & 2.8709 & 1.9662 \\ \hline
-		\end{tabular}
-	\end{table}
+Table. \ref{tbl4}, \ref{tbl5}, and \ref{tbl6} show the average distances and standard deviations on each landmark on pronotum, body, and head part of beelte in the dataset with the size of $96 \times 96$. Like previous case, the result with fine-tuning has been improved when we compare with the result when we training from scratch.
+\section{Conclusions}
+In this study, we have proposed a CNN to predict the landmarks on beetle species. The model includes 3-repeated of an elementary block followed by 3 full-connected layers and a dropout layer. Each elementary block includes a convolutional layer, a maximum pooling layer, and a dropout layer.
+
+The model has been trained and tested on two dataset with different size of images ($256 \times 192$ and $96 \times 96$) by applying two stategies: training from scratch and fine-tuning. The results show that the model had a good prediction on beelte species by training from scratch. However, the quality of predictions have been improved when we have applied fine-tuning. In addition, when we consider the size of the input, the model has given the better result with the small size of images than the larger.  
+
+\pagebreak
+\bibliographystyle{unsrt}
+\bibliography{includes/references}
+
+\end{document}
 
 
 \subsection{Training on three parts of beetle}
@@ -349,10 +363,3 @@ Table.\ref{tab2} shows the average error distance given by each landmark. The va
 \label{tab2}
 \end{center}
 \end{table}
-
-\section{Conclusions}
-A CNN model has been trained on a dataset that includes the images of three parts of beetle. The trained model then has been fine-tuned with the pronotum dataset. Comparing the losses when we trained the pronotum from scratch, the losses during fine-tuning has been improved $40\%$ on validation test. Besides, the coordinates of predicted landmarks are also more accuracy than the last result (training from scratch) (Table.\ref{tab2}). From the result, we can see that fine-tuning has affected to the results from CNN. However, the effects still limits in our case. The experiments of the techniques on fine-tuning need to do to reach to the result as we expect.
-\bibliographystyle{unsrt}
-\bibliography{includes/references}
-
-\end{document}
