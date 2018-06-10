@@ -15,16 +15,16 @@
 \date{\today}
 \maketitle
 \begin{abstract}
-	In morphometric studies, landmarks are regarded as one of important properties to analyze the object's shape. Especially in biology, collecting complete landmarks give us the information of the oganism. From that, the biologists can study the complex interactions between evolution of the oganism and environment factors. In the context of this study, we focus on one of the most common insect of North-Western France, Carabidae (Beetle). Landmarking manually will be a time-consuming process. In order to investigate the posibility of automatic identify the landmarks on Beetles, we propose a convolutional neural network (CNN) to predict the landmarks on the parts of Beetle: pronotum, head, and body. The proposed model will witnessed on the datasets includes $293$ images (for each part) in different sizes. The experiments will be done in two directions: training the model from scratch and using fine-tuning. During the experiments, the coordinates of automatic landmarks will be evaluated by comparing with the manual coordinates, which are given by the biologists.
+	In morphometric studies, landmarks are regarded as one of important properties to analyze the object's shape. Especially in biology, collecting complete landmarks can give the information of the oganism. From that, the biologists can study the complex interactions between evolution of the oganism and environment factors. Currently, landmarking is most oftne done by manually. It is time-consuming and difficult to reproduce. In the context of this study, we order to investigate the posibiliy of automatic idenfity landmarks on Beetles. The dataset, that we focus, is one of the most common insect of North-Western France, Carabidae (Beetle). To do this work, we propose a convolutional neural network (CNN) to predict the landmarks on the parts of Beetle: pronotum, head, and body. The proposed model will witnessed on the datasets includes $293$ images (for each part) in different sizes: $192 \times 256$ and $96 \times 96$. The experiments will be done in two directions: training the model from scratch and using fine-tuning. During the experiments, the coordinates of automatic landmarks will be evaluated by comparing with the manual coordinates, which are given by the biologists.
 \end{abstract}
 \section{Introduction}
-Morphometric landmarks are important features in biological investigations. They are using to analyze the shape of the organisms. Depending on the organisms, the number of landmarks on their shapes is different. When we consider the position of the landmarks with the shape, most of landmarks are located on the edges, for example, the landmarks on wings of Drosophila fly \cite{.}. Besides, we can also see the landmarks which stayed inside the anatomical part, i.e, landmarks on pinna of human ears \cite{.}. Currently, the landmarks are set manually by the biologsits. However, landmarking manually will be a time-consuming process and difficult to pre-process. Consequently, a process that proposed automatically the coordinates of landmarks could be interested.
+Morphometric landmarks are important features in biological investigations. They are using to analyze the shape of the organisms. Depending on the organisms, the number of landmarks on their shapes is different. In addition, when we consider the location of the landmarks with the object, most of landmarks are located on the edges (shape), for example, the landmarks on wings of Drosophila fly \cite{sonnenschein2015image}. Besides, we can also see the landmarks which stayed inside the anatomical part, i.e, landmarks on pinna of human ears \cite{cintas2016automatic}. Currently, the landmarks are set manually by the biologsits. This operation is a time-consuming process and difficult to reproduce. Consequently, a process that proposed automatically the coordinates of landmarks could be interested.
 
-In image processing, segmentation is a most often step of the methods. In some cases, the object of interest is easy to extract and can be analyzed with the help of a lot of very well-known image analysis procedures. The result of segmentation step is very useful for many purposes. Depending on purpose of the applications, the object can be segmented or un-segmented before continuing the futher steps. Landmarks setting is no different. In a previous study \cite{.}, we have analyzed two parts of beetle: left and right mandibles. These parts are easy to segment. In that work, we have applied a set of algorithms based on segmentation, image alignment and SIFT \cite{.} to detect the landmarks on mandibles. 
+A way to automatize landmarks setting is using the image processing techniques. In which, segmentation is a most often step of the methods because the result from segmentation step is very useful for many purposes. Depending on the characteristics of the image, we can choose the suitable methods to finish target work. In some cases, the object of interest is easy to extract and landmarks can be set by applying a lot of very well-known image analysis procedures, i.e. the landmarks on fly wings \cite{palaniswamy2010automatic}. In a previous study \cite{le2017maelab}, we have analyzed two parts of beetle: left and right mandibles. These parts are easy to segment. In that work, we have applied a set of algorithms based on segmentation, image alignment and SIFT \cite{lowe2004distinctive} descriptor to estimate the landmarks on mandibles. 
 
-Unfortunately, the images of other parts are not simply as the mandibles. Besides the main objects, we have also the different parts, i.e, we have a part of head and the legs in pronotum images. The image becomes very noisy. If we would like to segment the object as traditional processes, the process may have consumed a lot of time and difficult to choose a proper method. This is the reason that we turn the landmarking problem on some parts of beetle (i.e, pronotum, head, and body) to a way of analyzing images without the segmentation step. 
+Unfortunately, the images of other parts are not simply as the mandibles. Besides the main objects, the images have also the different parts, i.e. we have a part of head and the legs in pronotum images. So, they become very noisy. If we would like to segment the object as traditional processes, the process may have consumed a lot of time and difficult to choose a proper method. This is the reason that we turn the landmarking problem on some parts of beetle (i.e, pronotum, head, and body) to a way of analyzing images without the segmentation step. 
 
-As the beetles have not been dissected, their anatomical parts have not been set apart. So image segmentation of each part, as they are still attached to the whole specimen, is problematic and has been given up. Coordinates of manual landmarks for each part have been provided and are considered as the ground truth to evaluate the predicted ones by our methods. Fig.\ref{figintro} shows the parts of beeltes and their manual landmarks what we are looking for. 
+As the beetles have not been dissected, their anatomical parts have not been set apart. So image segmentation of each part, as they are still attached to the whole specimen, is problematic and has been given up. Coordinates of manual landmarks for each part have been provided by the biologists and they are considered as the ground truth to evaluate the predicted ones by our methods. Fig.\ref{figintro} shows the parts of beeltes and their manual landmarks what we are looking for. 
 
 \begin{figure}[h!]
 \centering
@@ -36,13 +36,14 @@ As the beetles have not been dissected, their anatomical parts have not been set
 \label{figintro}
 \end{figure}
 
-To achieve the landmarks prediction, we have proposed a CNN model \cite{.} by using Lasagne library \cite{.}. In the first evaluation, the proposed model has been trained from scratch on the dataset of each part. In the second step, the evaluation has been modified to use a fine-tuning \cite{.} stage.
+To achieve the landmarks prediction, we have proposed a CNN model \cite{lecun2010convolutional} by using Lasagne library \cite{lasagne}. To evaluate the effective of the model, we have applied two scenarios to predict the landmarks on beetles anatomicals: training from the scratch and applying fine-tuning. The experiments are done on two datasets with different size of the images: $192 \times 256$ and $96 \times 96$.
+% In the first evaluation, the proposed model has been trained from scratch on the dataset of each part. In the second step, the evaluation has been modified to use a fine-tuning \cite{.} stage.
 
-Our contributions in this study are as follows: In the next section, we present the related works about automatic estimation landmarks on 2D images. The architecture of proposed network will be presented at section \ref{}. In section \ref{.}, we describe the process to augment the dataset. All the experiments of our model will be shown in section \ref{.}. It includes the results to evaluate the model and comparison between two working strategy on neural networks.
+Our contributions in this study are as follows: In the next section, we present the related works about automatic estimation landmarks on 2D images. In section \ref{secdata}, we describe the process to augment the dataset. The architecture of proposed network will be presented at section \ref{secarch}. All the experiments of our model will be shown in section \ref{secexpr}. It includes the results to evaluate the model and comparison between two working strategy on neural networks.
 
 \section{Related works}
-In geometric morphometry, landmarks (or points of interest) are important features to describe a shape. Depending on the difficulty to segment the objects inside the images, setting automatic landmarks can rely on different methods. When segmentation can be applied, Lowe et al. \cite{.} have proposed a method to identify the key points in the 2D image. From the detected key points, the method is able to match two images. Palaniswamy et al. \cite{.} have applied probabilistic Hough Transform to automatically estimate the landmarks in images
-of Drosophila wings. In a previous study \cite{.}, we have extended
+In geometric morphometry, landmarks (or points of interest) are important features to describe a shape. Depending on the difficulty to segment the objects inside the images, setting automatic landmarks can rely on different methods. When segmentation can be applied, Lowe et al. \cite{lowe2004distinctive} have proposed a method to identify the key points in the 2D image. From the detected key points, the method is able to match two images. Palaniswamy et al. \cite{palaniswamy2010automatic} have applied probabilistic Hough Transform to automatically estimate the landmarks in images
+of Drosophila wings. In a previous study \cite{le2017maelab}, we have extended
 Palaniswamy’s method to detect landmarks automatically on
 beetles mandibles with good results. Unfortunately, when the
 segmentation is not precise, we have observed that the results
@@ -54,55 +55,57 @@ Deep Learning models are coming from machine learning theory. They have been int
 several problems to take real-world cases. More recently, the
 improvement of computing capacities, both in memory size
 and computing time with GPU programming has opened new
-perspective for Deep Learning. Many deep learning architectures have been proposed to solve the problems of classification \cite{.}, image recognition \cite{.}, speech recognition \cite{.} and language translation \cite{.}. To implement
+perspective for Deep Learning. Many deep learning architectures have been proposed to solve the problems of classification \cite{krizhevsky2012imagenet}, image recognition \cite{simonyan2014very}, speech recognition \cite{hinton2012deep,mikolov2011strategies} and language translation \cite{jean2014using}. To implement
 the algorithms, many frameworks have been built such as Caffe
-\cite{.}, Theano \cite{.}, Tensorflow \cite{.},.... These frameworks help
+\cite{jia2014caffe}, Theano \cite{2016arXiv160502688short}, Tensorflow \cite{abadi2016tensorflow},.... These frameworks help
 the users to design their application by re-using already proposed network architectures. In image analysis domain, Deep
 Learning, specifically with CNN, can be used to predict the key
-points in an image. Yi Sun et al. \cite{.} have proposed a cascaded
+points in an image. Yi Sun et al. \cite{sun2013deep} have proposed a cascaded
 convolutional network to predict the key points on the human
-face. Zhang et al. \cite{.} optimize facial landmarks detection
+face. Zhang et al. \cite{zhang2014facial} optimize facial landmarks detection
 with a set of related tasks such as head pose estimation, age
-estimation, ...Cintas et al. \cite{.} have introduced a network to
+estimation, ...Cintas et al. \cite{cintas2016automatic} have introduced a network to
 predict the landmarks on human ear images to characterize ear
 shape for biometric analysis. In the same way, we have applied CNN computing to predict the landmarks on beetles anatomical parts. The predicted landmarks will be found in two strategies: training the model from scratch and applying a fine-tuning process.
 \section{Dataset}
+\label{secdata}
 The data includes images in three sets of the beetle: pronotum, body, and head (Fig.\ref{figdata}). Each dataset includes 293 color images which are taken with the same camera in the same
 condition with a resolution of $3264 \times 2448$. Each image has
 the manual landmarks setting by biologists, i.e, pronotum has $8$
-manual landmarks. For each dataset, the images are randomly divided into two subsets: training and validation (called training set) include 260 images, and the testing set has 33 images.
+manual landmarks. To obtain the datasets in different resolutions of images ($256 \times 192$ and $96 \times 96$), we have applied different methods to down-sampling from the original images. In the first considered resolutions ($256 \times 192$), we have simplied down-sampling from the original resolution. While, in the second considered resolution ($96 \times 96$), the original images have been cropped from the left to obtain a new resolution of $2448 \times 2448$. Then, the cropped images have been down-sampled to the target resolution. Of course, the coordinates of manual landmarks have been also scaled to fit with the new resolutions.
 
 One of the main characteristics of CNN is that it must use
 a huge number of data and one can consider that only several
 hundreds of images is not enough to feed a CNN. Moreover,
-working with small dataset can push us again to the popular problem of overfitting. A way to enlarge the dataset size
+working with small dataset can push us again to the popular problem of overfitting. So, a way to enlarge the dataset size
 has to be considered. In image processing, we usually apply
 transform procedures (translation, rotation) to generate a new
 image. Unluckily the methods to compute features through a
 CNN most often are translation and rotation independent. So, we have used another method to augment dataset from the down-sampling images. 
 
-\begin{figure}[h!]
+\begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.6]{images/cnn_newdatasize/data_aug}
+	\includegraphics[height=4.0in]{images/cnn_newdatasize/data_aug}
 	\caption{An example of augmentation data. From an original image, six augmented version have generated.}
 	\label{figdataaug}
 \end{figure}
 
-A first procedure has been applied to change the value of
+The first procedure has been applied to change the value of
 each color channel in the original image. According to that,
-a constant is added to one of the RGB channels each time it
-is used for training. Each constant is sampled in a uniform
-distribution $\in [1,N] $ to obtain a new value caped at $255$. For
+a constant is added to each channel of original image in each time. Each constant is sampled in a uniform distribution $\in [1,N] $ to obtain a new value caped at $255$. For
 example, we can add a constant $c = 10$ to the red channel of
 all images in order to generate new images. This operation can
-be done for the three color channels. The second procedure separates the channels of RGB into three gray-scale images. As the network works on single channel images we are able to generate six versions of the same image, the total number of images used to train and to validate is
-$260 \times 7 = 1820$ images (six versions and original image). This
-has been an efficient way to proceed to the dataset expansion. Fig.\ref{figdataaug} presents two strategies that we used to augment the data.
+be done for the three color channels (see the first row of Fig. \ref{figdataaug}).
 
-To have obtained the datasets in different sizes of images, we have applied different methods to down-sampling from the original images (see section \ref{}). In the context of this study, we have considered the images in two different resolutions: $256 \times 192$ and $96 \times 96$. Of course, the coordinates of manual landmarks have been also scaled to fit with the new resolutions. In the first considered resolutions ($256 \times 192$), we have simplied down-sampling from the original resolution. While, in the second considered resolution ($96 \times 96$), the original images have been cropped from the left to obtain a new resolution of $2448 \times 2448$. Then, the cropped images have been down-sampled to the target resolution.
+The second procedure splits the channels of RGB images. It means that we separate the channels of RGB into three gray-scale images. The third row of Fig. \ref{figdataaug} shows the values at three individual channels of an image.
+
+At the end of this process, we are able to generate six versions of the same image, the total number of images used to train and to validate is
+$260 \times 7 = 1820$ images (six versions and original image). This
+has been an efficient way to proceed to the dataset expansion. Fig.\ref{figdataaug} presents two strategies that we used to augment the data: the image at the second row is the original image, three images at the first row are the result of the first procedure (adding a constant to each color channel), and the third color includes the result images of the second procedure (splitting the channels).
 
 \section{The model}
-The model, what we used to predict the landmarks, receives an image of $1 \times 256 \times 192$ as the input. The network was constructed from $3$ \textit{``elementary block"} following by $3$ full-connected layers. An elementary block is defined as a sequence of convolution $(C_i)$, pooling $(P_i)$ and dropout $(D_i)$ layers. The parameters for each layers are as below, the list of values follows the order of elementary blocks:
+\label{secarch}
+The model, what we used to predict the landmarks, receives an image of $1 \times w \times h$ as the input where $w = 256$ or $96$ and $h = 192$ or $96$. The network was constructed from $3$ \textit{``elementary blocks"} following by $3$ full-connected layers. An elementary block is defined as a sequence of convolution $(C_i)$, maximum pooling $(P_i)$ and dropout $(D_i)$ layers. The \textit{depth} of each convolutional layer and the drop probability of each dropout layer in each elementary block are different. While the parameters of pooling layers are kept the same values. The parameters for each layers are as below, the list of values follows the order of elementary blocks:
 \begin{itemize}[nosep,label=\footnotesize$\bullet$]
 	\item CONV layres:
 	\begin{itemize}[nosep]
@@ -111,7 +114,7 @@ The model, what we used to predict the landmarks, receives an image of $1 \times
 		\item Stride values: $1,1,1$
 		\item No padding is used for CONV layers
 	\end{itemize}
-	\item POOL layers:
+	\item MAXPOOL layers:
 	\begin{itemize}[nosep]
 		\item Kernel filters size: $(2 \times 2), (2 \times 2)$, and $(2 \times 2)$
 		\item Stride values: $2,2,2$
@@ -119,21 +122,22 @@ The model, what we used to predict the landmarks, receives an image of $1 \times
 	\end{itemize}
 	\item DROP layers:
 	\begin{itemize}
-		\item Propabilities: $0.1, 0.2$ and $0.3$.
+		\item Probability: $0.1, 0.2$ and $0.3$.
 	\end{itemize}
 \end{itemize}
 
+In the last full-connected layers (FC), the parameters are: FC1
+output: $1000$, FC2 output: $1000$, FC3 output: $16$. As usual, a
+dropout layer is inserted between FC1 ond FC2 with a probability equal to $0.5$. The output of the last full-connected layer is a set of $16$ values which corresponds to 8 landmarks ($x$ and $y$ coordinates) which we would like to predict. Fig.\ref{cnnnetwork2} illustrate the order of the layers in the network when we apply the model to predict the landmarks on the input of $1 \times 256 \times 192$.
+
 \begin{figure*}[h]
 \centering
-\includegraphics[scale=0.32]{images/cnn_newdatasize/arch_model}
+\includegraphics[scale=0.3]{images/cnn_newdatasize/arch_model}
 \caption{{\small{Network architecture using $3$ \textit{elementary blocks}.
   Convolution
   layer in red, pooling in yellow and dropout in green color.}}} 
 \label{cnnnetwork2}
 \end{figure*}
-In the last full-connected layers (FC), the parameters are: FC1
-output: $1000$, FC2 output: $1000$, FC3 output: $16$. As usual, a
-dropout layer is inserted between FC1 ond FC2 with a probability equal to $0.5$. Fig.\ref{cnnnetwork2} illustrate the order of the layers in the network.
 
 The parameters of CNN are shown in Table.\ref{model2parameters}.
 \begin{table}[h!]
@@ -150,12 +154,15 @@ The parameters of CNN are shown in Table.\ref{model2parameters}.
 	\label{model2parameters}
 \end{table}
 \section{Experiments}
-The model has been experimented on two resolution datasets: $256 \times 192$ and $96 \times 96$. For each resolution dataset, the model was evaluated in two strategies: training from scratch and fine-tuning. In each evaluation, cross-validation technique to select the training and the testing data. From that, we able to have the predicted landmarks on all images.
+\label{secexpr}
+The model has been experimented on two resolution datasets: $256 \times 192$ and $96 \times 96$. For each resolution dataset, the model was evaluated in two strategies: training from scratch and fine-tuning. To have the predicted landmarks on all images, during the training process, the cross-validation has been applied to select the training data.
 
-The dataset was trained on the model with $10000$ epochs\footnote{An epoch is a single pass through the full training set}. During training, the images are randomly divided into training set and validation set followed the ratio $6:4$. The learning rate began at $0.03$ and decreased to $0.00001$ during training. In vice versa, the momentum started at $0.9$ and increasing to $0.999$ at the end of the training process. 
+The dataset was trained on the model with $5000$ epochs\footnote{An epoch is a single pass through the full training set}. The images are randomly divided into training set and validation set followed the ratio $6:4$ automatically during training step. The learning rate begin at $0.03$ and decreased to $0.00001$. In vice versa, the momentum started at $0.9$ and increasing to $0.999$ at the end of the training process. 
 
-To evaluate the prediction, the distance between predicted and manual landmarks have been computed in all images. Then, the average distance and standard deviation (SD) have been calculated on each landmark. Following sub-sections describe the average distance and SD of each dataset in each part of beetle. The evaluation has been finished on two size of the input images.
+To evaluate the prediction, the distance between predicted and manual landmarks have been computed in all images. Then, the average distance and standard deviation (SD) have been calculated on each landmark. Following sub-sections describe the average distance and SD of each dataset in each part of beetle.
 \subsection{Experiment on the first resolution dataset ($256 \times 192$) }
+Table \ref{tbl1} shows the average distances and standard deviations on each landmarks of pronotum part. The table shows the results in three experiment processes on pronotum dataset: training from the scratch, fine-tuning with and without freezing some first layers in the model. The minimum distances belong to the first landmark, while worst distances belong to the sixth landmark in both three cases. In other view, when we consider the results of three experiment processes, the distances have been improved by applying fine-tuning: all the average distances and standard deviations in fine-tuning cases are smaller than the same values when we train the model from the scratch,  for example, if we consider the first landmark of head part, the average distance has decreased from $4.002$ to $2.486$. However, we do not see the significant difference  of the fine-tuning processes (with and without freezing some first layers).
+
 	\begin{table}[htbp]
 		\centering
 		\begin{tabular}{ | c | c | c | c | c | c | c | }
@@ -170,10 +177,10 @@ To evaluate the prediction, the distance between predicted and manual landmarks 
 			\color{red}{\textbf{LM6}} & \color{red}{\textbf{5.3631}} & \color{red}{\textbf{3.4234}} & \color{red}{\textbf{3.0492}} & \color{red}{\textbf{1.991}} & \color{red}{\textbf{3.09}} & \color{red}{\textbf{2.13}}\\ \hline
 			LM7 & 4.636 & 2.8426 & 2.6836 & 1.7781 & 2.65 & 1.80\\ \hline
 			LM8 & 4.9363 & 3.0801 & 2.8709 & 1.9662 & 2.96 & 1.97\\ \hline
-		\end{tabular}
-		\label{tbl1}
+		\end{tabular}		
 		\caption{The average distance and standard deviation on pronotum images ($256 \times 192$)}
-	\end{table}~\\
+		\label{tbl1}
+	\end{table}
 	\begin{table}[htbp]
 		\centering
 		\begin{tabular}{ | c | c | c | c | c | c| c | }
@@ -192,14 +199,13 @@ To evaluate the prediction, the distance between predicted and manual landmarks 
 			LM10 & 4.07 & 3.45 & 2.49 & 3.05 & 2.45 & 2.75 \\ \hline
 			LM11 & 3.99 & 3.34 & 2.30 & 3.06 & 2.31 & 2.97 \\ \hline						
 		\end{tabular}
-		\label{tbl2}
 		\caption{The average distance and standard deviation on body (elytra) images ($256 \times 192$)}
-	\end{table}~\\
+		\label{tbl2}
+	\end{table}
 	\begin{table}[htbp]
 		\centering
 		\begin{tabular}{ | c | c | c | c | c | c | c | }
 			\hline
-	
 			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{Fine-tuning without freezing} & \multicolumn{2}{c|}{Fine-tuning with freezing}  \\ \cline{2-7}
 	 & Average & SD & Average & SD & Average & SD \  \\ \hline
 			\color{green}{\textbf{LM1}} & \color{green}{\textbf{5.53}} & \color{green}{\textbf{3.40}} & \color{green}{\textbf{3.03}} & \color{green}{\textbf{1.89}} & \color{green}{\textbf{3.03}} & \color{green}{\textbf{1.88}} \\ \hline
@@ -213,10 +219,11 @@ To evaluate the prediction, the distance between predicted and manual landmarks 
 			LM9 & 5.14 & 3.13 & 2.57 & 1.60 & 2.66 & 1.63 \\ \hline
 			LM10 & 5.06 & 3.17 & 2.44 & 1.53 & 2.55 & 1.61 \\ \hline
 		\end{tabular}
-		\label{tbl3}
 		\caption{The average distance and standard deviation on head images ($256 \times 192$)}
-	\end{table}~\\
-Table. \ref{tbl1}, \ref{tbl2}, and \ref{tbl3} show the comparation on average distances and standard deviations on protum, body, and head part, respectively. The results show that the average distance have been improved with using fine-tuning, for example, if we consider the first landmark of head part, the average distance has decreased from $5.53$ to $3.03$ (approximate $45\%$). However, we do not see the significant difference of the fine-tuning processes (with and without freezing some layers).
+		\label{tbl3}
+	\end{table}
+	
+Table \ref{tbl2}, and \ref{tbl3} show the comparation on average distances and standard deviations on body, and head part, respectively. The results of these parts are also the same with the result of pronotum part: the distances of fine-tuning processes are more improved than the result when training from the scratch.
 \subsection{Experiment on the second resolution dataset ($96 \times 96$) }
 	\begin{table}[htbp]
 		\centering
@@ -233,14 +240,13 @@ Table. \ref{tbl1}, \ref{tbl2}, and \ref{tbl3} show the comparation on average di
 			LM7 & 1.61 & 1.02 & 0.81 & 0.64 \\ \hline
 			LM8 & 1.98 & 1.27 & 0.94 & 0.82 \\ \hline
 		\end{tabular}
-		\label{tbl4}
 		\caption{The average distance and standard deviation on pronotum images ($96 \times 96$)}
-	\end{table}~\\
+		\label{tbl4}
+	\end{table}
 	\begin{table}[htbp]
 		\centering
 		\begin{tabular}{ | c | c | c | c | c | }
 			\hline
-	
 			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{With fine-tuning}  \\ \cline{2-5}
 	 & Average & SD & Average & SD \  \\ \hline
 			\color{green}{\textbf{LM1}} & \color{green}{\textbf{1.50}} & \color{green}{\textbf{1.27}} & \color{green}{\textbf{0.878}} & \color{green}{\textbf{0.77}} \\ \hline
@@ -254,15 +260,14 @@ Table. \ref{tbl1}, \ref{tbl2}, and \ref{tbl3} show the comparation on average di
 			LM9 & 2.33 & 1.55 & 1.21 & 0.84 \\ \hline
 			LM10 & 1.59 & 1.21 & 0.85 & 0.72 \\ \hline
 			LM11 & 1.54 & 1.24 & 0.83 & 0.70 \\ \hline
-		\end{tabular}
-		\label{tbl5}
+		\end{tabular}		
 		\caption{The average distance and standard deviation on body images ($96 \times 96$)}
-	\end{table}~\\
+		\label{tbl5}
+	\end{table}
 	\begin{table}[htbp]
 		\centering
 		\begin{tabular}{ | c | c | c | c | c | }
 			\hline
-	
 			\multicolumn{1}{|c|}{\multirow{2}{*}{Landmarks}} & \multicolumn{2}{c|}{From scratch} &  \multicolumn{2}{c|}{With fine-tuning}  \\ \cline{2-5}
 	 & Average & SD & Average & SD \  \\ \hline
 			\color{green}{\textbf{LM1}} & \color{green}{\textbf{2.32}} & \color{green}{\textbf{1.40}} & \color{green}{\textbf{0.98}} & \color{green}{\textbf{0.80}} \\ \hline
@@ -276,10 +281,13 @@ Table. \ref{tbl1}, \ref{tbl2}, and \ref{tbl3} show the comparation on average di
 			LM9 & 1.92 & 1.22 & 0.96 & 0.91 \\ \hline
 			LM10 & 1.83 & 1.20 & 0.92 & 0.83 \\ \hline
 		\end{tabular}
-		\label{tbl6}
 		\caption{The average distance and standard deviation on head images ($96 \times 96$)}
+		\label{tbl6}
 	\end{table}
-Table. \ref{tbl4}, \ref{tbl5}, and \ref{tbl6} show the average distances and standard deviations on each landmark on pronotum, body, and head part of beelte in the dataset with the size of $96 \times 96$. Like previous case, the result with fine-tuning has been improved when we compare with the result when we training from scratch.
+	
+Table \ref{tbl4}, \ref{tbl5}, and \ref{tbl6} show the average distances and standard deviations on each landmark on pronotum, body, and head part of beelte in the dataset with the size of $96 \times 96$. In this dataset, we have just considered the fine-tuning process without freezing because we do not see the significantly different between two fine-tuning processes in the case of the previous dataset. Like previous case of dataset $192 \times 256$, the average distances and standard deviations with fine-tuning have been improved than the results when training from scratch.
+
+In addition, when we compare the results on two datasets, the distances have been reduced in the case of small resolution ($96 \times 96$). Even in the case of training from the scratch, the distances are still smaller than the results of fine-tuning in the large resolution ($192 \times 256$).  
 \section{Conclusions}
 In this study, we have proposed a CNN to predict the landmarks on beetle species. The model includes 3-repeated of an elementary block followed by 3 full-connected layers and a dropout layer. Each elementary block includes a convolutional layer, a maximum pooling layer, and a dropout layer.
 

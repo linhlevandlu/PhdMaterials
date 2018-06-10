@@ -4,45 +4,45 @@ The top-level auxiliary file: cnn_summary.aux
 The style file: unsrt.bst
 Database file #1: includes/references.bib
 Warning--I didn't find a database entry for "."
-You've used 0 entries,
+You've used 17 entries,
             1791 wiz_defined-function locations,
-            446 strings with 3540 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+            547 strings with 7436 characters,
+and the built_in function-call counts, 5188 in all, are:
+= -- 446
+> -- 290
+< -- 8
++ -- 103
+- -- 86
+* -- 363
+:= -- 792
+add.period$ -- 54
+call.type$ -- 17
+change.case$ -- 17
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 17
+duplicate$ -- 235
+empty$ -- 466
+format.name$ -- 86
+if$ -- 1180
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 17
+missing$ -- 16
+newline$ -- 87
+num.names$ -- 17
+pop$ -- 67
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1
+skip$ -- 138
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 332
+swap$ -- 90
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
+while$ -- 47
+width$ -- 19
+write$ -- 189
 (There was 1 warning)
