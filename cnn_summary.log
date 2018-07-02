@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.4)  10 JUN 2018 22:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  11 JUN 2018 11:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -361,26 +361,27 @@ Overfull \hbox (7.4418pt too wide) in paragraph at lines 135--138
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [4 <./images/cnn_newdatasize/data_aug.png>] [5 <./images/cnn_newdatasize/arch_m
-odel.png>] [6] [7] [8] (./cnn_summary.bbl
+odel.png>] [6] [7] (./cnn_summary.bbl
 Underfull \hbox (badness 1297) in paragraph at lines 11--17
 []\OT1/cmr/m/n/12 Celia Cin-tas, Mir-sha Quinto-S^^Sanchez, Vic-tor Acu~na, Car
 -olina Paschetta, Soledad
  []
 
+[8]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¼ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
-[9]) [10] (./cnn_summary.aux)
+) [9] (./cnn_summary.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
  4222 strings out of 493029
- 64303 string characters out of 6136235
+ 64303 string characters out of 6136234
  149143 words of memory out of 5000000
  7701 multiletter control sequences out of 15000+600000
  12301 words of font info for 44 fonts, out of 8000000 for 9000
@@ -398,10 +399,10 @@ sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
 >
-Output written on cnn_summary.pdf (10 pages, 500709 bytes).
+Output written on cnn_summary.pdf (9 pages, 500421 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 87 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

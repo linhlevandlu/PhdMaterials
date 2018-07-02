@@ -3,10 +3,9 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: cnn_summary.aux
 The style file: unsrt.bst
 Database file #1: includes/references.bib
-Warning--I didn't find a database entry for "."
 You've used 17 entries,
             1791 wiz_defined-function locations,
-            547 strings with 7436 characters,
+            546 strings with 7435 characters,
 and the built_in function-call counts, 5188 in all, are:
 = -- 446
 > -- 290
@@ -45,4 +44,3 @@ warning$ -- 0
 while$ -- 47
 width$ -- 19
 write$ -- 189
-(There was 1 warning)

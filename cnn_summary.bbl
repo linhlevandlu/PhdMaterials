@@ -15,6 +15,17 @@ Celia Cintas, Mirsha Quinto-S{\'a}nchez, Victor Acu{\~n}a, Carolina Paschetta,
   morphometrics and convolutional neural networks.
 \newblock {\em IET Biometrics}, 6(3):211--223, 2016.
 
+\bibitem{palaniswamy2010automatic}
+Sasirekha Palaniswamy, Neil~A Thacker, and Christian~Peter Klingenberg.
+\newblock Automatic identification of landmarks in digital images.
+\newblock {\em IET Computer Vision}, 4(4):247--260, 2010.
+
+\bibitem{le2017maelab}
+Van~Linh LE, Marie BEURTON-AIMAR, Adrien KR{\"A}HENB{\"U}HL, and Nicolas
+  PARISEY.
+\newblock {MAELab: a framework to automatize landmark estimation}.
+\newblock In {\em {WSCG 2017}}, Plzen, Czech Republic, May 2017.
+
 \bibitem{lowe2004distinctive}
 David~G Lowe.
 \newblock Distinctive image features from scale-invariant keypoints.
@@ -30,17 +41,6 @@ Yann LeCun, Koray Kavukcuoglu, and Cl{\'e}ment Farabet.
 Sander Dieleman, Jan Schlüter, Colin Raffel, Eben Olson, Søren~Kaae
   Sønderby, Daniel Nouri, et~al.
 \newblock Lasagne: First release., August 2015.
-
-\bibitem{palaniswamy2010automatic}
-Sasirekha Palaniswamy, Neil~A Thacker, and Christian~Peter Klingenberg.
-\newblock Automatic identification of landmarks in digital images.
-\newblock {\em IET Computer Vision}, 4(4):247--260, 2010.
-
-\bibitem{le2017maelab}
-Van~Linh LE, Marie BEURTON-AIMAR, Adrien KR{\"A}HENB{\"U}HL, and Nicolas
-  PARISEY.
-\newblock {MAELab: a framework to automatize landmark estimation}.
-\newblock In {\em {WSCG 2017}}, Plzen, Czech Republic, May 2017.
 
 \bibitem{krizhevsky2012imagenet}
 Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E Hinton.

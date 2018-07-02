@@ -144,7 +144,7 @@ The parameters of CNN are shown in Table.\ref{model2parameters}.
 	\centering
 	\begin{tabular}{l l l}
 	Parameter & Initial value & End value \\ \hline
-	Epochs & 10000 &  \\ \hline
+	Epochs & 5000 &  \\ \hline
 	Training batch size & 128 & \\ \hline
 	Testing batch size & 128 & \\ \hline
 	Learning rate & 0.03 & 0.0001 \\ \hline
@@ -293,7 +293,6 @@ In this study, we have proposed a CNN to predict the landmarks on beetle species
 
 The model has been trained and tested on two dataset with different size of images ($256 \times 192$ and $96 \times 96$) by applying two stategies: training from scratch and fine-tuning. The results show that the model had a good prediction on beelte species by training from scratch. However, the quality of predictions have been improved when we have applied fine-tuning. In addition, when we consider the size of the input, the model has given the better result with the small size of images than the larger.  
 
-\pagebreak
 \bibliographystyle{unsrt}
 \bibliography{includes/references}
 
