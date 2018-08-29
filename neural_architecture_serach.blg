@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: neural_architecture_serach.aux
+The style file: unsrt.bst
+Database file #1: includes/references.bib
+Warning--can't use both volume and number fields in huang2017densely
+You've used 8 entries,
+            1791 wiz_defined-function locations,
+            483 strings with 4857 characters,
+and the built_in function-call counts, 1951 in all, are:
+= -- 156
+> -- 106
+< -- 4
++ -- 38
+- -- 30
+* -- 116
+:= -- 307
+add.period$ -- 24
+call.type$ -- 8
+change.case$ -- 7
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 101
+empty$ -- 183
+format.name$ -- 30
+if$ -- 445
+int.to.chr$ -- 0
+int.to.str$ -- 8
+missing$ -- 9
+newline$ -- 43
+num.names$ -- 8
+pop$ -- 34
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 58
+stack$ -- 0
+substring$ -- 74
+swap$ -- 36
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 15
+width$ -- 9
+write$ -- 87
+(There was 1 warning)

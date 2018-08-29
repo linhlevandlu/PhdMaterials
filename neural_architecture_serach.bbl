@@ -1,0 +1,46 @@
+\begin{thebibliography}{1}
+
+\bibitem{elsken2018neural}
+Thomas Elsken, Jan~Hendrik Metzen, and Frank Hutter.
+\newblock Neural architecture search: A survey.
+\newblock {\em arXiv preprint arXiv:1808.05377}, 2018.
+
+\bibitem{zoph2016neural}
+Barret Zoph and Quoc~V Le.
+\newblock Neural architecture search with reinforcement learning.
+\newblock {\em arXiv preprint arXiv:1611.01578}, 2016.
+
+\bibitem{cai2018path}
+Han Cai, Jiacheng Yang, Weinan Zhang, Song Han, and Yong Yu.
+\newblock Path-level network transformation for efficient architecture search.
+\newblock {\em arXiv preprint arXiv:1806.02639}, 2018.
+
+\bibitem{he2016deep}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep residual learning for image recognition.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 770--778, 2016.
+
+\bibitem{huang2017densely}
+Gao Huang, Zhuang Liu, Laurens Van Der~Maaten, and Kilian~Q Weinberger.
+\newblock Densely connected convolutional networks.
+\newblock In {\em CVPR}, volume~1, page~3, 2017.
+
+\bibitem{zoph2017learning}
+Barret Zoph, Vijay Vasudevan, Jonathon Shlens, and Quoc~V Le.
+\newblock Learning transferable architectures for scalable image recognition.
+\newblock {\em arXiv preprint arXiv:1707.07012}, 2(6), 2017.
+
+\bibitem{szegedy2016rethinking}
+Christian Szegedy, Vincent Vanhoucke, Sergey Ioffe, Jon Shlens, and Zbigniew
+  Wojna.
+\newblock Rethinking the inception architecture for computer vision.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 2818--2826, 2016.
+
+\bibitem{sutton1998reinforcement}
+Richard~S Sutton, Andrew~G Barto, et~al.
+\newblock {\em Reinforcement learning: An introduction}.
+\newblock MIT press, 1998.
+
+\end{thebibliography}
