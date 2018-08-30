@@ -7,6 +7,7 @@ A level-1 auxiliary file: includes/segmentation.aux
 A level-1 auxiliary file: includes/localfeatures.aux
 A level-1 auxiliary file: includes/dominantpoints.aux
 A level-1 auxiliary file: includes/software.aux
+A level-1 auxiliary file: includes/mcPart.aux
 A level-1 auxiliary file: includes/machineLearning.aux
 A level-1 auxiliary file: includes/linearClassifition.aux
 A level-1 auxiliary file: includes/deepNetwork.aux
@@ -25,7 +26,7 @@ Warning--empty journal in fechner1948elements
 Warning--empty year in barnessurvey
 You've used 46 entries,
             1791 wiz_defined-function locations,
-            730 strings with 11791 characters,
+            731 strings with 11810 characters,
 and the built_in function-call counts, 11485 in all, are:
 = -- 1057
 > -- 482

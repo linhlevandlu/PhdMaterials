@@ -1,6 +1,23 @@
 \chapter{Machine Learning}
-Machine learning is a norm refer to teach the computer the abilities which are only done by the humans. A machine learning algorithm is an algorithm that is able to learn from data. Most of machine learning algorithms can be divided into two categories: supervised learning and unsupervised learning algorithms. \\
-A machine learning algorithm is built based on the tasked for a machine learning system. We have many kinds of task can be solved with machine learning. Some of common machine learning tasks include the following:
+Machine learning is a norm refer to teach the computer the abilities which are only done by the humans by applying the algorithms. The learning of computer is done through experience directly or observations of an algorithm on a database. In general, machine learning is mention to how to learning better in the future based on the experienced of current situation or the past. A machine learning algorithm is an algorithm that is able to learn from data, it was built based on the task for a machine learning system. 
+
+Machine learning has been applied to solve many problems in computer science, i.e. classification, regression, language translation, \ldots. The machine learning task can be divided into two categories: \textit{supervised learning} and \textit{unsupervised learning algorithms}. 
+
+\section{Supervised learning}
+Supervised learning is the machine learning tasks that the system try to find the output for an input based on the pair input-output examples that it has been seen before. It refers to a function can be learned from a labeled training data. In training data, each pair example includes an input and an output (which considered as the right output of the input). The supervised learning algorithm analyzes the training data and provides an inferred function, which can be used for finding the output of a new input. Three important elements of a supervised learning problem includes: training data, learned function and corresponding learning algorithm. In order to solve a problem by supervised learning, the steps can be followed:
+\begin{enumerate}
+	\item Determine the training set of the problem, this includes finding the corresponding output for each input of training set
+	\item Choose the structure of the learned function and corresponding learning algorithm
+	\item Determine the features that they can be gathered and represented on the learned function. The accuracy of learned function will be improved during the training process.
+	\item Run the learning algorithm on training set. In some algorithm, the parameters can be adjusted to optimize the performance of remaining training process.
+	\item Evaluate the accuracy of the learned function on test set.
+\end{enumerate}
+
+Given an input space $X$, an output space $Y$, a training set $T$ includes $N$ training examples $T = \{(x_1,y_1), (x_2, y_2), ..., (x_N, y_N)\}$ which $x_i \in X$ is the feature vector and $y_i \in Y$ is its label. A learning algorithm seeks a function $g: X \rightarrow Y$, it means that the learning algorithm tries to find a function $g$ so that for each feature vector in the input space $X$ will be correspond with a value in output space $Y$. Sometimes, the function $g$ is replaced by a scoring function $f: X \times Y \rightarrow R$ such as $f$ function returns the score when we map an input feature vector to output space, i.e. the probability function. The learning algorithm will perform the score function to obtain the highest score. In order to measure the fitting of the function with the training data, a loss function $l: Y \times Y \rightarrow R^{\geq 0}$ is defined. For training example $(x_i,y_i)$, the loss of predicting value $\hat{y}$ is $L(y_i,\hat{y})$
+\section{Unsupervised learning}
+
+
+ We have many kinds of task can be solved with machine learning. Some of common machine learning tasks include the following:
 \begin{itemize}
 	\item \textit{Classification}: In this type of task, the computer is asked to indicate a category in k category which the input belongs to. To solve this task, the learning algorithm uses a function $y=f(x)$, the model assigns the input described by vector $x$ to a category identified by score y.
 	\item \textit{Classification without input}: A challenge of classification is missing the input vectors. In this case, to solve the classification task, the learning algorithm only has to define a single function mapping from a vector input to a category output. When some of inputs are missing, instead of providing a single classification function, the learning algorithm must learn a set of functions. Each function corresponds to classifying x with different subset of its inputs missing.
