@@ -90,9 +90,8 @@
 \contentsline {chapter}{\numberline {7}Deep Network}{52}
 \contentsline {section}{\numberline {7.1}Deep learning}{52}
 \contentsline {section}{\numberline {7.2}Neural network}{52}
-\contentsline {subsection}{\numberline {7.2.1}Neural}{52}
-\contentsline {section}{\numberline {7.3}The architecture of neural networks}{53}
-\contentsline {section}{\numberline {7.4}Deep network}{54}
+\contentsline {section}{\numberline {7.3}Deep network}{53}
+\contentsline {section}{\numberline {7.4}Convolutional neural network}{53}
 \contentsline {chapter}{\numberline {8}Convolutional Neural Network}{55}
 \contentsline {section}{\numberline {8.1}Architecture}{55}
 \contentsline {subsection}{\numberline {8.1.1}Convolutional layer}{55}
