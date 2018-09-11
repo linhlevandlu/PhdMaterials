@@ -57,10 +57,4 @@ As other machine learning model, designing a deep neural network to solve a prob
 
 A cost function of a neural network is used to compute the difference between the real data and the model's outputs. It is usually updated by each iteration of training process (or validation process). In most of case, we use the cross-entropy between the training data an the model's predictions as the cost function. It means that we define a distribution $p(y | x; \theta)$ and we simply use the priciple of maximum likelihood. But sometimes, we mergely predict some statistic of $y$ conditioned on $x$. The total cost functions of a neural network often combines a primary cost function with a regularization term to make the learning algorithm intend to reduce its generation error.
 
-In our mind, we think that we can seperate the choice of cost function and the output units but in fact, they are related together. For example, if we want to use cross-entropy as the cost function, we need to choose the way to represent the output so that the computing is easy and cheapest. One simple kind of output unit is linear units. Given a feature $h$, the linear output units produces a vector $\hat{y} = W^{T}h + b$.
-
-
-
-
-
-Besides the deep neural network, convolutional neural networks are other solutions for deep learning. It consists of an input, an output, as well as multiple hidden layers. The hidden layers of a CNN may be convolutional layers, pooling layers, normalization layers or fully connected layers. The layers of a CNN has neurons arranged in three dimensions of the input: \textit{width, height and depth} with learnable parameters.
+In our mind, we think that we can separate the choice of the cost function and the output units but in fact, they are related together. For example, if we want to use cross-entropy as the cost function, we need to choose the way to represent the output so that the computing is easy and cheapest. Depending on the solved problem, the output units are chosen to fit with it. For example, we can use the Sigmoid function for a binary classification problem; the Linear function for a transformation with no nonlinearity; the Softmax function for a classifier over \textit{n} different classes.
