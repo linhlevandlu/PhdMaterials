@@ -7,7 +7,7 @@ In deep learning, a neural network is known as the popular method. This is a com
 \section{Neural network}
 \subsection{Neural}
 The basic components of the brain is a neuron. For the ordinary man, we have billion neurons in the human nervous system, and they are connected by the billion of synapses. Each neuron receives input signals from its dendrites and procedures output signals along its axon.\\[0.2cm]
-In the computational model of a neuron, the signals travel along the axons interact multiplicatively with the dendrites of the other neuron based on the synaptic strength at the synapse. The synaptic strength are learnable and control the strength at influence or inhibitory of one neuron on another. In basic mode, the input signals are summed and compared with a threshold value. If the sum is greater than threshold value, the neuron can fire, sending a spike along its axon. Actually, we have many firing rate (called activation function) at a neuron, and the common choice of activation function is the \textbf{sigmoid funciont $\sigma$}, because it take a real-valued input and squashes it to range between 0 and 1. The image () show the model of a neuron:
+In the computational model of a neuron, the signals travel along the axons interact multiplicatively with the dendrites of the other neuron based on the synaptic strength at the synapse. The synaptic strength are learnable and control the strength at influence or inhibitory of one neuron on another. In basic mode, the input signals are summed and compared with a threshold value. If the sum is greater than threshold value, the neuron can fire, sending a spike along its axon. Actually, we have many firing rate (called activation function) at a neuron, and the common choice of activation function is the \textbf{sigmoid funciont $\sigma$}, because it take a real-valued input and squashes it to range between 0 and 1. Fig. \ref{fignneuron} shows the model of a neuron. The left side presents the connections of a neuron in human brain, the right side describes the mathematical model at the neuron.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.5]{images/neurons.png}
@@ -15,17 +15,17 @@ In the computational model of a neuron, the signals travel along the axons inter
 	\label{fignneuron}
 \end{figure}
 
-Some activation functions which we can use:
+In mathematical model, the popular activation functions maybe used as:
 \begin{itemize}
 	\item \textbf{Sigmoid function}:
 		\begin{equation}
 			\sigma(x) = \frac{1}{1+e^{-x}}
 		\end{equation}
-	\item \textbf{Tanh}
+	\item \textbf{Tanh function}
 		\begin{equation}
 			tanh(x) = 2\sigma(2x) - 1
 		\end{equation}
-	\item \textbf{ReLU}
+	\item \textbf{Rectified Linear Unit (ReLU) function}
 		\begin{equation}
 			f(x) = max(0,x)
 		\end{equation}
@@ -34,16 +34,33 @@ Some activation functions which we can use:
 			f(w^Tx + b) = max({w_1}^Tx + b_1,{w_2}^Tx + b_2)
 		\end{equation}
 \end{itemize}
-\section{The architecture of neural networks}
+\subsection{Neural network}
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.5]{images/neuron}
+	\includegraphics[scale=0.5]{images/neural_net}
 	\caption{A model of neural networks}
 	\label{fignnnetworks}
 \end{figure}
-The image \ref{fignnnetworks} show a simple model of neural networks. The leftmost layer in this network is called the input layer, the rightmost layer is called the output layer. The neurons within the input layer are called input neurons, the neurons from output layer are called output neurons. The middle layer is called a hidden layer. The network in example \ref{fignnnetworks} has just a single hidden layer, but many networks have multiple hidden layers. When design the network, the input and the output are often straightforward. It means that the neural networks is designed where the output form one layer is used as the input to the next layer, there are no loops in the network, it always feed forward, never feed back (called feedforward networks).\\[0.2cm]
+The image \ref{fignnnetworks} show a simple model of neural networks. The leftmost layer in this network is called the input layer, the rightmost layer is called the output layer. The neurons within the input layer are called input neurons, the neurons from output layer are called output neurons. When design the network, the input and the output are often straightforward. It means that the neural networks is designed where the output form one layer is used as the input to the next layer, there are no loops in the network, it always feed forward, never feed back (called feedforward networks).\\[0.2cm]
 So, the neural network includes many layers are designed as an directred acyclic graph from the intput to the output layer. The output of previous layer is used as the input of the next layer. At each layer excepts the output layer, the output is indicated by a activation function (i.e loss, tanh,...). The size of a neural network can be to compute as the number of neurons, or the number of parameters.
 \section{Deep network}
-A deep neural network is a neural network with multiple layers between the input and the output layers. These layers are called hidden layers. Each layer tries to find the correct mathematical operator to turn its input into the next layer. The deep neural network forwards the data from the input layer to the output layer without looping back: The network creates the connections of neurons and assigns the ``weight" for each connection. At each layer, the weights and its input are multiplied and return an output. Further, an algorithm is used to adjust the weights so that make certain parameters more influential until it receives the correct mathematical manipulation on all dataset.
+A deep neural network is a neural network with multiple layers between the input and the output layers. These layers are called hidden layers. Each layer tries to find the correct mathematical operator to turn its input into the next layer. The deep neural network forwards the data from the input layer to the output layer without looping back: The network creates the connections of neurons and assigns the ``weight" for each connection. At each layer, the weights and its input are multiplied and return an output to transfer to the next layer. Further, an algorithm is used to adjust the weights so that make certain parameters more influential until it receives the correct mathematical manipulation on all dataset. Fig. \ref{figndeepnetworks} presents a deep neural network with multiple hidden layers between the input and the output.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{images/deep_neural_network}
+	\caption{A deep neural network with multiple hidden layers}
+	\label{figndeepnetworks}
+\end{figure}
+
+As other machine learning model, designing a deep neural network to solve a problem must be specified an optimization procedure, a cost function and a model family. In deep learning, the gradient-based learning is widely applied because it focus on the difference between the linear models and neural networks. In linear models, the solvers used to train the linear models with global convergence guarantees; instead of, neural network uses gradient-based optimization to drive the cost function to a lowest value after each iteration (because neural network is usually trained by using iterative). Along with gradient-based optimization, a cost fucntion and the represetation of the output of model must be chosen.
+
+A cost function of a neural network is used to compute the difference between the real data and the model's outputs. It is usually updated by each iteration of training process (or validation process). In most of case, we use the cross-entropy between the training data an the model's predictions as the cost function. It means that we define a distribution $p(y | x; \theta)$ and we simply use the priciple of maximum likelihood. But sometimes, we mergely predict some statistic of $y$ conditioned on $x$. The total cost functions of a neural network often combines a primary cost function with a regularization term to make the learning algorithm intend to reduce its generation error.
+
+In our mind, we think that we can seperate the choice of cost function and the output units but in fact, they are related together. For example, if we want to use cross-entropy as the cost function, we need to choose the way to represent the output so that the computing is easy and cheapest. One simple kind of output unit is linear units. Given a feature $h$, the linear output units produces a vector $\hat{y} = W^{T}h + b$.
+
+
+
+
 
 Besides the deep neural network, convolutional neural networks are other solutions for deep learning. It consists of an input, an output, as well as multiple hidden layers. The hidden layers of a CNN may be convolutional layers, pooling layers, normalization layers or fully connected layers. The layers of a CNN has neurons arranged in three dimensions of the input: \textit{width, height and depth} with learnable parameters.
