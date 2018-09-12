@@ -22,15 +22,36 @@ The second architecture is modified from the first model. The layers are kept th
 	\label{fignet2}
 \end{figure}
 
-In the third architecture, instead changing the parameters, we have supplemented $4$ dropout layers to the network to correct the over-fitting artifacts \cite{}. The idea of dropout is to include some variations between different runs. During training phase, dropout samples are done from an exponential number of different ``thinned” network. At test phase, it is easy to approximate the effect of averaging the prediction of all thinned networks by simply using a single unthinned network with smaller weights. This significantly reduces overfitting and gives major improvements over other
-regularization methods \cite{}. Fig. \ref{} illustrates the layers in the third architecture. The first of three dropout layers are supplemented to the repeated-structures followed the convolutional layers and the maximum pooling layers to form the \textit{elementary blocks}. An {elementary block} is defined as a sequence of convolution ($C_{i}$), maximum pooling ($P_i$) and dropout ($D_i$) layers.
+To build the third architecture, we have used the definition of \textit{elementary block}. An {elementary block} is defined as a sequence of convolution ($C_{i}$), maximum pooling ($P_i$) and dropout ($D_i$) layers. This significantly reduces overfitting and gives major improvements over other regularization methods \cite{}. The idea of dropout is to include some variations between different runs. During training phase, dropout samples are done from an exponential number of different ``thinned” network. At test phase, it is easy to approximate the effect of averaging the prediction of all thinned networks by simply using a single unthinned network with smaller weights. So, we have modified the architecture by combining some \textit{elementary blocks}. Fig. \ref{fignet3} illustrates the layers in the third architecture. For our purpose, we have assembled \textbf{3 elementary blocks}. The parameters for each layer in each elementary block are as below, the list of values follows the order of elementary blocks ($i = [1..3]$):
+\begin{itemize}
+	\item CONV layers:
+	\begin{itemize}
+		\item Number of filters: $32, 64, $ and $128$
+		\item Kernel filter sizes: $(3 \times 3), (2 \times 2), $ and $(2 \times 2)$
+		\item Stride values: $1, 1, $ and $1$
+		\item No padding is used for CONV layers 
+	\end{itemize}
+	\item POOL layers:
+		\begin{itemize}
+			\item Kernel filter sizes: $(2 \times 2), (2 \times 2), $ and $(2 \times 2)$
+			\item Stride values: $2, 2, $ and $2$
+			\item No padding is used for POOL layers
+		\end{itemize}
+	\item DROP layers:
+		\begin{itemize}
+			\item Probabilites: $0.1, 0.2, $ and $0.3$
+		\end{itemize}
+\end{itemize}
 
+Three full-connected layers (FC) are kept the same as the second architecture: FC1 and FC2 have $1000$ outputs, the last full-connected layer (FC3) has $16$ outputs. As usual, a dropout layer is inserted between FC1 and FC2 with a probability equal to $0.5$.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.3]{images/arch_model}
 	\caption{The architecture of the third model}
 	\label{fignet3}
 \end{figure}
+
+During training process, the values of learnable parameters have been updated to increase the accuracy of the network by applying gradient descent \cite{} in backward phase (which algorithm??). Therefore, the networks are designed with a small sharing learning rate and a momentum. Their values are updated over training time to fit with the number of epochs \footnote{An epoch is a single pass through the full training set}.
 
 \section{Data augmentation}
 \section{Experiments}

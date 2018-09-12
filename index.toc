@@ -144,9 +144,9 @@
 \contentsline {section}{\numberline {11.5}Conclusions}{82}
 \contentsline {chapter}{\numberline {12}Convolutional Neural Network for predicting morphometry landmarks}{83}
 \contentsline {section}{\numberline {12.1}Network architecture designing}{83}
-\contentsline {section}{\numberline {12.2}Data augmentation}{84}
-\contentsline {section}{\numberline {12.3}Experiments}{84}
-\contentsline {section}{\numberline {12.4}Conclusion}{84}
-\contentsline {part}{III\hspace {1em}Conclusion}{85}
-\contentsline {chapter}{\numberline {13}Conclusion}{86}
-\contentsline {chapter}{\numberline {14}Discussion}{87}
+\contentsline {section}{\numberline {12.2}Data augmentation}{85}
+\contentsline {section}{\numberline {12.3}Experiments}{85}
+\contentsline {section}{\numberline {12.4}Conclusion}{85}
+\contentsline {part}{III\hspace {1em}Conclusion}{86}
+\contentsline {chapter}{\numberline {13}Conclusion}{87}
+\contentsline {chapter}{\numberline {14}Discussion}{88}

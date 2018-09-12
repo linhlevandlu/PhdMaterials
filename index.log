@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  12 SEP 2018 16:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.20)  12 SEP 2018 23:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **index.tex
 (./index.tex
-LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -36,11 +36,10 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
-Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
 (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
@@ -60,7 +59,7 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@dimlist=\toks15
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
-Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
+Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
@@ -76,10 +75,10 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Cskip=\skip46
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
-Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2016/03/03 v2.15a AMS math features
+Package: amsmath 2017/09/02 v2.17a AMS math features
 \@mathmargin=\skip47
 
 For additional information on amsmath, use the `?' option.
@@ -96,23 +95,23 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen114
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 1999/12/14 v2.01 operator names
+Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count94
-LaTeX Info: Redefining \frac on input line 199.
+LaTeX Info: Redefining \frac on input line 213.
 \uproot@=\count95
 \leftroot@=\count96
-LaTeX Info: Redefining \overline on input line 297.
+LaTeX Info: Redefining \overline on input line 375.
 \classnum@=\count97
 \DOTSCASE@=\count98
-LaTeX Info: Redefining \ldots on input line 394.
-LaTeX Info: Redefining \dots on input line 397.
-LaTeX Info: Redefining \cdots on input line 518.
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
 \big@size=\dimen115
-LaTeX Font Info:    Redeclaring font encoding OML on input line 630.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \macc@depth=\count99
 \c@MaxMatrixCols=\count100
 \dotsspace@=\muskip10
@@ -133,8 +132,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
 \multlinegap=\skip48
 \multlinetaggap=\skip49
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2735.
-LaTeX Info: Redefining \] on input line 2736.
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
 )
 LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
@@ -151,29 +150,21 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_below_shortintertext_sep=\dimen128
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 95.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count107
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen129
 \Gin@req@width=\dimen130
@@ -181,33 +172,30 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen131
 \WF@size=\dimen132
-\c@WF@wrappedlines=\count108
+\c@WF@wrappedlines=\count107
 \WF@box=\box28
 \WF@everypar=\toks21
 Package: wrapfig 2003/01/31  v 3.6
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
-Package: algorithm2e 2013/01/06 v5.00 algorithms environments
-\c@AlgoLine=\count109
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count108
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \algocf@hangindent=\skip51
 
+(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count109
+)
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-********************************************************
-Package `algorithm2e' Release 5.1 -- october 19 2015 --
-- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
-- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
-subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
-- Author: Christophe Fiorio (christophe.fiorio@umontpellier.fr)
-********************************************************
 \skiptotal=\skip52
 \skiplinenumber=\skip53
 \skiprule=\skip54
@@ -233,16 +221,18 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \algocf@untilbox=\box33
 \algocf@skipuntil=\skip64
 \algocf@capbox=\box34
-\algoheightruledefault=\skip65
-\algoheightrule=\skip66
-\algotitleheightruledefault=\skip67
-\algotitleheightrule=\skip68
+\algocf@lcaptionbox=\skip65
+\algoheightruledefault=\skip66
+\algoheightrule=\skip67
+\algotitleheightruledefault=\skip68
+\algotitleheightrule=\skip69
 \c@algocfline=\count110
 \c@algocfproc=\count111
 \c@algocf=\count112
 \algocf@algoframe=\box35
 \algocf@algobox=\box36
-) (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
@@ -313,21 +303,21 @@ File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
 tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 )) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
-Package xcolor Info: Model `RGB' extended on input line 1353.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
@@ -520,7 +510,7 @@ zlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 )))
 (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
-Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
+Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
 \c@tracingmulticols=\count132
 \mult@box=\box48
 \multicol@leftmargin=\dimen185
@@ -533,8 +523,8 @@ Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
 \page@free=\dimen187
 \premulticols=\dimen188
 \postmulticols=\dimen189
-\multicolsep=\skip69
-\multicolbaselineskip=\skip70
+\multicolsep=\skip70
+\multicolbaselineskip=\skip71
 \partial@page=\box49
 \last@line=\box50
 \maxbalancingoverflow=\dimen190
@@ -575,7 +565,7 @@ Package: subfig 2005/06/28 ver: 1.3 subfig package
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen194
 \captionmargin@=\dimen195
@@ -589,18 +579,18 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 Package caption Info: wrapfig package is loaded.
 )
 \c@KVtest=\count142
-\sf@farskip=\skip71
+\sf@farskip=\skip72
 \sf@captopadj=\dimen257
-\sf@capskip=\skip72
-\sf@nearskip=\skip73
+\sf@capskip=\skip73
+\sf@nearskip=\skip74
 \c@subfigure=\count143
 \c@subfigure@save=\count144
 \c@lofdepth=\count145
 \c@subtable=\count146
 \c@subtable@save=\count147
 \c@lotdepth=\count148
-\sf@top=\skip74
-\sf@bottom=\skip75
+\sf@top=\skip75
+\sf@bottom=\skip76
 ) (./index.aux
 (./includes/cover.aux) (./includes/abstract.aux) (./includes/segmentation.aux)
 (./includes/localfeatures.aux) (./includes/dominantpoints.aux
@@ -730,7 +720,7 @@ LaTeX Font Info:    ... okay on input line 12.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count149
 \scratchdimen=\dimen258
@@ -743,45 +733,53 @@ LaTeX Font Info:    ... okay on input line 12.
 \MPnumerator=\count153
 \makeMPintoPDFobject=\count154
 \everyMPtoPDFconversion=\toks35
-) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
+(grfext)             \AppendGraphicsExtensions on input line 456.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -835,16 +833,13 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
  [8]
 <images/threshold.png, id=43, 437.635pt x 512.91624pt>
 File: images/threshold.png Graphic file (type png)
-
 <use images/threshold.png>
-Package pdftex.def Info: images/threshold.png used on input line 85.
+Package pdftex.def Info: images/threshold.png  used on input line 85.
 (pdftex.def)             Requested size: 175.05089pt x 205.16286pt.
-
 <images/thresholdpost.png, id=44, 437.635pt x 512.91624pt>
 File: images/thresholdpost.png Graphic file (type png)
-
 <use images/thresholdpost.png>
-Package pdftex.def Info: images/thresholdpost.png used on input line 86.
+Package pdftex.def Info: images/thresholdpost.png  used on input line 86.
 (pdftex.def)             Requested size: 175.05089pt x 205.16286pt.
  [9 <./images/threshold.png> <./images/thresholdpost.png (PNG copy)>] [10] [11]
  [12]
@@ -857,21 +852,19 @@ t/12 >
 
 <./images/PGH_geo.png, id=63, 386.44376pt x 244.915pt>
 File: ./images/PGH_geo.png Graphic file (type png)
-
 <use ./images/PGH_geo.png>
-Package pdftex.def Info: ./images/PGH_geo.png used on input line 205.
+Package pdftex.def Info: ./images/PGH_geo.png  used on input line 205.
 (pdftex.def)             Requested size: 193.47578pt x 122.61787pt.
- <./images/PGH.png, id=64, 570.13pt x 442.65375pt>
+<./images/PGH.png, id=64, 570.13pt x 442.65375pt>
 File: ./images/PGH.png Graphic file (type png)
-
 <use ./images/PGH.png>
-Package pdftex.def Info: ./images/PGH.png used on input line 206.
+Package pdftex.def Info: ./images/PGH.png  used on input line 206.
 (pdftex.def)             Requested size: 193.47578pt x 150.21658pt.
- [13 <./images/PGH_geo.png> <./images/PGH.png>]
+[13 <./images/PGH_geo.png> <./images/PGH.png>]
 <images/bbox.png, id=69, 378.41376pt x 564.1075pt>
 File: images/bbox.png Graphic file (type png)
- <use images/bbox.png>
-Package pdftex.def Info: images/bbox.png used on input line 228.
+<use images/bbox.png>
+Package pdftex.def Info: images/bbox.png  used on input line 228.
 (pdftex.def)             Requested size: 151.36281pt x 225.63899pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 225--233
@@ -881,21 +874,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--233
 [14 <./images/bbox.png>]
 <images/projection.png, id=75, 853.1875pt x 576.1525pt>
 File: images/projection.png Graphic file (type png)
-
 <use images/projection.png>
-Package pdftex.def Info: images/projection.png used on input line 238.
+Package pdftex.def Info: images/projection.png  used on input line 238.
 (pdftex.def)             Requested size: 341.26895pt x 230.45691pt.
-
 <./images/rbox1.png, id=77, 341.275pt x 531.9875pt>
 File: ./images/rbox1.png Graphic file (type png)
- <use ./images/rbox1.png>
-Package pdftex.def Info: ./images/rbox1.png used on input line 249.
+<use ./images/rbox1.png>
+Package pdftex.def Info: ./images/rbox1.png  used on input line 249.
 (pdftex.def)             Requested size: 241.84843pt x 377.00755pt.
-
 <./images/rbox2.png, id=78, 531.9875pt x 598.235pt>
 File: ./images/rbox2.png Graphic file (type png)
- <use ./images/rbox2.png>
-Package pdftex.def Info: ./images/rbox2.png used on input line 250.
+<use ./images/rbox2.png>
+Package pdftex.def Info: ./images/rbox2.png  used on input line 250.
 (pdftex.def)             Requested size: 241.84843pt x 271.96pt.
 
 Overfull \hbox (7.83325pt too wide) in paragraph at lines 249--251
@@ -908,13 +898,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 246--254
  []
 
 [15 <./images/projection.png>] [16 <./images/rbox1.png> <./images/rbox2.png>]
-[17] <images/lbp.png, id=90, 680.5425pt x 281.05pt>
+[17]
+<images/lbp.png, id=90, 680.5425pt x 281.05pt>
 File: images/lbp.png Graphic file (type png)
- <use images/lbp.png>
-Package pdftex.def Info: images/lbp.png used on input line 304.
+<use images/lbp.png>
+Package pdftex.def Info: images/lbp.png  used on input line 304.
 (pdftex.def)             Requested size: 272.21217pt x 112.418pt.
-)
-[18 <./images/lbp.png>]
+) [18 <./images/lbp.png>]
 \openout2 = `includes/localfeatures.aux'.
 
  (./includes/localfeatures.tex
@@ -929,38 +919,35 @@ LaTeX Warning: Citation `‚Ä¢' on page 20 undefined on input line 55.
 
 <./images/scov.png, id=97, 225.84375pt x 176.66pt>
 File: ./images/scov.png Graphic file (type png)
- <use ./images/scov.png>
-Package pdftex.def Info: ./images/scov.png used on input line 58.
+<use ./images/scov.png>
+Package pdftex.def Info: ./images/scov.png  used on input line 58.
 (pdftex.def)             Requested size: 96.73788pt x 75.67119pt.
-
 [20 <./images/scov.png>]
 <./images/lbpc.jpg, id=101, 968.61874pt x 225.84375pt>
 File: ./images/lbpc.jpg Graphic file (type jpg)
- <use ./images/lbpc.jpg>
-Package pdftex.def Info: ./images/lbpc.jpg used on input line 81.
+<use ./images/lbpc.jpg>
+Package pdftex.def Info: ./images/lbpc.jpg  used on input line 81.
 (pdftex.def)             Requested size: 435.32422pt x 101.50124pt.
-
-[21 <./images/lbpc.jpg>]) [22]
+ [21 <./images/lbpc.jpg>]) [22]
 \openout2 = `includes/dominantpoints.aux'.
 
- (./includes/dominantpoints.tex
+
+(./includes/dominantpoints.tex
 Chapter 3.
 [23
 
 
 
-] <./images/cmodel28.jpg, id=112, 607.26875pt x 341.275pt>
+]
+<./images/cmodel28.jpg, id=112, 607.26875pt x 341.275pt>
 File: ./images/cmodel28.jpg Graphic file (type jpg)
-
 <use ./images/cmodel28.jpg>
-Package pdftex.def Info: ./images/cmodel28.jpg used on input line 21.
+Package pdftex.def Info: ./images/cmodel28.jpg  used on input line 21.
 (pdftex.def)             Requested size: 241.84843pt x 135.91393pt.
-
 <./images/cmodel71.jpg, id=113, 607.26875pt x 341.275pt>
 File: ./images/cmodel71.jpg Graphic file (type jpg)
-
 <use ./images/cmodel71.jpg>
-Package pdftex.def Info: ./images/cmodel71.jpg used on input line 22.
+Package pdftex.def Info: ./images/cmodel71.jpg  used on input line 22.
 (pdftex.def)             Requested size: 241.84843pt x 135.91393pt.
 
 Overfull \hbox (7.83325pt too wide) in paragraph at lines 21--23
@@ -970,31 +957,28 @@ Overfull \hbox (7.83325pt too wide) in paragraph at lines 21--23
 [24 <./images/cmodel28.jpg> <./images/cmodel71.jpg>] [25]
 <./images/pca1.png, id=121, 453.695pt x 596.2275pt>
 File: ./images/pca1.png Graphic file (type png)
- <use ./images/pca1.png>
-Package pdftex.def Info: ./images/pca1.png used on input line 72.
+<use ./images/pca1.png>
+Package pdftex.def Info: ./images/pca1.png  used on input line 72.
 (pdftex.def)             Requested size: 145.11053pt x 190.69662pt.
-
 <./images/pca2.png, id=122, 630.355pt x 555.07375pt>
 File: ./images/pca2.png Graphic file (type png)
- <use ./images/pca2.png>
-Package pdftex.def Info: ./images/pca2.png used on input line 73.
+<use ./images/pca2.png>
+Package pdftex.def Info: ./images/pca2.png  used on input line 73.
 (pdftex.def)             Requested size: 193.47578pt x 170.36865pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[26] <./images/md18fevr.jpg, id=126, 321.45094pt x 180.675pt>
+[26]
+<./images/md18fevr.jpg, id=126, 321.45094pt x 180.675pt>
 File: ./images/md18fevr.jpg Graphic file (type jpg)
-
 <use ./images/md18fevr.jpg>
-Package pdftex.def Info: ./images/md18fevr.jpg used on input line 85.
+Package pdftex.def Info: ./images/md18fevr.jpg  used on input line 85.
 (pdftex.def)             Requested size: 241.84843pt x 135.93874pt.
-
 <./images/mg18fevr.jpg, id=127, 321.03094pt x 179.16937pt>
 File: ./images/mg18fevr.jpg Graphic file (type jpg)
-
 <use ./images/mg18fevr.jpg>
-Package pdftex.def Info: ./images/mg18fevr.jpg used on input line 86.
+Package pdftex.def Info: ./images/mg18fevr.jpg  used on input line 86.
 (pdftex.def)             Requested size: 241.84843pt x 134.98088pt.
 
 Overfull \hbox (7.83325pt too wide) in paragraph at lines 85--87
@@ -1003,16 +987,13 @@ Overfull \hbox (7.83325pt too wide) in paragraph at lines 85--87
 
 <./images/mg18fevrSize1.jpg, id=128, 322.55241pt x 179.92218pt>
 File: ./images/mg18fevrSize1.jpg Graphic file (type jpg)
-
 <use ./images/mg18fevrSize1.jpg>
-Package pdftex.def Info: ./images/mg18fevrSize1.jpg used on input line 93.
+Package pdftex.def Info: ./images/mg18fevrSize1.jpg  used on input line 93.
 (pdftex.def)             Requested size: 241.84843pt x 134.90561pt.
-
 <./images/mg18fevrSize2.jpg, id=129, 317.68687pt x 180.29463pt>
 File: ./images/mg18fevrSize2.jpg Graphic file (type jpg)
-
 <use ./images/mg18fevrSize2.jpg>
-Package pdftex.def Info: ./images/mg18fevrSize2.jpg used on input line 94.
+Package pdftex.def Info: ./images/mg18fevrSize2.jpg  used on input line 94.
 (pdftex.def)             Requested size: 241.84843pt x 137.25917pt.
 
 Overfull \hbox (7.83325pt too wide) in paragraph at lines 93--95
@@ -1021,16 +1002,13 @@ Overfull \hbox (7.83325pt too wide) in paragraph at lines 93--95
 
 <./images/md18fevrSize1.jpg, id=130, 319.1925pt x 181.05537pt>
 File: ./images/md18fevrSize1.jpg Graphic file (type jpg)
-
 <use ./images/md18fevrSize1.jpg>
-Package pdftex.def Info: ./images/md18fevrSize1.jpg used on input line 100.
+Package pdftex.def Info: ./images/md18fevrSize1.jpg  used on input line 100.
 (pdftex.def)             Requested size: 241.84843pt x 137.18356pt.
-
 <./images/md18fevrSize2.jpg, id=131, 318.43968pt x 179.16937pt>
 File: ./images/md18fevrSize2.jpg Graphic file (type jpg)
-
 <use ./images/md18fevrSize2.jpg>
-Package pdftex.def Info: ./images/md18fevrSize2.jpg used on input line 101.
+Package pdftex.def Info: ./images/md18fevrSize2.jpg  used on input line 101.
 (pdftex.def)             Requested size: 241.84843pt x 136.07445pt.
 
 Overfull \hbox (7.83325pt too wide) in paragraph at lines 100--102
@@ -1056,17 +1034,14 @@ images/md18fevrSize1.jpg> <./images/md18fevrSize2.jpg>] [29] [30]) [31]
 Chapter 4.
 <images/software_3tiers.jpg, id=148, 171.64125pt x 260.975pt>
 File: images/software_3tiers.jpg Graphic file (type jpg)
-
 <use images/software_3tiers.jpg>
-Package pdftex.def Info: images/software_3tiers.jpg used on input line 12.
+Package pdftex.def Info: images/software_3tiers.jpg  used on input line 12.
 (pdftex.def)             Requested size: 120.14804pt x 182.68126pt.
-
 <images/modules.png, id=149, 831.105pt x 474.77374pt>
 File: images/modules.png Graphic file (type png)
- <use images/modules.png>
-Package pdftex.def Info: images/modules.png used on input line 20.
+<use images/modules.png>
+Package pdftex.def Info: images/modules.png  used on input line 20.
 (pdftex.def)             Requested size: 415.55148pt x 237.38629pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1077,9 +1052,8 @@ LaTeX Warning: `h' float specifier changed to `ht'.
  <./images/software_3tiers.jpg>]
 <images/classDiagram.pdf, id=153, 845.04686pt x 597.50786pt>
 File: images/classDiagram.pdf Graphic file (type pdf)
-
 <use images/classDiagram.pdf>
-Package pdftex.def Info: images/classDiagram.pdf used on input line 38.
+Package pdftex.def Info: images/classDiagram.pdf  used on input line 38.
 (pdftex.def)             Requested size: 718.29323pt x 507.88408pt.
 
 Overfull \hbox (24.18721pt too wide) in paragraph at lines 38--39
@@ -1095,39 +1069,30 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [33 <./images/modules.png>]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 77.
-
 <./images/manualLM.jpg, id=157, 2457.18pt x 1842.885pt>
 File: ./images/manualLM.jpg Graphic file (type jpg)
-
 <use ./images/manualLM.jpg>
-Package pdftex.def Info: ./images/manualLM.jpg used on input line 81.
+Package pdftex.def Info: ./images/manualLM.jpg  used on input line 81.
 (pdftex.def)             Requested size: 338.58632pt x 253.92473pt.
-
 <./images/est32.JPG, id=158, 3276.24pt x 2457.18pt>
 File: ./images/est32.JPG Graphic file (type jpg)
- <use ./images/est32.JPG>
-Package pdftex.def Info: ./images/est32.JPG used on input line 87.
+<use ./images/est32.JPG>
+Package pdftex.def Info: ./images/est32.JPG  used on input line 87.
 (pdftex.def)             Requested size: 338.58632pt x 253.90598pt.
-
 <./images/MdChart.png, id=159, 996.72375pt x 564.60938pt>
 File: ./images/MdChart.png Graphic file (type png)
-
 <use ./images/MdChart.png>
-Package pdftex.def Info: ./images/MdChart.png used on input line 94.
+Package pdftex.def Info: ./images/MdChart.png  used on input line 94.
 (pdftex.def)             Requested size: 290.22107pt x 164.39589pt.
-
 <./images/MgChart.png, id=160, 974.13937pt x 505.13719pt>
 File: ./images/MgChart.png Graphic file (type png)
-
 <use ./images/MgChart.png>
-Package pdftex.def Info: ./images/MgChart.png used on input line 100.
+Package pdftex.def Info: ./images/MgChart.png  used on input line 100.
 (pdftex.def)             Requested size: 290.22107pt x 150.49406pt.
-
 <images/statistic1.jpg, id=161, 795.97375pt x 405.515pt>
 File: images/statistic1.jpg Graphic file (type jpg)
-
 <use images/statistic1.jpg>
-Package pdftex.def Info: images/statistic1.jpg used on input line 107.
+Package pdftex.def Info: images/statistic1.jpg  used on input line 107.
 (pdftex.def)             Requested size: 477.58794pt x 243.31087pt.
  [34]
 
@@ -1172,40 +1137,36 @@ Chapter 5.
 Chapter 6.
 <images/neurons.png, id=202, 866.23625pt x 249.93375pt>
 File: images/neurons.png Graphic file (type png)
-
 <use images/neurons.png>
-Package pdftex.def Info: images/neurons.png used on input line 13.
+Package pdftex.def Info: images/neurons.png  used on input line 13.
 (pdftex.def)             Requested size: 433.11707pt x 124.96657pt.
- [45
+[45
 
 
 
 ]
 <images/neural_net.png, id=206, 525.965pt x 329.23pt>
 File: images/neural_net.png Graphic file (type png)
-
 <use images/neural_net.png>
-Package pdftex.def Info: images/neural_net.png used on input line 40.
+Package pdftex.def Info: images/neural_net.png  used on input line 40.
 (pdftex.def)             Requested size: 262.98184pt x 164.6146pt.
- [46 <./images/neurons.png> <./images/neural_net.png>] <images/deep_neural_netw
-ork.png, id=210, 922.44624pt x 388.45125pt>
+ [46 <./images/neurons.png> <./images/neural_net.png>]
+<images/deep_neural_network.png, id=210, 922.44624pt x 388.45125pt>
 File: images/deep_neural_network.png Graphic file (type png)
-
 <use images/deep_neural_network.png>
-Package pdftex.def Info: images/deep_neural_network.png used on input line 51.
+Package pdftex.def Info: images/deep_neural_network.png  used on input line 51.
+
 (pdftex.def)             Requested size: 461.22198pt x 194.22514pt.
- [47 <./images/deep_neural_network.png>])
-[48]
+ [47 <./images/deep_neural_network.png>]) [48]
 \openout2 = `includes/linearClassifition.aux'.
 
  (./includes/linearClassifition.tex
 Chapter 7.
 <images/nncl1.jpeg, id=219, 1162.3425pt x 331.2375pt>
 File: images/nncl1.jpeg Graphic file (type jpg)
- <use images/nncl1.jpeg>
-Package pdftex.def Info: images/nncl1.jpeg used on input line 23.
+<use images/nncl1.jpeg>
+Package pdftex.def Info: images/nncl1.jpeg  used on input line 23.
 (pdftex.def)             Requested size: 348.70544pt x 99.37201pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1216,43 +1177,39 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ] [50 <./images/nncl1.jpeg>]
 <images/lncex.jpg, id=226, 1227.58624pt x 454.69875pt>
 File: images/lncex.jpg Graphic file (type jpg)
- <use images/lncex.jpg>
-Package pdftex.def Info: images/lncex.jpg used on input line 53.
+<use images/lncex.jpg>
+Package pdftex.def Info: images/lncex.jpg  used on input line 53.
 (pdftex.def)             Requested size: 368.27872pt x 136.41068pt.
-
 <images/lncba.jpeg, id=227, 1340.00626pt x 477.785pt>
 File: images/lncba.jpeg Graphic file (type jpg)
- <use images/lncba.jpeg>
-Package pdftex.def Info: images/lncba.jpeg used on input line 64.
+<use images/lncba.jpeg>
+Package pdftex.def Info: images/lncba.jpeg  used on input line 64.
 (pdftex.def)             Requested size: 402.00497pt x 143.3366pt.
-
-[51 <./images/lncex.jpg> <./images/lncba.jpeg>]
+ [51 <./images/lncex.jpg> <./images/lncba.jpeg>]
 <images/svmsf.png, id=231, 1008.76875pt x 489.83pt>
 File: images/svmsf.png Graphic file (type png)
- <use images/svmsf.png>
-Package pdftex.def Info: images/svmsf.png used on input line 107.
+<use images/svmsf.png>
+Package pdftex.def Info: images/svmsf.png  used on input line 107.
 (pdftex.def)             Requested size: 453.94174pt x 220.42146pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [52] [53 <./images/svmsf.png>]
 <images/back_ex.png, id=240, 433.62pt x 219.82124pt>
 File: images/back_ex.png Graphic file (type png)
- <use images/back_ex.png>
-Package pdftex.def Info: images/back_ex.png used on input line 139.
+<use images/back_ex.png>
+Package pdftex.def Info: images/back_ex.png  used on input line 139.
 (pdftex.def)             Requested size: 260.17401pt x 131.89375pt.
-
-[54 <./images/back_ex.png>]) [55]
+ [54 <./images/back_ex.png>]) [55]
 \openout2 = `includes/cnnNetwork.aux'.
 
- (./includes/cnnNetwork.tex
+
+(./includes/cnnNetwork.tex
 Chapter 8.
 <images/cnn_architecture.png, id=247, 1043.9pt x 321.2pt>
 File: images/cnn_architecture.png Graphic file (type png)
-
 <use images/cnn_architecture.png>
-Package pdftex.def Info: images/cnn_architecture.png used on input line 7.
+Package pdftex.def Info: images/cnn_architecture.png  used on input line 7.
 (pdftex.def)             Requested size: 469.75066pt x 144.53867pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--11
@@ -1266,16 +1223,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--11
  <./images/cnn_architecture.png>] [57]
 <images/filter_w0.png, id=255, 972.63374pt x 832.10875pt>
 File: images/filter_w0.png Graphic file (type png)
-
 <use images/filter_w0.png>
-Package pdftex.def Info: images/filter_w0.png used on input line 56.
+Package pdftex.def Info: images/filter_w0.png  used on input line 56.
 (pdftex.def)             Requested size: 340.42691pt x 291.24242pt.
-
 <images/filter_w1.png, id=256, 972.63374pt x 823.075pt>
 File: images/filter_w1.png Graphic file (type png)
-
 <use images/filter_w1.png>
-Package pdftex.def Info: images/filter_w1.png used on input line 62.
+Package pdftex.def Info: images/filter_w1.png  used on input line 62.
 (pdftex.def)             Requested size: 340.42691pt x 288.08057pt.
 
 
@@ -1284,9 +1238,8 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [58 <./images/filter_w0.png (PNG copy)>]
 <images/pooling.png, id=260, 720.6925pt x 225.84375pt>
 File: images/pooling.png Graphic file (type png)
-
 <use images/pooling.png>
-Package pdftex.def Info: images/pooling.png used on input line 86.
+Package pdftex.def Info: images/pooling.png  used on input line 86.
 (pdftex.def)             Requested size: 468.44458pt x 146.79669pt.
 
 
@@ -1301,12 +1254,10 @@ LaTeX Warning: Citation `‚Ä¢' on page 61 undefined on input line 109.
 
 <images/trend_deep_learning_libs_2018.jpg, id=268, 693.59125pt x 607.26875pt>
 File: images/trend_deep_learning_libs_2018.jpg Graphic file (type jpg)
-
 <use images/trend_deep_learning_libs_2018.jpg>
-Package pdftex.def Info: images/trend_deep_learning_libs_2018.jpg used on input
- line 122.
+Package pdftex.def Info: images/trend_deep_learning_libs_2018.jpg  used on inpu
+t line 122.
 (pdftex.def)             Requested size: 450.82896pt x 394.72002pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1342,9 +1293,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 397--398
 Chapter 9.
 <images/CNN_classify.jpg, id=278, 2515.14656pt x 258.9675pt>
 File: images/CNN_classify.jpg Graphic file (type jpg)
-
 <use images/CNN_classify.jpg>
-Package pdftex.def Info: images/CNN_classify.jpg used on input line 24.
+Package pdftex.def Info: images/CNN_classify.jpg  used on input line 24.
 (pdftex.def)             Requested size: 503.0204pt x 51.79257pt.
 
 Overfull \hbox (19.32353pt too wide) in paragraph at lines 24--25
@@ -1378,51 +1328,43 @@ Chapter 10.
 Chapter 11.
 <images/3levels.png, id=295, 1364.09625pt x 409.53pt>
 File: images/3levels.png Graphic file (type png)
- <use images/3levels.png>
-Package pdftex.def Info: images/3levels.png used on input line 12.
+<use images/3levels.png>
+Package pdftex.def Info: images/3levels.png  used on input line 12.
 (pdftex.def)             Requested size: 477.44084pt x 143.33765pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 <images/cnn_level1.png, id=296, 951.555pt x 177.66376pt>
 File: images/cnn_level1.png Graphic file (type png)
-
 <use images/cnn_level1.png>
-Package pdftex.def Info: images/cnn_level1.png used on input line 20.
+Package pdftex.def Info: images/cnn_level1.png  used on input line 20.
 (pdftex.def)             Requested size: 475.77634pt x 88.83165pt.
- [69
+[69
 
 
 
 ]
 <images/cnn_level2.png, id=300, 847.165pt x 182.6825pt>
 File: images/cnn_level2.png Graphic file (type png)
-
 <use images/cnn_level2.png>
-Package pdftex.def Info: images/cnn_level2.png used on input line 28.
+Package pdftex.def Info: images/cnn_level2.png  used on input line 28.
 (pdftex.def)             Requested size: 423.58145pt x 91.34102pt.
  [70 <./images/3levels.png> <./images/cnn_level1.png> <./images/cnn_level2.png>
 ]
 <images/level1_test.png, id=304, 1445.4pt x 1084.05pt>
 File: images/level1_test.png Graphic file (type png)
-
 <use images/level1_test.png>
-Package pdftex.def Info: images/level1_test.png used on input line 65.
+Package pdftex.def Info: images/level1_test.png  used on input line 65.
 (pdftex.def)             Requested size: 361.34912pt x 271.01184pt.
-
 <images/level2_test.png, id=305, 1445.4pt x 1084.05pt>
 File: images/level2_test.png Graphic file (type png)
-
 <use images/level2_test.png>
-Package pdftex.def Info: images/level2_test.png used on input line 71.
+Package pdftex.def Info: images/level2_test.png  used on input line 71.
 (pdftex.def)             Requested size: 361.34912pt x 271.01184pt.
-
 <images/level3_test.png, id=306, 1445.4pt x 1084.05pt>
 File: images/level3_test.png Graphic file (type png)
-
 <use images/level3_test.png>
-Package pdftex.def Info: images/level3_test.png used on input line 77.
+Package pdftex.def Info: images/level3_test.png  used on input line 77.
 (pdftex.def)             Requested size: 361.34912pt x 271.01184pt.
 
 
@@ -1437,9 +1379,8 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [71] [72 <./images/level1_test.png> <./images/level2_test.png>]
 <images/ear_cnn.png, id=316, 1143.27126pt x 785.93625pt>
 File: images/ear_cnn.png Graphic file (type png)
-
 <use images/ear_cnn.png>
-Package pdftex.def Info: images/ear_cnn.png used on input line 90.
+Package pdftex.def Info: images/ear_cnn.png  used on input line 90.
 (pdftex.def)             Requested size: 457.3004pt x 314.36893pt.
 
 
@@ -1447,53 +1388,45 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <images/trainloss.png, id=317, 1345.025pt x 767.86874pt>
 File: images/trainloss.png Graphic file (type png)
-
 <use images/trainloss.png>
-Package pdftex.def Info: images/trainloss.png used on input line 129.
+Package pdftex.def Info: images/trainloss.png  used on input line 129.
 (pdftex.def)             Requested size: 363.1616pt x 207.32733pt.
-
 <images/figure_1-1.png, id=318, 1695.4542pt x 922.8879pt>
 File: images/figure_1-1.png Graphic file (type png)
-
 <use images/figure_1-1.png>
-Package pdftex.def Info: images/figure_1-1.png used on input line 136.
+Package pdftex.def Info: images/figure_1-1.png  used on input line 136.
 (pdftex.def)             Requested size: 457.77876pt x 249.18306pt.
- [73 <./images/level3_test.png>]
+[73 <./images/level3_test.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [74 <./images/ear_cnn.png> <./images/trainloss.png>]
 <./images/test1.JPG, id=326, 256.96pt x 192.72pt>
 File: ./images/test1.JPG Graphic file (type jpg)
- <use ./images/test1.JPG>
-Package pdftex.def Info: ./images/test1.JPG used on input line 168.
+<use ./images/test1.JPG>
+Package pdftex.def Info: ./images/test1.JPG  used on input line 168.
 (pdftex.def)             Requested size: 96.73788pt x 72.55505pt.
-
 <./images/test2.JPG, id=327, 256.96pt x 192.72pt>
 File: ./images/test2.JPG Graphic file (type jpg)
- <use ./images/test2.JPG>
-Package pdftex.def Info: ./images/test2.JPG used on input line 169.
+<use ./images/test2.JPG>
+Package pdftex.def Info: ./images/test2.JPG  used on input line 169.
 (pdftex.def)             Requested size: 96.73788pt x 72.55505pt.
-
 <./images/test3.JPG, id=328, 256.96pt x 192.72pt>
 File: ./images/test3.JPG Graphic file (type jpg)
- <use ./images/test3.JPG>
-Package pdftex.def Info: ./images/test3.JPG used on input line 170.
+<use ./images/test3.JPG>
+Package pdftex.def Info: ./images/test3.JPG  used on input line 170.
 (pdftex.def)             Requested size: 96.73788pt x 72.55505pt.
-
 <./images/test4.JPG, id=329, 256.96pt x 192.72pt>
 File: ./images/test4.JPG Graphic file (type jpg)
- <use ./images/test4.JPG>
-Package pdftex.def Info: ./images/test4.JPG used on input line 171.
+<use ./images/test4.JPG>
+Package pdftex.def Info: ./images/test4.JPG  used on input line 171.
 (pdftex.def)             Requested size: 96.73788pt x 72.55505pt.
-
-[75 <./images/figure_1-1.png>]
+ [75 <./images/figure_1-1.png>]
 <images/figure_1_loss_celia.png, id=334, 578.16pt x 433.62pt>
 File: images/figure_1_loss_celia.png Graphic file (type png)
-
 <use images/figure_1_loss_celia.png>
-Package pdftex.def Info: images/figure_1_loss_celia.png used on input line 183.
-
+Package pdftex.def Info: images/figure_1_loss_celia.png  used on input line 183
+.
 (pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
 
 
@@ -1501,20 +1434,17 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <images/figure_1_celia.png, id=335, 1695.4542pt x 922.8879pt>
 File: images/figure_1_celia.png Graphic file (type png)
-
 <use images/figure_1_celia.png>
-Package pdftex.def Info: images/figure_1_celia.png used on input line 190.
+Package pdftex.def Info: images/figure_1_celia.png  used on input line 190.
 (pdftex.def)             Requested size: 423.86252pt x 230.7214pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <images/model3.png, id=336, 737.75626pt x 132.495pt>
 File: images/model3.png Graphic file (type png)
- <use images/model3.png>
-Package pdftex.def Info: images/model3.png used on input line 211.
+<use images/model3.png>
+Package pdftex.def Info: images/model3.png  used on input line 211.
 (pdftex.def)             Requested size: 295.09727pt x 52.99706pt.
-
 [76 <./images/test1.JPG> <./images/test2.JPG> <./images/test3.JPG> <./images/te
 st4.JPG>]
 
@@ -1532,54 +1462,43 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <./images/figure_1_cnn3_5000_loss_v11.png, id=346, 578.16pt x 433.62pt>
 File: ./images/figure_1_cnn3_5000_loss_v11.png Graphic file (type png)
-
 <use ./images/figure_1_cnn3_5000_loss_v11.png>
-Package pdftex.def Info: ./images/figure_1_cnn3_5000_loss_v11.png used on input
- line 291.
+Package pdftex.def Info: ./images/figure_1_cnn3_5000_loss_v11.png  used on inpu
+t line 291.
 (pdftex.def)             Requested size: 193.47578pt x 145.10646pt.
-
 <./images/figure_1_cnn3_5000_loss_v12.png, id=347, 1695.4542pt x 922.8879pt>
 File: ./images/figure_1_cnn3_5000_loss_v12.png Graphic file (type png)
-
 <use ./images/figure_1_cnn3_5000_loss_v12.png>
-Package pdftex.def Info: ./images/figure_1_cnn3_5000_loss_v12.png used on input
- line 292.
+Package pdftex.def Info: ./images/figure_1_cnn3_5000_loss_v12.png  used on inpu
+t line 292.
 (pdftex.def)             Requested size: 193.47578pt x 105.30606pt.
-
 <./images/figure_1_cnn3_5000_loss_v13.png, id=348, 578.16pt x 433.62pt>
 File: ./images/figure_1_cnn3_5000_loss_v13.png Graphic file (type png)
-
 <use ./images/figure_1_cnn3_5000_loss_v13.png>
-Package pdftex.def Info: ./images/figure_1_cnn3_5000_loss_v13.png used on input
- line 293.
+Package pdftex.def Info: ./images/figure_1_cnn3_5000_loss_v13.png  used on inpu
+t line 293.
 (pdftex.def)             Requested size: 193.47578pt x 145.10646pt.
-
 <./images/figure_1_cnn3_5000_loss_v14.png, id=349, 1517.67pt x 896.148pt>
 File: ./images/figure_1_cnn3_5000_loss_v14.png Graphic file (type png)
-
 <use ./images/figure_1_cnn3_5000_loss_v14.png>
-Package pdftex.def Info: ./images/figure_1_cnn3_5000_loss_v14.png used on input
- line 294.
+Package pdftex.def Info: ./images/figure_1_cnn3_5000_loss_v14.png  used on inpu
+t line 294.
 (pdftex.def)             Requested size: 193.47578pt x 114.23341pt.
-
 <./images/figure_1_cnn3_5000_loss_v15.png, id=350, 578.16pt x 433.62pt>
 File: ./images/figure_1_cnn3_5000_loss_v15.png Graphic file (type png)
-
 <use ./images/figure_1_cnn3_5000_loss_v15.png>
-Package pdftex.def Info: ./images/figure_1_cnn3_5000_loss_v15.png used on input
- line 295.
+Package pdftex.def Info: ./images/figure_1_cnn3_5000_loss_v15.png  used on inpu
+t line 295.
 (pdftex.def)             Requested size: 193.47578pt x 145.10646pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [78 <./images/model3.png>]
 <images/figure_1_cnn3_5000_v13.png, id=354, 1695.4542pt x 922.8879pt>
 File: images/figure_1_cnn3_5000_v13.png Graphic file (type png)
-
 <use images/figure_1_cnn3_5000_v13.png>
-Package pdftex.def Info: images/figure_1_cnn3_5000_v13.png used on input line 3
-10.
+Package pdftex.def Info: images/figure_1_cnn3_5000_v13.png  used on input line 
+310.
 (pdftex.def)             Requested size: 339.08484pt x 184.57431pt.
 
 
@@ -1588,27 +1507,22 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [79]
 <images/figure_1_cnn3_3000_v13_loss_change2.png, id=358, 578.16pt x 433.62pt>
 File: images/figure_1_cnn3_3000_v13_loss_change2.png Graphic file (type png)
-
 <use images/figure_1_cnn3_3000_v13_loss_change2.png>
-Package pdftex.def Info: images/figure_1_cnn3_3000_v13_loss_change2.png used on
- input line 348.
+Package pdftex.def Info: images/figure_1_cnn3_3000_v13_loss_change2.png  used o
+n input line 348.
 (pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
-
 <images/model3_dropout.png, id=359, 1073.00874pt x 146.5475pt>
 File: images/model3_dropout.png Graphic file (type png)
-
 <use images/model3_dropout.png>
-Package pdftex.def Info: images/model3_dropout.png used on input line 355.
+Package pdftex.def Info: images/model3_dropout.png  used on input line 355.
 (pdftex.def)             Requested size: 375.55869pt x 51.29237pt.
-
 <images/figure_1_cnn3_3000_v13_loss_change3_dropout_increase_2.png, id=360, 151
 7.67pt x 896.148pt>
 File: images/figure_1_cnn3_3000_v13_loss_change3_dropout_increase_2.png Graphic
  file (type png)
-
 <use images/figure_1_cnn3_3000_v13_loss_change3_dropout_increase_2.png>
 Package pdftex.def Info: images/figure_1_cnn3_3000_v13_loss_change3_dropout_inc
-rease_2.png used on input line 362.
+rease_2.png  used on input line 362.
 (pdftex.def)             Requested size: 303.52863pt x 179.22641pt.
 
 
@@ -1632,11 +1546,11 @@ _v13_loss_change3_dropout_increase_2.png>]
 Chapter 12.
 <images/net1.png, id=378, 1214.5375pt x 251.94125pt>
 File: images/net1.png Graphic file (type png)
- <use images/net1.png>
-Package pdftex.def Info: images/net1.png used on input line 10.
+<use images/net1.png>
+Package pdftex.def Info: images/net1.png  used on input line 11.
 (pdftex.def)             Requested size: 485.8064pt x 100.7747pt.
 
-Overfull \hbox (2.10953pt too wide) in paragraph at lines 10--11
+Overfull \hbox (2.10953pt too wide) in paragraph at lines 11--12
  [][] 
  []
 
@@ -1645,10 +1559,9 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <images/net2.png, id=379, 1208.515pt x 248.93pt>
 File: images/net2.png Graphic file (type png)
- <use images/net2.png>
-Package pdftex.def Info: images/net2.png used on input line 19.
+<use images/net2.png>
+Package pdftex.def Info: images/net2.png  used on input line 20.
 (pdftex.def)             Requested size: 483.39743pt x 99.57022pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1659,19 +1572,22 @@ Missing character: There is no ù in font cmr12!
 
 
 
-] <images/arch_model.png, id=384, 1637.11626pt x 283.0575pt>
+]
+<images/arch_model.png, id=384, 1637.11626pt x 283.0575pt>
 File: images/arch_model.png Graphic file (type png)
-
 <use images/arch_model.png>
-Package pdftex.def Info: images/arch_model.png used on input line 29.
+Package pdftex.def Info: images/arch_model.png  used on input line 49.
 (pdftex.def)             Requested size: 491.13867pt x 84.9179pt.
 
-Overfull \hbox (7.4418pt too wide) in paragraph at lines 29--30
+Overfull \hbox (7.4418pt too wide) in paragraph at lines 49--50
  [][] 
  []
 
-) [84 <./images/net1.png> <./images/net2.png> <./images/arch_model.png>]
-[85
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[84 <./images/net1.png> <./images/net2.png>]) [85 <./images/arch_model.png>]
+[86
 
 
 ]
@@ -1679,7 +1595,7 @@ Overfull \hbox (7.4418pt too wide) in paragraph at lines 29--30
 
  (./includes/conclusion.tex
 Chapter 13.
-) [86
+) [87
 
 
 ]
@@ -1687,7 +1603,7 @@ Chapter 13.
 
  (./includes/discussion.tex
 Chapter 14.
-) [87
+) [88
 
 
 
@@ -1695,10 +1611,10 @@ Chapter 14.
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no î in font cmr12!
- [88
+ [89
 
 
-] [89]
+] [90]
 Underfull \hbox (badness 1297) in paragraph at lines 227--233
 []\OT1/cmr/m/n/12 Celia Cin-tas, Mir-sha Quinto-S^^Sanchez, Vic-tor Acu~na, Car
 -olina Paschetta, Soledad
@@ -1710,7 +1626,7 @@ Missing character: There is no √ in font cmr12!
 Missing character: There is no ∏ in font cmr12!
 Missing character: There is no √ in font cmr12!
 Missing character: There is no ∏ in font cmr12!
-) [90] (./index.aux (./includes/cover.aux) (./includes/abstract.aux)
+) [91] (./index.aux (./includes/cover.aux) (./includes/abstract.aux)
 (./includes/segmentation.aux) (./includes/localfeatures.aux)
 (./includes/dominantpoints.aux) (./includes/software.aux)
 (./includes/mcPart.aux) (./includes/machineLearning.aux)
@@ -1727,13 +1643,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16037 strings out of 493029
- 309577 string characters out of 6136234
- 377144 words of memory out of 5000000
- 19090 multiletter control sequences out of 15000+600000
+ 16031 strings out of 492982
+ 309998 string characters out of 6134896
+ 375241 words of memory out of 5000000
+ 19108 multiletter control sequences out of 15000+600000
  12239 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,11n,54p,1370b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,54p,1618b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/
@@ -1750,10 +1666,10 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on index.pdf (92 pages, 12221446 bytes).
+Output written on index.pdf (93 pages, 12128822 bytes).
 PDF statistics:
- 465 PDF objects out of 1000 (max. 8388607)
- 263 compressed objects within 3 object streams
+ 468 PDF objects out of 1000 (max. 8388607)
+ 265 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  368 words of extra memory for PDF output out of 10000 (max. 10000000)
 
