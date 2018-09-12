@@ -15,6 +15,7 @@ A level-1 auxiliary file: includes/cnnNetwork.aux
 A level-1 auxiliary file: includes/cnnClassification.aux
 A level-1 auxiliary file: includes/cnndatasets.aux
 A level-1 auxiliary file: includes/cnnAndLandmarks.aux
+A level-1 auxiliary file: includes/cnnBeetles.aux
 A level-1 auxiliary file: includes/conclusion.aux
 A level-1 auxiliary file: includes/discussion.aux
 The style file: unsrt.bst
@@ -25,7 +26,7 @@ Warning--empty journal in fechner1948elements
 Warning--empty year in barnessurvey
 You've used 46 entries,
             1791 wiz_defined-function locations,
-            730 strings with 11783 characters,
+            731 strings with 11806 characters,
 and the built_in function-call counts, 11485 in all, are:
 = -- 1057
 > -- 482
