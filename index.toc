@@ -147,6 +147,6 @@
 \contentsline {section}{\numberline {12.2}Data augmentation}{85}
 \contentsline {section}{\numberline {12.3}Experiments and results}{87}
 \contentsline {section}{\numberline {12.4}Conclusion}{90}
-\contentsline {part}{III\hspace {1em}Conclusion}{91}
-\contentsline {chapter}{\numberline {13}Conclusion}{92}
-\contentsline {chapter}{\numberline {14}Discussion}{93}
+\contentsline {part}{III\hspace {1em}Conclusion}{92}
+\contentsline {chapter}{\numberline {13}Conclusion}{93}
+\contentsline {chapter}{\numberline {14}Discussion}{94}

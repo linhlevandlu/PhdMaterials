@@ -172,13 +172,71 @@ To illustrate this purpose, Fig. \ref{figrsexample} shows the predicted landmark
 
 \begin{figure}[htbp]
     \centering
-    \subfloat[Image with well-predicted landmarks]{\label{figsub1}\includegraphics[width=0.45\textwidth]{images/fn_accuracy}}~~
-\subfloat[Image with inaccuracy landmarks]{\label{figsub2}\includegraphics[width=0.45\textwidth]{images/plandmark2}}\\    
+    \subfloat[Image with well-predicted landmarks]{\label{figsub1}\includegraphics[width=0.35\textwidth]{images/fn_accuracy}}~~
+\subfloat[Image with inaccuracy landmarks]{\label{figsub2}\includegraphics[width=0.35\textwidth]{images/plandmark2}}\\    
     \caption{The predicted landmarks, in red,  on the images in test set.}
     \label{figrsexample}
 \end{figure}
 
-\textbf{How about the results on head and elytra parts???????}
+From the success of the third architecture on thorax dataset, we apply the same procedures (data augmentation, training, \ldots) on other parts of beetle: \textit{elytra and head}. Table. \ref{tbltraininglosselytra} and \ref{tbltraininglosshead} show the losses during training process  of the third model on elytra and head dataset, respectively.
+
+\begin{table}[htbp]
+\begin{minipage}{0.5\linewidth}
+	\centering
+	\begin{tabular}{l l l}
+	Round & Training loss & Validation loss \\ \hline
+	1 & 0.00019 & 0.00012  \\ \hline
+	2 & 0.00020 & 0.00012 \\ \hline
+	3 & 0.00019 & 0.00012 \\ \hline
+	4 & 0.00020 & 0.00011 \\ \hline
+	5 & 0.00018 & 0.00010 \\ \hline
+	6 & 0.00019 & 0.00013 \\ \hline
+	7 & 0.00018 & 0.00013 \\ \hline
+	8 & 0.00018 & 0.00017 \\ \hline
+	9 & 0.00019 & 0.00012 \\ \hline
+	\end{tabular}
+	\caption{\small{The losses during training the third model on \textbf{elytra} images}}
+	\label{tbltraininglosselytra}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\linewidth}
+	\centering
+	\begin{tabular}{l l l}
+	Round & Training loss & Validation loss \\ \hline
+	1 & 0.00023 & 0.00032  \\ \hline
+	2 & 0.00027 & 0.00044 \\ \hline
+	3 & 0.00026 & 0.00051 \\ \hline
+	4 & 0.00026 & 0.00058 \\ \hline
+	5 & 0.00027 & 0.00072 \\ \hline
+	6 & 0.00025 & 0.00050 \\ \hline
+	7 & 0.00023 & 0.00019 \\ \hline
+	8 & 0.00024 & 0.00021 \\ \hline
+	9 & 0.00025 & 0.00027 \\ \hline
+	\end{tabular}
+	\caption{\small{The losses during training the third model on \textbf{head} images}}
+	\label{tbltraininglosshead}
+\end{minipage}
+\end{table}
+
+Fig. \ref{figelytraloss} shows the loss curves of training and validation processes of two rounds on elytra part.
+
+\begin{figure}[htbp]
+    \centering
+    \subfloat[The first fold]{\label{figel1}\includegraphics[width=0.45\textwidth]{images/cnnmodel3_5000_elytre_1000_output_v10_loss}}~~
+\subfloat[The eight fold]{\label{figel2}\includegraphics[width=0.45\textwidth]{images/cnnmodel3_5000_elytre_1000_output_v18_loss}}\\    
+    \caption{The losses of two training examples on elytra part }
+    \label{figelytraloss}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \subfloat[The first fold]{\label{figel1}\includegraphics[width=0.45\textwidth]{images/cnnmodel3_5000_tete_1000_output_v10_loss}}~~
+\subfloat[The eight fold]{\label{figel2}\includegraphics[width=0.45\textwidth]{images/cnnmodel3_5000_tete_1000_output_v18_loss}}\\    
+    \caption{The losses of two training examples on head part }
+    \label{figelytraloss}
+\end{figure}
+
+\textbf{Move the losses and curves diagram to appendix, just focus on the distance of the landmarks ???????}
 \section{Conclusion}
 
 
