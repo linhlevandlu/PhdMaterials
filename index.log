@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.20)  13 SEP 2018 21:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.20)  14 SEP 2018 08:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1650,7 +1650,12 @@ File: images/plandmark2.png Graphic file (type png)
 Package pdftex.def Info: images/plandmark2.png  used on input line 176.
 (pdftex.def)             Requested size: 169.29684pt x 126.68878pt.
 
-Overfull \hbox (2.61108pt too wide) in paragraph at lines 184--219
+Overfull \hbox (2.61108pt too wide) in paragraph at lines 184--224
+[]$[]$  $[]$ 
+ []
+
+
+Overfull \hbox (2.61108pt too wide) in paragraph at lines 232--267
 []$[]$  $[]$ 
  []
 
@@ -1660,7 +1665,7 @@ File: images/cnnmodel3_5000_elytre_1000_output_v10_loss.png Graphic file (type
 png)
 <use images/cnnmodel3_5000_elytre_1000_output_v10_loss.png>
 Package pdftex.def Info: images/cnnmodel3_5000_elytre_1000_output_v10_loss.png 
- used on input line 225.
+ used on input line 273.
 (pdftex.def)             Requested size: 217.66211pt x 163.24228pt.
 <images/cnnmodel3_5000_elytre_1000_output_v18_loss.png, id=415, 578.16pt x 433.
 62pt>
@@ -1668,7 +1673,7 @@ File: images/cnnmodel3_5000_elytre_1000_output_v18_loss.png Graphic file (type
 png)
 <use images/cnnmodel3_5000_elytre_1000_output_v18_loss.png>
 Package pdftex.def Info: images/cnnmodel3_5000_elytre_1000_output_v18_loss.png 
- used on input line 226.
+ used on input line 274.
 (pdftex.def)             Requested size: 217.66211pt x 163.24228pt.
 <images/cnnmodel3_5000_tete_1000_output_v10_loss.png, id=416, 578.16pt x 433.62
 pt>
@@ -1676,7 +1681,7 @@ File: images/cnnmodel3_5000_tete_1000_output_v10_loss.png Graphic file (type pn
 g)
 <use images/cnnmodel3_5000_tete_1000_output_v10_loss.png>
 Package pdftex.def Info: images/cnnmodel3_5000_tete_1000_output_v10_loss.png  u
-sed on input line 233.
+sed on input line 281.
 (pdftex.def)             Requested size: 217.66211pt x 163.24228pt.
 <images/cnnmodel3_5000_tete_1000_output_v18_loss.png, id=417, 578.16pt x 433.62
 pt>
@@ -1684,13 +1689,13 @@ File: images/cnnmodel3_5000_tete_1000_output_v18_loss.png Graphic file (type pn
 g)
 <use images/cnnmodel3_5000_tete_1000_output_v18_loss.png>
 Package pdftex.def Info: images/cnnmodel3_5000_tete_1000_output_v18_loss.png  u
-sed on input line 234.
+sed on input line 282.
 (pdftex.def)             Requested size: 217.66211pt x 163.24228pt.
 ) [90 <./images/fn_accuracy.png (PNG copy)> <./images/plandmark2.png (PNG copy)
 >] [91 <./images/cnnmodel3_5000_elytre_1000_output_v10_loss.png> <./images/cnnm
 odel3_5000_elytre_1000_output_v18_loss.png> <./images/cnnmodel3_5000_tete_1000_
 output_v10_loss.png> <./images/cnnmodel3_5000_tete_1000_output_v18_loss.png>]
-[92
+[92] [93
 
 
 ]
@@ -1698,7 +1703,7 @@ output_v10_loss.png> <./images/cnnmodel3_5000_tete_1000_output_v18_loss.png>]
 
  (./includes/conclusion.tex
 Chapter 13.
-) [93
+) [94
 
 
 ]
@@ -1706,7 +1711,7 @@ Chapter 13.
 
  (./includes/discussion.tex
 Chapter 14.
-) [94
+) [95
 
 
 
@@ -1714,10 +1719,10 @@ Chapter 14.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ” in font cmr12!
- [95
+ [96
 
 
-] [96]
+] [97]
 Underfull \hbox (badness 1297) in paragraph at lines 227--233
 []\OT1/cmr/m/n/12 Celia Cin-tas, Mir-sha Quinto-S^^Sanchez, Vic-tor Acu~na, Car
 -olina Paschetta, Soledad
@@ -1729,7 +1734,7 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
-) [97] (./index.aux (./includes/cover.aux) (./includes/abstract.aux)
+) [98] (./index.aux (./includes/cover.aux) (./includes/abstract.aux)
 (./includes/segmentation.aux) (./includes/localfeatures.aux)
 (./includes/dominantpoints.aux) (./includes/software.aux)
 (./includes/mcPart.aux) (./includes/machineLearning.aux)
@@ -1746,10 +1751,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16108 strings out of 492982
- 312592 string characters out of 6134896
- 375435 words of memory out of 5000000
- 19173 multiletter control sequences out of 15000+600000
+ 16110 strings out of 492982
+ 312624 string characters out of 6134896
+ 375458 words of memory out of 5000000
+ 19175 multiletter control sequences out of 15000+600000
  12847 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,14n,54p,2128b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1771,10 +1776,10 @@ ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on index.pdf (99 pages, 12864032 bytes).
+Output written on index.pdf (100 pages, 12866169 bytes).
 PDF statistics:
- 512 PDF objects out of 1000 (max. 8388607)
- 284 compressed objects within 3 object streams
+ 515 PDF objects out of 1000 (max. 8388607)
+ 286 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  423 words of extra memory for PDF output out of 10000 (max. 10000000)
 

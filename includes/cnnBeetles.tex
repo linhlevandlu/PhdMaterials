@@ -178,7 +178,55 @@ To illustrate this purpose, Fig. \ref{figrsexample} shows the predicted landmark
     \label{figrsexample}
 \end{figure}
 
-From the success of the third architecture on thorax dataset, we apply the same procedures (data augmentation, training, \ldots) on other parts of beetle: \textit{elytra and head}. Table. \ref{tbltraininglosselytra} and \ref{tbltraininglosshead} show the losses during training process  of the third model on elytra and head dataset, respectively.
+From the success of the third architecture on thorax dataset, we apply the same procedures (data augmentation, training, \ldots) on other parts of beetle: \textit{elytra and head}. However, we have modified the number of the last full-connected layer to adapt with each dataset before training. Arcoding, the values at the last full-connected layer are set to $22$ and $20$ outputs corresponds to $11$ and $10$ landmarks on elytra and head, respectively. Of course, we have also applied \textit{cross-validation} to select testing data to get all predicted landmarks for all images in each dataset. Then, the quality of predicted landmarks are evaluated by comparing with the corresponding manual landmarks (distance computation). Table .\ref{tblavgdiselytra} and \ref{tblavgdishead} show the average distances on each landmark of elytra and head anatomical, respectively.
+
+\begin{table}[htbp]
+\begin{minipage}{0.5\linewidth}
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Landmark} & \textbf{Distance} (in pixels) \\ \hline
+		1 & 3.8669  \\ \hline
+		2 & 3.9730 \\ \hline
+		3 & 3.9166 \\ \hline
+		4 & 3.8673 \\ \hline
+		5 & 4.0151 \\ \hline
+		6 & 4.8426 \\ \hline
+		7 & 5.2125 \\ \hline
+		8 & 5.4685 \\ \hline
+		9 & 5.2692 \\ \hline
+		10 & 4.0709 \\ \hline
+		11 & 3.9896 \\ \hline
+	\end{tabular}
+	\caption{\small{The average distance on all images per landmark on \textbf{elytra} images}}
+	\label{tblavgdiselytra}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\linewidth}
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Landmark} & \textbf{Distance} (in pixels) \\ \hline
+		1 & 5.5280  \\ \hline
+		2 & 5.1609 \\ \hline
+		3 & 5.3827 \\ \hline
+		4 & 5.0345 \\ \hline
+		5 & 4.8393 \\ \hline
+		6 & 4.4516 \\ \hline
+		7 & 4.7937 \\ \hline
+		8 & 4.5322 \\ \hline
+		9 & 5.1412 \\ \hline
+		10 & 5.0564 \\ \hline
+	\end{tabular}
+	\caption{\small{The average distance on all images per landmark on \textbf{head} images}}
+	\label{tblavgdishead}
+\end{minipage}
+\end{table}
+
+
+
+
+ Table. \ref{tbltraininglosselytra} and \ref{tbltraininglosshead} show the losses during training process  of the third model on elytra and head dataset, respectively.
 
 \begin{table}[htbp]
 \begin{minipage}{0.5\linewidth}
