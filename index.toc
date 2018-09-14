@@ -146,7 +146,10 @@
 \contentsline {section}{\numberline {12.1}Network architecture designing}{83}
 \contentsline {section}{\numberline {12.2}Data augmentation}{85}
 \contentsline {section}{\numberline {12.3}Experiments and results}{87}
-\contentsline {section}{\numberline {12.4}Conclusion}{92}
-\contentsline {part}{III\hspace {1em}Conclusion}{93}
-\contentsline {chapter}{\numberline {13}Conclusion}{94}
-\contentsline {chapter}{\numberline {14}Discussion}{95}
+\contentsline {section}{\numberline {12.4}Resulting improvement by fine-tuning}{91}
+\contentsline {subsection}{\numberline {12.4.1}Data preparation and training}{91}
+\contentsline {subsection}{\numberline {12.4.2}Fine-tuning on each dataset}{92}
+\contentsline {section}{\numberline {12.5}Conclusion}{95}
+\contentsline {part}{III\hspace {1em}Conclusion}{96}
+\contentsline {chapter}{\numberline {13}Conclusion}{97}
+\contentsline {chapter}{\numberline {14}Discussion}{98}

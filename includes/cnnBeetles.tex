@@ -178,7 +178,7 @@ To illustrate this purpose, Fig. \ref{figrsexample} shows the predicted landmark
     \label{figrsexample}
 \end{figure}
 
-From the success of the third architecture on thorax dataset, we apply the same procedures (data augmentation, training, \ldots) on other parts of beetle: \textit{elytra and head}. However, we have modified the number of the last full-connected layer to adapt with each dataset before training. Arcoding, the values at the last full-connected layer are set to $22$ and $20$ outputs corresponds to $11$ and $10$ landmarks on elytra and head, respectively. Of course, we have also applied \textit{cross-validation} to select testing data to get all predicted landmarks for all images in each dataset. Then, the quality of predicted landmarks are evaluated by comparing with the corresponding manual landmarks (distance computation). Table .\ref{tblavgdiselytra} and \ref{tblavgdishead} show the average distances on each landmark of elytra and head anatomical, respectively.
+From the success of the third architecture on thorax dataset, we apply the same procedures (data augmentation, training, \ldots) on other parts of beetle: \textit{elytra and head}. However, we have modified the number of the last full-connected layer to adapt with each dataset before training. Arcoding, the values at the last full-connected layer are set to $22$ and $20$ outputs corresponds to $11$ and $10$ landmarks on elytra and head, respectively. Of course, we have also applied \textit{cross-validation} to select testing data to get all predicted landmarks for all images in each dataset. Then, the quality of predicted landmarks are evaluated by comparing with the corresponding manual landmarks (distance computation). Table. \ref{tblavgdiselytra} and \ref{tblavgdishead} show the average distances on each landmark of elytra and head anatomical, respectively. The losses during training of both two parts are presented in Appendix \ref{}. Comparing with the average distances on the thorax part, it seems that the proposed architecture provides more accurate predictions on the elytra dataset, but the results are opposite on head dataset.
 
 \begin{table}[htbp]
 \begin{minipage}{0.5\linewidth}
@@ -222,11 +222,236 @@ From the success of the third architecture on thorax dataset, we apply the same 
 	\label{tblavgdishead}
 \end{minipage}
 \end{table}
+\section{Resulting improvement by fine-tuning}
+The proposed network (third architecture) presented in section \ref{} have been trained from scratch on three datasets (thorax, elytra, and head). At the first step, the network was able to predict the landmarks on the images. But as we have discussed, even if the strength of the correlation seems to validate the results, when we display the predicted landmarks on the images, the quality of the predicted coordinates are also not enough precise, and the average error are also still high (of course, we have the distances are higher than the average distances).
+
+In order to reach more acceptable results for biologists, we have broadened model with another step of deep learning: \textbf{transfer learning}. That is a method enables to re-uses the model developed for a specific task/dataset to lead another task (called \textit{target task}) with another dataset. This process allows rapid process and improves the performance of the model on the target task \cite{}. The most popular example has been given with the project ImageNet of Google \cite{} which has labeled several millions of images. The
+obtained parameter values which can be used in another context to classify another dataset, eventually very different dataset \cite{}. The name of this procedure to re-use parameters to pretrain a model is currently called \textbf{fine-tuning}.
+
+Fine-tuning does not only replace and retrain the model on
+the new dataset but also fine-tunes the weights of a trained
+model by continuing the backpropagation. Unfortunately,
+\textit{some rapid tests have shown that re-using ImageNet features
+has not been relevant for our application}. We have designed a
+way to reproduce the method with our own data. It is worth
+noting that of course the size of data to pre-train has drastically decreased. For our pre-training step, the network has been
+trained on the whole dataset including the images of three parts
+of beetle \textit{i.e thorax, elytra and head}. Then, the trained model
+has been used to fine-tune and test on each dataset.
+\subsection{Data preparation and training}
+The images training dataset is combined from the images of three sets: \textit{thorax, elytra, and head} (after augmentation). When applying the training from the scratch, we have used cross-validation to select the data ($9$ folds). It means that for each dataset, we have some different training data and corresponding testing data. So, the images that use to train the model are just select from one of the folds in each dataset. Specifically, we have taken $1, 820$ images of each part. In total, it includes $5, 460$ images $(260 \times 7 \times 3)$. 
+
+\begin{figure}[htbp]
+	\centerline{\includegraphics[scale=0.55]{images/merge}}
+	\caption{A presentation of head, thorax and elytra part with
+corresponding manual landmarks}
+	\label{figmerge}
+\end{figure}
+
+However, another problem has been appeared when we combined the images from different dataset. That is the different number of landmarks on each part: \textit{$8$ landmarks on thorax part, $10$ landmarks on head part, and $11$ landmarks on elytra part}. Fig. \ref{figmerge} shows the possition of the landmarks on each part. Because of the meaning of landmarks on each anatomical part for biologists, we cannot insert the landmarks arbitrary. So,  we have decided to keep the landmarks on thorax as reference and to remove the landmarks on elytra and head parts instead of adding. We kept $8$ (landmarks) as a reference number, then we have removed the supernumerary when it is unnecessary. Specifically, we have removed three landmarks on the elytra part ($1^{st}, 6^{th}, 9^{th}$), and two landmarks on the head part ($5^{th}, 6^{th}$). 
+
+During training the proposed architecture on the combined dataset, the parameters of the network (learning rate, momentum, \ldots) are kept the same as training from scratch but the number of epochs are increased to $10, 000$ instead of $5, 000$ to achieve better learning on the parameters (weights). Additional, we have shuffled the training set. Because the neural network learns the faster from the most unexpected sample. It is advisable to choose a sample at each iteration that is the most unfamiliar to the system. Shuffling the examples will be helped the model works with different anatomical parts rather than the same anatomical samples in each training time.
+
+\subsection{Fine-tuning on each dataset}
+The combined dataset then used to train the third architecture (with $8$ outputs). Then, the trained model is used to fine-tuning on each dataset. To compare the result with the previous one, we have also fine-tuned the trained model with different dataset (applying cross-validation). Firstly, we consider on the losses during fine-tuning. \textit{For example}, Table. \ref{tblftpronotum}, \ref{tblftbody}, \ref{tblfthead} show the losses during fine-tuning on thorax, elytra, and head dataset, respectively. Comparing with the losses when we trained the model from scratch, \textit{i.e.} on thorax, the validation losses of this scenario have been significantly improved (around $40\%$).
+
+On each part, the landmarks are predicted on the test images. Then, the average error based on the distances between predicted and corresponding manual landmarks have been also computed. Table. \ref{tblcmppronotum}, \ref{tblcmpbody}, and \ref{tblcmphead} show the average distances per landmark on thorax, elytra, and head dataset, respectively. \textbf{From scratch} columns remind the previously average distances. \textbf{Fine-tune} columns present the new average distances after applying fine-tuning on each part. It is clearly shown that the result of predicted landmarks with the help of fine-tuning is more precise than training from scratch. For example, when we compare the average distances between two processes, the worse case of fine-tuning process is still better than the best case of training from scratch.
+
+\begin{table}[htbp]
+\begin{minipage}[b]{.5\textwidth}
+	\centering
+	\begin{tabular}{l l l}
+	Round & Training loss & Validation loss \\ \hline
+	1 & 0.00019 & 0.00009  \\ \hline
+	2 & 0.00018 & 0.00010 \\ \hline
+	3 & 0.00018 & 0.00010 \\ \hline
+	4 & 0.00019 & 0.00008 \\ \hline
+	5 & 0.00019 & 0.00009 \\ \hline
+	6 & 0.00018 & 0.00008 \\ \hline
+	7 & 0.00019 & 0.00008 \\ \hline
+	8 & 0.00018 & 0.00006 \\ \hline
+	9 & 0.00018 & 0.00009 \\ \hline
+	\end{tabular}
+	\caption{The losses during fine-tuning model on thorax dataset}
+	\label{tblftpronotum}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{.5\textwidth}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{$\#$Landmark} & \textbf{From scratch} & \textbf{Fine-tune} \\ \hline
+1 & \textbf{4.00} & \textbf{2.49}  \\ \hline
+2 & 4.48 & 2.72  \\ \hline
+3 & 4.30  & 2.65 \\ \hline
+4 & 4.39  & 2.77 \\ \hline
+5 & 4.29  & 2.49 \\ \hline
+6 & \textbf{5.36}  & \textbf{3.05} \\ \hline
+7 & 4.64  & 2.68 \\ \hline
+8 & 4.94  & 2.87 \\ \hline
+\end{tabular}
+\caption{The average error distance per landmark of two processes on thorax images}
+\label{tblcmppronotum}
+\end{minipage}
+\end{table}
+
+\begin{table}[ht]
+\begin{minipage}[b]{0.5\textwidth}
+	\centering
+	\begin{tabular}{c c c}
+	Round & Training loss & Validation loss \\ \hline
+	1 & 0.00020 & 0.00006  \\ \hline
+	2 & 0.00020 & 0.00006 \\ \hline
+	3 & 0.00021 & 0.00006 \\ \hline
+	4 & 0.00021 & 0.00006 \\ \hline
+	5 & 0.00019 & 0.00006 \\ \hline
+	6 & 0.00019 & 0.00006 \\ \hline
+	7 & 0.00018 & 0.00005 \\ \hline
+	8 & 0.00020 & 0.00006 \\ \hline
+	9 & 0.00019 & 0.00006 \\ \hline
+	\end{tabular}
+	\caption{The losses during fine-tuning model on elytra dataset}
+	\label{tblftbody}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.5\textwidth}
+
+\centering
+\begin{tabular}[t]{|c|c|c|}
+\hline
+\textbf{$\#$Landmark} & \textbf{From scratch} & \textbf{Fine-tune} \\ \hline
+1 & \textbf{3.87} & 2.34  \\ \hline
+2 & 3.97 & 2.27  \\ \hline
+3 & 3.92  & 2.27 \\ \hline
+4 & \textbf{3.87}  & \textbf{2.25} \\ \hline
+5 & 4.02  & 2.27 \\ \hline
+6 & 4.84  & 3.14 \\ \hline
+7 & 5.21  & 3.14 \\ \hline
+8 & \textbf{5.47}  & 3.29 \\ \hline
+9 & 5.27  & \textbf{3.42} \\ \hline
+10 & 4.07  & 2.49 \\ \hline
+11 & 3.99  & 2.30 \\ \hline
+\end{tabular}
+\caption{The average error distance per landmark of two processes on elytra images}
+\label{tblcmpbody}
+
+\end{minipage}
+\end{table}
+
+\begin{table}[ht]
+\begin{minipage}[b]{0.5\textwidth}
+	\centering
+	\begin{tabular}{l l l}
+	Round & Training loss & Validation loss \\ \hline
+	1 & 0.00022 & 0.00007  \\ \hline
+	2 & 0.00022 & 0.00007 \\ \hline
+	3 & 0.00023 & 0.00008 \\ \hline
+	4 & 0.00023 & 0.00008 \\ \hline
+	5 & 0.00022 & 0.00008 \\ \hline
+	6 & 0.00023 & 0.00007 \\ \hline
+	7 & 0.00022 & 0.00008 \\ \hline
+	8 & 0.00023 & 0.00007 \\ \hline
+	9 & 0.00024 & 0.00008 \\ \hline
+	\end{tabular}
+	\caption{The losses during fine-tuning model on head dataset}
+	\label{tblfthead}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.5\textwidth}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{$\#$Landmark} & \textbf{From scratch} & \textbf{Fine-tune} \\ \hline
+1 & 5.53 & \textbf{3.03}  \\ \hline
+2 & 5.16 & 2.94  \\ \hline
+3 & \textbf{5.38}  & 2.96 \\ \hline
+4 & 5.03  & 2.88 \\ \hline
+5 & 4.84  & 2.76 \\ \hline
+6 & \textbf{4.45}  & 2.67 \\ \hline
+7 & 4.79  & 2.29 \\ \hline
+8 & 4.53  & \textbf{2.20} \\ \hline
+9 & 5.14  & 2.57 \\ \hline
+10 & 5.06  & 2.44 \\ \hline
+\end{tabular}
+\caption{The average error distance per landmark of two processes on head images}
+\label{tblcmphead}
+\end{minipage}
+\end{table}
+
+In other view, Fig. \ref{figdist3parts} shows the comparation of the average distance distribution on each dataset in two procedures (from scratch and fine-tuning). In which:
+\begin{itemize}
+	\item \textbf{Blue} curves: present for the average distances on each landmarks when we train the model from scratch.
+	\item \textbf{Orange} curves: describe for the average distance on each landmark when we fine-tune the trained model.
+	\item \textbf{Green} curves: illuslate for the average distances \textbf{plus its standard deviation} on each landmark in fine-tuning case.
+\end{itemize}
+
+\begin{figure}[htbp]
+    \centering
+    \subfloat[Thorax]{\label{figsub1}\includegraphics[width=0.5\textwidth]{images/prono_part.eps}}~~
+	\subfloat[Elytra]{\label{figsub2}\includegraphics[width=0.5\textwidth]{images/body_part.eps}}\\
+	\subfloat[Head]{\label{figsub2}\includegraphics[width=0.5\textwidth]{images/head_part.eps}}\\    
+    \caption{The distribution of average distances on each landmark of each part.}
+    \label{figdist3parts}
+\end{figure}
+
+The fine-tuning process has improved the results of the proposed architecture on both $3$ datasets: thorax, elytra and head. All the average distances are significantly decreased. Specially, the results have been improved $\approx 40.3\%$ on thorax, $\approx 39.8\%$ on elytra, and $\approx 46.4\%$  on head part based on considering the average distances per landmark.
+
+To illustrate the final results, we display the distribution of
+the distances of both the best and the worst results (resp. landmark $1$ and $6$) on thorax dataset. The Fig. \ref{figdist3parts} shows in (\ref{figdist3parts1}) and (\ref{figdist3parts2}) diagrams how
+much the average distances (blue lines) and standard errors (red
+lines) have been improved for the landmark 1, the (\ref{figdist3parts3}) and (\ref{figdist3parts4}) diagrams for the landmark 6.
+
+\begin{figure}[htbp]
+    \centering
+    \subfloat[Landmark 1 - CNN]{\label{figdist3parts1}\includegraphics[width=0.4\textwidth]{images/lm1_cnn_2}}~~
+	\subfloat[Landmark 1 - fine-tuning]{\label{figdist3parts2}\includegraphics[width=0.4\textwidth]{images/lm1_finetuning_2}}\\
+	\subfloat[Landmark 6 - CNN]{\label{figdist3parts3}\includegraphics[width=0.4\textwidth]{images/lm6_cnn_2}}~~
+	\subfloat[Landmark 6 - fine-tuning]{\label{figdist3parts4}\includegraphics[width=0.4\textwidth]{images/lm6_finetuning_2}}\\
+    \caption{The distribution of distances on $1^{st}$ and $6^{th}$
+landmarks of all images in two testing steps (CNN and fine-tuning) (on thorax dataset). The blue and red lines present the average distances and standard
+deviation values, respectively.}
+    \label{figdist3parts}
+\end{figure}
+
+\section{Conclusion}
+
+In this chapter, we have presented how to apply convolutional neural network to predict the landmark on 2D anatomical images of beetles. After testing several models, we have presented a convolutional neural network for automatic detection landmarks on anatomical images of beetles. The training and testing processes have been finished by using two strategies: \textit{train from scratch} and \textit{fine-tuning}. 
+
+In our case, the size of dataset is limited. Therefore, we have applied some techniques to augment dataset. The predicted landmarks have been evaluated by calculating the distance between manual landmarks and corresponding predicted landmarks. Then, the average of distance errors on each landmarks has been considered.
+
+The results have been shown that using the convolutional network to predict the landmarks on biological images leads to satisfying results without need for segmentation step on the object of interest. The
+best set of estimated landmarks has been obtained after a step
+of fine-tuning using the whole set of images that we have for the
+project, i.e. about all beetle parts. The quality of prediction allows using automatic landmarking to replace the manual ones.
+
+The results obtained in this chapter was:
+\begin{itemize}
+	\item published and presented in the articles at the conference on Multimedia Analysis and Pattern Recognition 2018 (MAPR 2018) \cite{} and  International Conference on Pattern Recognition Systems 2018 (ICPRS-18) \cite{}.
+	\item presented at Symposium de Morphométrie et Évolution des Formes (SMEF 2018) \cite{}.
+\end{itemize}
 
 
 
 
- Table. \ref{tbltraininglosselytra} and \ref{tbltraininglosshead} show the losses during training process  of the third model on elytra and head dataset, respectively.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\iffalse
+Table. \ref{tbltraininglosselytra} and \ref{tbltraininglosshead} show the losses during training process  of the third model on elytra and head dataset, respectively.
 
 \begin{table}[htbp]
 \begin{minipage}{0.5\linewidth}
@@ -283,10 +508,7 @@ Fig. \ref{figelytraloss} shows the loss curves of training and validation proces
     \caption{The losses of two training examples on head part }
     \label{figelytraloss}
 \end{figure}
-
-\textbf{Move the losses and curves diagram to appendix, just focus on the distance of the landmarks ???????}
-\section{Conclusion}
-
+\fi
 
 \iffalse
 
