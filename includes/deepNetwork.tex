@@ -58,3 +58,53 @@ As other machine learning model, designing a deep neural network to solve a prob
 A cost function of a neural network is used to compute the difference between the real data and the model's outputs. It is usually updated by each iteration of training process (or validation process). In most of case, we use the cross-entropy between the training data an the model's predictions as the cost function. It means that we define a distribution $p(y | x; \theta)$ and we simply use the priciple of maximum likelihood. But sometimes, we mergely predict some statistic of $y$ conditioned on $x$. The total cost functions of a neural network often combines a primary cost function with a regularization term to make the learning algorithm intend to reduce its generation error.
 
 In our mind, we think that we can separate the choice of the cost function and the output units but in fact, they are related together. For example, if we want to use cross-entropy as the cost function, we need to choose the way to represent the output so that the computing is easy and cheapest. Depending on the solved problem, the output units are chosen to fit with it. For example, we can use the Sigmoid function for a binary classification problem; the Linear function for a transformation with no nonlinearity; the Softmax function for a classifier over \textit{n} different classes.
+\section{Back propagation}
+A feedforward neural network accepts an input \textbf{$x$} as the initial information, then it was propagated up to the hidden units at each layer and finally procedure an output \textbf{$\hat{y}$}. This is called \textit{forward propagation}. During training, forward propagation can continue until the cost is stable. The \textit{back propagation} algorithm receives the information from the cost (lost function) then flows backward through the network to compute the gradient. This process is repreatedly to discover the gradient for updateing the weights in an attempt to minimize the loss function.
+
+The back-propagation in the form of an algorithm is written as followed:
+\begin{enumerate}
+	\item \textbf{Input} $x$, \textbf{network} with $L$ layers. Set the corresponding activation $a^1$ for the input layer
+	\item \textbf{Feedforward}: For each layer $l = 2, 3, \ldots, L $ compute $z^l = w^la^{l-1} + b^l$ and activation $a^l = \sigma(z^l)$
+	\item Compute the error vector: $\delta^L = \nabla_{a}C \odot \sigma'(z^L)$
+	\item \textbf{Back-propagation the error}: For each layer $l = L-1, L-2,\ldots, 2$ compute $\delta' = ((w^{l+1})^T \delta^{l+1}) \odot \sigma'(z^l)$
+	\item \textbf{Ouput}: the gradient of the cost function given by $\frac{\partial C}{\partial w^l_{jk}} = a^{l-1}_k \delta^l_j$ and $\frac{\delta C}{\delta b^l_j} = \delta^l_j$
+\end{enumerate}
+
+
+The term back-propagation refers only to the method for computing the gradient through recursive application of \textbf{chain rule}. For an arbitrary function $f$, the gradient can be computed from its set of variables whose derivative are desired and set of inputs. It means the process at each function can do independent. In the next, we will describe how to compute the gradient of a function $f(x)$ by using Chain Rule of Calculus which is used to compute the derivaives of functions formed by composing other functions whose derivatives are known.
+Let consider a simple multiplication function: $f(x,y) = xy$. The partial derivative of this function as followed:
+\begin{equation}
+	f(x,y) = xy \rightarrow \frac{\partial f}{\partial x} = y \text{ and } \frac{\partial f}{\partial y} = x
+\end{equation}
+
+The objective of derivative is indicating the rate of change of the function with respect to the variable surrounding a small region near a particular point. For example, if $x = 4, y = -3 \rightarrow f(x,y) = -12$, then the derivatives on $x, y$ are:
+\begin{equation}
+	\frac{\partial f}{\partial x} = -3 \text{ and } \frac{\partial f}{\partial y} = 4
+\end{equation}
+It means that if we increase the values of $x$, the value of function $f$ will be decreased. Otherwise, if we increase the value of $y$, the ouput of function $f$ is also increased.
+For an addition function, the derivatives are:
+\begin{equation}
+	f(x,y) = x + y \rightarrow \frac{\partial f}{\partial x} = 1 \text{ and } \frac{\partial f}{\partial y} = 1
+\end{equation}
+And for a MAX operation, the gradient is $1$ on the larger input and $0$ on other inputs:
+\begin{equation}
+	f(x,y) = max(x,y) \rightarrow \frac{\partial f}{\partial x} = 1 (x \geq y) \text{ and } \frac{\partial f}{\partial y} = 0 (y \geq x)
+\end{equation}
+
+Consider example in Fig. \ref{figbackex1}, it presents the function $f(x,y,z) = (x + y)z$. Let see how to apply the derivative to compute the backward pass.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{images/back_ex}
+	\caption{The computation graph of function $f$}
+	\label{figbackex1}
+\end{figure}
+The \textit{green} values are the input to compute the forward pass. It is very easy to obtain the result: $f(x,y,z) = (x +y)z = (-2 + 5)(-4) = -12$. In the backward pass, the values are computed by applying derivative: At multiply gate, we can easy to compute the gradient of add gate and input $z$ are $-4$ and $3$, respectively. At the add gate, it takes the gradient and multiples it to all of the local gradient for its input. So, the gradient on both $x$ and $y$ are $1 \ast -4 = -4$. Clearly that if we increase the value of $x$ and $y$, the value of add gate will be decreased and it will turn the ouput of multiply gate increase. So, back-propagation can see as gates communicating to each other to make a change on their outputs (decrease or increase) and to make the final value higher.
+
+\section{Data augmentation}
+Like other machine learning model, a deep neural network will be better if is is trained with more data. But in practice, we do not always have a large data instead the amount of data is very limitted. A solution for this problem is to create the fake data and add it to the dataset. However, for different tasks, we may be need to apply the different augmentation methods. \textit{For example,} in classification problem, a classifier needs to take a pair of input $x$ and summary it with a single category $y$. This means that the task of a classifier is to be invariant when the input transforms. So, we can generate new $(x,y)$ pairs just by transforming the $x$ inputs in the training set. But this approach is not reality applicable with a \textit{density estimation} task.
+
+Data augmentation has been a particularly effective technique for object recognition problem \cite{}, speech recognition \cite{}. With the operations like translating the images a few pixels some directions, it can often generate the new images. Even the other operations like rotating or scaling the images have also proven effective.
+
+\section{Optimization algorithms}
+\section{Conclusion}
