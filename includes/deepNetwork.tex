@@ -110,5 +110,67 @@ Noise injection can also be as another form of data augmentation \cite{}. For ma
 
 Data augmentation is considered as a part of machine learning algorithms. Usually, operations are generally applicable while other operations are specific to one application domain. So, choosing augmentation methods should be thoroughly examined before applying.
 
-\section{Optimization algorithms}
+\section{Optimization problem}
+The optimization for neural networks is a active area, it involves to deep learning in many contexts and one of all is finding the parameters of a neural network that significantly reduce the cost function and improve the accuracy of the algorithm. In the previous section, we have seen how to compute the gradient with back-propagation. They are used to perform the parameters of the network to reduce the cost of the model. There are several appoaches for performing the update. In this section, we present some established and common techniques which have used to optimize the neural networks.
+
+In previous section, we have tried to calculate the gradient of the loss function. Based on that we can compute the best direction along which we should change our weights to guarante the direction of the stepest descent. This process will be repeated to evaluate the gradients and to perform the parameters updating. This procedure is called \textit{Gradient Descent}. The simplest form of this procedure is to change the parameters along the negative direction. Assuming a vector of parameters \textbf{$x$} and the gradient \textbf{$dx$}, the update has the form: 
+\begin{equation}
+	x = x - learning\_rate \ast dx \text{ (\textbf{learning\_rate} is a fixed constant)}
+\end{equation}
+A neural network can be trained on a dataset of hundreds of millions of examples. It seems that wasteful to compute the full loss of the network to perform a parameter. So, we can just apply the Gradient descent over \textbf{batches} of training data to achieve the faster convergence. This process is called \textbf{Stochastic Gradient Descent (SGD)}. Using SGD to update training of a minibatch of \textit{m} examples can be described in  Algorithm \ref{sgdalgorithm}.
+\begin{algorithm}
+	\caption{SGD update at training iteration $k$}
+	\label{sgdalgorithm}
+	\begin{algorithmic}
+		\REQUIRE Learning rate $\epsilon$
+		\REQUIRE Initial parameter $\theta$
+		\WHILE{stopping criterion not meet}
+			\STATE Sample a minibatch of $m$ example from training set $\{ x^1,x^2,\ldots, x^m \}$ with corresponding targets $y^{(i)}$
+			\STATE Compute gradient estimate: $\hat{g} \leftarrow + \frac{1}{m} \nabla_\theta \sum_i L(f(x^i;\theta), y^i) $
+			\STATE Apply update $\theta \leftarrow \theta - \epsilon \hat{g}$
+		\ENDWHILE
+	\end{algorithmic}
+\end{algorithm}
+
+In SGD algorithm, the learning rate is an important parameter. In previous, the learning rate is fixed as a constant but in practice, it is necessary to decrease the learning rate over time. Denote the learning rate at iteration $k$ as $\epsilon_k$. It is common to decay the learning rate linearly until iteration $\tau$:
+\begin{equation}
+	\epsilon_k = (1 - \alpha) \epsilon_0 + \alpha \epsilon_\tau
+\end{equation}
+Where $\alpha = \frac{k}{\tau}$ and after iteration $\tau$, it is common to leave $\epsilon$ constant. Usually, the learning rate is chosen by trial and error. When using the linear schedule, the parameters to choose are $\epsilon_0$, $\epsilon_\tau$, and $\tau$: $\tau$ parameter prefers to the number of iteration after that the learning rate will be decreased, $\epsilon_\tau$ indicates the dropping of the learning rate, the last problem is how to choose the value for initial learning rate $\epsilon_0$. If the learning is too large, the cost function often increases significantly. Otherwise, if the learning rate is too low, the learning process will be slow and learning may become stuck with a high-cost value. Experience indicates that the learning rate in the first $100$ iterations should be higher than the next iterations. Therefore, setting up the first learning rate along with a decreasing schedule should be considered together to obtain the best result.
+
+Besides SGD, the method of momentum \cite{} is designed to accelerate learning. It accumulates an exponentially decaying moving average of past gradients and continues to move in their direction. Acording that, a variable role of velocity $\upsilon$ is introduced, it presents the direction and speed that the parameters move through the parameter space. The velocity is set to an exponentially decaying average of the negative gradient. The SGD algorithm with momentum is describe in Algorithm \ref{sgdm_algorithm}.
+
+\begin{algorithm}
+	\caption{SGD with momentum}
+	\label{sgdm_algorithm}
+	\begin{algorithmic}
+		\REQUIRE Learning rate $\epsilon$, momentum parameter $\alpha$
+		\REQUIRE Initial parameter $\theta$, initial velocity $\upsilon$
+		\WHILE{stopping criterion not meet}
+			\STATE Sample a minibatch of $m$ example from training set $\{ x^1,x^2,\ldots, x^m \}$ with corresponding targets $y^{(i)}$
+			\STATE Compute gradient estimate: $\hat{g} \leftarrow + \frac{1}{m} \nabla_\theta \sum_i L(f(x^i;\theta), y^i) $
+			\STATE Compute velocity update: $\upsilon \leftarrow \alpha \upsilon - \epsilon \hat{g} $
+			\STATE Apply update $\theta \leftarrow \theta + \upsilon$
+		\ENDWHILE
+	\end{algorithmic}
+\end{algorithm}
+
+\textbf{Nesterov Momentum} is another version of the momentum on SGD. The difference between Nesterov momentum and standard momentum is where the gradient is evaluated after applying the current velocity. It looks like we add a correlation factor to the standard momentum. The complete Nesterov momentum is presented in Algorithm \ref{sgdNm_algorithm}.
+
+\begin{algorithm}
+	\caption{SGD with momentum}
+	\label{sgdNm_algorithm}
+	\begin{algorithmic}
+		\REQUIRE Learning rate $\epsilon$, momentum parameter $\alpha$
+		\REQUIRE Initial parameter $\theta$, initial velocity $\upsilon$
+		\WHILE{stopping criterion not meet}
+			\STATE Sample a minibatch of $m$ example from training set $\{ x^1,x^2,\ldots, x^m \}$ with corresponding targets $y^{(i)}$
+			\STATE Apply interim update: $\tilde{\theta} \leftarrow \theta + \alpha \upsilon$
+			\STATE Compute gradient: $\hat{g} \leftarrow + \frac{1}{m} \nabla_{\tilde{\theta}} \sum_i L(f(x^i;\tilde{\theta}), y^i) $
+			\STATE Compute velocity update: $\upsilon \leftarrow \alpha \upsilon - \epsilon \hat{g} $
+			\STATE Apply update $\theta \leftarrow \theta + \upsilon$
+		\ENDWHILE
+	\end{algorithmic}
+\end{algorithm}
+
 \section{Conclusion}
