@@ -173,4 +173,76 @@ Besides SGD, the method of momentum \cite{} is designed to accelerate learning. 
 	\end{algorithmic}
 \end{algorithm}
 
+The momentum algorithm can accelerate learning and mitigate the issues of the network, but it is expensive of including other hyperparameters. In which, the learning rate is one of the hyperparameters that is the most difficult to set because it has a significant impact on model performance. Tuning the learning rate for each trial is a very expensive process, so adjusting and adapting the learning rate throughout the training phase can be suitable to impale the cost because it is often highly sensitive to the directions in the parameter space. In this part, we highlight some common adaptive methods on learning rate.
+
+\textbf{Delta-bar-delta} algorithm \cite{} is the first approach to adaptive local learning rates for model parameters during training. The algorithm describes that we should increase the learning rate when the partial derivative of the loss with respect the parameters remains the same sign and otherwise, if the partial derivative of the loss with respect the parameters change sign, then the learning rate should decrease. 
+
+\textbf{AdaGrad} algorithm (Algorithm \ref{AdaGrad_algorithm}) adapts the learning rates by scaling them inversely proportional to the square root of the sum of all of their historical squared values. The parameters with the largest parital derivative of the loss have a correspondingly rapid decrease in their learning rate, while parameters with small partial derivatives have a relatively small decrease in their learning rate.
+
+\begin{algorithm}
+	\caption{The AdaGrad algorithm}
+	\label{AdaGrad_algorithm}
+	\begin{algorithmic}
+		\REQUIRE Global learning rate $\epsilon$
+		\REQUIRE Initial parameter $\theta$
+		\REQUIRE Small constant $\delta$ ($i.e. 10^{-7}$)
+		\STATE Initialize gradient accumulation variable r = 0
+		\WHILE{stopping criterion not meet}
+			\STATE Sample a minibatch of $m$ example from training set $\{ x^1,x^2,\ldots, x^m \}$ with corresponding targets $y^{(i)}$
+			\STATE Compute gradient: $g \leftarrow + \frac{1}{m} \nabla_{\theta} \sum_i L(f(x^i;\theta), y^i) $
+			\STATE Accumulate squared gradient: $r \leftarrow r + g \odot g$
+			\STATE Compute update: $\Delta \theta \leftarrow - \frac{\epsilon}{\delta + \sqrt{r}} \odot g$ (Division and square root applied element-wise)
+			\STATE Apply update: $\theta \leftarrow \theta + \Delta \theta$
+		\ENDWHILE
+	\end{algorithmic}
+\end{algorithm}
+
+\textbf{RMSProp} algorithm \cite{} (Algorithm \ref{RMSProp_algorithm}) modifies AdaGrad to perform better in non-convex function by chaning the gradient accumulation into an exponentially weighted moving average. 
+
+\begin{algorithm}
+	\caption{The RMSProp algorithm}
+	\label{RMSProp_algorithm}
+	\begin{algorithmic}
+		\REQUIRE Global learning rate $\epsilon$, decay rate $\rho$
+		\REQUIRE Initial parameter $\theta$
+		\REQUIRE Small constant $\delta$ ($i.e. 10^{-6}$)
+		\STATE Initialize gradient accumulation variable r = 0
+		\WHILE{stopping criterion not meet}
+			\STATE Sample a minibatch of $m$ example from training set $\{ x^1,x^2,\ldots, x^m \}$ with corresponding targets $y^{(i)}$
+			\STATE Compute gradient: $g \leftarrow + \frac{1}{m} \nabla_{\theta} \sum_i L(f(x^i;\theta), y^i) $
+			\STATE Accumulate squared gradient: $r \leftarrow \rho r + (1 - \rho)g \odot g$
+			\STATE Compute parameter update: $\Delta \theta \leftarrow - \frac{\epsilon}{\delta + \sqrt{r}} \odot g$ (Division and square root applied element-wise)
+			\STATE Apply update: $\theta \leftarrow \theta + \Delta \theta$
+		\ENDWHILE
+	\end{algorithmic}
+\end{algorithm}
+
+\textbf{Adam} algorithm \cite{} (Algorithm \ref{Adam_algorithm}) is another adaptive learning rate optimization. It looks like RMSProp with momentum but in Adam, the momenum is incorporated directly as an estimate of the first order moment of the gradient. Additional, it includes bias corrections to the estimates of both the first-order moments and the second order moments to account for their initialization at the origin.
+
+\begin{algorithm}
+	\caption{The Adam algorithm}
+	\label{Adam_algorithm}
+	\begin{algorithmic}
+		\REQUIRE Step size $\epsilon$ (default suggestion $0.001$)
+		\REQUIRE Exponential decay rates for moment estimates, $\rho_1, \rho_2$ in $[0, 1)$ (default suggestion $0.9 \text{ and } 0.999$ resprectively)
+		\REQUIRE Small constant $\delta$ ($i.e. 10^{-8}$)
+		\REQUIRE Initial parameter $\theta$
+		\STATE Initialize $1^{st}$ and $2^{nd}$ moment variables $s = 0$, $r = 0$
+		\STATE Initialize time step t = 0
+		\WHILE{stopping criterion not meet}
+			\STATE Sample a minibatch of $m$ example from training set $\{ x^1,x^2,\ldots, x^m \}$ with corresponding targets $y^{(i)}$
+			\STATE Compute gradi ent: $g \leftarrow + \frac{1}{m} \nabla_{\theta} \sum_i L(f(x^i;\theta), y^i) $
+			\STATE $t \leftarrow t + 1$
+			\STATE Update biased first moment estimate: $s \leftarrow \rho_1 s + (1 - \rho_1)g$
+			\STATE Update biased second moment estimate: $r \leftarrow \rho_2 r + (1 - \rho_2)g \odot g $
+			\STATE Correct bias in first moment: $\hat{s} \leftarrow \frac{s}{1-\rho_1^t}$
+			\STATE Correct bias in second moment: $\hat{r} \leftarrow \frac{r}{1 - \rho_2^t}$
+			\STATE Compute parameter update: $\Delta \theta \leftarrow - \epsilon \frac{\hat{s}}{\sqrt{\hat{r} + \delta}} \odot g$ (Division and square root applied element-wise)
+			\STATE Apply update: $\theta \leftarrow \theta + \Delta \theta$
+		\ENDWHILE
+	\end{algorithmic}
+\end{algorithm}
+
+In this section, we have described a highlight algorithms related to optimize the deep models by adapting the learning rate for each model parameter. The question is what algorithm should we choose? There is currently no consensus on this point. Choosing an algorithm is depending on the user's familiarity with the algorithm. In practice, the most popular algorithms are used include  SGD, SGD with momentum, RMSProp, and Adam.
+
 \section{Conclusion}
