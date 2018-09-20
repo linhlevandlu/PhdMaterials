@@ -82,11 +82,11 @@
 \contentsline {section}{\numberline {6.2}Neural network}{45}
 \contentsline {subsection}{\numberline {6.2.1}Neural}{45}
 \contentsline {subsection}{\numberline {6.2.2}Neural network}{46}
-\contentsline {section}{\numberline {6.3}Deep network}{47}
-\contentsline {section}{\numberline {6.4}Back propagation}{48}
-\contentsline {section}{\numberline {6.5}Data augmentation}{49}
-\contentsline {section}{\numberline {6.6}Optimization problem}{50}
-\contentsline {section}{\numberline {6.7}Conclusion}{53}
+\contentsline {subsection}{\numberline {6.2.3}Deep network}{47}
+\contentsline {section}{\numberline {6.3}Back propagation}{48}
+\contentsline {section}{\numberline {6.4}Data augmentation}{49}
+\contentsline {section}{\numberline {6.5}Optimization problem}{50}
+\contentsline {section}{\numberline {6.6}Conclusion}{53}
 \contentsline {chapter}{\numberline {7}Classification}{54}
 \contentsline {section}{\numberline {7.1}Nearest Neighbour Classifier}{54}
 \contentsline {section}{\numberline {7.2}K-Nearest Neighbour Classifier}{55}

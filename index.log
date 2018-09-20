@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  19 SEP 2018 14:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  20 SEP 2018 18:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1171,7 +1171,7 @@ Chapter 6.
 File: images/neurons.png Graphic file (type png)
 
 <use images/neurons.png>
-Package pdftex.def Info: images/neurons.png used on input line 13.
+Package pdftex.def Info: images/neurons.png used on input line 16.
 (pdftex.def)             Requested size: 433.11707pt x 124.96657pt.
  [45
 
@@ -1182,23 +1182,27 @@ Package pdftex.def Info: images/neurons.png used on input line 13.
 File: images/neural_net.png Graphic file (type png)
 
 <use images/neural_net.png>
-Package pdftex.def Info: images/neural_net.png used on input line 40.
+Package pdftex.def Info: images/neural_net.png used on input line 43.
 (pdftex.def)             Requested size: 262.98184pt x 164.6146pt.
- [46 <./images/neurons.png> <./images/neural_net.png>] <images/deep_neural_netw
-ork.png, id=210, 922.44624pt x 388.45125pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[46 <./images/neurons.png>]
+<images/deep_neural_network.png, id=210, 922.44624pt x 388.45125pt>
 File: images/deep_neural_network.png Graphic file (type png)
 
 <use images/deep_neural_network.png>
-Package pdftex.def Info: images/deep_neural_network.png used on input line 51.
+Package pdftex.def Info: images/deep_neural_network.png used on input line 54.
 (pdftex.def)             Requested size: 461.22198pt x 194.22514pt.
- [47 <./images/deep_neural_network.png>]
-[48] <images/back_ex.png, id=219, 433.62pt x 219.82124pt>
+ [47 <./images/neural_net.png> <./images/deep_neural_network.png>] [48]
+<images/back_ex.png, id=219, 433.62pt x 219.82124pt>
 File: images/back_ex.png Graphic file (type png)
-
-<use images/back_ex.png>
-Package pdftex.def Info: images/back_ex.png used on input line 98.
+ <use images/back_ex.png>
+Package pdftex.def Info: images/back_ex.png used on input line 101.
 (pdftex.def)             Requested size: 260.17401pt x 131.89375pt.
- [49 <./images/back_ex.png>] [50] [51]) [52] [53]
+
+[49 <./images/back_ex.png>] [50] [51] [52]) [53]
 \openout2 = `includes/linearClassifition.aux'.
 
 
@@ -1935,7 +1939,7 @@ ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on index.pdf (108 pages, 13263652 bytes).
+Output written on index.pdf (108 pages, 13265183 bytes).
 PDF statistics:
  548 PDF objects out of 1000 (max. 8388607)
  309 compressed objects within 4 object streams
