@@ -9,8 +9,8 @@ In deep learning, using neural networks is known as the most popular method. Thi
 
 \section{Neural network}
 \subsection{Neural}
-The basic components of the brain is a neuron. For the ordinary man, we have billion neurons in the human nervous system, and they are connected by the billion of synapses. Each neuron receives input signals from its dendrites and procedures output signals along its axon.\\[0.2cm]
-In the computational model of a neuron, the signals travel along the axons interact multiplicatively with the dendrites of the other neuron based on the synaptic strength at the synapse. The synaptic strength are learnable and control the strength at influence or inhibitory of one neuron on another. In basic mode, the input signals are summed and compared with a threshold value. If the sum is greater than threshold value, the neuron can fire, sending a spike along its axon. Actually, we have many firing rate (called activation function) at a neuron, and the common choice of activation function is the \textbf{sigmoid funciont $\sigma$}, because it take a real-valued input and squashes it to range between 0 and 1. Fig. \ref{fignneuron} shows the model of a neuron. The left side presents the connections of a neuron in human brain, the right side describes the mathematical model at the neuron.
+The basic components of the brain is a neuron. For the ordinary man, we have billion neurons in the human nervous system, and they are connected by the billion of synapses. Each neuron receives input signals from its dendrites and procedures output signals along its axon. At each neuron, the input signals are received, analysed and then given a decision. Fig. \ref{fignneuron} shows the model of a neuron: the left side presents the connections of a biological neuron in human brain, the right side describes the mathematical model at the neuron.
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.5]{images/neurons.png}
@@ -18,35 +18,67 @@ In the computational model of a neuron, the signals travel along the axons inter
 	\label{fignneuron}
 \end{figure}
 
-In mathematical model, the popular activation functions maybe used as:
-\begin{itemize}
-	\item \textbf{Sigmoid function}:
-		\begin{equation}
-			\sigma(x) = \frac{1}{1+e^{-x}}
-		\end{equation}
-	\item \textbf{Tanh function}
-		\begin{equation}
-			tanh(x) = 2\sigma(2x) - 1
-		\end{equation}
-	\item \textbf{Rectified Linear Unit (ReLU) function}
-		\begin{equation}
-			f(x) = max(0,x)
-		\end{equation}
-	\item \textbf{Maxout}:
-		\begin{equation}
-			f(w^Tx + b) = max({w_1}^Tx + b_1,{w_2}^Tx + b_2)
-		\end{equation}
-\end{itemize}
+In the computational model of a neuron, the signals travel along the axons interact multiplicatively with the dendrites of the other neuron based on the synaptic strength at the synapse. The synaptic strength are learnable and control the strength at influence or inhibitory of one neuron on another. In basic mode, the input signals are summed and compared with a threshold value (called \textit{firing rate}). If the sum is greater than threshold value, the neuron can ``fire", sending a spike along its axon. It look likes what we have seen in the real world, the human makes a decision when he take into acount all the conditions. The computation at a neural can be considered as following:
+\begin{equation}
+	Y = \sum(\text{weight } \ast \text{input}) + \text{bias}
+\end{equation}
+
+Depending on the values of the parameters, the output of \textbf{$Y$} can be from $-\infty$ to $+\infty$. So, how do we decide what does a neuron should do in a large range? Should it "fire" or not? Therefore, an ``activation function" has been added to check the value of $Y$ and decide what the neural should be ``fire" (called \textit{activated}) or not.
+
+The first thing in usual is using a threshold for activation function. If the value of $Y$ is greater than the threshold value, the neural will be declared as actived; otherwise, it is not activated. This kind of activation is called \textit{Step} function. It seems that Step function is really work when we would like to create a binary classifier. \textit{For example}, we would like to classify the samples of a dataset includes the samples of two classes (i.e. Class 1 and Class 2). Clearly that Step function works well in this case because it just provides a value to precise a sample will belong to ``Class 1" or ``Class 2". But the problem does not stop there, the question is raised as what will happen if we want to classify more than two classes (i.e three or four classes)? Of course, Step function can still be used in this case if we consider an activated class and other classes are non-activated. But it is really hard to train and converge follows this way. It will be better if we have ``non-binary" activation which can provide the activated (or non-activated) probabilty for each class. The first solution is \textbf{Linear} function. This function gives a range of activations. The user can combine the output of some neurons before deciding. So, that is good too.
+
+However, a neural can not stay alone, it need to connect to other neurons until the last one. In fact, the neurons are organized by the layers and they are connected. If each layer is activated by a linear funtion, the final activation function of the last layer is  just a linear function of the input of the first layer. This means the layers that we have tried to create can be replaced by a single layer. Therefore, we have to use some ``non-linear" activation function in the network if we would like to create a neural network with many layers, i.e. sigmoid, tanh or rectified linear Unit (ReLU).
+
+\textbf{Sigmoid} function is one of the most widely used activation function (Eq. \ref{fsigmoid}). Its output is always going to be in range $(0,1)$.  It means this activation can bound the range of the output instead of $(-\infty, +\infty )$ of linear function. Consider on Eq. \ref{fsigmoid}, if $x$ stays in the range around the origin (i.e $[-2,2]$), then the value of activation has a change being considered. It means any small changes in the values of $x$ in this region will make the output to change significatly. Additional, when $x$ is bigger then $\sigma(x) \rightarrow 1$ and otherwise, $\sigma(x) \rightarrow 0$ if x smaller which means Sigmoid function makes clear distinctions on classification.
+
+\begin{equation}
+	\sigma(x) = \frac{1}{1+e^{-x}}
+	\label{fsigmoid}
+\end{equation}
+
+\textbf{Tanh} is also another popular activation function (Eq. \ref{ftanh}). It is known as a scaled of Sigmoid function (two times Sigmoid). The characteristics of Tanh is similar with the Sigmoid function. However, the output of this functions is zero centered. It means the boundary range is changed to $(-1, 1)$. This point mj 
+
+\begin{equation}
+	tanh(x) = 2\sigma(2x) - 1 = \frac{2}{1 + e^{-2x}} - 1
+	\label{ftanh}
+\end{equation}
+
+\textbf{Rectified Linear Unit (ReLU)} function (Eq. \ref{frelu}) is another activation function which has become in the last of few years. The activation is threshold at zero. At first look this function likes the linear function but in fact they are different because ReLU outputs zero across half its domain. This makes the derivatives through a ReLU remain large and consitent whenever the unit is active. Comparing with Sigmoid or Tanh functions, ReLU was found to greatly accelerate the update parameters of the networks. Addition, ReLU can be easily implemented by threshoding at zero.
+
+\begin{equation}
+	f(x) = max(0,x)
+	\label{frelu}
+\end{equation}
+
+Besides, we have also some generalizations of ReLU such as \textbf{Leaky ReLU} (Eq. \ref{fleakyrelu}), \textbf{PReLU} (Eq. \ref{fPrelu}). They are also more broadly applicable.
+
+\begin{equation}
+	f(x) = max(0.01x, x)
+	\label{fleakyrelu}
+\end{equation}
+
+\begin{equation}
+	f(\alpha,x) = max(\alpha x, x)
+	\label{fPrelu}
+\end{equation}
+
+Actually, we have many kinds of activation functions along with the mentioned functions above. Choosing an activation function for a neuron is depending on the objective of the user when they designed the network. For example, a sigmoid function works well for a classifier because approximating a classifier function as combinations of sigmoid is easier than ReLU for example.
+
 \subsection{Neural network}
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.5]{images/neural_net}
 	\caption{A model of neural networks}
 	\label{fignnnetworks}
 \end{figure}
-The image \ref{fignnnetworks} show a simple model of neural networks. The leftmost layer in this network is called the input layer, the rightmost layer is called the output layer. The neurons within the input layer are called input neurons, the neurons from output layer are called output neurons. When design the network, the input and the output are often straightforward. It means that the neural networks is designed where the output form one layer is used as the input to the next layer, there are no loops in the network, it always feed forward, never feed back (called feedforward networks).\\[0.2cm]
-So, the neural network includes many layers are designed as an directred acyclic graph from the intput to the output layer. The output of previous layer is used as the input of the next layer. At each layer excepts the output layer, the output is indicated by a activation function (i.e loss, tanh,...). The size of a neural network can be to compute as the number of neurons, or the number of parameters.
+
+Fig. \ref{fignnnetworks} shows architecture of a simple neural network. The leftmost layer in this network is called the \textit{input layer}, the rightmost layer is called the \textit{output layer}. The neurons within the input layer are called input neurons, the neurons from output layer are called output neurons. When design the network, the input and the output are often straightforward. It means that the neural networks is designed where the output form one layer is used as the input to the next layer, there are no loops in the network, it always feed forward, never feed back (called feedforward networks).
+
+So, the neural network includes many layers are designed as an directred acyclic graph from the intput to the output layer. The output of previous layer is used as the input of the next layer. At each layer excepts the output layer, the output is indicated by a activation function (i.e sigmoid, tanh,...). The size of a neural network can be to compute as the number of neurons, or the number of parameters.
+
 \subsection{Deep network}
+
 A deep neural network is a neural network with multiple layers between the input and the output layers. These layers are called hidden layers. Each layer tries to find the correct mathematical operator to turn its input into the next layer. The deep neural network forwards the data from the input layer to the output layer without looping back: The network creates the connections of neurons and assigns the ``weight" for each connection. At each layer, the weights and its input are multiplied and return an output to transfer to the next layer. Further, an algorithm is used to adjust the weights so that make certain parameters more influential until it receives the correct mathematical manipulation on all dataset. Fig. \ref{figndeepnetworks} presents a deep neural network with multiple hidden layers between the input and the output.
 
 \begin{figure}[h]

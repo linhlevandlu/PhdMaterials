@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  20 SEP 2018 18:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  21 SEP 2018 18:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1167,48 +1167,47 @@ Chapter 5.
 
  (./includes/deepNetwork.tex
 Chapter 6.
-<images/neurons.png, id=202, 866.23625pt x 249.93375pt>
+[45
+
+
+
+] <images/neurons.png, id=205, 866.23625pt x 249.93375pt>
 File: images/neurons.png Graphic file (type png)
 
 <use images/neurons.png>
 Package pdftex.def Info: images/neurons.png used on input line 16.
 (pdftex.def)             Requested size: 433.11707pt x 124.96657pt.
- [45
-
-
-
-]
-<images/neural_net.png, id=206, 525.965pt x 329.23pt>
+ [46 <./images/neurons.png>]
+<images/neural_net.png, id=209, 525.965pt x 329.23pt>
 File: images/neural_net.png Graphic file (type png)
 
 <use images/neural_net.png>
-Package pdftex.def Info: images/neural_net.png used on input line 43.
+Package pdftex.def Info: images/neural_net.png used on input line 71.
 (pdftex.def)             Requested size: 262.98184pt x 164.6146pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[46 <./images/neurons.png>]
-<images/deep_neural_network.png, id=210, 922.44624pt x 388.45125pt>
+[47] <images/deep_neural_network.png, id=215, 922.44624pt x 388.45125pt>
 File: images/deep_neural_network.png Graphic file (type png)
 
 <use images/deep_neural_network.png>
-Package pdftex.def Info: images/deep_neural_network.png used on input line 54.
+Package pdftex.def Info: images/deep_neural_network.png used on input line 86.
 (pdftex.def)             Requested size: 461.22198pt x 194.22514pt.
- [47 <./images/neural_net.png> <./images/deep_neural_network.png>] [48]
-<images/back_ex.png, id=219, 433.62pt x 219.82124pt>
+ [48 <./images/neural_net.png> <./images/deep_neural_network.png>] [49]
+<images/back_ex.png, id=222, 433.62pt x 219.82124pt>
 File: images/back_ex.png Graphic file (type png)
  <use images/back_ex.png>
-Package pdftex.def Info: images/back_ex.png used on input line 101.
+Package pdftex.def Info: images/back_ex.png used on input line 133.
 (pdftex.def)             Requested size: 260.17401pt x 131.89375pt.
 
-[49 <./images/back_ex.png>] [50] [51] [52]) [53]
+[50 <./images/back_ex.png>] [51] [52]) [53] [54] [55]
 \openout2 = `includes/linearClassifition.aux'.
 
 
 (./includes/linearClassifition.tex
 Chapter 7.
-<images/nncl1.jpeg, id=236, 1162.3425pt x 331.2375pt>
+<images/nncl1.jpeg, id=242, 1162.3425pt x 331.2375pt>
 File: images/nncl1.jpeg Graphic file (type jpg)
  <use images/nncl1.jpeg>
 Package pdftex.def Info: images/nncl1.jpeg used on input line 23.
@@ -1217,25 +1216,25 @@ Package pdftex.def Info: images/nncl1.jpeg used on input line 23.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[54
+[56
 
 
 
-] [55 <./images/nncl1.jpeg>]
-<images/lncex.jpg, id=243, 1227.58624pt x 454.69875pt>
+] [57 <./images/nncl1.jpeg>]
+<images/lncex.jpg, id=249, 1227.58624pt x 454.69875pt>
 File: images/lncex.jpg Graphic file (type jpg)
  <use images/lncex.jpg>
 Package pdftex.def Info: images/lncex.jpg used on input line 53.
 (pdftex.def)             Requested size: 368.27872pt x 136.41068pt.
 
-<images/lncba.jpeg, id=244, 1340.00626pt x 477.785pt>
+<images/lncba.jpeg, id=250, 1340.00626pt x 477.785pt>
 File: images/lncba.jpeg Graphic file (type jpg)
  <use images/lncba.jpeg>
 Package pdftex.def Info: images/lncba.jpeg used on input line 64.
 (pdftex.def)             Requested size: 402.00497pt x 143.3366pt.
 
-[56 <./images/lncex.jpg> <./images/lncba.jpeg>]
-<images/svmsf.png, id=248, 1008.76875pt x 489.83pt>
+[58 <./images/lncex.jpg> <./images/lncba.jpeg>]
+<images/svmsf.png, id=254, 1008.76875pt x 489.83pt>
 File: images/svmsf.png Graphic file (type png)
  <use images/svmsf.png>
 Package pdftex.def Info: images/svmsf.png used on input line 107.
@@ -1244,18 +1243,18 @@ Package pdftex.def Info: images/svmsf.png used on input line 107.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[57] [58 <./images/svmsf.png>]
+[59] [60 <./images/svmsf.png>]
 File: images/back_ex.png Graphic file (type png)
  <use images/back_ex.png>
 Package pdftex.def Info: images/back_ex.png used on input line 139.
 (pdftex.def)             Requested size: 260.17401pt x 131.89375pt.
- [59]) [60]
+ [61]) [62]
 \openout2 = `includes/cnnNetwork.aux'.
 
 
 (./includes/cnnNetwork.tex
 Chapter 8.
-<images/cnn_architecture.png, id=263, 1043.9pt x 321.2pt>
+<images/cnn_architecture.png, id=269, 1043.9pt x 321.2pt>
 File: images/cnn_architecture.png Graphic file (type png)
 
 <use images/cnn_architecture.png>
@@ -1266,19 +1265,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--11
 
  []
 
-[61
+[63
 
 
 
- <./images/cnn_architecture.png>] [62]
-<images/filter_w0.png, id=271, 972.63374pt x 832.10875pt>
+ <./images/cnn_architecture.png>] [64]
+<images/filter_w0.png, id=277, 972.63374pt x 832.10875pt>
 File: images/filter_w0.png Graphic file (type png)
 
 <use images/filter_w0.png>
 Package pdftex.def Info: images/filter_w0.png used on input line 56.
 (pdftex.def)             Requested size: 340.42691pt x 291.24242pt.
 
-<images/filter_w1.png, id=272, 972.63374pt x 823.075pt>
+<images/filter_w1.png, id=278, 972.63374pt x 823.075pt>
 File: images/filter_w1.png Graphic file (type png)
 
 <use images/filter_w1.png>
@@ -1288,8 +1287,8 @@ Package pdftex.def Info: images/filter_w1.png used on input line 62.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[63 <./images/filter_w0.png (PNG copy)>]
-<images/pooling.png, id=276, 720.6925pt x 225.84375pt>
+[65 <./images/filter_w0.png (PNG copy)>]
+<images/pooling.png, id=283, 720.6925pt x 225.84375pt>
 File: images/pooling.png Graphic file (type png)
 
 <use images/pooling.png>
@@ -1299,14 +1298,14 @@ Package pdftex.def Info: images/pooling.png used on input line 86.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[64 <./images/filter_w1.png (PNG copy)>] [65 <./images/pooling.png>]
+[66 <./images/filter_w1.png (PNG copy)>] [67 <./images/pooling.png>]
 
-LaTeX Warning: Citation `‚Ä¢' on page 66 undefined on input line 107.
+LaTeX Warning: Citation `‚Ä¢' on page 68 undefined on input line 107.
 
 
-LaTeX Warning: Citation `‚Ä¢' on page 66 undefined on input line 109.
+LaTeX Warning: Citation `‚Ä¢' on page 68 undefined on input line 109.
 
-<images/trend_deep_learning_libs_2018.jpg, id=284, 693.59125pt x 607.26875pt>
+<images/trend_deep_learning_libs_2018.jpg, id=290, 693.59125pt x 607.26875pt>
 File: images/trend_deep_learning_libs_2018.jpg Graphic file (type jpg)
 
 <use images/trend_deep_learning_libs_2018.jpg>
@@ -1317,12 +1316,12 @@ Package pdftex.def Info: images/trend_deep_learning_libs_2018.jpg used on input
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[66]
+[68]
 Underfull \hbox (badness 10000) in paragraph at lines 389--390
 
  []
 
-[67 <./images/trend_deep_learning_libs_2018.jpg>]
+[69 <./images/trend_deep_learning_libs_2018.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 391--392
 
  []
@@ -1342,12 +1341,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 397--398
 
  []
 
-) [68]
+) [70]
 \openout2 = `includes/cnnClassification.aux'.
 
  (./includes/cnnClassification.tex
 Chapter 9.
-<images/CNN_classify.jpg, id=294, 2515.14656pt x 258.9675pt>
+<images/CNN_classify.jpg, id=300, 2515.14656pt x 258.9675pt>
 File: images/CNN_classify.jpg Graphic file (type jpg)
 
 <use images/CNN_classify.jpg>
@@ -1361,7 +1360,7 @@ Overfull \hbox (19.32353pt too wide) in paragraph at lines 24--25
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[69
+[71
 
 
 
@@ -1369,21 +1368,25 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[70 <./images/CNN_classify.jpg>]) [71]
+[72 <./images/CNN_classify.jpg>]) [73]
 \openout2 = `includes/cnndatasets.aux'.
 
  (./includes/cnndatasets.tex
 Chapter 10.
-[72
+[74
 
 
 
-]) [73]
+])
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[75] [76]
 \openout2 = `includes/cnnAndLandmarks.aux'.
 
  (./includes/cnnAndLandmarks.tex
 Chapter 11.
-<images/3levels.png, id=311, 1364.09625pt x 409.53pt>
+<images/3levels.png, id=320, 1364.09625pt x 409.53pt>
 File: images/3levels.png Graphic file (type png)
  <use images/3levels.png>
 Package pdftex.def Info: images/3levels.png used on input line 12.
@@ -1392,40 +1395,40 @@ Package pdftex.def Info: images/3levels.png used on input line 12.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/cnn_level1.png, id=312, 951.555pt x 177.66376pt>
+<images/cnn_level1.png, id=321, 951.555pt x 177.66376pt>
 File: images/cnn_level1.png Graphic file (type png)
 
 <use images/cnn_level1.png>
 Package pdftex.def Info: images/cnn_level1.png used on input line 20.
 (pdftex.def)             Requested size: 475.77634pt x 88.83165pt.
- [74
+ [77
 
 
 
 ]
-<images/cnn_level2.png, id=316, 847.165pt x 182.6825pt>
+<images/cnn_level2.png, id=326, 847.165pt x 182.6825pt>
 File: images/cnn_level2.png Graphic file (type png)
 
 <use images/cnn_level2.png>
 Package pdftex.def Info: images/cnn_level2.png used on input line 28.
 (pdftex.def)             Requested size: 423.58145pt x 91.34102pt.
- [75 <./images/3levels.png> <./images/cnn_level1.png> <./images/cnn_level2.png>
+ [78 <./images/3levels.png> <./images/cnn_level1.png> <./images/cnn_level2.png>
 ]
-<images/level1_test.png, id=320, 1445.4pt x 1084.05pt>
+<images/level1_test.png, id=330, 1445.4pt x 1084.05pt>
 File: images/level1_test.png Graphic file (type png)
 
 <use images/level1_test.png>
 Package pdftex.def Info: images/level1_test.png used on input line 65.
 (pdftex.def)             Requested size: 361.34912pt x 271.01184pt.
 
-<images/level2_test.png, id=321, 1445.4pt x 1084.05pt>
+<images/level2_test.png, id=331, 1445.4pt x 1084.05pt>
 File: images/level2_test.png Graphic file (type png)
 
 <use images/level2_test.png>
 Package pdftex.def Info: images/level2_test.png used on input line 71.
 (pdftex.def)             Requested size: 361.34912pt x 271.01184pt.
 
-<images/level3_test.png, id=322, 1445.4pt x 1084.05pt>
+<images/level3_test.png, id=332, 1445.4pt x 1084.05pt>
 File: images/level3_test.png Graphic file (type png)
 
 <use images/level3_test.png>
@@ -1441,8 +1444,8 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[76] [77 <./images/level1_test.png> <./images/level2_test.png>]
-<images/ear_cnn.png, id=332, 1143.27126pt x 785.93625pt>
+[79] [80 <./images/level1_test.png> <./images/level2_test.png>]
+<images/ear_cnn.png, id=341, 1143.27126pt x 785.93625pt>
 File: images/ear_cnn.png Graphic file (type png)
 
 <use images/ear_cnn.png>
@@ -1452,50 +1455,50 @@ Package pdftex.def Info: images/ear_cnn.png used on input line 90.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/trainloss.png, id=333, 1345.025pt x 767.86874pt>
+<images/trainloss.png, id=342, 1345.025pt x 767.86874pt>
 File: images/trainloss.png Graphic file (type png)
 
 <use images/trainloss.png>
 Package pdftex.def Info: images/trainloss.png used on input line 129.
 (pdftex.def)             Requested size: 363.1616pt x 207.32733pt.
 
-<images/figure_1-1.png, id=334, 1695.4542pt x 922.8879pt>
+<images/figure_1-1.png, id=343, 1695.4542pt x 922.8879pt>
 File: images/figure_1-1.png Graphic file (type png)
 
 <use images/figure_1-1.png>
 Package pdftex.def Info: images/figure_1-1.png used on input line 136.
 (pdftex.def)             Requested size: 457.77876pt x 249.18306pt.
- [78 <./images/level3_test.png>]
+ [81 <./images/level3_test.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[79 <./images/ear_cnn.png> <./images/trainloss.png>]
-<./images/test1.JPG, id=342, 256.96pt x 192.72pt>
+[82 <./images/ear_cnn.png> <./images/trainloss.png>]
+<./images/test1.JPG, id=351, 256.96pt x 192.72pt>
 File: ./images/test1.JPG Graphic file (type jpg)
  <use ./images/test1.JPG>
 Package pdftex.def Info: ./images/test1.JPG used on input line 168.
 (pdftex.def)             Requested size: 96.73788pt x 72.55505pt.
 
-<./images/test2.JPG, id=343, 256.96pt x 192.72pt>
+<./images/test2.JPG, id=352, 256.96pt x 192.72pt>
 File: ./images/test2.JPG Graphic file (type jpg)
  <use ./images/test2.JPG>
 Package pdftex.def Info: ./images/test2.JPG used on input line 169.
 (pdftex.def)             Requested size: 96.73788pt x 72.55505pt.
 
-<./images/test3.JPG, id=344, 256.96pt x 192.72pt>
+<./images/test3.JPG, id=353, 256.96pt x 192.72pt>
 File: ./images/test3.JPG Graphic file (type jpg)
  <use ./images/test3.JPG>
 Package pdftex.def Info: ./images/test3.JPG used on input line 170.
 (pdftex.def)             Requested size: 96.73788pt x 72.55505pt.
 
-<./images/test4.JPG, id=345, 256.96pt x 192.72pt>
+<./images/test4.JPG, id=354, 256.96pt x 192.72pt>
 File: ./images/test4.JPG Graphic file (type jpg)
  <use ./images/test4.JPG>
 Package pdftex.def Info: ./images/test4.JPG used on input line 171.
 (pdftex.def)             Requested size: 96.73788pt x 72.55505pt.
 
-[80 <./images/figure_1-1.png>]
-<images/figure_1_loss_celia.png, id=350, 578.16pt x 433.62pt>
+[83 <./images/figure_1-1.png>]
+<images/figure_1_loss_celia.png, id=360, 578.16pt x 433.62pt>
 File: images/figure_1_loss_celia.png Graphic file (type png)
 
 <use images/figure_1_loss_celia.png>
@@ -1506,7 +1509,7 @@ Package pdftex.def Info: images/figure_1_loss_celia.png used on input line 183.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/figure_1_celia.png, id=351, 1695.4542pt x 922.8879pt>
+<images/figure_1_celia.png, id=361, 1695.4542pt x 922.8879pt>
 File: images/figure_1_celia.png Graphic file (type png)
 
 <use images/figure_1_celia.png>
@@ -1516,18 +1519,18 @@ Package pdftex.def Info: images/figure_1_celia.png used on input line 190.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/model3.png, id=352, 737.75626pt x 132.495pt>
+<images/model3.png, id=362, 737.75626pt x 132.495pt>
 File: images/model3.png Graphic file (type png)
  <use images/model3.png>
 Package pdftex.def Info: images/model3.png used on input line 211.
 (pdftex.def)             Requested size: 295.09727pt x 52.99706pt.
 
-[81 <./images/test1.JPG> <./images/test2.JPG> <./images/test3.JPG> <./images/te
+[84 <./images/test1.JPG> <./images/test2.JPG> <./images/test3.JPG> <./images/te
 st4.JPG>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[82 <./images/figure_1_loss_celia.png> <./images/figure_1_celia.png>]
+[85 <./images/figure_1_loss_celia.png> <./images/figure_1_celia.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1537,7 +1540,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/figure_1_cnn3_5000_loss_v11.png, id=361, 578.16pt x 433.62pt>
+<./images/figure_1_cnn3_5000_loss_v11.png, id=371, 578.16pt x 433.62pt>
 File: ./images/figure_1_cnn3_5000_loss_v11.png Graphic file (type png)
 
 <use ./images/figure_1_cnn3_5000_loss_v11.png>
@@ -1545,7 +1548,7 @@ Package pdftex.def Info: ./images/figure_1_cnn3_5000_loss_v11.png used on input
  line 291.
 (pdftex.def)             Requested size: 193.47578pt x 145.10646pt.
 
-<./images/figure_1_cnn3_5000_loss_v12.png, id=362, 1695.4542pt x 922.8879pt>
+<./images/figure_1_cnn3_5000_loss_v12.png, id=372, 1695.4542pt x 922.8879pt>
 File: ./images/figure_1_cnn3_5000_loss_v12.png Graphic file (type png)
 
 <use ./images/figure_1_cnn3_5000_loss_v12.png>
@@ -1553,7 +1556,7 @@ Package pdftex.def Info: ./images/figure_1_cnn3_5000_loss_v12.png used on input
  line 292.
 (pdftex.def)             Requested size: 193.47578pt x 105.30606pt.
 
-<./images/figure_1_cnn3_5000_loss_v13.png, id=363, 578.16pt x 433.62pt>
+<./images/figure_1_cnn3_5000_loss_v13.png, id=373, 578.16pt x 433.62pt>
 File: ./images/figure_1_cnn3_5000_loss_v13.png Graphic file (type png)
 
 <use ./images/figure_1_cnn3_5000_loss_v13.png>
@@ -1561,7 +1564,7 @@ Package pdftex.def Info: ./images/figure_1_cnn3_5000_loss_v13.png used on input
  line 293.
 (pdftex.def)             Requested size: 193.47578pt x 145.10646pt.
 
-<./images/figure_1_cnn3_5000_loss_v14.png, id=364, 1517.67pt x 896.148pt>
+<./images/figure_1_cnn3_5000_loss_v14.png, id=374, 1517.67pt x 896.148pt>
 File: ./images/figure_1_cnn3_5000_loss_v14.png Graphic file (type png)
 
 <use ./images/figure_1_cnn3_5000_loss_v14.png>
@@ -1569,7 +1572,7 @@ Package pdftex.def Info: ./images/figure_1_cnn3_5000_loss_v14.png used on input
  line 294.
 (pdftex.def)             Requested size: 193.47578pt x 114.23341pt.
 
-<./images/figure_1_cnn3_5000_loss_v15.png, id=365, 578.16pt x 433.62pt>
+<./images/figure_1_cnn3_5000_loss_v15.png, id=375, 578.16pt x 433.62pt>
 File: ./images/figure_1_cnn3_5000_loss_v15.png Graphic file (type png)
 
 <use ./images/figure_1_cnn3_5000_loss_v15.png>
@@ -1580,8 +1583,8 @@ Package pdftex.def Info: ./images/figure_1_cnn3_5000_loss_v15.png used on input
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[83 <./images/model3.png>]
-<images/figure_1_cnn3_5000_v13.png, id=370, 1695.4542pt x 922.8879pt>
+[86 <./images/model3.png>]
+<images/figure_1_cnn3_5000_v13.png, id=379, 1695.4542pt x 922.8879pt>
 File: images/figure_1_cnn3_5000_v13.png Graphic file (type png)
 
 <use images/figure_1_cnn3_5000_v13.png>
@@ -1595,7 +1598,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/figure_1_cnn3_3000_v13_loss_change2.png, id=371, 578.16pt x 433.62pt>
+<images/figure_1_cnn3_3000_v13_loss_change2.png, id=380, 578.16pt x 433.62pt>
 File: images/figure_1_cnn3_3000_v13_loss_change2.png Graphic file (type png)
 
 <use images/figure_1_cnn3_3000_v13_loss_change2.png>
@@ -1603,14 +1606,14 @@ Package pdftex.def Info: images/figure_1_cnn3_3000_v13_loss_change2.png used on
  input line 348.
 (pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
 
-<images/model3_dropout.png, id=372, 1073.00874pt x 146.5475pt>
+<images/model3_dropout.png, id=381, 1073.00874pt x 146.5475pt>
 File: images/model3_dropout.png Graphic file (type png)
 
 <use images/model3_dropout.png>
 Package pdftex.def Info: images/model3_dropout.png used on input line 355.
 (pdftex.def)             Requested size: 375.55869pt x 51.29237pt.
 
-<images/figure_1_cnn3_3000_v13_loss_change3_dropout_increase_2.png, id=373, 151
+<images/figure_1_cnn3_3000_v13_loss_change3_dropout_increase_2.png, id=382, 151
 7.67pt x 896.148pt>
 File: images/figure_1_cnn3_3000_v13_loss_change3_dropout_increase_2.png Graphic
  file (type png)
@@ -1620,11 +1623,11 @@ Package pdftex.def Info: images/figure_1_cnn3_3000_v13_loss_change3_dropout_inc
 rease_2.png used on input line 362.
 (pdftex.def)             Requested size: 303.52863pt x 179.22641pt.
 
-[84]
+[87]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[85 <./images/figure_1_cnn3_5000_loss_v11.png> <./images/figure_1_cnn3_5000_los
+[88 <./images/figure_1_cnn3_5000_loss_v11.png> <./images/figure_1_cnn3_5000_los
 s_v12.png> <./images/figure_1_cnn3_5000_loss_v13.png> <./images/figure_1_cnn3_5
 000_loss_v14.png> <./images/figure_1_cnn3_5000_loss_v15.png>]
 
@@ -1633,14 +1636,14 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [86 <./images/figure_1_cnn3_5000_v13.png> <./images/figure_1_cnn3_3000_v13_lo
-ss_change2.png> <./images/model3_dropout.png>] [87 <./images/figure_1_cnn3_3000
+) [89 <./images/figure_1_cnn3_5000_v13.png> <./images/figure_1_cnn3_3000_v13_lo
+ss_change2.png> <./images/model3_dropout.png>] [90 <./images/figure_1_cnn3_3000
 _v13_loss_change3_dropout_increase_2.png>]
 \openout2 = `includes/cnnBeetles.aux'.
 
  (./includes/cnnBeetles.tex
 Chapter 12.
-<images/net1.png, id=394, 1214.5375pt x 251.94125pt>
+<images/net1.png, id=404, 1214.5375pt x 251.94125pt>
 File: images/net1.png Graphic file (type png)
  <use images/net1.png>
 Package pdftex.def Info: images/net1.png used on input line 11.
@@ -1653,11 +1656,11 @@ Overfull \hbox (2.10953pt too wide) in paragraph at lines 11--12
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[88
+[91
 
 
 
-] <images/net2.png, id=398, 1208.515pt x 248.93pt>
+] <images/net2.png, id=408, 1208.515pt x 248.93pt>
 File: images/net2.png Graphic file (type png)
  <use images/net2.png>
 Package pdftex.def Info: images/net2.png used on input line 20.
@@ -1666,7 +1669,7 @@ Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ù in font cmr12!
 
-<images/arch_model.png, id=399, 1637.11626pt x 283.0575pt>
+<images/arch_model.png, id=409, 1637.11626pt x 283.0575pt>
 File: images/arch_model.png Graphic file (type png)
 
 <use images/arch_model.png>
@@ -1677,23 +1680,23 @@ Overfull \hbox (7.4418pt too wide) in paragraph at lines 49--50
  [][] 
  []
 
-[89 <./images/net1.png> <./images/net2.png>]
-<images/inc_channels.png, id=404, 547.04375pt x 339.2675pt>
+[92 <./images/net1.png> <./images/net2.png>]
+<images/inc_channels.png, id=413, 547.04375pt x 339.2675pt>
 File: images/inc_channels.png Graphic file (type png)
 
 <use images/inc_channels.png>
 Package pdftex.def Info: images/inc_channels.png used on input line 64.
 (pdftex.def)             Requested size: 273.5212pt x 169.63333pt.
- [90 <./images/arch_model.png>]
-<images/sp_channels.png, id=408, 562.1pt x 338.26375pt>
+ [93 <./images/arch_model.png>]
+<images/sp_channels.png, id=417, 562.1pt x 338.26375pt>
 File: images/sp_channels.png Graphic file (type png)
 
 <use images/sp_channels.png>
 Package pdftex.def Info: images/sp_channels.png used on input line 73.
 (pdftex.def)             Requested size: 281.04932pt x 169.13145pt.
- [91 <./images/inc_channels.png> <./images/sp_channels.png (PNG copy)>]
+ [94 <./images/inc_channels.png> <./images/sp_channels.png (PNG copy)>]
 <images/cnnmodel3_5000_pronotum_v13_without_dropout_normalized_data_loss.png, i
-d=412, 578.16pt x 433.62pt>
+d=421, 578.16pt x 433.62pt>
 File: images/cnnmodel3_5000_pronotum_v13_without_dropout_normalized_data_loss.p
 ng Graphic file (type png)
 
@@ -1702,7 +1705,7 @@ g>
 Package pdftex.def Info: images/cnnmodel3_5000_pronotum_v13_without_dropout_nor
 malized_data_loss.png used on input line 88.
 (pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
- <images/loss_v16.png, id=413, 578.16pt x 433.62pt>
+ <images/loss_v16.png, id=422, 578.16pt x 433.62pt>
 File: images/loss_v16.png Graphic file (type png)
 
 <use images/loss_v16.png>
@@ -1712,24 +1715,24 @@ Package pdftex.def Info: images/loss_v16.png used on input line 97.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[92 <./images/cnnmodel3_5000_pronotum_v13_without_dropout_normalized_data_loss.
-png>] [93 <./images/loss_v16.png>]
-<images/statistic_pronotum_from_scratch_lm1.png, id=422, 608.2725pt x 434.62375
+[95 <./images/cnnmodel3_5000_pronotum_v13_without_dropout_normalized_data_loss.
+png>] [96 <./images/loss_v16.png>]
+<images/statistic_pronotum_from_scratch_lm1.png, id=432, 608.2725pt x 434.62375
 pt>
 File: images/statistic_pronotum_from_scratch_lm1.png Graphic file (type png)
  <use images/statistic_pronotum_from_scratch_lm1.png>
 Package pdftex.def Info: images/statistic_pronotum_from_scratch_lm1.png used on
  input line 166.
 (pdftex.def)             Requested size: 304.13551pt x 217.31134pt.
- [94 <./images/statistic_pronotum_from_scratch_lm1.png>]
-<images/fn_accuracy.png, id=427, 76.3653pt x 57.3342pt>
+ [97 <./images/statistic_pronotum_from_scratch_lm1.png>]
+<images/fn_accuracy.png, id=438, 76.3653pt x 57.3342pt>
 File: images/fn_accuracy.png Graphic file (type png)
 
 <use images/fn_accuracy.png>
 Package pdftex.def Info: images/fn_accuracy.png used on input line 175.
 (pdftex.def)             Requested size: 169.29684pt x 127.11542pt.
 
-<images/plandmark2.png, id=428, 178.9887pt x 133.9404pt>
+<images/plandmark2.png, id=439, 178.9887pt x 133.9404pt>
 File: images/plandmark2.png Graphic file (type png)
 
 <use images/plandmark2.png>
@@ -1740,14 +1743,14 @@ Overfull \hbox (2.61108pt too wide) in paragraph at lines 184--224
 []$[]$  $[]$ 
  []
 
-[95 <./images/fn_accuracy.png (PNG copy)> <./images/plandmark2.png (PNG copy)>]
-<images/merge.png, id=434, 729.72626pt x 361.35pt>
+[98 <./images/fn_accuracy.png (PNG copy)> <./images/plandmark2.png (PNG copy)>]
+<images/merge.png, id=444, 729.72626pt x 361.35pt>
 File: images/merge.png Graphic file (type png)
  <use images/merge.png>
 Package pdftex.def Info: images/merge.png used on input line 245.
 (pdftex.def)             Requested size: 401.3507pt x 198.74312pt.
 
-[96 <./images/merge.png>]
+[99 <./images/merge.png>]
 Overfull \hbox (2.61108pt too wide) in paragraph at lines 261--296
 [][]  [] 
  []
@@ -1762,7 +1765,7 @@ Overfull \hbox (2.61108pt too wide) in paragraph at lines 342--379
 [][]  [] 
  []
 
-[97]
+[100]
 Package epstopdf Info: Source file: <images/prono_part.eps>
 (epstopdf)                    date: 2018-03-15 09:01:06
 (epstopdf)                    size: 94899 bytes
@@ -1774,7 +1777,7 @@ erted-to.pdf images/prono_part.eps>
 (epstopdf)             \includegraphics on input line 390.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/prono_part-eps-converted-to.pdf, id=443, 388.45125pt x 225.84375pt>
+<images/prono_part-eps-converted-to.pdf, id=452, 388.45125pt x 225.84375pt>
 File: images/prono_part-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/prono_part-eps-converted-to.pdf>
@@ -1792,7 +1795,7 @@ rted-to.pdf images/body_part.eps>
 (epstopdf)             \includegraphics on input line 391.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/body_part-eps-converted-to.pdf, id=444, 390.45876pt x 231.86626pt>
+<images/body_part-eps-converted-to.pdf, id=453, 390.45876pt x 231.86626pt>
 File: images/body_part-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/body_part-eps-converted-to.pdf>
@@ -1814,7 +1817,7 @@ Package epstopdf Info: Source file: <images/head_part.eps>
 rted-to.pdf images/head_part.eps>
 (epstopdf)             \includegraphics on input line 392.
 Package epstopdf Info: Output file is already uptodate.
-<images/head_part-eps-converted-to.pdf, id=445, 392.46625pt x 232.87pt>
+<images/head_part-eps-converted-to.pdf, id=454, 392.46625pt x 232.87pt>
 File: images/head_part-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/head_part-eps-converted-to.pdf>
@@ -1822,42 +1825,42 @@ Package pdftex.def Info: images/head_part-eps-converted-to.pdf used on input li
 ne 392.
 (pdftex.def)             Requested size: 241.84843pt x 143.50378pt.
 
-<images/lm1_cnn_2.jpg, id=446, 379.4175pt x 216.81pt>
+<images/lm1_cnn_2.jpg, id=455, 379.4175pt x 216.81pt>
 File: images/lm1_cnn_2.jpg Graphic file (type jpg)
 
 <use images/lm1_cnn_2.jpg>
 Package pdftex.def Info: images/lm1_cnn_2.jpg used on input line 406.
 (pdftex.def)             Requested size: 193.47578pt x 110.5584pt.
 
-<images/lm1_finetuning_2.jpg, id=447, 414.79968pt x 218.33147pt>
+<images/lm1_finetuning_2.jpg, id=456, 414.79968pt x 218.33147pt>
 File: images/lm1_finetuning_2.jpg Graphic file (type jpg)
 
 <use images/lm1_finetuning_2.jpg>
 Package pdftex.def Info: images/lm1_finetuning_2.jpg used on input line 407.
 (pdftex.def)             Requested size: 193.47578pt x 101.83623pt.
 
-<images/lm6_cnn_2.jpg, id=448, 382.65063pt x 225.84375pt>
+<images/lm6_cnn_2.jpg, id=457, 382.65063pt x 225.84375pt>
 File: images/lm6_cnn_2.jpg Graphic file (type jpg)
 
 <use images/lm6_cnn_2.jpg>
 Package pdftex.def Info: images/lm6_cnn_2.jpg used on input line 408.
 (pdftex.def)             Requested size: 193.47578pt x 114.19319pt.
 
-<images/lm6_finetuning_2.jpg, id=449, 407.27156pt x 234.30695pt>
+<images/lm6_finetuning_2.jpg, id=458, 407.27156pt x 234.30695pt>
 File: images/lm6_finetuning_2.jpg Graphic file (type jpg)
 
 <use images/lm6_finetuning_2.jpg>
 Package pdftex.def Info: images/lm6_finetuning_2.jpg used on input line 409.
 (pdftex.def)             Requested size: 193.47578pt x 111.30768pt.
- [98] [99 <./images/prono_part-eps-converted-to.pdf> <./images/body_part-eps-co
-nverted-to.pdf> <./images/head_part-eps-converted-to.pdf> <./images/lm1_cnn_2.j
-pg> <./images/lm1_finetuning_2.jpg> <./images/lm6_cnn_2.jpg> <./images/lm6_fine
-tuning_2.jpg>]
+ [101] [102 <./images/prono_part-eps-converted-to.pdf> <./images/body_part-eps-
+converted-to.pdf> <./images/head_part-eps-converted-to.pdf> <./images/lm1_cnn_2
+.jpg> <./images/lm1_finetuning_2.jpg> <./images/lm6_cnn_2.jpg> <./images/lm6_fi
+netuning_2.jpg>]
 Missing character: There is no √ in font cmr12!
 Missing character: There is no © in font cmr12!
 Missing character: There is no √ in font cmr12!
 Missing character: There is no â in font cmr12!
-) [100] [101
+) [103] [104
 
 
 ]
@@ -1866,7 +1869,7 @@ Missing character: There is no â in font cmr12!
 
 (./includes/conclusion.tex
 Chapter 13.
-) [102
+) [105
 
 
 ]
@@ -1874,7 +1877,7 @@ Chapter 13.
 
  (./includes/discussion.tex
 Chapter 14.
-) [103
+) [106
 
 
 
@@ -1882,10 +1885,10 @@ Chapter 14.
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no î in font cmr12!
- [104
+ [107
 
 
-] [105]
+] [108]
 Underfull \hbox (badness 1297) in paragraph at lines 227--233
 []\OT1/cmr/m/n/12 Celia Cin-tas, Mir-sha Quinto-S^^Sanchez, Vic-tor Acu~na, Car
 -olina Paschetta, Soledad
@@ -1897,7 +1900,7 @@ Missing character: There is no √ in font cmr12!
 Missing character: There is no ∏ in font cmr12!
 Missing character: There is no √ in font cmr12!
 Missing character: There is no ∏ in font cmr12!
-) [106] (./index.aux (./includes/cover.aux) (./includes/abstract.aux)
+) [109] (./index.aux (./includes/cover.aux) (./includes/abstract.aux)
 (./includes/segmentation.aux) (./includes/localfeatures.aux)
 (./includes/dominantpoints.aux) (./includes/software.aux)
 (./includes/mcPart.aux) (./includes/machineLearning.aux)
@@ -1914,10 +1917,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15473 strings out of 493029
- 300859 string characters out of 6136234
- 361689 words of memory out of 5000000
- 18504 multiletter control sequences out of 15000+600000
+ 15478 strings out of 493029
+ 300903 string characters out of 6136234
+ 361757 words of memory out of 5000000
+ 18509 multiletter control sequences out of 15000+600000
  12847 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,14n,54p,2128b,526s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1939,10 +1942,10 @@ ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on index.pdf (108 pages, 13265183 bytes).
+Output written on index.pdf (111 pages, 13287811 bytes).
 PDF statistics:
- 548 PDF objects out of 1000 (max. 8388607)
- 309 compressed objects within 4 object streams
+ 559 PDF objects out of 1000 (max. 8388607)
+ 317 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  443 words of extra memory for PDF output out of 10000 (max. 10000000)
 

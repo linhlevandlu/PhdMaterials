@@ -81,79 +81,80 @@
 \contentsline {section}{\numberline {6.1}Deep learning}{45}
 \contentsline {section}{\numberline {6.2}Neural network}{45}
 \contentsline {subsection}{\numberline {6.2.1}Neural}{45}
-\contentsline {subsection}{\numberline {6.2.2}Neural network}{46}
-\contentsline {subsection}{\numberline {6.2.3}Deep network}{47}
-\contentsline {section}{\numberline {6.3}Back propagation}{48}
-\contentsline {section}{\numberline {6.4}Data augmentation}{49}
-\contentsline {section}{\numberline {6.5}Optimization problem}{50}
-\contentsline {section}{\numberline {6.6}Conclusion}{53}
-\contentsline {chapter}{\numberline {7}Classification}{54}
-\contentsline {section}{\numberline {7.1}Nearest Neighbour Classifier}{54}
-\contentsline {section}{\numberline {7.2}K-Nearest Neighbour Classifier}{55}
-\contentsline {section}{\numberline {7.3}Linear Classification}{55}
-\contentsline {subsection}{\numberline {7.3.1}Multiclass Support Vector Machine loss}{57}
-\contentsline {subsection}{\numberline {7.3.2}Softmax classifer}{57}
-\contentsline {section}{\numberline {7.4}How to determine the value of W and b?}{58}
-\contentsline {subsection}{\numberline {7.4.1}Random search and random local search}{58}
-\contentsline {subsection}{\numberline {7.4.2}Following the Grandient}{58}
-\contentsline {section}{\numberline {7.5}Backpropagation}{59}
-\contentsline {chapter}{\numberline {8}Convolutional Neural Network}{61}
-\contentsline {section}{\numberline {8.1}Architecture}{61}
-\contentsline {subsection}{\numberline {8.1.1}Convolutional layer}{61}
-\contentsline {subsection}{\numberline {8.1.2}Pooling layer}{64}
-\contentsline {subsection}{\numberline {8.1.3}Full connected layer}{65}
-\contentsline {section}{\numberline {8.2}Frameworks}{65}
-\contentsline {subsection}{\numberline {8.2.1}Caffe}{65}
-\contentsline {subsection}{\numberline {8.2.2}Theano}{66}
-\contentsline {subsection}{\numberline {8.2.3}TensorFlow}{66}
-\contentsline {subsection}{\numberline {8.2.4}Torch}{66}
-\contentsline {subsection}{\numberline {8.2.5}PyTorch}{66}
-\contentsline {subsection}{\numberline {8.2.6}Trends of Deep Learning libraries}{66}
-\contentsline {section}{\numberline {8.3}Case studies}{66}
-\contentsline {section}{\numberline {8.4}A small deep network with Caffe}{68}
-\contentsline {chapter}{\numberline {9}Using CNN to classify the patches}{69}
-\contentsline {section}{\numberline {9.1}Data}{69}
-\contentsline {section}{\numberline {9.2}The network}{69}
-\contentsline {section}{\numberline {9.3}Solver parameters}{70}
-\contentsline {section}{\numberline {9.4}Experiment and results}{70}
-\contentsline {section}{\numberline {9.5}Conclusion}{71}
-\contentsline {chapter}{\numberline {10}Deep learning datasets for landmarking}{72}
-\contentsline {section}{\numberline {10.1}Facial keypoints problem}{72}
-\contentsline {subsection}{\numberline {10.1.1}The Annotated Facial Landmarks in the Wild dataset}{72}
-\contentsline {subsection}{\numberline {10.1.2}Multi-Task Facial Landmark (MTFL) dataset}{72}
-\contentsline {subsection}{\numberline {10.1.3}Facial Keypoints Detection Kaggle Challenge}{72}
-\contentsline {section}{\numberline {10.2}Other problems}{73}
-\contentsline {subsection}{\numberline {10.2.1}Syntheseyes dataset}{73}
-\contentsline {subsection}{\numberline {10.2.2}Drosophila Wings dataset}{73}
-\contentsline {section}{\numberline {10.3}Summary}{73}
-\contentsline {chapter}{\numberline {11}Automatic extraction the morphometry landmarks by Convolutional Neural Network}{74}
-\contentsline {section}{\numberline {11.1}Model 1: Facial point detection by CNN}{74}
-\contentsline {subsection}{\numberline {11.1.1}Data}{74}
-\contentsline {subsection}{\numberline {11.1.2}Architecture}{74}
-\contentsline {subsection}{\numberline {11.1.3}Experiments}{76}
-\contentsline {subsubsection}{Training}{76}
-\contentsline {subsubsection}{Testing}{76}
-\contentsline {section}{\numberline {11.2}Model 2: Automatic ear landmarks detection by CNN}{77}
-\contentsline {subsection}{\numberline {11.2.1}Dataset}{78}
-\contentsline {subsection}{\numberline {11.2.2}Network}{78}
-\contentsline {subsection}{\numberline {11.2.3}Experiments}{78}
-\contentsline {section}{\numberline {11.3}Model 1 and model 2 on pronotum}{80}
-\contentsline {subsection}{\numberline {11.3.1}Dataset preparing}{80}
-\contentsline {subsection}{\numberline {11.3.2}Model 1 and pronotum landmarks}{80}
-\contentsline {subsubsection}{Testing}{80}
-\contentsline {subsection}{\numberline {11.3.3}Model 2 and pronotum landmarks}{81}
-\contentsline {section}{\numberline {11.4}Proposed architecture (model 3)}{82}
-\contentsline {subsection}{\numberline {11.4.1}Model and parameters}{82}
-\contentsline {subsection}{\numberline {11.4.2}Training and experiments}{83}
-\contentsline {section}{\numberline {11.5}Conclusions}{87}
-\contentsline {chapter}{\numberline {12}Convolutional Neural Network for predicting morphometry landmarks}{88}
-\contentsline {section}{\numberline {12.1}Network architecture designing}{88}
-\contentsline {section}{\numberline {12.2}Data augmentation}{90}
-\contentsline {section}{\numberline {12.3}Experiments and results}{92}
-\contentsline {section}{\numberline {12.4}Resulting improvement by fine-tuning}{96}
-\contentsline {subsection}{\numberline {12.4.1}Data preparation and training}{96}
-\contentsline {subsection}{\numberline {12.4.2}Fine-tuning on each dataset}{97}
-\contentsline {section}{\numberline {12.5}Conclusion}{100}
-\contentsline {part}{III\hspace {1em}Conclusion}{101}
-\contentsline {chapter}{\numberline {13}Conclusion}{102}
-\contentsline {chapter}{\numberline {14}Discussion}{103}
+\contentsline {subsection}{\numberline {6.2.2}Neural network}{47}
+\contentsline {subsection}{\numberline {6.2.3}Deep network}{48}
+\contentsline {section}{\numberline {6.3}Back propagation}{49}
+\contentsline {section}{\numberline {6.4}Data augmentation}{50}
+\contentsline {section}{\numberline {6.5}Optimization problem}{51}
+\contentsline {section}{\numberline {6.6}Conclusion}{55}
+\contentsline {chapter}{\numberline {7}Classification}{56}
+\contentsline {section}{\numberline {7.1}Nearest Neighbour Classifier}{56}
+\contentsline {section}{\numberline {7.2}K-Nearest Neighbour Classifier}{57}
+\contentsline {section}{\numberline {7.3}Linear Classification}{57}
+\contentsline {subsection}{\numberline {7.3.1}Multiclass Support Vector Machine loss}{59}
+\contentsline {subsection}{\numberline {7.3.2}Softmax classifer}{59}
+\contentsline {section}{\numberline {7.4}How to determine the value of W and b?}{60}
+\contentsline {subsection}{\numberline {7.4.1}Random search and random local search}{60}
+\contentsline {subsection}{\numberline {7.4.2}Following the Grandient}{60}
+\contentsline {section}{\numberline {7.5}Backpropagation}{61}
+\contentsline {chapter}{\numberline {8}Convolutional Neural Network}{63}
+\contentsline {section}{\numberline {8.1}Architecture}{63}
+\contentsline {subsection}{\numberline {8.1.1}Convolutional layer}{63}
+\contentsline {subsection}{\numberline {8.1.2}Pooling layer}{66}
+\contentsline {subsection}{\numberline {8.1.3}Full connected layer}{67}
+\contentsline {section}{\numberline {8.2}Frameworks}{67}
+\contentsline {subsection}{\numberline {8.2.1}Caffe}{67}
+\contentsline {subsection}{\numberline {8.2.2}Theano}{68}
+\contentsline {subsection}{\numberline {8.2.3}TensorFlow}{68}
+\contentsline {subsection}{\numberline {8.2.4}Torch}{68}
+\contentsline {subsection}{\numberline {8.2.5}PyTorch}{68}
+\contentsline {subsection}{\numberline {8.2.6}Trends of Deep Learning libraries}{68}
+\contentsline {section}{\numberline {8.3}Case studies}{68}
+\contentsline {section}{\numberline {8.4}A small deep network with Caffe}{70}
+\contentsline {chapter}{\numberline {9}Using CNN to classify the patches}{71}
+\contentsline {section}{\numberline {9.1}Data}{71}
+\contentsline {section}{\numberline {9.2}The network}{71}
+\contentsline {section}{\numberline {9.3}Solver parameters}{72}
+\contentsline {section}{\numberline {9.4}Experiment and results}{72}
+\contentsline {section}{\numberline {9.5}Conclusion}{73}
+\contentsline {chapter}{\numberline {10}Deep learning datasets for landmarking}{74}
+\contentsline {section}{\numberline {10.1}Facial keypoints problem}{74}
+\contentsline {subsection}{\numberline {10.1.1}The Annotated Facial Landmarks in the Wild dataset}{74}
+\contentsline {subsection}{\numberline {10.1.2}Multi-Task Facial Landmark (MTFL) dataset}{74}
+\contentsline {subsection}{\numberline {10.1.3}Facial Keypoints Detection Kaggle Challenge}{74}
+\contentsline {subsection}{\numberline {10.1.4}Cat dataset}{75}
+\contentsline {section}{\numberline {10.2}Other problems}{75}
+\contentsline {subsection}{\numberline {10.2.1}Syntheseyes dataset}{75}
+\contentsline {subsection}{\numberline {10.2.2}Drosophila Wings dataset}{75}
+\contentsline {section}{\numberline {10.3}Summary}{75}
+\contentsline {chapter}{\numberline {11}Automatic extraction the morphometry landmarks by Convolutional Neural Network}{77}
+\contentsline {section}{\numberline {11.1}Model 1: Facial point detection by CNN}{77}
+\contentsline {subsection}{\numberline {11.1.1}Data}{77}
+\contentsline {subsection}{\numberline {11.1.2}Architecture}{77}
+\contentsline {subsection}{\numberline {11.1.3}Experiments}{79}
+\contentsline {subsubsection}{Training}{79}
+\contentsline {subsubsection}{Testing}{79}
+\contentsline {section}{\numberline {11.2}Model 2: Automatic ear landmarks detection by CNN}{80}
+\contentsline {subsection}{\numberline {11.2.1}Dataset}{81}
+\contentsline {subsection}{\numberline {11.2.2}Network}{81}
+\contentsline {subsection}{\numberline {11.2.3}Experiments}{81}
+\contentsline {section}{\numberline {11.3}Model 1 and model 2 on pronotum}{83}
+\contentsline {subsection}{\numberline {11.3.1}Dataset preparing}{83}
+\contentsline {subsection}{\numberline {11.3.2}Model 1 and pronotum landmarks}{83}
+\contentsline {subsubsection}{Testing}{83}
+\contentsline {subsection}{\numberline {11.3.3}Model 2 and pronotum landmarks}{84}
+\contentsline {section}{\numberline {11.4}Proposed architecture (model 3)}{85}
+\contentsline {subsection}{\numberline {11.4.1}Model and parameters}{85}
+\contentsline {subsection}{\numberline {11.4.2}Training and experiments}{86}
+\contentsline {section}{\numberline {11.5}Conclusions}{90}
+\contentsline {chapter}{\numberline {12}Convolutional Neural Network for predicting morphometry landmarks}{91}
+\contentsline {section}{\numberline {12.1}Network architecture designing}{91}
+\contentsline {section}{\numberline {12.2}Data augmentation}{93}
+\contentsline {section}{\numberline {12.3}Experiments and results}{95}
+\contentsline {section}{\numberline {12.4}Resulting improvement by fine-tuning}{99}
+\contentsline {subsection}{\numberline {12.4.1}Data preparation and training}{99}
+\contentsline {subsection}{\numberline {12.4.2}Fine-tuning on each dataset}{100}
+\contentsline {section}{\numberline {12.5}Conclusion}{103}
+\contentsline {part}{III\hspace {1em}Conclusion}{104}
+\contentsline {chapter}{\numberline {13}Conclusion}{105}
+\contentsline {chapter}{\numberline {14}Discussion}{106}
