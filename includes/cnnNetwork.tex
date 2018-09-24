@@ -1,16 +1,21 @@
 \chapter{Convolutional Neural Network}
-Convolutional Neural Networks (CNNs) are similar with the original of Neural Networks. It means that CNNs has also the score function and the loss function at the end of network. Neural Networks receive an input and pass it through a series of hidden layer but in CNNs is deeper. Each hidden layer is made from a set of neurons, where each neuron is full connected with all neurons of previous layer. The layers of the CNNs have neurons arranged in 3 dimensions: \textbf{width, height, depth}. CNNs transform the original image layer by layer from the original pixel value to the final class score. In CNNs, some layers contain the parameters but other don't. This chapter will describe the architecture and the detail of each layer in the CNNs.
-\section{Architecture}
-A CNN is made from the layers. The common layers in CNN are convolutional, nonlinear, pooling and full connected layers. CNN takes image as an input, pass it through the series of layers and get an ouput. Each layer has a difference function to transform the input to another layer. 
+Convolutional Neural Networks (CNNs) or Convolutional Networks are similar with the original of Neural Networks. It means that CNNs has also the score function and the loss function at the end of network. However, CNNs are the specialized neural network for preprocessing data that has grid topology \textit{i.e.} time series data can be seen as $1-D$ grid or images data can be presented as $2-D$ grid, \ldots. The networks have the name ``convolutional neural network" means that the networks have implemented \textbf{convolution} operation which is a kined of linear operation. Like neural networks, CNNs receive also the input, then pass them through a series of hidden layers and give the outputs at the last layer. The layers of the CNNs have neurons arranged in 3 dimensions: \textbf{width, height, depth}. In CNNs, some layers contain the parameters but other don't. This chapter will describe the element layers which can be used to build a CNN and how CNNs work.
+
+\section{CNN components}
+
+A CNN is made from the layers. The common layers in CNN are convolutional, nonlinear, pooling and full connected layers. CNN takes image as an input, pass it through the series of layers and get an ouput. Each layer has a different function to transform the input to another layer. 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.45]{images/cnn_architecture}
 	\caption{An architecture of convolutional neural network}
 	\label{figlncex}
-\end{figure}~\\
+\end{figure}
+
 \subsection{Convolutional layer}
-Convolutional (CONV) layer computes a dot product between their weights and a small region in the input image for each small region in the input. At the output of neurons is combining the result  of the connected to local regions.\\[0.2cm]
-CONV layer uses a set of learnable filters as parameters. Each filter is small spatially but extends the depth of the input. During the forward pass, the filter is slided over each pixel of the input (from left to right, top to bottom) and calculate dot product between the entries of the filter and the input at this position. During the process, we can see the response of input for each filter such as the orientation of the edge or a blotch of some color on the firt layer. With an entire set of filters in each CONV layer, we will stack these activation maps along the depth dimension and procedure the output volume.\\[0.2cm]
+Convolutional (CONV) layer are one of the main layers in CNNs which is implemented the convolution operation. The convolution operation refers an \textbf{input} and a \textbf{kernel} as the arguments and outputs the \textbf{feature map}. It compute a dot product between the input and the kernel. In practice, the input of the CONV layer oftens the images. The convolution operation is computed for each small region in the input with the kernel. At the output of neurons is combining the result of the connected to local regions.
+
+CONV layer uses a set of learnable filters as parameters. Each filter is small spatially but extends the depth of the input. During the forward pass, the filter is slided over each pixel of the input (from left to right, top to bottom) and calculate dot product between the entries of the filter and the input at this position. During the process, we can see the response of input for each filter such as the orientation of the edge or a blotch of some color on the firt layer. With an entire set of filters in each CONV layer, we will stack these activation maps along the depth dimension and procedure the output volume.
+
 Instead of connecting a neurons to all neurons in the previous layer, CONV connect each neurons to only a local region of the input. The spatial extent of this connectivity is a hyperparameter called the receptive field of the neuron (equal with the number of the filter). The extent of connectivity has the depth axis is equal to the depth of the input. For example, if the input has size [32x32x3] and the filter size is [5x5] then each neuron in the CONV layer will have the weights to a [5x5x3] region in the input, and total of $5*5*3 = 75$ weights. This is the way that each neuron in CONV layer connected to the input; but how many neurons that we have in the output and how the order between the neurons. With 3 hyperparameters \textbf{depth, stride} and \textbf{zero-padding} will help us control the size of the CONV output.
 \begin{itemize}
 	\item \textbf{Depth}: corresponds to the number of filters we would like to use, each learning to look for something different in the input.
@@ -29,6 +34,7 @@ Where:
 	\item \textbf{P} is amount of zero padding on the border
 	\item \textbf{S} is the stride.
 \end{itemize}
+
 The important of equation \ref{convneuron} is the constraint on stride. If we choose the stride inadequate, the result could be not an integer, it means that the neurons do not fit neatly and symmetrically across the input. Besides, using zero-padding also affects to the spatial size of the output. Therefore, the setting of the hyperparameters is considered to cheap, we can throw an exception or use zero pad the rest or crop the input to make it fit,etc. 
 Easy to see that if a CONV layer received the input of size $[w x h x d]$, then the number of neurons is $(w * h * d)$; and if the size of the filter on each neuron is $k$, then we have $k * k * d$ weights for each neuron. And the total parameters that we need to keep on the layer is $(w * h * d) * (k * k * d)$, this number is clearly high. To reduce the number of the parameter on the layer, we can assume that if the filter is useful to compute at a position $(x_1,y_1)$, then it should be useful to compute at different postion $(x_2,y_2)$. With this way, we just need to keep unique set of weights for each depth slice(single 2-dimensional slice of depth). This technique is called parameter sharing.\\[0.2cm]
 In general, the CONV layer:
@@ -50,19 +56,22 @@ In general, the CONV layer:
 	\item With parameter sharing, CONV layer store \textbf{$F * F * D_1$} weight per filter, for a total of \textbf{$(F * F * D_1) * K$} weights and \textbf{$K$} biases.
 	\item In the output, the \textbf{d}-th depth slice (size \textbf{$W_2 x H_2$} is the result of performing a valid convolution on the \textbf{d}-th filter over the input volume with a stride of \textbf{$S$} and then offset by \textbf{d}-th bias.
 \end{itemize}
-Consider an example below (figure \ref{figconvw0}, \ref{figconvw1}), with the input is image of size \textbf{[$5$} x \textbf{$5$} x \textbf{$3$]}. The parameter of CONV layer are \textbf{K = 2, F= 3, S = 2, P = 1}, that is using two filter of size \textbf{[3x3]} and applying the stride of 2. Therefore, the size of the output volume is $(5 - 3 + 2)/2 + 1 = 3$ ([3x3x2]), and the zero padding P = 1, so making the outer border of the input with zero value. The figure \ref{figconvw0} and \ref{figconvw1} describe the process of convolution. The each the element in the output (green) is computed by elementwise multiplying the highlight input (blue) with the filter(red), summing it up, and then offsetting the sum result by the bias.
+Fig. \ref{figconv} shows an example of convolution layer. It receives an input with the size of $(7 \times 7 \times 1)$. The parameters of layer are set: \textbf{K = 1, F = 3, S = 1, P = 0}. It means the layer used a kernel with the size of $(3 \times 3)$, the stride of each pixel $1$ and zero padding $P = 0$. Therefore, the size of the output volume is $(7 - 3 + 2.0)/1 + 1 = 5$ $([5 \times 5 \times 1])$. The highlight parts present for convolution operation at a region on input: Each element in the output (red) is computed by elementwise multiplying the hightlight of input (yellow) with the kernel (green), summing it up, and then offsetting the sum result by the bias (the bias is zero in this case).
+
 \begin{figure}[!h]
 	\centering
-	\includegraphics[scale=0.35]{images/filter_w0}
-	\caption{Convolutional input with W0 filter}
-	\label{figconvw0}
+	\includegraphics[scale=0.35]{images/convolutional}
+	\caption{Convolution operation of a $(7 \times 7)$ matrix and kernel of $(3 \times 3)$}
+	\label{figconv}
 \end{figure}
+\iffalse
 \begin{figure}[!h]
 	\centering
 	\includegraphics[scale=0.35]{images/filter_w1}
 	\caption{Convolutional input with W1 filter}
 	\label{figconvw1}
 \end{figure}
+\fi
 \subsection{Pooling layer}
 Pooling (POOL) layer  is another common layer in CNNs network. It is used to reduce the spatial size of the representation to reduce the quantity of the parameters and control overfitting. Hence, it performs a downsampling operation along the spatial dimensions (width, height). This operation will not affect to the depth dimension of the input. More generally, the POOL layer:
 \begin{itemize}
