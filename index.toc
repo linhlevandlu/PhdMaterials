@@ -79,8 +79,8 @@
 \contentsline {section}{\numberline {5.5}Stochastic Gradient Descent}{44}
 \contentsline {chapter}{\numberline {6}Deep Network}{45}
 \contentsline {section}{\numberline {6.1}Deep learning}{45}
-\contentsline {section}{\numberline {6.2}Neural network}{45}
-\contentsline {subsection}{\numberline {6.2.1}Neural}{45}
+\contentsline {section}{\numberline {6.2}Neural network}{46}
+\contentsline {subsection}{\numberline {6.2.1}Neural}{46}
 \contentsline {subsection}{\numberline {6.2.2}Neural network}{47}
 \contentsline {subsection}{\numberline {6.2.3}Deep network}{48}
 \contentsline {section}{\numberline {6.3}Back propagation}{49}
