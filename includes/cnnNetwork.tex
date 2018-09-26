@@ -96,6 +96,11 @@ The common function in POOL layer is \textbf{MAX} function and the size of filte
 	\caption{A POOL layer with MAX function}
 	\label{figconvw1}
 \end{figure}
+
+\subsection{Dropout layer}
+
+\textbf{Dropout layer} \cite{} is a very specific layer in CNNs. As discussed in the previous section, \textbf{pooling layers} have really useful to control the overfitting problem, which has the good performance during the training process but does not perform when given the new data. However, the operation of max pooling is not enough strong to destroys the overfitting. So, dropout is another idea to help the network solves this problem. The idea of dropout is simplistic in nature. It dops out a random some activations in a layer by setting them to zero. By that, it makes the network to be redundant which makes sure that the network is not too ``fitted" to the training data and thus helps alleviate overfitting. Besides, dropout layer also improves the speed of the training process. A special thing is the neurons will be removed only during the training process. They are reinserted into the network with their original weights in the testing process.
+
 \subsection{Full connected layer}
 Full connected (FC) layer computes the class scores of the input. The neurons in FC layer have full connections to all activations in the previous layer. Their activations can be computed with a matrix multiplication followed by a bias offset.\\[0.2cm]
 The difference between CONV and FC layer is that the neurons in the CONV layer are connected only to a local region in the input and the neurons in CONV layer are sharing parameters. However, the neurons in both layers still compute the dot products (it means the functional form is identical). Therefore, it turns out that it is possible to convert between FC and CONV layer.
